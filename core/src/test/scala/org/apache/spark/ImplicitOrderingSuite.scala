@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
-import org.apache.spark.rdd.RDD
+import com.pubmatic.spark.rdd.RDD
 
 class ImplicitOrderingSuite extends SparkFunSuite with LocalSparkContext {
   // Tests that PairRDDFunctions grabs an implicit Ordering in various cases where it should.

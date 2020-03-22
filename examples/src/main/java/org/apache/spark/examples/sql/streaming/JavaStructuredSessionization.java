@@ -16,13 +16,13 @@
  */
 package org.apache.spark.examples.sql.streaming;
 
-import org.apache.spark.api.java.function.FlatMapFunction;
-import org.apache.spark.api.java.function.MapFunction;
+import com.pubmatic.spark.api.java.function.FlatMapFunction;
+import com.pubmatic.spark.api.java.function.MapFunction;
 import org.apache.spark.api.java.function.MapGroupsWithStateFunction;
-import org.apache.spark.sql.*;
-import org.apache.spark.sql.streaming.GroupState;
-import org.apache.spark.sql.streaming.GroupStateTimeout;
-import org.apache.spark.sql.streaming.StreamingQuery;
+import com.pubmatic.spark.sql.*;
+import com.pubmatic.spark.sql.streaming.GroupState;
+import com.pubmatic.spark.sql.streaming.GroupStateTimeout;
+import com.pubmatic.spark.sql.streaming.StreamingQuery;
 
 import java.io.Serializable;
 import java.sql.Timestamp;

@@ -19,9 +19,9 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.classification.LinearSVC
+import com.pubmatic.spark.ml.classification.LinearSVC
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 object LinearSVCExample {
 

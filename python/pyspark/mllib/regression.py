@@ -185,7 +185,7 @@ class LinearRegressionModel(LinearRegressionModelBase):
     @since("1.4.0")
     def save(self, sc, path):
         """Save a LinearRegressionModel."""
-        java_model = sc._jvm.org.apache.spark.mllib.regression.LinearRegressionModel(
+        java_model = sc._jvm.com.pubmatic.spark.mllib.regression.LinearRegressionModel(
             _py2java(sc, self._coeff), self.intercept)
         java_model.save(sc._jsc.sc(), path)
 
@@ -193,7 +193,7 @@ class LinearRegressionModel(LinearRegressionModelBase):
     @since("1.4.0")
     def load(cls, sc, path):
         """Load a LinearRegressionModel."""
-        java_model = sc._jvm.org.apache.spark.mllib.regression.LinearRegressionModel.load(
+        java_model = sc._jvm.com.pubmatic.spark.mllib.regression.LinearRegressionModel.load(
             sc._jsc.sc(), path)
         weights = _java2py(sc, java_model.weights())
         intercept = java_model.intercept()
@@ -354,7 +354,7 @@ class LassoModel(LinearRegressionModelBase):
     @since("1.4.0")
     def save(self, sc, path):
         """Save a LassoModel."""
-        java_model = sc._jvm.org.apache.spark.mllib.regression.LassoModel(
+        java_model = sc._jvm.com.pubmatic.spark.mllib.regression.LassoModel(
             _py2java(sc, self._coeff), self.intercept)
         java_model.save(sc._jsc.sc(), path)
 
@@ -362,7 +362,7 @@ class LassoModel(LinearRegressionModelBase):
     @since("1.4.0")
     def load(cls, sc, path):
         """Load a LassoModel."""
-        java_model = sc._jvm.org.apache.spark.mllib.regression.LassoModel.load(
+        java_model = sc._jvm.com.pubmatic.spark.mllib.regression.LassoModel.load(
             sc._jsc.sc(), path)
         weights = _java2py(sc, java_model.weights())
         intercept = java_model.intercept()
@@ -498,7 +498,7 @@ class RidgeRegressionModel(LinearRegressionModelBase):
     @since("1.4.0")
     def save(self, sc, path):
         """Save a RidgeRegressionMode."""
-        java_model = sc._jvm.org.apache.spark.mllib.regression.RidgeRegressionModel(
+        java_model = sc._jvm.com.pubmatic.spark.mllib.regression.RidgeRegressionModel(
             _py2java(sc, self._coeff), self.intercept)
         java_model.save(sc._jsc.sc(), path)
 
@@ -506,7 +506,7 @@ class RidgeRegressionModel(LinearRegressionModelBase):
     @since("1.4.0")
     def load(cls, sc, path):
         """Load a RidgeRegressionMode."""
-        java_model = sc._jvm.org.apache.spark.mllib.regression.RidgeRegressionModel.load(
+        java_model = sc._jvm.com.pubmatic.spark.mllib.regression.RidgeRegressionModel.load(
             sc._jsc.sc(), path)
         weights = _java2py(sc, java_model.weights())
         intercept = java_model.intercept()
@@ -655,7 +655,7 @@ class IsotonicRegressionModel(Saveable, Loader):
         """Save an IsotonicRegressionModel."""
         java_boundaries = _py2java(sc, self.boundaries.tolist())
         java_predictions = _py2java(sc, self.predictions.tolist())
-        java_model = sc._jvm.org.apache.spark.mllib.regression.IsotonicRegressionModel(
+        java_model = sc._jvm.com.pubmatic.spark.mllib.regression.IsotonicRegressionModel(
             java_boundaries, java_predictions, self.isotonic)
         java_model.save(sc._jsc.sc(), path)
 
@@ -663,7 +663,7 @@ class IsotonicRegressionModel(Saveable, Loader):
     @since("1.4.0")
     def load(cls, sc, path):
         """Load an IsotonicRegressionModel."""
-        java_model = sc._jvm.org.apache.spark.mllib.regression.IsotonicRegressionModel.load(
+        java_model = sc._jvm.com.pubmatic.spark.mllib.regression.IsotonicRegressionModel.load(
             sc._jsc.sc(), path)
         py_boundaries = _java2py(sc, java_model.boundaryVector()).toArray()
         py_predictions = _java2py(sc, java_model.predictionVector()).toArray()

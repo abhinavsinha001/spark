@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.deploy.history
+package com.pubmatic.spark.deploy.history
 
 import java.io.{ByteArrayInputStream, ByteArrayOutputStream, File}
 import java.net.URI
@@ -27,14 +27,14 @@ import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.fs.Path
 import org.scalatest.BeforeAndAfter
 
-import org.apache.spark.{LocalSparkContext, SparkConf, SparkFunSuite}
-import org.apache.spark.deploy.SparkHadoopUtil
-import org.apache.spark.deploy.history.EventLogTestHelper._
-import org.apache.spark.deploy.history.RollingEventLogFilesWriter._
-import org.apache.spark.internal.Logging
-import org.apache.spark.internal.config._
-import org.apache.spark.io.CompressionCodec
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.{LocalSparkContext, SparkConf, SparkFunSuite}
+import com.pubmatic.spark.deploy.SparkHadoopUtil
+import com.pubmatic.spark.deploy.history.EventLogTestHelper._
+import com.pubmatic.spark.deploy.history.RollingEventLogFilesWriter._
+import com.pubmatic.spark.internal.Logging
+import com.pubmatic.spark.internal.config._
+import com.pubmatic.spark.io.CompressionCodec
+import com.pubmatic.spark.util.Utils
 
 
 abstract class EventLogFileReadersSuite extends SparkFunSuite with LocalSparkContext

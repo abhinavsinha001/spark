@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
 import scala.concurrent.duration.Duration
 
 import org.scalatest.{BeforeAndAfter, Matchers}
 
-import org.apache.spark.util.ThreadUtils
+import com.pubmatic.spark.util.ThreadUtils
 
 
 class FutureActionSuite

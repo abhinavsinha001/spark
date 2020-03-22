@@ -16,12 +16,12 @@
  */
 
 
-package org.apache.spark.resource
+package com.pubmatic.spark.resource
 
 import org.json4s.JsonDSL._
 import org.json4s.jackson.JsonMethods._
 
-import org.apache.spark.{SparkException, SparkFunSuite}
+import com.pubmatic.spark.{SparkException, SparkFunSuite}
 
 class ResourceInformationSuite extends SparkFunSuite {
   test("ResourceInformation.parseJson for valid JSON") {

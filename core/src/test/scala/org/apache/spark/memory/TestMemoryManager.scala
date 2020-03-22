@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package org.apache.spark.memory
+package com.pubmatic.spark.memory
 
 import javax.annotation.concurrent.GuardedBy
 
 import scala.collection.mutable
 
-import org.apache.spark.SparkConf
-import org.apache.spark.storage.BlockId
+import com.pubmatic.spark.SparkConf
+import com.pubmatic.spark.storage.BlockId
 
 class TestMemoryManager(conf: SparkConf)
   extends MemoryManager(conf, numCores = 1, Long.MaxValue, Long.MaxValue) {

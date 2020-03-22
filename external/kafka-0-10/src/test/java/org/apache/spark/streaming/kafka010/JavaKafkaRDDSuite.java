@@ -33,7 +33,7 @@ import org.junit.Test;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.api.java.function.Function;
+import com.pubmatic.spark.api.java.function.Function;
 
 public class JavaKafkaRDDSuite implements Serializable {
   private transient JavaSparkContext sc = null;

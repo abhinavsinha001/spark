@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.scheduler.dynalloc
+package com.pubmatic.spark.scheduler.dynalloc
 
 import java.util.concurrent.TimeUnit
 
@@ -24,12 +24,12 @@ import scala.collection.mutable
 import org.mockito.ArgumentMatchers.any
 import org.mockito.Mockito.{doAnswer, mock, when}
 
-import org.apache.spark._
-import org.apache.spark.executor.ExecutorMetrics
-import org.apache.spark.internal.config._
-import org.apache.spark.scheduler._
-import org.apache.spark.storage._
-import org.apache.spark.util.ManualClock
+import com.pubmatic.spark._
+import com.pubmatic.spark.executor.ExecutorMetrics
+import com.pubmatic.spark.internal.config._
+import com.pubmatic.spark.scheduler._
+import com.pubmatic.spark.storage._
+import com.pubmatic.spark.util.ManualClock
 
 class ExecutorMonitorSuite extends SparkFunSuite {
 

@@ -21,8 +21,8 @@ import org.apache.hadoop.hive.cli.CliSessionState
 import org.apache.hadoop.hive.conf.HiveConf
 import org.apache.hadoop.hive.ql.session.SessionState
 
-import org.apache.spark.{SparkConf, SparkFunSuite}
-import org.apache.spark.deploy.SparkHadoopUtil
+import com.pubmatic.spark.{SparkConf, SparkFunSuite}
+import com.pubmatic.spark.deploy.SparkHadoopUtil
 import org.apache.spark.sql.hive.HiveUtils
 
 class HiveCliSessionStateSuite extends SparkFunSuite {

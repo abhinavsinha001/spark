@@ -19,10 +19,10 @@
 package org.apache.spark.examples.graphx
 
 // $example on$
-import org.apache.spark.graphx.{Graph, VertexId}
-import org.apache.spark.graphx.util.GraphGenerators
+import com.pubmatic.spark.graphx.{Graph, VertexId}
+import com.pubmatic.spark.graphx.util.GraphGenerators
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 /**
  * An example use the Pregel operator to express computation

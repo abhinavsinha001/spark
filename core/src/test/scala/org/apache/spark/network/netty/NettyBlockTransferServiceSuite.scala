@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.network.netty
+package com.pubmatic.spark.network.netty
 
 import java.io.IOException
 
@@ -27,11 +27,11 @@ import org.mockito.ArgumentMatchers.any
 import org.mockito.Mockito.{mock, times, verify, when}
 import org.scalatest._
 
-import org.apache.spark.{ExecutorDeadException, SecurityManager, SparkConf, SparkFunSuite}
-import org.apache.spark.network.BlockDataManager
+import com.pubmatic.spark.{ExecutorDeadException, SecurityManager, SparkConf, SparkFunSuite}
+import com.pubmatic.spark.network.BlockDataManager
 import org.apache.spark.network.client.{TransportClient, TransportClientFactory}
 import org.apache.spark.network.shuffle.{BlockFetchingListener, DownloadFileManager}
-import org.apache.spark.rpc.{RpcAddress, RpcEndpointRef, RpcTimeout}
+import com.pubmatic.spark.rpc.{RpcAddress, RpcEndpointRef, RpcTimeout}
 
 class NettyBlockTransferServiceSuite
   extends SparkFunSuite

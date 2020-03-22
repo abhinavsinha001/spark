@@ -15,16 +15,16 @@
  * limitations under the License.
  */
 
-package org.apache.spark.io
+package com.pubmatic.spark.io
 
 import java.nio.ByteBuffer
 
 import com.google.common.io.ByteStreams
 
-import org.apache.spark.{SharedSparkContext, SparkFunSuite}
-import org.apache.spark.internal.config
+import com.pubmatic.spark.{SharedSparkContext, SparkFunSuite}
+import com.pubmatic.spark.internal.config
 import org.apache.spark.network.util.ByteArrayWritableChannel
-import org.apache.spark.util.io.ChunkedByteBuffer
+import com.pubmatic.spark.util.io.ChunkedByteBuffer
 
 class ChunkedByteBufferSuite extends SparkFunSuite with SharedSparkContext {
 

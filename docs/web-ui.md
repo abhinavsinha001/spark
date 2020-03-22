@@ -184,7 +184,7 @@ scala> rdd.count
 res1: Long = 100                                                                
 
 scala> val df = Seq((1, "andy"), (2, "bob"), (2, "andy")).toDF("count", "name")
-df: org.apache.spark.sql.DataFrame = [count: int, name: string]
+df: com.pubmatic.spark.sql.DataFrame = [count: int, name: string]
 
 scala> df.persist(DISK_ONLY)
 res2: df.type = [count: int, name: string]
@@ -311,7 +311,7 @@ jobs, and physical and logical plans for the queries. Here we include a basic ex
 this tab:
 {% highlight scala %}
 scala> val df = Seq((1, "andy"), (2, "bob"), (2, "andy")).toDF("count", "name")
-df: org.apache.spark.sql.DataFrame = [count: int, name: string]
+df: com.pubmatic.spark.sql.DataFrame = [count: int, name: string]
 
 scala> df.count
 res0: Long = 3                                                                  

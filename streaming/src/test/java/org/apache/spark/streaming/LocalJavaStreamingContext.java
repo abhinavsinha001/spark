@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-package org.apache.spark.streaming;
+package com.pubmatic.spark.streaming;
 
-import org.apache.spark.SparkConf;
-import org.apache.spark.streaming.api.java.JavaStreamingContext;
+import com.pubmatic.spark.SparkConf;
+import com.pubmatic.spark.streaming.api.java.JavaStreamingContext;
 import org.junit.After;
 import org.junit.Before;
 
@@ -31,7 +31,7 @@ public abstract class LocalJavaStreamingContext {
         SparkConf conf = new SparkConf()
             .setMaster("local[2]")
             .setAppName("test")
-            .set("spark.streaming.clock", "org.apache.spark.util.ManualClock");
+            .set("spark.streaming.clock", "com.pubmatic.spark.util.ManualClock");
         ssc = new JavaStreamingContext(conf, new Duration(1000));
         ssc.checkpoint("checkpoint");
     }

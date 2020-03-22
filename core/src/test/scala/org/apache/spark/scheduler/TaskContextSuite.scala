@@ -15,23 +15,22 @@
  * limitations under the License.
  */
 
-package org.apache.spark.scheduler
+package com.pubmatic.spark.scheduler
 
 import java.util.Properties
 
 import org.mockito.ArgumentMatchers.any
 import org.mockito.Mockito._
 import org.scalatest.BeforeAndAfter
-
-import org.apache.spark._
-import org.apache.spark.executor.{Executor, TaskMetrics, TaskMetricsSuite}
-import org.apache.spark.internal.config.METRICS_CONF
-import org.apache.spark.memory.TaskMemoryManager
-import org.apache.spark.metrics.source.JvmSource
+import com.pubmatic.spark._
+import com.pubmatic.spark.executor.{Executor, TaskMetrics, TaskMetricsSuite}
+import com.pubmatic.spark.internal.config.METRICS_CONF
+import com.pubmatic.spark.memory.TaskMemoryManager
+import com.pubmatic.spark.metrics.source.JvmSource
 import org.apache.spark.network.util.JavaUtils
-import org.apache.spark.rdd.RDD
-import org.apache.spark.shuffle.FetchFailedException
-import org.apache.spark.util._
+import com.pubmatic.spark.rdd.RDD
+import com.pubmatic.spark.shuffle.FetchFailedException
+import com.pubmatic.spark.util._
 
 class TaskContextSuite extends SparkFunSuite with BeforeAndAfter with LocalSparkContext {
 

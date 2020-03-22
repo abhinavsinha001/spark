@@ -24,13 +24,13 @@ import org.apache.spark.api.java.JavaSparkContext;
 import java.util.Arrays;
 
 import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.mllib.linalg.Matrices;
-import org.apache.spark.mllib.linalg.Matrix;
-import org.apache.spark.mllib.linalg.Vector;
-import org.apache.spark.mllib.linalg.Vectors;
-import org.apache.spark.mllib.regression.LabeledPoint;
-import org.apache.spark.mllib.stat.Statistics;
-import org.apache.spark.mllib.stat.test.ChiSqTestResult;
+import com.pubmatic.spark.mllib.linalg.Matrices;
+import com.pubmatic.spark.mllib.linalg.Matrix;
+import com.pubmatic.spark.mllib.linalg.Vector;
+import com.pubmatic.spark.mllib.linalg.Vectors;
+import com.pubmatic.spark.mllib.regression.LabeledPoint;
+import com.pubmatic.spark.mllib.stat.Statistics;
+import com.pubmatic.spark.mllib.stat.test.ChiSqTestResult;
 // $example off$
 
 public class JavaHypothesisTestingExample {

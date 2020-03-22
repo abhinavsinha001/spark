@@ -82,7 +82,7 @@ For a regular multi-line JSON file, set a named parameter `multiLine` to `TRUE`.
 {% highlight sql %}
 
 CREATE TEMPORARY VIEW jsonTable
-USING org.apache.spark.sql.json
+USING com.pubmatic.spark.sql.json
 OPTIONS (
   path "examples/src/main/resources/people.json"
 )

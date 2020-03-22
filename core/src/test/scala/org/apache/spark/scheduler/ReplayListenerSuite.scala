@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.scheduler
+package com.pubmatic.spark.scheduler
 
 import java.io._
 import java.nio.charset.StandardCharsets
@@ -28,12 +28,12 @@ import org.json4s.JsonAST.JValue
 import org.json4s.jackson.JsonMethods._
 import org.scalatest.BeforeAndAfter
 
-import org.apache.spark._
-import org.apache.spark.deploy.SparkHadoopUtil
-import org.apache.spark.deploy.history.EventLogFileReader
-import org.apache.spark.deploy.history.EventLogTestHelper._
-import org.apache.spark.io.{CompressionCodec, LZ4CompressionCodec}
-import org.apache.spark.util.{JsonProtocol, JsonProtocolSuite, Utils}
+import com.pubmatic.spark._
+import com.pubmatic.spark.deploy.SparkHadoopUtil
+import com.pubmatic.spark.deploy.history.EventLogFileReader
+import com.pubmatic.spark.deploy.history.EventLogTestHelper._
+import com.pubmatic.spark.io.{CompressionCodec, LZ4CompressionCodec}
+import com.pubmatic.spark.util.{JsonProtocol, JsonProtocolSuite, Utils}
 
 /**
  * Test whether ReplayListenerBus replays events from logs correctly.

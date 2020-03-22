@@ -23,10 +23,10 @@ import scala.Tuple3;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.mllib.regression.IsotonicRegression;
-import org.apache.spark.mllib.regression.IsotonicRegressionModel;
-import org.apache.spark.mllib.regression.LabeledPoint;
-import org.apache.spark.mllib.util.MLUtils;
+import com.pubmatic.spark.mllib.regression.IsotonicRegression;
+import com.pubmatic.spark.mllib.regression.IsotonicRegressionModel;
+import com.pubmatic.spark.mllib.regression.LabeledPoint;
+import com.pubmatic.spark.mllib.util.MLUtils;
 // $example off$
 import org.apache.spark.SparkConf;
 

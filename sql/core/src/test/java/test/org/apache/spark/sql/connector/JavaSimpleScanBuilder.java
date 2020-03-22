@@ -17,11 +17,11 @@
 
 package test.org.apache.spark.sql.connector;
 
-import org.apache.spark.sql.connector.read.Batch;
-import org.apache.spark.sql.connector.read.PartitionReaderFactory;
-import org.apache.spark.sql.connector.read.Scan;
-import org.apache.spark.sql.connector.read.ScanBuilder;
-import org.apache.spark.sql.types.StructType;
+import com.pubmatic.spark.sql.connector.read.Batch;
+import com.pubmatic.spark.sql.connector.read.PartitionReaderFactory;
+import com.pubmatic.spark.sql.connector.read.Scan;
+import com.pubmatic.spark.sql.connector.read.ScanBuilder;
+import com.pubmatic.spark.sql.types.StructType;
 
 abstract class JavaSimpleScanBuilder implements ScanBuilder, Scan, Batch {
 

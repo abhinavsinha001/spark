@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.scheduler
+package com.pubmatic.spark.scheduler
 
 import java.io.{Externalizable, ObjectInput, ObjectOutput}
 import java.util.concurrent.Semaphore
@@ -26,12 +26,12 @@ import scala.collection.mutable
 import org.mockito.Mockito
 import org.scalatest.Matchers
 
-import org.apache.spark._
-import org.apache.spark.executor.TaskMetrics
-import org.apache.spark.internal.config._
-import org.apache.spark.internal.config.Network.RPC_MESSAGE_MAX_SIZE
-import org.apache.spark.metrics.MetricsSystem
-import org.apache.spark.util.{ResetSystemProperties, RpcUtils}
+import com.pubmatic.spark._
+import com.pubmatic.spark.executor.TaskMetrics
+import com.pubmatic.spark.internal.config._
+import com.pubmatic.spark.internal.config.Network.RPC_MESSAGE_MAX_SIZE
+import com.pubmatic.spark.metrics.MetricsSystem
+import com.pubmatic.spark.util.{ResetSystemProperties, RpcUtils}
 
 class SparkListenerSuite extends SparkFunSuite with LocalSparkContext with Matchers
   with ResetSystemProperties {

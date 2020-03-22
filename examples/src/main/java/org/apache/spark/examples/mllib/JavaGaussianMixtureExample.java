@@ -22,10 +22,10 @@ import org.apache.spark.api.java.JavaSparkContext;
 
 // $example on$
 import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.mllib.clustering.GaussianMixture;
-import org.apache.spark.mllib.clustering.GaussianMixtureModel;
-import org.apache.spark.mllib.linalg.Vector;
-import org.apache.spark.mllib.linalg.Vectors;
+import com.pubmatic.spark.mllib.clustering.GaussianMixture;
+import com.pubmatic.spark.mllib.clustering.GaussianMixtureModel;
+import com.pubmatic.spark.mllib.linalg.Vector;
+import com.pubmatic.spark.mllib.linalg.Vectors;
 // $example off$
 
 public class JavaGaussianMixtureExample {

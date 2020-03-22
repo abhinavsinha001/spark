@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.network.netty
+package com.pubmatic.spark.network.netty
 
 import java.io.InputStreamReader
 import java.nio._
@@ -31,14 +31,14 @@ import org.mockito.Mockito._
 import org.scalatest.Matchers
 import org.scalatestplus.mockito.MockitoSugar
 
-import org.apache.spark.{SecurityManager, SparkConf, SparkFunSuite}
-import org.apache.spark.internal.config._
-import org.apache.spark.internal.config.Network
-import org.apache.spark.network.{BlockDataManager, BlockTransferService}
+import com.pubmatic.spark.{SecurityManager, SparkConf, SparkFunSuite}
+import com.pubmatic.spark.internal.config._
+import com.pubmatic.spark.internal.config.Network
+import com.pubmatic.spark.network.{BlockDataManager, BlockTransferService}
 import org.apache.spark.network.buffer.{ManagedBuffer, NioManagedBuffer}
 import org.apache.spark.network.shuffle.BlockFetchingListener
-import org.apache.spark.storage.{BlockId, ShuffleBlockId}
-import org.apache.spark.util.ThreadUtils
+import com.pubmatic.spark.storage.{BlockId, ShuffleBlockId}
+import com.pubmatic.spark.util.ThreadUtils
 
 class NettyBlockTransferSecuritySuite extends SparkFunSuite with MockitoSugar with Matchers {
   test("security default off") {

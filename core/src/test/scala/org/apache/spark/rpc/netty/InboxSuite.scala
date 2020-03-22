@@ -15,15 +15,15 @@
  * limitations under the License.
  */
 
-package org.apache.spark.rpc.netty
+package com.pubmatic.spark.rpc.netty
 
 import java.util.concurrent.{CountDownLatch, TimeUnit}
 import java.util.concurrent.atomic.AtomicInteger
 
 import org.mockito.Mockito._
 
-import org.apache.spark.SparkFunSuite
-import org.apache.spark.rpc.{RpcAddress, TestRpcEndpoint}
+import com.pubmatic.spark.SparkFunSuite
+import com.pubmatic.spark.rpc.{RpcAddress, TestRpcEndpoint}
 
 class InboxSuite extends SparkFunSuite {
 

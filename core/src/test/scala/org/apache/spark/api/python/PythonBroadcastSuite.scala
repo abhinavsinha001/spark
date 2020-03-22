@@ -15,18 +15,17 @@
  * limitations under the License.
  */
 
-package org.apache.spark.api.python
+package com.pubmatic.spark.api.python
 
 import java.io.{File, PrintWriter}
 
+import com.pubmatic.spark.{SharedSparkContext, SparkConf, SparkFunSuite}
+
 import scala.io.Source
-
 import org.scalatest.Matchers
-
-import org.apache.spark.{SharedSparkContext, SparkConf, SparkFunSuite}
-import org.apache.spark.internal.config.Kryo._
-import org.apache.spark.serializer.KryoSerializer
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.internal.config.Kryo._
+import com.pubmatic.spark.serializer.KryoSerializer
+import com.pubmatic.spark.util.Utils
 
 // This test suite uses SharedSparkContext because we need a SparkEnv in order to deserialize
 // a PythonBroadcast:

@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
 import scala.collection.JavaConverters._
 
-import org.apache.spark.internal.Logging
+import com.pubmatic.spark.internal.Logging
 
 /**
  * Thread audit for test suites.

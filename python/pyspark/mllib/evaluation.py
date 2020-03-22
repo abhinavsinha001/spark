@@ -62,7 +62,7 @@ class BinaryClassificationMetrics(JavaModelWrapper):
         if numCol == 3:
             schema.add("weight", DoubleType(), False)
         df = sql_ctx.createDataFrame(scoreAndLabels, schema=schema)
-        java_class = sc._jvm.org.apache.spark.mllib.evaluation.BinaryClassificationMetrics
+        java_class = sc._jvm.com.pubmatic.spark.mllib.evaluation.BinaryClassificationMetrics
         java_model = java_class(df._jdf)
         super(BinaryClassificationMetrics, self).__init__(java_model)
 
@@ -129,7 +129,7 @@ class RegressionMetrics(JavaModelWrapper):
         if numCol == 3:
             schema.add("weight", DoubleType(), False)
         df = sql_ctx.createDataFrame(predictionAndObservations, schema=schema)
-        java_class = sc._jvm.org.apache.spark.mllib.evaluation.RegressionMetrics
+        java_class = sc._jvm.com.pubmatic.spark.mllib.evaluation.RegressionMetrics
         java_model = java_class(df._jdf)
         super(RegressionMetrics, self).__init__(java_model)
 
@@ -262,7 +262,7 @@ class MulticlassMetrics(JavaModelWrapper):
         if numCol == 4:
             schema.add("probability", ArrayType(DoubleType(), False), False)
         df = sql_ctx.createDataFrame(predictionAndLabels, schema)
-        java_class = sc._jvm.org.apache.spark.mllib.evaluation.MulticlassMetrics
+        java_class = sc._jvm.com.pubmatic.spark.mllib.evaluation.MulticlassMetrics
         java_model = java_class(df._jdf)
         super(MulticlassMetrics, self).__init__(java_model)
 
@@ -525,7 +525,7 @@ class MultilabelMetrics(JavaModelWrapper):
         sql_ctx = SQLContext.getOrCreate(sc)
         df = sql_ctx.createDataFrame(predictionAndLabels,
                                      schema=sql_ctx._inferSchema(predictionAndLabels))
-        java_class = sc._jvm.org.apache.spark.mllib.evaluation.MultilabelMetrics
+        java_class = sc._jvm.com.pubmatic.spark.mllib.evaluation.MultilabelMetrics
         java_model = java_class(df._jdf)
         super(MultilabelMetrics, self).__init__(java_model)
 

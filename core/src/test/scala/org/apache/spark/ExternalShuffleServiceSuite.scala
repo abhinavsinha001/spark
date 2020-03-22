@@ -15,19 +15,19 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
 import org.scalatest.BeforeAndAfterAll
 import org.scalatest.concurrent.Eventually
 import org.scalatest.time.SpanSugar._
 
-import org.apache.spark.internal.config
+import com.pubmatic.spark.internal.config
 import org.apache.spark.network.TransportContext
-import org.apache.spark.network.netty.SparkTransportConf
+import com.pubmatic.spark.network.netty.SparkTransportConf
 import org.apache.spark.network.server.TransportServer
 import org.apache.spark.network.shuffle.{ExternalBlockHandler, ExternalBlockStoreClient}
-import org.apache.spark.storage.{RDDBlockId, StorageLevel}
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.storage.{RDDBlockId, StorageLevel}
+import com.pubmatic.spark.util.Utils
 
 /**
  * This suite creates an external shuffle server and routes all shuffle fetches through it.

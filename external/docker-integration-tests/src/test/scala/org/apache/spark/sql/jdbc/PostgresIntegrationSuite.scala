@@ -201,7 +201,7 @@ class PostgresIntegrationSuite extends DockerJDBCIntegrationSuite {
     sql(
       s"""
          |CREATE OR REPLACE TEMPORARY VIEW queryOption
-         |USING org.apache.spark.sql.jdbc
+         |USING com.pubmatic.spark.sql.jdbc
          |OPTIONS (url '$jdbcUrl', query '$query')
        """.stripMargin.replaceAll("\n", " "))
     assert(sql("select c1, c3 from queryOption").collect.toSet == expectedResult)

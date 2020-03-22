@@ -23,8 +23,8 @@ import org.apache.spark.api.java.JavaSparkContext;
 import java.util.Arrays;
 
 import org.apache.spark.api.java.JavaDoubleRDD;
-import org.apache.spark.mllib.stat.Statistics;
-import org.apache.spark.mllib.stat.test.KolmogorovSmirnovTestResult;
+import com.pubmatic.spark.mllib.stat.Statistics;
+import com.pubmatic.spark.mllib.stat.test.KolmogorovSmirnovTestResult;
 // $example off$
 
 public class JavaHypothesisTestingKolmogorovSmirnovTestExample {

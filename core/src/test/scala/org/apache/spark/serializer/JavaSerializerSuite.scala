@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package org.apache.spark.serializer
+package com.pubmatic.spark.serializer
 
-import org.apache.spark.{SparkConf, SparkFunSuite}
+import com.pubmatic.spark.{SparkConf, SparkFunSuite}
 
 class JavaSerializerSuite extends SparkFunSuite {
   test("JavaSerializer instances are serializable") {

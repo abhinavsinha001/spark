@@ -87,7 +87,7 @@ SELECT cast(1 as tinyint) FROM t UNION SELECT cast('2' as binary) FROM t
 -- !query 9 schema
 struct<>
 -- !query 9 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. binary <> tinyint at the first column of the second table;
 
 
@@ -96,7 +96,7 @@ SELECT cast(1 as tinyint) FROM t UNION SELECT cast(2 as boolean) FROM t
 -- !query 10 schema
 struct<>
 -- !query 10 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. boolean <> tinyint at the first column of the second table;
 
 
@@ -105,7 +105,7 @@ SELECT cast(1 as tinyint) FROM t UNION SELECT cast('2017-12-11 09:30:00.0' as ti
 -- !query 11 schema
 struct<>
 -- !query 11 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. timestamp <> tinyint at the first column of the second table;
 
 
@@ -114,7 +114,7 @@ SELECT cast(1 as tinyint) FROM t UNION SELECT cast('2017-12-11 09:30:00' as date
 -- !query 12 schema
 struct<>
 -- !query 12 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. date <> tinyint at the first column of the second table;
 
 
@@ -195,7 +195,7 @@ SELECT cast(1 as smallint) FROM t UNION SELECT cast('2' as binary) FROM t
 -- !query 21 schema
 struct<>
 -- !query 21 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. binary <> smallint at the first column of the second table;
 
 
@@ -204,7 +204,7 @@ SELECT cast(1 as smallint) FROM t UNION SELECT cast(2 as boolean) FROM t
 -- !query 22 schema
 struct<>
 -- !query 22 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. boolean <> smallint at the first column of the second table;
 
 
@@ -213,7 +213,7 @@ SELECT cast(1 as smallint) FROM t UNION SELECT cast('2017-12-11 09:30:00.0' as t
 -- !query 23 schema
 struct<>
 -- !query 23 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. timestamp <> smallint at the first column of the second table;
 
 
@@ -222,7 +222,7 @@ SELECT cast(1 as smallint) FROM t UNION SELECT cast('2017-12-11 09:30:00' as dat
 -- !query 24 schema
 struct<>
 -- !query 24 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. date <> smallint at the first column of the second table;
 
 
@@ -303,7 +303,7 @@ SELECT cast(1 as int) FROM t UNION SELECT cast('2' as binary) FROM t
 -- !query 33 schema
 struct<>
 -- !query 33 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. binary <> int at the first column of the second table;
 
 
@@ -312,7 +312,7 @@ SELECT cast(1 as int) FROM t UNION SELECT cast(2 as boolean) FROM t
 -- !query 34 schema
 struct<>
 -- !query 34 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. boolean <> int at the first column of the second table;
 
 
@@ -321,7 +321,7 @@ SELECT cast(1 as int) FROM t UNION SELECT cast('2017-12-11 09:30:00.0' as timest
 -- !query 35 schema
 struct<>
 -- !query 35 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. timestamp <> int at the first column of the second table;
 
 
@@ -330,7 +330,7 @@ SELECT cast(1 as int) FROM t UNION SELECT cast('2017-12-11 09:30:00' as date) FR
 -- !query 36 schema
 struct<>
 -- !query 36 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. date <> int at the first column of the second table;
 
 
@@ -411,7 +411,7 @@ SELECT cast(1 as bigint) FROM t UNION SELECT cast('2' as binary) FROM t
 -- !query 45 schema
 struct<>
 -- !query 45 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. binary <> bigint at the first column of the second table;
 
 
@@ -420,7 +420,7 @@ SELECT cast(1 as bigint) FROM t UNION SELECT cast(2 as boolean) FROM t
 -- !query 46 schema
 struct<>
 -- !query 46 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. boolean <> bigint at the first column of the second table;
 
 
@@ -429,7 +429,7 @@ SELECT cast(1 as bigint) FROM t UNION SELECT cast('2017-12-11 09:30:00.0' as tim
 -- !query 47 schema
 struct<>
 -- !query 47 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. timestamp <> bigint at the first column of the second table;
 
 
@@ -438,7 +438,7 @@ SELECT cast(1 as bigint) FROM t UNION SELECT cast('2017-12-11 09:30:00' as date)
 -- !query 48 schema
 struct<>
 -- !query 48 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. date <> bigint at the first column of the second table;
 
 
@@ -519,7 +519,7 @@ SELECT cast(1 as float) FROM t UNION SELECT cast('2' as binary) FROM t
 -- !query 57 schema
 struct<>
 -- !query 57 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. binary <> float at the first column of the second table;
 
 
@@ -528,7 +528,7 @@ SELECT cast(1 as float) FROM t UNION SELECT cast(2 as boolean) FROM t
 -- !query 58 schema
 struct<>
 -- !query 58 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. boolean <> float at the first column of the second table;
 
 
@@ -537,7 +537,7 @@ SELECT cast(1 as float) FROM t UNION SELECT cast('2017-12-11 09:30:00.0' as time
 -- !query 59 schema
 struct<>
 -- !query 59 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. timestamp <> float at the first column of the second table;
 
 
@@ -546,7 +546,7 @@ SELECT cast(1 as float) FROM t UNION SELECT cast('2017-12-11 09:30:00' as date) 
 -- !query 60 schema
 struct<>
 -- !query 60 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. date <> float at the first column of the second table;
 
 
@@ -627,7 +627,7 @@ SELECT cast(1 as double) FROM t UNION SELECT cast('2' as binary) FROM t
 -- !query 69 schema
 struct<>
 -- !query 69 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. binary <> double at the first column of the second table;
 
 
@@ -636,7 +636,7 @@ SELECT cast(1 as double) FROM t UNION SELECT cast(2 as boolean) FROM t
 -- !query 70 schema
 struct<>
 -- !query 70 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. boolean <> double at the first column of the second table;
 
 
@@ -645,7 +645,7 @@ SELECT cast(1 as double) FROM t UNION SELECT cast('2017-12-11 09:30:00.0' as tim
 -- !query 71 schema
 struct<>
 -- !query 71 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. timestamp <> double at the first column of the second table;
 
 
@@ -654,7 +654,7 @@ SELECT cast(1 as double) FROM t UNION SELECT cast('2017-12-11 09:30:00' as date)
 -- !query 72 schema
 struct<>
 -- !query 72 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. date <> double at the first column of the second table;
 
 
@@ -735,7 +735,7 @@ SELECT cast(1 as decimal(10, 0)) FROM t UNION SELECT cast('2' as binary) FROM t
 -- !query 81 schema
 struct<>
 -- !query 81 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. binary <> decimal(10,0) at the first column of the second table;
 
 
@@ -744,7 +744,7 @@ SELECT cast(1 as decimal(10, 0)) FROM t UNION SELECT cast(2 as boolean) FROM t
 -- !query 82 schema
 struct<>
 -- !query 82 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. boolean <> decimal(10,0) at the first column of the second table;
 
 
@@ -753,7 +753,7 @@ SELECT cast(1 as decimal(10, 0)) FROM t UNION SELECT cast('2017-12-11 09:30:00.0
 -- !query 83 schema
 struct<>
 -- !query 83 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. timestamp <> decimal(10,0) at the first column of the second table;
 
 
@@ -762,7 +762,7 @@ SELECT cast(1 as decimal(10, 0)) FROM t UNION SELECT cast('2017-12-11 09:30:00' 
 -- !query 84 schema
 struct<>
 -- !query 84 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. date <> decimal(10,0) at the first column of the second table;
 
 
@@ -843,7 +843,7 @@ SELECT cast(1 as string) FROM t UNION SELECT cast('2' as binary) FROM t
 -- !query 93 schema
 struct<>
 -- !query 93 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. binary <> string at the first column of the second table;
 
 
@@ -852,7 +852,7 @@ SELECT cast(1 as string) FROM t UNION SELECT cast(2 as boolean) FROM t
 -- !query 94 schema
 struct<>
 -- !query 94 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. boolean <> string at the first column of the second table;
 
 
@@ -879,7 +879,7 @@ SELECT cast('1' as binary) FROM t UNION SELECT cast(2 as tinyint) FROM t
 -- !query 97 schema
 struct<>
 -- !query 97 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. tinyint <> binary at the first column of the second table;
 
 
@@ -888,7 +888,7 @@ SELECT cast('1' as binary) FROM t UNION SELECT cast(2 as smallint) FROM t
 -- !query 98 schema
 struct<>
 -- !query 98 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. smallint <> binary at the first column of the second table;
 
 
@@ -897,7 +897,7 @@ SELECT cast('1' as binary) FROM t UNION SELECT cast(2 as int) FROM t
 -- !query 99 schema
 struct<>
 -- !query 99 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. int <> binary at the first column of the second table;
 
 
@@ -906,7 +906,7 @@ SELECT cast('1' as binary) FROM t UNION SELECT cast(2 as bigint) FROM t
 -- !query 100 schema
 struct<>
 -- !query 100 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. bigint <> binary at the first column of the second table;
 
 
@@ -915,7 +915,7 @@ SELECT cast('1' as binary) FROM t UNION SELECT cast(2 as float) FROM t
 -- !query 101 schema
 struct<>
 -- !query 101 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. float <> binary at the first column of the second table;
 
 
@@ -924,7 +924,7 @@ SELECT cast('1' as binary) FROM t UNION SELECT cast(2 as double) FROM t
 -- !query 102 schema
 struct<>
 -- !query 102 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. double <> binary at the first column of the second table;
 
 
@@ -933,7 +933,7 @@ SELECT cast('1' as binary) FROM t UNION SELECT cast(2 as decimal(10, 0)) FROM t
 -- !query 103 schema
 struct<>
 -- !query 103 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. decimal(10,0) <> binary at the first column of the second table;
 
 
@@ -942,7 +942,7 @@ SELECT cast('1' as binary) FROM t UNION SELECT cast(2 as string) FROM t
 -- !query 104 schema
 struct<>
 -- !query 104 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. string <> binary at the first column of the second table;
 
 
@@ -960,7 +960,7 @@ SELECT cast('1' as binary) FROM t UNION SELECT cast(2 as boolean) FROM t
 -- !query 106 schema
 struct<>
 -- !query 106 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. boolean <> binary at the first column of the second table;
 
 
@@ -969,7 +969,7 @@ SELECT cast('1' as binary) FROM t UNION SELECT cast('2017-12-11 09:30:00.0' as t
 -- !query 107 schema
 struct<>
 -- !query 107 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. timestamp <> binary at the first column of the second table;
 
 
@@ -978,7 +978,7 @@ SELECT cast('1' as binary) FROM t UNION SELECT cast('2017-12-11 09:30:00' as dat
 -- !query 108 schema
 struct<>
 -- !query 108 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. date <> binary at the first column of the second table;
 
 
@@ -987,7 +987,7 @@ SELECT cast(1 as boolean) FROM t UNION SELECT cast(2 as tinyint) FROM t
 -- !query 109 schema
 struct<>
 -- !query 109 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. tinyint <> boolean at the first column of the second table;
 
 
@@ -996,7 +996,7 @@ SELECT cast(1 as boolean) FROM t UNION SELECT cast(2 as smallint) FROM t
 -- !query 110 schema
 struct<>
 -- !query 110 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. smallint <> boolean at the first column of the second table;
 
 
@@ -1005,7 +1005,7 @@ SELECT cast(1 as boolean) FROM t UNION SELECT cast(2 as int) FROM t
 -- !query 111 schema
 struct<>
 -- !query 111 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. int <> boolean at the first column of the second table;
 
 
@@ -1014,7 +1014,7 @@ SELECT cast(1 as boolean) FROM t UNION SELECT cast(2 as bigint) FROM t
 -- !query 112 schema
 struct<>
 -- !query 112 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. bigint <> boolean at the first column of the second table;
 
 
@@ -1023,7 +1023,7 @@ SELECT cast(1 as boolean) FROM t UNION SELECT cast(2 as float) FROM t
 -- !query 113 schema
 struct<>
 -- !query 113 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. float <> boolean at the first column of the second table;
 
 
@@ -1032,7 +1032,7 @@ SELECT cast(1 as boolean) FROM t UNION SELECT cast(2 as double) FROM t
 -- !query 114 schema
 struct<>
 -- !query 114 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. double <> boolean at the first column of the second table;
 
 
@@ -1041,7 +1041,7 @@ SELECT cast(1 as boolean) FROM t UNION SELECT cast(2 as decimal(10, 0)) FROM t
 -- !query 115 schema
 struct<>
 -- !query 115 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. decimal(10,0) <> boolean at the first column of the second table;
 
 
@@ -1050,7 +1050,7 @@ SELECT cast(1 as boolean) FROM t UNION SELECT cast(2 as string) FROM t
 -- !query 116 schema
 struct<>
 -- !query 116 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. string <> boolean at the first column of the second table;
 
 
@@ -1059,7 +1059,7 @@ SELECT cast(1 as boolean) FROM t UNION SELECT cast('2' as binary) FROM t
 -- !query 117 schema
 struct<>
 -- !query 117 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. binary <> boolean at the first column of the second table;
 
 
@@ -1076,7 +1076,7 @@ SELECT cast(1 as boolean) FROM t UNION SELECT cast('2017-12-11 09:30:00.0' as ti
 -- !query 119 schema
 struct<>
 -- !query 119 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. timestamp <> boolean at the first column of the second table;
 
 
@@ -1085,7 +1085,7 @@ SELECT cast(1 as boolean) FROM t UNION SELECT cast('2017-12-11 09:30:00' as date
 -- !query 120 schema
 struct<>
 -- !query 120 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. date <> boolean at the first column of the second table;
 
 
@@ -1094,7 +1094,7 @@ SELECT cast('2017-12-12 09:30:00.0' as timestamp) FROM t UNION SELECT cast(2 as 
 -- !query 121 schema
 struct<>
 -- !query 121 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. tinyint <> timestamp at the first column of the second table;
 
 
@@ -1103,7 +1103,7 @@ SELECT cast('2017-12-12 09:30:00.0' as timestamp) FROM t UNION SELECT cast(2 as 
 -- !query 122 schema
 struct<>
 -- !query 122 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. smallint <> timestamp at the first column of the second table;
 
 
@@ -1112,7 +1112,7 @@ SELECT cast('2017-12-12 09:30:00.0' as timestamp) FROM t UNION SELECT cast(2 as 
 -- !query 123 schema
 struct<>
 -- !query 123 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. int <> timestamp at the first column of the second table;
 
 
@@ -1121,7 +1121,7 @@ SELECT cast('2017-12-12 09:30:00.0' as timestamp) FROM t UNION SELECT cast(2 as 
 -- !query 124 schema
 struct<>
 -- !query 124 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. bigint <> timestamp at the first column of the second table;
 
 
@@ -1130,7 +1130,7 @@ SELECT cast('2017-12-12 09:30:00.0' as timestamp) FROM t UNION SELECT cast(2 as 
 -- !query 125 schema
 struct<>
 -- !query 125 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. float <> timestamp at the first column of the second table;
 
 
@@ -1139,7 +1139,7 @@ SELECT cast('2017-12-12 09:30:00.0' as timestamp) FROM t UNION SELECT cast(2 as 
 -- !query 126 schema
 struct<>
 -- !query 126 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. double <> timestamp at the first column of the second table;
 
 
@@ -1148,7 +1148,7 @@ SELECT cast('2017-12-12 09:30:00.0' as timestamp) FROM t UNION SELECT cast(2 as 
 -- !query 127 schema
 struct<>
 -- !query 127 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. decimal(10,0) <> timestamp at the first column of the second table;
 
 
@@ -1166,7 +1166,7 @@ SELECT cast('2017-12-12 09:30:00.0' as timestamp) FROM t UNION SELECT cast('2' a
 -- !query 129 schema
 struct<>
 -- !query 129 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. binary <> timestamp at the first column of the second table;
 
 
@@ -1175,7 +1175,7 @@ SELECT cast('2017-12-12 09:30:00.0' as timestamp) FROM t UNION SELECT cast(2 as 
 -- !query 130 schema
 struct<>
 -- !query 130 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. boolean <> timestamp at the first column of the second table;
 
 
@@ -1202,7 +1202,7 @@ SELECT cast('2017-12-12 09:30:00' as date) FROM t UNION SELECT cast(2 as tinyint
 -- !query 133 schema
 struct<>
 -- !query 133 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. tinyint <> date at the first column of the second table;
 
 
@@ -1211,7 +1211,7 @@ SELECT cast('2017-12-12 09:30:00' as date) FROM t UNION SELECT cast(2 as smallin
 -- !query 134 schema
 struct<>
 -- !query 134 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. smallint <> date at the first column of the second table;
 
 
@@ -1220,7 +1220,7 @@ SELECT cast('2017-12-12 09:30:00' as date) FROM t UNION SELECT cast(2 as int) FR
 -- !query 135 schema
 struct<>
 -- !query 135 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. int <> date at the first column of the second table;
 
 
@@ -1229,7 +1229,7 @@ SELECT cast('2017-12-12 09:30:00' as date) FROM t UNION SELECT cast(2 as bigint)
 -- !query 136 schema
 struct<>
 -- !query 136 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. bigint <> date at the first column of the second table;
 
 
@@ -1238,7 +1238,7 @@ SELECT cast('2017-12-12 09:30:00' as date) FROM t UNION SELECT cast(2 as float) 
 -- !query 137 schema
 struct<>
 -- !query 137 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. float <> date at the first column of the second table;
 
 
@@ -1247,7 +1247,7 @@ SELECT cast('2017-12-12 09:30:00' as date) FROM t UNION SELECT cast(2 as double)
 -- !query 138 schema
 struct<>
 -- !query 138 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. double <> date at the first column of the second table;
 
 
@@ -1256,7 +1256,7 @@ SELECT cast('2017-12-12 09:30:00' as date) FROM t UNION SELECT cast(2 as decimal
 -- !query 139 schema
 struct<>
 -- !query 139 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. decimal(10,0) <> date at the first column of the second table;
 
 
@@ -1274,7 +1274,7 @@ SELECT cast('2017-12-12 09:30:00' as date) FROM t UNION SELECT cast('2' as binar
 -- !query 141 schema
 struct<>
 -- !query 141 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. binary <> date at the first column of the second table;
 
 
@@ -1283,7 +1283,7 @@ SELECT cast('2017-12-12 09:30:00' as date) FROM t UNION SELECT cast(2 as boolean
 -- !query 142 schema
 struct<>
 -- !query 142 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Union can only be performed on tables with the compatible column types. boolean <> date at the first column of the second table;
 
 

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.internal.plugin
+package com.pubmatic.spark.internal.plugin
 
 import java.io.File
 import java.nio.charset.StandardCharsets
@@ -23,19 +23,18 @@ import java.util.{Map => JMap}
 
 import scala.collection.JavaConverters._
 import scala.concurrent.duration._
-
 import com.codahale.metrics.Gauge
 import com.google.common.io.Files
 import org.mockito.ArgumentMatchers.{any, eq => meq}
 import org.mockito.Mockito.{mock, spy, verify, when}
 import org.scalatest.BeforeAndAfterEach
 import org.scalatest.concurrent.Eventually.{eventually, interval, timeout}
-
-import org.apache.spark._
-import org.apache.spark.api.plugin._
-import org.apache.spark.internal.config._
-import org.apache.spark.launcher.SparkLauncher
-import org.apache.spark.util.Utils
+import com.pubmatic.spark._
+import com.pubmatic.spark.api.plugin.{DriverPlugin, ExecutorPlugin, PluginContext, SparkPlugin}
+import com.pubmatic.spark.api.plugin._
+import com.pubmatic.spark.internal.config._
+import com.pubmatic.spark.launcher.SparkLauncher
+import com.pubmatic.spark.util.Utils
 
 class PluginContainerSuite extends SparkFunSuite with BeforeAndAfterEach with LocalSparkContext {
 

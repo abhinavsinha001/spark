@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.serializer
+package com.pubmatic.spark.serializer
 
 import java.io.{ByteArrayInputStream, ByteArrayOutputStream}
 
@@ -23,9 +23,9 @@ import scala.util.Random
 
 import org.scalatest.Assertions
 
-import org.apache.spark.{SparkConf, SparkFunSuite}
-import org.apache.spark.internal.config.Kryo._
-import org.apache.spark.serializer.KryoTest.RegistratorWithoutAutoReset
+import com.pubmatic.spark.{SparkConf, SparkFunSuite}
+import com.pubmatic.spark.internal.config.Kryo._
+import com.pubmatic.spark.serializer.KryoTest.RegistratorWithoutAutoReset
 
 /**
  * Tests to ensure that [[Serializer]] implementations obey the API contracts for methods that

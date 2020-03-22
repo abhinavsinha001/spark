@@ -19,9 +19,9 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.regression.IsotonicRegression
+import com.pubmatic.spark.ml.regression.IsotonicRegression
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 /**
  * An example demonstrating Isotonic Regression.

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.deploy.history
+package com.pubmatic.spark.deploy.history
 
 import java.util.{Date, NoSuchElementException}
 import javax.servlet.http.{HttpServletRequest, HttpServletResponse}
@@ -30,11 +30,11 @@ import org.mockito.invocation.InvocationOnMock
 import org.scalatest.Matchers
 import org.scalatestplus.mockito.MockitoSugar
 
-import org.apache.spark.SparkFunSuite
-import org.apache.spark.internal.Logging
-import org.apache.spark.status.api.v1.{ApplicationAttemptInfo => AttemptInfo, ApplicationInfo}
-import org.apache.spark.ui.SparkUI
-import org.apache.spark.util.ManualClock
+import com.pubmatic.spark.SparkFunSuite
+import com.pubmatic.spark.internal.Logging
+import com.pubmatic.spark.status.api.v1.{ApplicationAttemptInfo => AttemptInfo, ApplicationInfo}
+import com.pubmatic.spark.ui.SparkUI
+import com.pubmatic.spark.util.ManualClock
 
 class ApplicationCacheSuite extends SparkFunSuite with Logging with MockitoSugar with Matchers {
 
@@ -129,7 +129,7 @@ class ApplicationCacheSuite extends SparkFunSuite with Logging with MockitoSugar
       ended: Long): SparkUI = {
     val info = new ApplicationInfo(name, name, Some(1), Some(1), Some(1), Some(64),
       Seq(new AttemptInfo(attemptId, new Date(started), new Date(ended),
-        new Date(ended), ended - started, "user", completed, org.apache.spark.SPARK_VERSION)))
+        new Date(ended), ended - started, "user", completed, com.pubmatic.spark.SPARK_VERSION)))
     val ui = mock[SparkUI]
     when(ui.getApplicationInfoList).thenReturn(List(info).iterator)
     when(ui.getAppName).thenReturn(name)

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
 import org.scalatest.concurrent.{Signaler, ThreadSignaler, TimeLimits}
 import org.scalatest.time.{Millis, Span}

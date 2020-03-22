@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.deploy.master
+package com.pubmatic.spark.deploy.master
 
 import java.util.Date
 import java.util.concurrent.ConcurrentLinkedQueue
@@ -35,17 +35,17 @@ import org.scalatest.{BeforeAndAfter, Matchers, PrivateMethodTester}
 import org.scalatest.concurrent.Eventually
 import other.supplier.{CustomPersistenceEngine, CustomRecoveryModeFactory}
 
-import org.apache.spark.{SecurityManager, SparkConf, SparkFunSuite}
-import org.apache.spark.deploy._
-import org.apache.spark.deploy.DeployMessages._
-import org.apache.spark.internal.config._
-import org.apache.spark.internal.config.Deploy._
-import org.apache.spark.internal.config.UI._
-import org.apache.spark.internal.config.Worker._
-import org.apache.spark.resource.{ResourceInformation, ResourceRequirement}
-import org.apache.spark.resource.ResourceUtils.{FPGA, GPU}
-import org.apache.spark.rpc.{RpcAddress, RpcEndpoint, RpcEndpointRef, RpcEnv}
-import org.apache.spark.serializer
+import com.pubmatic.spark.{SecurityManager, SparkConf, SparkFunSuite}
+import com.pubmatic.spark.deploy._
+import com.pubmatic.spark.deploy.DeployMessages._
+import com.pubmatic.spark.internal.config._
+import com.pubmatic.spark.internal.config.Deploy._
+import com.pubmatic.spark.internal.config.UI._
+import com.pubmatic.spark.internal.config.Worker._
+import com.pubmatic.spark.resource.{ResourceInformation, ResourceRequirement}
+import com.pubmatic.spark.resource.ResourceUtils.{FPGA, GPU}
+import com.pubmatic.spark.rpc.{RpcAddress, RpcEndpoint, RpcEndpointRef, RpcEnv}
+import com.pubmatic.spark.serializer
 
 object MockWorker {
   val counter = new AtomicInteger(10000)

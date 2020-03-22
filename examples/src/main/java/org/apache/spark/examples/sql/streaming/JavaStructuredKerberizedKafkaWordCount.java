@@ -18,12 +18,12 @@
 package org.apache.spark.examples.sql.streaming;
 
 import org.apache.kafka.common.security.auth.SecurityProtocol;
-import org.apache.spark.api.java.function.FlatMapFunction;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Encoders;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SparkSession;
-import org.apache.spark.sql.streaming.StreamingQuery;
+import com.pubmatic.spark.api.java.function.FlatMapFunction;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.Encoders;
+import com.pubmatic.spark.sql.Row;
+import com.pubmatic.spark.sql.SparkSession;
+import com.pubmatic.spark.sql.streaming.StreamingQuery;
 
 import java.util.Arrays;
 

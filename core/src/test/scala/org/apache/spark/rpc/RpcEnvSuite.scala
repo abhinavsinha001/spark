@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.rpc
+package com.pubmatic.spark.rpc
 
 import java.io.{File, NotSerializableException}
 import java.nio.charset.StandardCharsets.UTF_8
@@ -33,10 +33,10 @@ import org.mockito.Mockito.{mock, never, verify, when}
 import org.scalatest.BeforeAndAfterAll
 import org.scalatest.concurrent.Eventually._
 
-import org.apache.spark.{SecurityManager, SparkConf, SparkEnv, SparkException, SparkFunSuite}
-import org.apache.spark.deploy.SparkHadoopUtil
-import org.apache.spark.internal.config._
-import org.apache.spark.util.{ThreadUtils, Utils}
+import com.pubmatic.spark.{SecurityManager, SparkConf, SparkEnv, SparkException, SparkFunSuite}
+import com.pubmatic.spark.deploy.SparkHadoopUtil
+import com.pubmatic.spark.internal.config._
+import com.pubmatic.spark.util.{ThreadUtils, Utils}
 
 /**
  * Common tests for an RpcEnv implementation.

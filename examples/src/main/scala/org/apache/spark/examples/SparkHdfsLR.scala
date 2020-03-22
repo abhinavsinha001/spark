@@ -24,7 +24,7 @@ import scala.math.exp
 
 import breeze.linalg.{DenseVector, Vector}
 
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 /**
  * Logistic regression based classification.

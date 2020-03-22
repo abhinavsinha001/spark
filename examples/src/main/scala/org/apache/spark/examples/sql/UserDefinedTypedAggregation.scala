@@ -17,8 +17,8 @@
 package org.apache.spark.examples.sql
 
 // $example on:typed_custom_aggregation$
-import org.apache.spark.sql.{Encoder, Encoders, SparkSession}
-import org.apache.spark.sql.expressions.Aggregator
+import com.pubmatic.spark.sql.{Encoder, Encoders, SparkSession}
+import com.pubmatic.spark.sql.expressions.Aggregator
 // $example off:typed_custom_aggregation$
 
 object UserDefinedTypedAggregation {

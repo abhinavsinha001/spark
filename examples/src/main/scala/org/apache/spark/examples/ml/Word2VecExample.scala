@@ -19,11 +19,11 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.feature.Word2Vec
-import org.apache.spark.ml.linalg.Vector
-import org.apache.spark.sql.Row
+import com.pubmatic.spark.ml.feature.Word2Vec
+import com.pubmatic.spark.ml.linalg.Vector
+import com.pubmatic.spark.sql.Row
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 object Word2VecExample {
   def main(args: Array[String]): Unit = {

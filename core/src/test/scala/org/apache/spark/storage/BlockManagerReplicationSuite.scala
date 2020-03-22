@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.storage
+package com.pubmatic.spark.storage
 
 import java.util.Locale
 
@@ -23,25 +23,23 @@ import scala.collection.mutable
 import scala.collection.mutable.ArrayBuffer
 import scala.concurrent.duration._
 import scala.language.implicitConversions
-
 import org.mockito.Mockito.{mock, when}
 import org.scalatest.{BeforeAndAfter, Matchers}
 import org.scalatest.concurrent.Eventually._
-
-import org.apache.spark._
-import org.apache.spark.broadcast.BroadcastManager
-import org.apache.spark.internal.Logging
-import org.apache.spark.internal.config._
-import org.apache.spark.internal.config.Tests._
-import org.apache.spark.memory.UnifiedMemoryManager
-import org.apache.spark.network.BlockTransferService
-import org.apache.spark.network.netty.NettyBlockTransferService
-import org.apache.spark.rpc.RpcEnv
-import org.apache.spark.scheduler.LiveListenerBus
-import org.apache.spark.serializer.{KryoSerializer, SerializerManager}
-import org.apache.spark.shuffle.sort.SortShuffleManager
-import org.apache.spark.storage.StorageLevel._
-import org.apache.spark.util.Utils
+import com.pubmatic.spark._
+import com.pubmatic.spark.broadcast.BroadcastManager
+import com.pubmatic.spark.internal.Logging
+import com.pubmatic.spark.internal.config._
+import com.pubmatic.spark.internal.config.Tests._
+import com.pubmatic.spark.memory.UnifiedMemoryManager
+import com.pubmatic.spark.network.BlockTransferService
+import com.pubmatic.spark.network.netty.NettyBlockTransferService
+import com.pubmatic.spark.rpc.RpcEnv
+import com.pubmatic.spark.scheduler.LiveListenerBus
+import com.pubmatic.spark.serializer.{KryoSerializer, SerializerManager}
+import com.pubmatic.spark.shuffle.sort.SortShuffleManager
+import com.pubmatic.spark.storage.StorageLevel._
+import com.pubmatic.spark.util.Utils
 
 trait BlockManagerReplicationBehavior extends SparkFunSuite
   with Matchers
@@ -313,7 +311,7 @@ trait BlockManagerReplicationBehavior extends SparkFunSuite
    * again checks whether the master's knowledge gets updated.
    */
   protected def testReplication(maxReplication: Int, storageLevels: Seq[StorageLevel]): Unit = {
-    import org.apache.spark.storage.StorageLevel._
+    import com.pubmatic.spark.storage.StorageLevel._
 
     assert(maxReplication > 1,
       s"Cannot test replication factor $maxReplication")

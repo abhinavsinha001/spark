@@ -20,7 +20,7 @@ package org.apache.spark.examples.mllib
 import org.apache.spark.SparkConf
 import org.apache.spark.mllib.stat.test.{BinarySample, StreamingTest}
 import org.apache.spark.streaming.{Seconds, StreamingContext}
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.util.Utils
 
 /**
  * Perform streaming testing using Welch's 2-sample t-test on a stream of data, where the data

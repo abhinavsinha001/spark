@@ -19,10 +19,10 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.evaluation.RegressionEvaluator
-import org.apache.spark.ml.recommendation.ALS
+import com.pubmatic.spark.ml.evaluation.RegressionEvaluator
+import com.pubmatic.spark.ml.recommendation.ALS
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 /**
  * An example demonstrating ALS.

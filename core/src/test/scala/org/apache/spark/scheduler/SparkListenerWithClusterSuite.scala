@@ -15,12 +15,12 @@
  * limitations under the License.
  */
 
-package org.apache.spark.scheduler
+package com.pubmatic.spark.scheduler
 
 import scala.collection.mutable
 
-import org.apache.spark.{LocalSparkContext, SparkContext, SparkFunSuite, TestUtils}
-import org.apache.spark.scheduler.cluster.ExecutorInfo
+import com.pubmatic.spark.{LocalSparkContext, SparkContext, SparkFunSuite, TestUtils}
+import com.pubmatic.spark.scheduler.cluster.ExecutorInfo
 
 /**
  * Unit tests for SparkListener that require a local cluster.

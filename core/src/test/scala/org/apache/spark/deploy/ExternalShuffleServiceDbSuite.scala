@@ -15,18 +15,18 @@
  * limitations under the License.
  */
 
-package org.apache.spark.deploy
+package com.pubmatic.spark.deploy
 
 import java.io._
 import java.nio.charset.StandardCharsets
 
 import com.google.common.io.CharStreams
 
-import org.apache.spark.{SecurityManager, SparkConf, SparkFunSuite}
-import org.apache.spark.internal.config._
+import com.pubmatic.spark.{SecurityManager, SparkConf, SparkFunSuite}
+import com.pubmatic.spark.internal.config._
 import org.apache.spark.network.shuffle.{ExternalBlockHandler, ExternalShuffleBlockResolver}
 import org.apache.spark.network.shuffle.TestShuffleDataContext
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.util.Utils
 
 /**
  * This suite gets BlockData when the ExternalShuffleService is restarted

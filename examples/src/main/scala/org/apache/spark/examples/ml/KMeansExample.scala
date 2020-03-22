@@ -20,10 +20,10 @@ package org.apache.spark.examples.ml
 // scalastyle:off println
 
 // $example on$
-import org.apache.spark.ml.clustering.KMeans
-import org.apache.spark.ml.evaluation.ClusteringEvaluator
+import com.pubmatic.spark.ml.clustering.KMeans
+import com.pubmatic.spark.ml.evaluation.ClusteringEvaluator
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 /**
  * An example demonstrating k-means clustering.

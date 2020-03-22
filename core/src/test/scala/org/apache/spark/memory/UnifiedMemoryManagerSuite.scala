@@ -15,15 +15,15 @@
  * limitations under the License.
  */
 
-package org.apache.spark.memory
+package com.pubmatic.spark.memory
 
 import org.scalatest.PrivateMethodTester
 
-import org.apache.spark.SparkConf
-import org.apache.spark.internal.config._
-import org.apache.spark.internal.config.Tests._
-import org.apache.spark.storage.TestBlockId
-import org.apache.spark.storage.memory.MemoryStore
+import com.pubmatic.spark.SparkConf
+import com.pubmatic.spark.internal.config._
+import com.pubmatic.spark.internal.config.Tests._
+import com.pubmatic.spark.storage.TestBlockId
+import com.pubmatic.spark.storage.memory.MemoryStore
 
 class UnifiedMemoryManagerSuite extends MemoryManagerSuite with PrivateMethodTester {
   private val dummyBlock = TestBlockId("--")

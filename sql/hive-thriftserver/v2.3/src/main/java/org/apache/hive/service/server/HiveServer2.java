@@ -42,7 +42,7 @@ import org.apache.hive.service.cli.thrift.ThriftHttpCLIService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import org.apache.spark.util.ShutdownHookManager;
+import com.pubmatic.spark.util.ShutdownHookManager;
 
 /**
  * HiveServer2.

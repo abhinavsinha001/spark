@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.spark.scheduler
+package com.pubmatic.spark.scheduler
 
 import org.mockito.ArgumentMatchers.isA
 import org.mockito.Mockito.{never, verify}
 import org.scalatest.BeforeAndAfterEach
 import org.scalatestplus.mockito.MockitoSugar
 
-import org.apache.spark.{SparkConf, SparkFunSuite}
-import org.apache.spark.internal.config
-import org.apache.spark.util.ManualClock
+import com.pubmatic.spark.{SparkConf, SparkFunSuite}
+import com.pubmatic.spark.internal.config
+import com.pubmatic.spark.util.ManualClock
 
 class TaskSetBlacklistSuite extends SparkFunSuite with BeforeAndAfterEach with MockitoSugar {
 

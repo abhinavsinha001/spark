@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package org.apache.spark.memory
+package com.pubmatic.spark.memory
 
-import org.apache.spark.{SparkConf, SparkFunSuite}
+import com.pubmatic.spark.{SparkConf, SparkFunSuite}
 
 /**
  * Tests of [[TestMemoryManager]] itself.

@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package org.apache.spark.storage
+package com.pubmatic.spark.storage
 
 import java.io.{File, IOException}
 
 import org.scalatest.BeforeAndAfter
 
-import org.apache.spark.{SparkConf, SparkFunSuite}
-import org.apache.spark.util.{SparkConfWithEnv, Utils}
+import com.pubmatic.spark.{SparkConf, SparkFunSuite}
+import com.pubmatic.spark.util.{SparkConfWithEnv, Utils}
 
 /**
  * Tests for the spark.local.dir and SPARK_LOCAL_DIRS configuration options.

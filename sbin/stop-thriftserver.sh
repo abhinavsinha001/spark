@@ -23,4 +23,4 @@ if [ -z "${SPARK_HOME}" ]; then
   export SPARK_HOME="$(cd "`dirname "$0"`"/..; pwd)"
 fi
 
-"${SPARK_HOME}/sbin"/spark-daemon.sh stop org.apache.spark.sql.hive.thriftserver.HiveThriftServer2 1
+"${SPARK_HOME}/sbin"/spark-daemon.sh stop com.pubmatic.spark.sql.hive.thriftserver.HiveThriftServer2 1

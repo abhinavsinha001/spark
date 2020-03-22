@@ -20,7 +20,7 @@ package org.apache.spark.examples
 
 import breeze.linalg.{squaredDistance, DenseVector, Vector}
 
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 /**
  * K-means clustering.

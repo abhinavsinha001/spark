@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.spark.scheduler
+package com.pubmatic.spark.scheduler
 
-import org.apache.spark._
-import org.apache.spark.internal.config
-import org.apache.spark.internal.config.Tests._
+import com.pubmatic.spark._
+import com.pubmatic.spark.internal.config
+import com.pubmatic.spark.internal.config.Tests._
 
 class BlacklistIntegrationSuite extends SchedulerIntegrationSuite[MultiExecutorMockBackend]{
 

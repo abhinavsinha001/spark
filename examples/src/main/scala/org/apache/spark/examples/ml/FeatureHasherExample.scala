@@ -18,9 +18,9 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.feature.FeatureHasher
+import com.pubmatic.spark.ml.feature.FeatureHasher
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 object FeatureHasherExample {
   def main(args: Array[String]): Unit = {

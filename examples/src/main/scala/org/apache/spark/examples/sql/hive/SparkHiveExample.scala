@@ -19,7 +19,7 @@ package org.apache.spark.examples.sql.hive
 // $example on:spark_hive$
 import java.io.File
 
-import org.apache.spark.sql.{Row, SaveMode, SparkSession}
+import com.pubmatic.spark.sql.{Row, SaveMode, SparkSession}
 // $example off:spark_hive$
 
 object SparkHiveExample {

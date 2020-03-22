@@ -22,20 +22,20 @@ import java.util.Arrays;
 // $example off$
 
 // $example on$
-import org.apache.spark.ml.Pipeline;
-import org.apache.spark.ml.PipelineStage;
-import org.apache.spark.ml.classification.LogisticRegression;
-import org.apache.spark.ml.evaluation.BinaryClassificationEvaluator;
-import org.apache.spark.ml.feature.HashingTF;
-import org.apache.spark.ml.feature.Tokenizer;
-import org.apache.spark.ml.param.ParamMap;
-import org.apache.spark.ml.tuning.CrossValidator;
-import org.apache.spark.ml.tuning.CrossValidatorModel;
-import org.apache.spark.ml.tuning.ParamGridBuilder;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
+import com.pubmatic.spark.ml.Pipeline;
+import com.pubmatic.spark.ml.PipelineStage;
+import com.pubmatic.spark.ml.classification.LogisticRegression;
+import com.pubmatic.spark.ml.evaluation.BinaryClassificationEvaluator;
+import com.pubmatic.spark.ml.feature.HashingTF;
+import com.pubmatic.spark.ml.feature.Tokenizer;
+import com.pubmatic.spark.ml.param.ParamMap;
+import com.pubmatic.spark.ml.tuning.CrossValidator;
+import com.pubmatic.spark.ml.tuning.CrossValidatorModel;
+import com.pubmatic.spark.ml.tuning.ParamGridBuilder;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.Row;
 // $example off$
-import org.apache.spark.sql.SparkSession;
+import com.pubmatic.spark.sql.SparkSession;
 
 /**
  * Java example for Model Selection via Cross Validation.

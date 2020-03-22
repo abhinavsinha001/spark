@@ -19,18 +19,18 @@ package test.org.apache.spark.sql.connector;
 
 import java.io.IOException;
 
-import org.apache.spark.sql.catalyst.InternalRow;
-import org.apache.spark.sql.connector.catalog.Table;
-import org.apache.spark.sql.connector.catalog.TableProvider;
-import org.apache.spark.sql.connector.read.InputPartition;
-import org.apache.spark.sql.connector.read.PartitionReader;
-import org.apache.spark.sql.connector.read.PartitionReaderFactory;
-import org.apache.spark.sql.connector.read.ScanBuilder;
-import org.apache.spark.sql.execution.vectorized.OnHeapColumnVector;
-import org.apache.spark.sql.types.DataTypes;
-import org.apache.spark.sql.util.CaseInsensitiveStringMap;
-import org.apache.spark.sql.vectorized.ColumnVector;
-import org.apache.spark.sql.vectorized.ColumnarBatch;
+import com.pubmatic.spark.sql.catalyst.InternalRow;
+import com.pubmatic.spark.sql.connector.catalog.Table;
+import com.pubmatic.spark.sql.connector.catalog.TableProvider;
+import com.pubmatic.spark.sql.connector.read.InputPartition;
+import com.pubmatic.spark.sql.connector.read.PartitionReader;
+import com.pubmatic.spark.sql.connector.read.PartitionReaderFactory;
+import com.pubmatic.spark.sql.connector.read.ScanBuilder;
+import com.pubmatic.spark.sql.execution.vectorized.OnHeapColumnVector;
+import com.pubmatic.spark.sql.types.DataTypes;
+import com.pubmatic.spark.sql.util.CaseInsensitiveStringMap;
+import com.pubmatic.spark.sql.vectorized.ColumnVector;
+import com.pubmatic.spark.sql.vectorized.ColumnarBatch;
 
 
 public class JavaColumnarDataSourceV2 implements TableProvider {

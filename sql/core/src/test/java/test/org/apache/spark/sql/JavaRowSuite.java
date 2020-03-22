@@ -30,8 +30,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.RowFactory;
+import com.pubmatic.spark.sql.Row;
+import com.pubmatic.spark.sql.RowFactory;
 
 public class JavaRowSuite {
   private byte byteValue;

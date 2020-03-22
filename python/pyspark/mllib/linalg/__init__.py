@@ -155,7 +155,7 @@ class VectorUDT(UserDefinedType):
 
     @classmethod
     def scalaUDT(cls):
-        return "org.apache.spark.mllib.linalg.VectorUDT"
+        return "com.pubmatic.spark.mllib.linalg.VectorUDT"
 
     def serialize(self, obj):
         if isinstance(obj, SparseVector):
@@ -205,7 +205,7 @@ class MatrixUDT(UserDefinedType):
 
     @classmethod
     def scalaUDT(cls):
-        return "org.apache.spark.mllib.linalg.MatrixUDT"
+        return "com.pubmatic.spark.mllib.linalg.MatrixUDT"
 
     def serialize(self, obj):
         if isinstance(obj, SparseMatrix):

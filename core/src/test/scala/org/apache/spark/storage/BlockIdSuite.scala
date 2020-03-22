@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-package org.apache.spark.storage
+package com.pubmatic.spark.storage
 
 import java.util.UUID
 
-import org.apache.spark.SparkFunSuite
+import com.pubmatic.spark.SparkFunSuite
 
 class BlockIdSuite extends SparkFunSuite {
   def assertSame(id1: BlockId, id2: BlockId): Unit = {

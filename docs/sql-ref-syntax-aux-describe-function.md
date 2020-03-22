@@ -54,7 +54,7 @@ DESC FUNCTION abs;
   |function_desc                                                      |
   +-------------------------------------------------------------------+
   |Function: abs                                                      |
-  |Class: org.apache.spark.sql.catalyst.expressions.Abs               |
+  |Class: com.pubmatic.spark.sql.catalyst.expressions.Abs               |
   |Usage: abs(expr) - Returns the absolute value of the numeric value.|
   +-------------------------------------------------------------------+
 
@@ -65,7 +65,7 @@ DESC FUNCTION EXTENDED abs;
   |function_desc                                                      |
   +-------------------------------------------------------------------+
   |Function: abs                                                      |
-  |Class: org.apache.spark.sql.catalyst.expressions.Abs               |
+  |Class: com.pubmatic.spark.sql.catalyst.expressions.Abs               |
   |Usage: abs(expr) - Returns the absolute value of the numeric value.|
   |Extended Usage:                                                    |
   |    Examples:                                                      |
@@ -80,7 +80,7 @@ DESC FUNCTION max;
   |function_desc                                                 |
   +--------------------------------------------------------------+
   |Function: max                                                 |
-  |Class: org.apache.spark.sql.catalyst.expressions.aggregate.Max|
+  |Class: com.pubmatic.spark.sql.catalyst.expressions.aggregate.Max|
   |Usage: max(expr) - Returns the maximum value of `expr`.       |
   +--------------------------------------------------------------+
 
@@ -91,7 +91,7 @@ DESC FUNCTION EXTENDED explode
   |function_desc                                                  |
   +---------------------------------------------------------------+
   |Function: explode                                              |
-  |Class: org.apache.spark.sql.catalyst.expressions.Explode       | 
+  |Class: com.pubmatic.spark.sql.catalyst.expressions.Explode       | 
   |Usage: explode(expr) - Separates the elements of array `expr`  |
   | into multiple rows, or the elements of map `expr` into        |
   | multiple rows and columns. Unless specified otherwise, uses   |

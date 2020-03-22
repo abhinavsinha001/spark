@@ -22,13 +22,16 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import org.apache.spark.streaming.Duration;
-import org.apache.spark.streaming.JavaCheckpointTestUtils;
-import org.apache.spark.streaming.JavaTestUtils;
-import org.apache.spark.streaming.LocalJavaStreamingContext;
-import org.apache.spark.streaming.Seconds;
-import org.apache.spark.streaming.StreamingContextState;
-import org.apache.spark.streaming.StreamingContextSuite;
+import com.pubmatic.spark.api.java.function.Function0;
+import com.pubmatic.spark.api.java.function.Function2;
+import com.pubmatic.spark.api.java.function.PairFunction;
+import com.pubmatic.spark.streaming.Duration;
+import com.pubmatic.spark.streaming.JavaCheckpointTestUtils;
+import com.pubmatic.spark.streaming.JavaTestUtils;
+import com.pubmatic.spark.streaming.LocalJavaStreamingContext;
+import com.pubmatic.spark.streaming.Seconds;
+import com.pubmatic.spark.streaming.StreamingContextState;
+import com.pubmatic.spark.streaming.StreamingContextSuite;
 import scala.Tuple2;
 
 import org.apache.hadoop.conf.Configuration;
@@ -42,17 +45,17 @@ import org.junit.Test;
 import com.google.common.io.Files;
 import com.google.common.collect.Sets;
 
-import org.apache.spark.HashPartitioner;
-import org.apache.spark.SparkConf;
-import org.apache.spark.api.java.JavaPairRDD;
-import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.api.java.Optional;
-import org.apache.spark.api.java.function.*;
-import org.apache.spark.storage.StorageLevel;
-import org.apache.spark.streaming.api.java.*;
-import org.apache.spark.util.LongAccumulator;
-import org.apache.spark.util.Utils;
+import com.pubmatic.spark.HashPartitioner;
+import com.pubmatic.spark.SparkConf;
+import com.pubmatic.spark.api.java.JavaPairRDD;
+import com.pubmatic.spark.api.java.JavaRDD;
+import com.pubmatic.spark.api.java.JavaSparkContext;
+import com.pubmatic.spark.api.java.Optional;
+import com.pubmatic.spark.api.java.function.*;
+import com.pubmatic.spark.storage.StorageLevel;
+import com.pubmatic.spark.streaming.api.java.*;
+import com.pubmatic.spark.util.LongAccumulator;
+import com.pubmatic.spark.util.Utils;
 
 // The test suite itself is Serializable so that anonymous Function implementations can be
 // serialized, as an alternative to converting these anonymous classes to static inner classes;
@@ -362,7 +365,7 @@ public class JavaAPISuite extends LocalJavaStreamingContext implements Serializa
     SparkConf conf = new SparkConf()
         .setMaster("local[2]")
         .setAppName("test")
-        .set("spark.streaming.clock", "org.apache.spark.util.ManualClock");
+        .set("spark.streaming.clock", "com.pubmatic.spark.util.ManualClock");
     ssc = new JavaStreamingContext(conf, new Duration(1000));
 
     List<List<Integer>> expected = Arrays.asList(

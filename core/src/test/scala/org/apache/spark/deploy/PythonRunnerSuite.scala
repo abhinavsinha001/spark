@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-package org.apache.spark.deploy
+package com.pubmatic.spark.deploy
 
-import org.apache.spark.SparkFunSuite
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.SparkFunSuite
+import com.pubmatic.spark.util.Utils
 
 class PythonRunnerSuite extends SparkFunSuite {
 

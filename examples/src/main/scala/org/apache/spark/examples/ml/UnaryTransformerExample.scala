@@ -19,17 +19,17 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.UnaryTransformer
-import org.apache.spark.ml.param.DoubleParam
-import org.apache.spark.ml.util.{DefaultParamsReadable, DefaultParamsWritable, Identifiable}
-import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.functions.col
-import org.apache.spark.sql.types.{DataType, DataTypes}
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.ml.UnaryTransformer
+import com.pubmatic.spark.ml.param.DoubleParam
+import com.pubmatic.spark.ml.util.{DefaultParamsReadable, DefaultParamsWritable, Identifiable}
+import com.pubmatic.spark.sql.SparkSession
+import com.pubmatic.spark.sql.functions.col
+import com.pubmatic.spark.sql.types.{DataType, DataTypes}
+import com.pubmatic.spark.util.Utils
 // $example off$
 
 /**
- * An example demonstrating creating a custom [[org.apache.spark.ml.Transformer]] using
+ * An example demonstrating creating a custom [[com.pubmatic.spark.ml.Transformer]] using
  * the [[UnaryTransformer]] abstraction.
  *
  * Run with

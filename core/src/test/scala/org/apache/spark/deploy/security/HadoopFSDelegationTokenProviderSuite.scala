@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package org.apache.spark.deploy.security
+package com.pubmatic.spark.deploy.security
 
 import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.fs.Path
 import org.scalatest.Matchers
 
-import org.apache.spark.{SparkConf, SparkFunSuite}
-import org.apache.spark.internal.config.{STAGING_DIR, SUBMIT_DEPLOY_MODE}
+import com.pubmatic.spark.{SparkConf, SparkFunSuite}
+import com.pubmatic.spark.internal.config.{STAGING_DIR, SUBMIT_DEPLOY_MODE}
 
 class HadoopFSDelegationTokenProviderSuite extends SparkFunSuite with Matchers {
   test("hadoopFSsToAccess should return defaultFS even if not configured") {

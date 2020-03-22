@@ -39,9 +39,9 @@ import org.apache.log4j.Level
 import org.apache.thrift.transport.TSocket
 import sun.misc.{Signal, SignalHandler}
 
-import org.apache.spark.SparkConf
-import org.apache.spark.deploy.SparkHadoopUtil
-import org.apache.spark.internal.Logging
+import com.pubmatic.spark.SparkConf
+import com.pubmatic.spark.deploy.SparkHadoopUtil
+import com.pubmatic.spark.internal.Logging
 import org.apache.spark.sql.AnalysisException
 import org.apache.spark.sql.hive.HiveUtils
 import org.apache.spark.sql.hive.security.HiveDelegationTokenProvider

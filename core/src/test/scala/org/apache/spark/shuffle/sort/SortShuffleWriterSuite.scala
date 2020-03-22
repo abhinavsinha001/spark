@@ -15,21 +15,21 @@
  * limitations under the License.
  */
 
-package org.apache.spark.shuffle.sort
+package com.pubmatic.spark.shuffle.sort
 
 import org.mockito.{Mock, MockitoAnnotations}
 import org.mockito.Answers.RETURNS_SMART_NULLS
 import org.mockito.Mockito._
 import org.scalatest.Matchers
 
-import org.apache.spark.{Partitioner, SharedSparkContext, ShuffleDependency, SparkFunSuite}
-import org.apache.spark.memory.MemoryTestingUtils
-import org.apache.spark.serializer.JavaSerializer
-import org.apache.spark.shuffle.{BaseShuffleHandle, IndexShuffleBlockResolver}
-import org.apache.spark.shuffle.api.ShuffleExecutorComponents
-import org.apache.spark.shuffle.sort.io.LocalDiskShuffleExecutorComponents
-import org.apache.spark.storage.BlockManager
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.{Partitioner, SharedSparkContext, ShuffleDependency, SparkFunSuite}
+import com.pubmatic.spark.memory.MemoryTestingUtils
+import com.pubmatic.spark.serializer.JavaSerializer
+import com.pubmatic.spark.shuffle.{BaseShuffleHandle, IndexShuffleBlockResolver}
+import com.pubmatic.spark.shuffle.api.ShuffleExecutorComponents
+import com.pubmatic.spark.shuffle.sort.io.LocalDiskShuffleExecutorComponents
+import com.pubmatic.spark.storage.BlockManager
+import com.pubmatic.spark.util.Utils
 
 
 class SortShuffleWriterSuite extends SparkFunSuite with SharedSparkContext with Matchers {

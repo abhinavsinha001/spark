@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.scheduler
+package com.pubmatic.spark.scheduler
 
 import java.util.{Properties, Random}
 
@@ -28,14 +28,14 @@ import org.mockito.Mockito._
 import org.mockito.invocation.InvocationOnMock
 import org.scalatest.Assertions._
 
-import org.apache.spark._
-import org.apache.spark.internal.Logging
-import org.apache.spark.internal.config
-import org.apache.spark.resource.ResourceUtils._
-import org.apache.spark.resource.TestResourceIDs._
-import org.apache.spark.serializer.SerializerInstance
-import org.apache.spark.storage.BlockManagerId
-import org.apache.spark.util.{AccumulatorV2, ManualClock}
+import com.pubmatic.spark._
+import com.pubmatic.spark.internal.Logging
+import com.pubmatic.spark.internal.config
+import com.pubmatic.spark.resource.ResourceUtils._
+import com.pubmatic.spark.resource.TestResourceIDs._
+import com.pubmatic.spark.serializer.SerializerInstance
+import com.pubmatic.spark.storage.BlockManagerId
+import com.pubmatic.spark.util.{AccumulatorV2, ManualClock}
 
 class FakeDAGScheduler(sc: SparkContext, taskScheduler: FakeTaskScheduler)
   extends DAGScheduler(sc) {

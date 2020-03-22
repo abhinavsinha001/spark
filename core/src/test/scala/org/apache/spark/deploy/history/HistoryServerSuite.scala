@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.spark.deploy.history
+package com.pubmatic.spark.deploy.history
 
 import java.io.{File, FileInputStream, FileWriter, InputStream, IOException}
 import java.net.{HttpURLConnection, URL}
@@ -42,15 +42,15 @@ import org.scalatest.concurrent.Eventually
 import org.scalatestplus.mockito.MockitoSugar
 import org.scalatestplus.selenium.WebBrowser
 
-import org.apache.spark._
-import org.apache.spark.internal.config._
-import org.apache.spark.internal.config.History._
-import org.apache.spark.internal.config.Tests.IS_TESTING
-import org.apache.spark.internal.config.UI._
-import org.apache.spark.status.api.v1.ApplicationInfo
-import org.apache.spark.status.api.v1.JobData
-import org.apache.spark.ui.SparkUI
-import org.apache.spark.util.{ResetSystemProperties, ShutdownHookManager, Utils}
+import com.pubmatic.spark._
+import com.pubmatic.spark.internal.config._
+import com.pubmatic.spark.internal.config.History._
+import com.pubmatic.spark.internal.config.Tests.IS_TESTING
+import com.pubmatic.spark.internal.config.UI._
+import com.pubmatic.spark.status.api.v1.ApplicationInfo
+import com.pubmatic.spark.status.api.v1.JobData
+import com.pubmatic.spark.ui.SparkUI
+import com.pubmatic.spark.util.{ResetSystemProperties, ShutdownHookManager, Utils}
 
 /**
  * A collection of tests against the historyserver, including comparing responses from the json

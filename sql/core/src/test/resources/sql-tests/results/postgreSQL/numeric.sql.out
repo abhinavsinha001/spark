@@ -3583,7 +3583,7 @@ INSERT INTO num_exp_power_10_ln VALUES (7,1716699575118597095.423308199106402476
 -- !query 447 schema
 struct<>
 -- !query 447 output
-org.apache.spark.sql.catalyst.parser.ParseException
+com.pubmatic.spark.sql.catalyst.parser.ParseException
 
 decimal can only support precision up to 38
 == SQL ==
@@ -3829,7 +3829,7 @@ INSERT INTO num_result SELECT t1.id, t2.id, t1.val, t2.val, t1.val * t2.val
 -- !query 474 schema
 struct<>
 -- !query 474 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 `default`.`num_result` requires that the data to be inserted have the same number of columns as the target table: target table has 3 column(s) but the inserted data has 5 column(s), including 0 partition column(s) having constant value(s).;
 
 

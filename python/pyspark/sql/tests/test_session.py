@@ -284,7 +284,7 @@ class SparkExtensionsTest(unittest.TestCase):
             "SparkSessionExtensionSuite.class")
         if not glob.glob(os.path.join(SPARK_HOME, filename_pattern)):
             raise unittest.SkipTest(
-                "'org.apache.spark.sql.SparkSessionExtensionSuite' is not "
+                "'com.pubmatic.spark.sql.SparkSessionExtensionSuite' is not "
                 "available. Will skip the related tests.")
 
         # Note that 'spark.sql.extensions' is a static immutable configuration.
@@ -293,7 +293,7 @@ class SparkExtensionsTest(unittest.TestCase):
             .appName(cls.__name__) \
             .config(
                 "spark.sql.extensions",
-                "org.apache.spark.sql.MyExtensions") \
+                "com.pubmatic.spark.sql.MyExtensions") \
             .getOrCreate()
 
     @classmethod
@@ -303,11 +303,11 @@ class SparkExtensionsTest(unittest.TestCase):
     def test_use_custom_class_for_extensions(self):
         self.assertTrue(
             self.spark._jsparkSession.sessionState().planner().strategies().contains(
-                self.spark._jvm.org.apache.spark.sql.MySparkStrategy(self.spark._jsparkSession)),
+                self.spark._jvm.com.pubmatic.spark.sql.MySparkStrategy(self.spark._jsparkSession)),
             "MySparkStrategy not found in active planner strategies")
         self.assertTrue(
             self.spark._jsparkSession.sessionState().analyzer().extendedResolutionRules().contains(
-                self.spark._jvm.org.apache.spark.sql.MyRule(self.spark._jsparkSession)),
+                self.spark._jvm.com.pubmatic.spark.sql.MyRule(self.spark._jsparkSession)),
             "MyRule not found in extended resolution rules")
 
 

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.rdd
+package com.pubmatic.spark.rdd
 
 import java.io.File
 
@@ -29,8 +29,8 @@ import org.apache.hadoop.io.{LongWritable, Text}
 import org.apache.hadoop.mapred.{FileSplit, JobConf, TextInputFormat}
 import org.scalatest.concurrent.Eventually
 
-import org.apache.spark._
-import org.apache.spark.util.Utils
+import com.pubmatic.spark._
+import com.pubmatic.spark.util.Utils
 
 class PipedRDDSuite extends SparkFunSuite with SharedSparkContext with Eventually {
   val envCommand = if (Utils.isWindows) {

@@ -25,14 +25,15 @@ import java.util.List;
 import java.util.Map;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import org.apache.spark.sql.*;
-import org.apache.spark.sql.types.DataTypes;
-import org.apache.spark.sql.types.StructField;
-import org.apache.spark.sql.types.StructType;
-import org.apache.spark.util.Utils;
+import com.pubmatic.spark.sql.*;
+import com.pubmatic.spark.sql.types.DataTypes;
+import com.pubmatic.spark.sql.types.StructField;
+import com.pubmatic.spark.sql.types.StructType;
+import com.pubmatic.spark.util.Utils;
 
 public class JavaSaveLoadSuite {
 
@@ -42,7 +43,10 @@ public class JavaSaveLoadSuite {
   Dataset<Row> df;
 
   private static void checkAnswer(Dataset<Row> actual, List<Row> expected) {
-    QueryTest$.MODULE$.checkAnswer(actual, expected);
+    String errorMessage = QueryTest$.MODULE$.checkAnswer(actual, expected);
+    if (errorMessage != null) {
+      Assert.fail(errorMessage);
+    }
   }
 
   @Before

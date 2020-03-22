@@ -27,10 +27,10 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.mllib.regression.LabeledPoint;
-import org.apache.spark.mllib.tree.DecisionTree;
-import org.apache.spark.mllib.tree.model.DecisionTreeModel;
-import org.apache.spark.mllib.util.MLUtils;
+import com.pubmatic.spark.mllib.regression.LabeledPoint;
+import com.pubmatic.spark.mllib.tree.DecisionTree;
+import com.pubmatic.spark.mllib.tree.model.DecisionTreeModel;
+import com.pubmatic.spark.mllib.util.MLUtils;
 // $example off$
 
 class JavaDecisionTreeClassificationExample {

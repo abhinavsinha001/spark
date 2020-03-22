@@ -265,8 +265,8 @@ class ALSTests(MLlibTestCase):
     def test_als_ratings_serialize(self):
         ser = PickleSerializer()
         r = Rating(7, 1123, 3.14)
-        jr = self.sc._jvm.org.apache.spark.mllib.api.python.SerDe.loads(bytearray(ser.dumps(r)))
-        nr = ser.loads(bytes(self.sc._jvm.org.apache.spark.mllib.api.python.SerDe.dumps(jr)))
+        jr = self.sc._jvm.com.pubmatic.spark.mllib.api.python.SerDe.loads(bytearray(ser.dumps(r)))
+        nr = ser.loads(bytes(self.sc._jvm.com.pubmatic.spark.mllib.api.python.SerDe.dumps(jr)))
         self.assertEqual(r.user, nr.user)
         self.assertEqual(r.product, nr.product)
         self.assertAlmostEqual(r.rating, nr.rating, 2)
@@ -275,7 +275,7 @@ class ALSTests(MLlibTestCase):
         ser = PickleSerializer()
         r = Rating(1205640308657491975, 50233468418, 1.0)
         # rating user id exceeds max int value, should fail when pickled
-        self.assertRaises(Py4JJavaError, self.sc._jvm.org.apache.spark.mllib.api.python.SerDe.loads,
+        self.assertRaises(Py4JJavaError, self.sc._jvm.com.pubmatic.spark.mllib.api.python.SerDe.loads,
                           bytearray(ser.dumps(r)))
 
 

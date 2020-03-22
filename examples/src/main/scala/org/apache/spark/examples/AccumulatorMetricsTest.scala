@@ -19,7 +19,7 @@
 package org.apache.spark.examples
 
 import org.apache.spark.metrics.source.{DoubleAccumulatorSource, LongAccumulatorSource}
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 /**
  * Usage: AccumulatorMetricsTest [numElem]

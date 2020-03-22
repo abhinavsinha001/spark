@@ -306,7 +306,7 @@ NULL
 #' @note lit since 1.5.0
 setMethod("lit", signature("ANY"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions",
+            jc <- callJStatic("com.pubmatic.spark.sql.functions",
                               "lit",
                               if (class(x) == "Column") { x@jc } else { x })
             column(jc)
@@ -321,7 +321,7 @@ setMethod("lit", signature("ANY"),
 setMethod("abs",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "abs", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "abs", x@jc)
             column(jc)
           })
 
@@ -335,7 +335,7 @@ setMethod("abs",
 setMethod("acos",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "acos", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "acos", x@jc)
             column(jc)
           })
 
@@ -356,7 +356,7 @@ setMethod("acos",
 setMethod("approx_count_distinct",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "approx_count_distinct", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "approx_count_distinct", x@jc)
             column(jc)
           })
 
@@ -370,7 +370,7 @@ setMethod("approxCountDistinct",
           signature(x = "Column"),
           function(x) {
             .Deprecated("approx_count_distinct")
-            jc <- callJStatic("org.apache.spark.sql.functions", "approx_count_distinct", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "approx_count_distinct", x@jc)
             column(jc)
           })
 
@@ -388,7 +388,7 @@ setMethod("approxCountDistinct",
 setMethod("ascii",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "ascii", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "ascii", x@jc)
             column(jc)
           })
 
@@ -402,7 +402,7 @@ setMethod("ascii",
 setMethod("asin",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "asin", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "asin", x@jc)
             column(jc)
           })
 
@@ -416,7 +416,7 @@ setMethod("asin",
 setMethod("atan",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "atan", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "atan", x@jc)
             column(jc)
           })
 
@@ -433,7 +433,7 @@ setMethod("atan",
 setMethod("avg",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "avg", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "avg", x@jc)
             column(jc)
           })
 
@@ -456,7 +456,7 @@ setMethod("avg",
 setMethod("base64",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "base64", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "base64", x@jc)
             column(jc)
           })
 
@@ -470,7 +470,7 @@ setMethod("base64",
 setMethod("bin",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "bin", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "bin", x@jc)
             column(jc)
           })
 
@@ -487,7 +487,7 @@ setMethod("bin",
 setMethod("bitwiseNOT",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "bitwiseNOT", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "bitwiseNOT", x@jc)
             column(jc)
           })
 
@@ -500,7 +500,7 @@ setMethod("bitwiseNOT",
 setMethod("cbrt",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "cbrt", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "cbrt", x@jc)
             column(jc)
           })
 
@@ -513,7 +513,7 @@ setMethod("cbrt",
 setMethod("ceil",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "ceil", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "ceil", x@jc)
             column(jc)
           })
 
@@ -542,7 +542,7 @@ setMethod("coalesce",
               stopifnot(class(x) == "Column")
               x@jc
             })
-            jc <- callJStatic("org.apache.spark.sql.functions", "coalesce", jcols)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "coalesce", jcols)
             column(jc)
           })
 
@@ -551,7 +551,7 @@ setMethod("coalesce",
 #' package and we also have "column" function exported which is an alias of "col".
 #' @noRd
 col <- function(x) {
-  column(callJStatic("org.apache.spark.sql.functions", "col", x))
+  column(callJStatic("com.pubmatic.spark.sql.functions", "col", x))
 }
 
 #' Returns a Column based on the given column name
@@ -590,7 +590,7 @@ setMethod("column",
 setMethod("corr", signature(x = "Column"),
           function(x, col2) {
             stopifnot(class(col2) == "Column")
-            jc <- callJStatic("org.apache.spark.sql.functions", "corr", x@jc, col2@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "corr", x@jc, col2@jc)
             column(jc)
           })
 
@@ -635,7 +635,7 @@ setMethod("covar_samp", signature(col1 = "characterOrColumn", col2 = "characterO
               col1 <- col1@jc
               col2 <- col2@jc
             }
-            jc <- callJStatic("org.apache.spark.sql.functions", "covar_samp", col1, col2)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "covar_samp", col1, col2)
             column(jc)
           })
 
@@ -653,7 +653,7 @@ setMethod("covar_pop", signature(col1 = "characterOrColumn", col2 = "characterOr
               col1 <- col1@jc
               col2 <- col2@jc
             }
-            jc <- callJStatic("org.apache.spark.sql.functions", "covar_pop", col1, col2)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "covar_pop", col1, col2)
             column(jc)
           })
 
@@ -667,7 +667,7 @@ setMethod("covar_pop", signature(col1 = "characterOrColumn", col2 = "characterOr
 setMethod("cos",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "cos", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "cos", x@jc)
             column(jc)
           })
 
@@ -681,7 +681,7 @@ setMethod("cos",
 setMethod("cosh",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "cosh", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "cosh", x@jc)
             column(jc)
           })
 
@@ -699,7 +699,7 @@ setMethod("cosh",
 setMethod("count",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "count", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "count", x@jc)
             column(jc)
           })
 
@@ -713,7 +713,7 @@ setMethod("count",
 setMethod("crc32",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "crc32", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "crc32", x@jc)
             column(jc)
           })
 
@@ -731,7 +731,7 @@ setMethod("hash",
               stopifnot(class(x) == "Column")
               x@jc
             })
-            jc <- callJStatic("org.apache.spark.sql.functions", "hash", jcols)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "hash", jcols)
             column(jc)
           })
 
@@ -750,7 +750,7 @@ setMethod("xxhash64",
               stopifnot(class(x) == "Column")
               x@jc
             })
-            jc <- callJStatic("org.apache.spark.sql.functions", "xxhash64", jcols)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "xxhash64", jcols)
             column(jc)
           })
 
@@ -771,7 +771,7 @@ setMethod("xxhash64",
 setMethod("dayofmonth",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "dayofmonth", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "dayofmonth", x@jc)
             column(jc)
           })
 
@@ -785,7 +785,7 @@ setMethod("dayofmonth",
 setMethod("dayofweek",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "dayofweek", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "dayofweek", x@jc)
             column(jc)
           })
 
@@ -799,7 +799,7 @@ setMethod("dayofweek",
 setMethod("dayofyear",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "dayofyear", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "dayofyear", x@jc)
             column(jc)
           })
 
@@ -816,7 +816,7 @@ setMethod("dayofyear",
 setMethod("decode",
           signature(x = "Column", charset = "character"),
           function(x, charset) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "decode", x@jc, charset)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "decode", x@jc, charset)
             column(jc)
           })
 
@@ -830,7 +830,7 @@ setMethod("decode",
 setMethod("encode",
           signature(x = "Column", charset = "character"),
           function(x, charset) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "encode", x@jc, charset)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "encode", x@jc, charset)
             column(jc)
           })
 
@@ -843,7 +843,7 @@ setMethod("encode",
 setMethod("exp",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "exp", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "exp", x@jc)
             column(jc)
           })
 
@@ -856,7 +856,7 @@ setMethod("exp",
 setMethod("expm1",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "expm1", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "expm1", x@jc)
             column(jc)
           })
 
@@ -869,7 +869,7 @@ setMethod("expm1",
 setMethod("factorial",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "factorial", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "factorial", x@jc)
             column(jc)
           })
 
@@ -903,7 +903,7 @@ setMethod("first",
             } else {
               x
             }
-            jc <- callJStatic("org.apache.spark.sql.functions", "first", col, na.rm)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "first", col, na.rm)
             column(jc)
           })
 
@@ -916,7 +916,7 @@ setMethod("first",
 setMethod("floor",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "floor", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "floor", x@jc)
             column(jc)
           })
 
@@ -929,7 +929,7 @@ setMethod("floor",
 setMethod("hex",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "hex", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "hex", x@jc)
             column(jc)
           })
 
@@ -949,7 +949,7 @@ setMethod("hex",
 setMethod("hour",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "hour", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "hour", x@jc)
             column(jc)
           })
 
@@ -973,7 +973,7 @@ setMethod("hour",
 setMethod("initcap",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "initcap", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "initcap", x@jc)
             column(jc)
           })
 
@@ -985,7 +985,7 @@ setMethod("initcap",
 setMethod("isnan",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "isnan", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "isnan", x@jc)
             column(jc)
           })
 
@@ -1014,7 +1014,7 @@ setMethod("is.nan",
 setMethod("kurtosis",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "kurtosis", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "kurtosis", x@jc)
             column(jc)
           })
 
@@ -1050,7 +1050,7 @@ setMethod("last",
             } else {
               x
             }
-            jc <- callJStatic("org.apache.spark.sql.functions", "last", col, na.rm)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "last", col, na.rm)
             column(jc)
           })
 
@@ -1069,7 +1069,7 @@ setMethod("last",
 setMethod("last_day",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "last_day", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "last_day", x@jc)
             column(jc)
           })
 
@@ -1084,7 +1084,7 @@ setMethod("last_day",
 setMethod("length",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "length", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "length", x@jc)
             column(jc)
           })
 
@@ -1097,7 +1097,7 @@ setMethod("length",
 setMethod("log",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "log", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "log", x@jc)
             column(jc)
           })
 
@@ -1110,7 +1110,7 @@ setMethod("log",
 setMethod("log10",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "log10", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "log10", x@jc)
             column(jc)
           })
 
@@ -1123,7 +1123,7 @@ setMethod("log10",
 setMethod("log1p",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "log1p", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "log1p", x@jc)
             column(jc)
           })
 
@@ -1136,7 +1136,7 @@ setMethod("log1p",
 setMethod("log2",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "log2", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "log2", x@jc)
             column(jc)
           })
 
@@ -1149,7 +1149,7 @@ setMethod("log2",
 setMethod("lower",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "lower", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "lower", x@jc)
             column(jc)
           })
 
@@ -1175,7 +1175,7 @@ setMethod("lower",
 setMethod("ltrim",
           signature(x = "Column", trimString = "missing"),
           function(x, trimString) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "ltrim", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "ltrim", x@jc)
             column(jc)
           })
 
@@ -1186,7 +1186,7 @@ setMethod("ltrim",
 setMethod("ltrim",
           signature(x = "Column", trimString = "character"),
           function(x, trimString) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "ltrim", x@jc, trimString)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "ltrim", x@jc, trimString)
             column(jc)
           })
 
@@ -1199,7 +1199,7 @@ setMethod("ltrim",
 setMethod("max",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "max", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "max", x@jc)
             column(jc)
           })
 
@@ -1213,7 +1213,7 @@ setMethod("max",
 setMethod("md5",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "md5", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "md5", x@jc)
             column(jc)
           })
 
@@ -1238,7 +1238,7 @@ setMethod("md5",
 setMethod("mean",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "mean", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "mean", x@jc)
             column(jc)
           })
 
@@ -1251,7 +1251,7 @@ setMethod("mean",
 setMethod("min",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "min", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "min", x@jc)
             column(jc)
           })
 
@@ -1264,7 +1264,7 @@ setMethod("min",
 setMethod("minute",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "minute", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "minute", x@jc)
             column(jc)
           })
 
@@ -1289,7 +1289,7 @@ setMethod("minute",
 setMethod("monotonically_increasing_id",
           signature("missing"),
           function() {
-            jc <- callJStatic("org.apache.spark.sql.functions", "monotonically_increasing_id")
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "monotonically_increasing_id")
             column(jc)
           })
 
@@ -1302,7 +1302,7 @@ setMethod("monotonically_increasing_id",
 setMethod("month",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "month", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "month", x@jc)
             column(jc)
           })
 
@@ -1315,7 +1315,7 @@ setMethod("month",
 setMethod("negate",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "negate", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "negate", x@jc)
             column(jc)
           })
 
@@ -1328,7 +1328,7 @@ setMethod("negate",
 setMethod("quarter",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "quarter", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "quarter", x@jc)
             column(jc)
           })
 
@@ -1341,7 +1341,7 @@ setMethod("quarter",
 setMethod("reverse",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "reverse", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "reverse", x@jc)
             column(jc)
           })
 
@@ -1355,7 +1355,7 @@ setMethod("reverse",
 setMethod("rint",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "rint", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "rint", x@jc)
             column(jc)
           })
 
@@ -1369,7 +1369,7 @@ setMethod("rint",
 setMethod("round",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "round", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "round", x@jc)
             column(jc)
           })
 
@@ -1388,7 +1388,7 @@ setMethod("round",
 setMethod("bround",
           signature(x = "Column"),
           function(x, scale = 0) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "bround", x@jc, as.integer(scale))
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "bround", x@jc, as.integer(scale))
             column(jc)
           })
 
@@ -1402,7 +1402,7 @@ setMethod("bround",
 setMethod("rtrim",
           signature(x = "Column", trimString = "missing"),
           function(x, trimString) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "rtrim", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "rtrim", x@jc)
             column(jc)
           })
 
@@ -1412,7 +1412,7 @@ setMethod("rtrim",
 setMethod("rtrim",
           signature(x = "Column", trimString = "character"),
           function(x, trimString) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "rtrim", x@jc, trimString)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "rtrim", x@jc, trimString)
             column(jc)
           })
 
@@ -1442,7 +1442,7 @@ setMethod("sd",
 setMethod("second",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "second", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "second", x@jc)
             column(jc)
           })
 
@@ -1456,7 +1456,7 @@ setMethod("second",
 setMethod("sha1",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "sha1", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "sha1", x@jc)
             column(jc)
           })
 
@@ -1469,7 +1469,7 @@ setMethod("sha1",
 setMethod("signum",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "signum", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "signum", x@jc)
             column(jc)
           })
 
@@ -1494,7 +1494,7 @@ setMethod("sign", signature(x = "Column"),
 setMethod("sin",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "sin", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "sin", x@jc)
             column(jc)
           })
 
@@ -1508,7 +1508,7 @@ setMethod("sin",
 setMethod("sinh",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "sinh", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "sinh", x@jc)
             column(jc)
           })
 
@@ -1521,7 +1521,7 @@ setMethod("sinh",
 setMethod("skewness",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "skewness", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "skewness", x@jc)
             column(jc)
           })
 
@@ -1534,7 +1534,7 @@ setMethod("skewness",
 setMethod("soundex",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "soundex", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "soundex", x@jc)
             column(jc)
           })
 
@@ -1553,7 +1553,7 @@ setMethod("soundex",
 setMethod("spark_partition_id",
           signature("missing"),
           function() {
-            jc <- callJStatic("org.apache.spark.sql.functions", "spark_partition_id")
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "spark_partition_id")
             column(jc)
           })
 
@@ -1566,7 +1566,7 @@ setMethod("spark_partition_id",
 setMethod("stddev",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "stddev", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "stddev", x@jc)
             column(jc)
           })
 
@@ -1579,7 +1579,7 @@ setMethod("stddev",
 setMethod("stddev_pop",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "stddev_pop", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "stddev_pop", x@jc)
             column(jc)
           })
 
@@ -1592,7 +1592,7 @@ setMethod("stddev_pop",
 setMethod("stddev_samp",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "stddev_samp", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "stddev_samp", x@jc)
             column(jc)
           })
 
@@ -1614,9 +1614,9 @@ setMethod("struct",
           function(x, ...) {
             if (class(x) == "Column") {
               jcols <- lapply(list(x, ...), function(x) { x@jc })
-              jc <- callJStatic("org.apache.spark.sql.functions", "struct", jcols)
+              jc <- callJStatic("com.pubmatic.spark.sql.functions", "struct", jcols)
             } else {
-              jc <- callJStatic("org.apache.spark.sql.functions", "struct", x, list(...))
+              jc <- callJStatic("com.pubmatic.spark.sql.functions", "struct", x, list(...))
             }
             column(jc)
           })
@@ -1630,7 +1630,7 @@ setMethod("struct",
 setMethod("sqrt",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "sqrt", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "sqrt", x@jc)
             column(jc)
           })
 
@@ -1643,7 +1643,7 @@ setMethod("sqrt",
 setMethod("sum",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "sum", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "sum", x@jc)
             column(jc)
           })
 
@@ -1661,7 +1661,7 @@ setMethod("sum",
 setMethod("sumDistinct",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "sumDistinct", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "sumDistinct", x@jc)
             column(jc)
           })
 
@@ -1676,7 +1676,7 @@ setMethod("sumDistinct",
 setMethod("tan",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "tan", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "tan", x@jc)
             column(jc)
           })
 
@@ -1690,7 +1690,7 @@ setMethod("tan",
 setMethod("tanh",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "tanh", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "tanh", x@jc)
             column(jc)
           })
 
@@ -1705,7 +1705,7 @@ setMethod("toDegrees",
           signature(x = "Column"),
           function(x) {
             .Deprecated("degrees")
-            jc <- callJStatic("org.apache.spark.sql.functions", "degrees", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "degrees", x@jc)
             column(jc)
           })
 
@@ -1719,7 +1719,7 @@ setMethod("toDegrees",
 setMethod("degrees",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "degrees", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "degrees", x@jc)
             column(jc)
           })
 
@@ -1734,7 +1734,7 @@ setMethod("toRadians",
           signature(x = "Column"),
           function(x) {
             .Deprecated("radians")
-            jc <- callJStatic("org.apache.spark.sql.functions", "radians", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "radians", x@jc)
             column(jc)
           })
 
@@ -1748,7 +1748,7 @@ setMethod("toRadians",
 setMethod("radians",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "radians", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "radians", x@jc)
             column(jc)
           })
 
@@ -1777,7 +1777,7 @@ setMethod("radians",
 setMethod("to_date",
           signature(x = "Column", format = "missing"),
           function(x, format) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "to_date", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "to_date", x@jc)
             column(jc)
           })
 
@@ -1787,7 +1787,7 @@ setMethod("to_date",
 setMethod("to_date",
           signature(x = "Column", format = "character"),
           function(x, format) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "to_date", x@jc, format)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "to_date", x@jc, format)
             column(jc)
           })
 
@@ -1824,7 +1824,7 @@ setMethod("to_date",
 setMethod("to_json", signature(x = "Column"),
           function(x, ...) {
             options <- varargsToStrEnv(...)
-            jc <- callJStatic("org.apache.spark.sql.functions", "to_json", x@jc, options)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "to_json", x@jc, options)
             column(jc)
           })
 
@@ -1844,7 +1844,7 @@ setMethod("to_json", signature(x = "Column"),
 setMethod("to_csv", signature(x = "Column"),
           function(x, ...) {
             options <- varargsToStrEnv(...)
-            jc <- callJStatic("org.apache.spark.sql.functions", "to_csv", x@jc, options)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "to_csv", x@jc, options)
             column(jc)
           })
 
@@ -1863,7 +1863,7 @@ setMethod("to_csv", signature(x = "Column"),
 setMethod("to_timestamp",
           signature(x = "Column", format = "missing"),
           function(x, format) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "to_timestamp", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "to_timestamp", x@jc)
             column(jc)
           })
 
@@ -1873,7 +1873,7 @@ setMethod("to_timestamp",
 setMethod("to_timestamp",
           signature(x = "Column", format = "character"),
           function(x, format) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "to_timestamp", x@jc, format)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "to_timestamp", x@jc, format)
             column(jc)
           })
 
@@ -1887,7 +1887,7 @@ setMethod("to_timestamp",
 setMethod("trim",
           signature(x = "Column", trimString = "missing"),
           function(x, trimString) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "trim", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "trim", x@jc)
             column(jc)
           })
 
@@ -1897,7 +1897,7 @@ setMethod("trim",
 setMethod("trim",
           signature(x = "Column", trimString = "character"),
           function(x, trimString) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "trim", x@jc, trimString)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "trim", x@jc, trimString)
             column(jc)
           })
 
@@ -1911,7 +1911,7 @@ setMethod("trim",
 setMethod("unbase64",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "unbase64", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "unbase64", x@jc)
             column(jc)
           })
 
@@ -1925,7 +1925,7 @@ setMethod("unbase64",
 setMethod("unhex",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "unhex", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "unhex", x@jc)
             column(jc)
           })
 
@@ -1938,7 +1938,7 @@ setMethod("unhex",
 setMethod("upper",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "upper", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "upper", x@jc)
             column(jc)
           })
 
@@ -1965,7 +1965,7 @@ setMethod("var",
 setMethod("variance",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "variance", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "variance", x@jc)
             column(jc)
           })
 
@@ -1978,7 +1978,7 @@ setMethod("variance",
 setMethod("var_pop",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "var_pop", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "var_pop", x@jc)
             column(jc)
           })
 
@@ -1991,7 +1991,7 @@ setMethod("var_pop",
 setMethod("var_samp",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "var_samp", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "var_samp", x@jc)
             column(jc)
           })
 
@@ -2004,7 +2004,7 @@ setMethod("var_samp",
 setMethod("weekofyear",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "weekofyear", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "weekofyear", x@jc)
             column(jc)
           })
 
@@ -2017,7 +2017,7 @@ setMethod("weekofyear",
 setMethod("year",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "year", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "year", x@jc)
             column(jc)
           })
 
@@ -2034,7 +2034,7 @@ setMethod("atan2", signature(y = "Column"),
             if (class(x) == "Column") {
               x <- x@jc
             }
-            jc <- callJStatic("org.apache.spark.sql.functions", "atan2", y@jc, x)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "atan2", y@jc, x)
             column(jc)
           })
 
@@ -2058,7 +2058,7 @@ setMethod("datediff", signature(y = "Column"),
             if (class(x) == "Column") {
               x <- x@jc
             }
-            jc <- callJStatic("org.apache.spark.sql.functions", "datediff", y@jc, x)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "datediff", y@jc, x)
             column(jc)
           })
 
@@ -2073,7 +2073,7 @@ setMethod("hypot", signature(y = "Column"),
             if (class(x) == "Column") {
               x <- x@jc
             }
-            jc <- callJStatic("org.apache.spark.sql.functions", "hypot", y@jc, x)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "hypot", y@jc, x)
             column(jc)
           })
 
@@ -2095,7 +2095,7 @@ setMethod("levenshtein", signature(y = "Column"),
             if (class(x) == "Column") {
               x <- x@jc
             }
-            jc <- callJStatic("org.apache.spark.sql.functions", "levenshtein", y@jc, x)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "levenshtein", y@jc, x)
             column(jc)
           })
 
@@ -2115,9 +2115,9 @@ setMethod("months_between", signature(y = "Column"),
               x <- x@jc
             }
             jc <- if (is.null(roundOff)) {
-              callJStatic("org.apache.spark.sql.functions", "months_between", y@jc, x)
+              callJStatic("com.pubmatic.spark.sql.functions", "months_between", y@jc, x)
             } else {
-              callJStatic("org.apache.spark.sql.functions", "months_between", y@jc, x,
+              callJStatic("com.pubmatic.spark.sql.functions", "months_between", y@jc, x,
                            as.logical(roundOff))
             }
             column(jc)
@@ -2136,7 +2136,7 @@ setMethod("nanvl", signature(y = "Column"),
             if (class(x) == "Column") {
               x <- x@jc
             }
-            jc <- callJStatic("org.apache.spark.sql.functions", "nanvl", y@jc, x)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "nanvl", y@jc, x)
             column(jc)
           })
 
@@ -2152,7 +2152,7 @@ setMethod("pmod", signature(y = "Column"),
             if (class(x) == "Column") {
               x <- x@jc
             }
-            jc <- callJStatic("org.apache.spark.sql.functions", "pmod", y@jc, x)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "pmod", y@jc, x)
             column(jc)
           })
 
@@ -2164,7 +2164,7 @@ setMethod("pmod", signature(y = "Column"),
 setMethod("approx_count_distinct",
           signature(x = "Column"),
           function(x, rsd = 0.05) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "approx_count_distinct", x@jc, rsd)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "approx_count_distinct", x@jc, rsd)
             column(jc)
           })
 
@@ -2175,7 +2175,7 @@ setMethod("approxCountDistinct",
           signature(x = "Column"),
           function(x, rsd = 0.05) {
             .Deprecated("approx_count_distinct")
-            jc <- callJStatic("org.apache.spark.sql.functions", "approx_count_distinct", x@jc, rsd)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "approx_count_distinct", x@jc, rsd)
             column(jc)
           })
 
@@ -2192,7 +2192,7 @@ setMethod("countDistinct",
               stopifnot(class(x) == "Column")
               x@jc
             })
-            jc <- callJStatic("org.apache.spark.sql.functions", "countDistinct", x@jc,
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "countDistinct", x@jc,
                               jcols)
             column(jc)
           })
@@ -2211,7 +2211,7 @@ setMethod("concat",
               stopifnot(class(x) == "Column")
               x@jc
             })
-            jc <- callJStatic("org.apache.spark.sql.functions", "concat", jcols)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "concat", jcols)
             column(jc)
           })
 
@@ -2230,7 +2230,7 @@ setMethod("greatest",
               stopifnot(class(x) == "Column")
               x@jc
             })
-            jc <- callJStatic("org.apache.spark.sql.functions", "greatest", jcols)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "greatest", jcols)
             column(jc)
           })
 
@@ -2249,7 +2249,7 @@ setMethod("least",
               stopifnot(class(x) == "Column")
               x@jc
             })
-            jc <- callJStatic("org.apache.spark.sql.functions", "least", jcols)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "least", jcols)
             column(jc)
           })
 
@@ -2288,7 +2288,7 @@ setMethod("n", signature(x = "Column"),
 #' @note date_format since 1.5.0
 setMethod("date_format", signature(y = "Column", x = "character"),
           function(y, x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "date_format", y@jc, x)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "date_format", y@jc, x)
             column(jc)
           })
 
@@ -2332,17 +2332,17 @@ setMethod("from_json", signature(x = "Column", schema = "characterOrstructTypeOr
               # treated as struct or element type of array in order to make it more
               # R-friendly.
               if (class(schema) == "Column") {
-                jschema <- callJStatic("org.apache.spark.sql.api.r.SQLUtils",
+                jschema <- callJStatic("com.pubmatic.spark.sql.api.r.SQLUtils",
                                        "createArrayType",
                                        jschema)
               } else {
-                jschema <- callJStatic("org.apache.spark.sql.types.DataTypes",
+                jschema <- callJStatic("com.pubmatic.spark.sql.types.DataTypes",
                                        "createArrayType",
                                        jschema)
               }
             }
             options <- varargsToStrEnv(...)
-            jc <- callJStatic("org.apache.spark.sql.functions",
+            jc <- callJStatic("com.pubmatic.spark.sql.functions",
                               "from_json",
                               x@jc, jschema, options)
             column(jc)
@@ -2363,12 +2363,12 @@ setMethod("from_json", signature(x = "Column", schema = "characterOrstructTypeOr
 setMethod("schema_of_json", signature(x = "characterOrColumn"),
           function(x, ...) {
             if (class(x) == "character") {
-              col <- callJStatic("org.apache.spark.sql.functions", "lit", x)
+              col <- callJStatic("com.pubmatic.spark.sql.functions", "lit", x)
             } else {
               col <- x@jc
             }
             options <- varargsToStrEnv(...)
-            jc <- callJStatic("org.apache.spark.sql.functions",
+            jc <- callJStatic("com.pubmatic.spark.sql.functions",
                               "schema_of_json",
                               col, options)
             column(jc)
@@ -2398,12 +2398,12 @@ setMethod("from_csv", signature(x = "Column", schema = "characterOrstructTypeOrC
             }
 
             if (is.character(schema)) {
-              jschema <- callJStatic("org.apache.spark.sql.functions", "lit", schema)
+              jschema <- callJStatic("com.pubmatic.spark.sql.functions", "lit", schema)
             } else {
               jschema <- schema@jc
             }
             options <- varargsToStrEnv(...)
-            jc <- callJStatic("org.apache.spark.sql.functions",
+            jc <- callJStatic("com.pubmatic.spark.sql.functions",
                               "from_csv",
                               x@jc, jschema, options)
             column(jc)
@@ -2424,12 +2424,12 @@ setMethod("from_csv", signature(x = "Column", schema = "characterOrstructTypeOrC
 setMethod("schema_of_csv", signature(x = "characterOrColumn"),
           function(x, ...) {
             if (class(x) == "character") {
-              col <- callJStatic("org.apache.spark.sql.functions", "lit", x)
+              col <- callJStatic("com.pubmatic.spark.sql.functions", "lit", x)
             } else {
               col <- x@jc
             }
             options <- varargsToStrEnv(...)
-            jc <- callJStatic("org.apache.spark.sql.functions",
+            jc <- callJStatic("com.pubmatic.spark.sql.functions",
                               "schema_of_csv",
                               col, options)
             column(jc)
@@ -2460,7 +2460,7 @@ setMethod("schema_of_csv", signature(x = "characterOrColumn"),
 setMethod("from_utc_timestamp", signature(y = "Column", x = "character"),
           function(y, x) {
             .Deprecated(msg = "from_utc_timestamp is deprecated. See SPARK-25496.")
-            jc <- callJStatic("org.apache.spark.sql.functions", "from_utc_timestamp", y@jc, x)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "from_utc_timestamp", y@jc, x)
             column(jc)
           })
 
@@ -2481,7 +2481,7 @@ setMethod("from_utc_timestamp", signature(y = "Column", x = "character"),
 #' @note instr since 1.5.0
 setMethod("instr", signature(y = "Column", x = "character"),
           function(y, x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "instr", y@jc, x)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "instr", y@jc, x)
             column(jc)
           })
 
@@ -2497,7 +2497,7 @@ setMethod("instr", signature(y = "Column", x = "character"),
 #' @note next_day since 1.5.0
 setMethod("next_day", signature(y = "Column", x = "character"),
           function(y, x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "next_day", y@jc, x)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "next_day", y@jc, x)
             column(jc)
           })
 
@@ -2519,7 +2519,7 @@ setMethod("next_day", signature(y = "Column", x = "character"),
 setMethod("to_utc_timestamp", signature(y = "Column", x = "character"),
           function(y, x) {
             .Deprecated(msg = "to_utc_timestamp is deprecated. See SPARK-25496.")
-            jc <- callJStatic("org.apache.spark.sql.functions", "to_utc_timestamp", y@jc, x)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "to_utc_timestamp", y@jc, x)
             column(jc)
           })
 
@@ -2539,7 +2539,7 @@ setMethod("to_utc_timestamp", signature(y = "Column", x = "character"),
 #' @note add_months since 1.5.0
 setMethod("add_months", signature(y = "Column", x = "numeric"),
           function(y, x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "add_months", y@jc, as.integer(x))
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "add_months", y@jc, as.integer(x))
             column(jc)
           })
 
@@ -2551,7 +2551,7 @@ setMethod("add_months", signature(y = "Column", x = "numeric"),
 #' @note date_add since 1.5.0
 setMethod("date_add", signature(y = "Column", x = "numeric"),
           function(y, x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "date_add", y@jc, as.integer(x))
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "date_add", y@jc, as.integer(x))
             column(jc)
           })
 
@@ -2564,7 +2564,7 @@ setMethod("date_add", signature(y = "Column", x = "numeric"),
 #' @note date_sub since 1.5.0
 setMethod("date_sub", signature(y = "Column", x = "numeric"),
           function(y, x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "date_sub", y@jc, as.integer(x))
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "date_sub", y@jc, as.integer(x))
             column(jc)
           })
 
@@ -2586,7 +2586,7 @@ setMethod("date_sub", signature(y = "Column", x = "numeric"),
 #' @note format_number since 1.5.0
 setMethod("format_number", signature(y = "Column", x = "numeric"),
           function(y, x) {
-            jc <- callJStatic("org.apache.spark.sql.functions",
+            jc <- callJStatic("com.pubmatic.spark.sql.functions",
                               "format_number",
                               y@jc, as.integer(x))
             column(jc)
@@ -2602,7 +2602,7 @@ setMethod("format_number", signature(y = "Column", x = "numeric"),
 #' @note sha2 since 1.5.0
 setMethod("sha2", signature(y = "Column", x = "numeric"),
           function(y, x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "sha2", y@jc, as.integer(x))
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "sha2", y@jc, as.integer(x))
             column(jc)
           })
 
@@ -2615,7 +2615,7 @@ setMethod("sha2", signature(y = "Column", x = "numeric"),
 #' @note shiftLeft since 1.5.0
 setMethod("shiftLeft", signature(y = "Column", x = "numeric"),
           function(y, x) {
-            jc <- callJStatic("org.apache.spark.sql.functions",
+            jc <- callJStatic("com.pubmatic.spark.sql.functions",
                               "shiftLeft",
                               y@jc, as.integer(x))
             column(jc)
@@ -2630,7 +2630,7 @@ setMethod("shiftLeft", signature(y = "Column", x = "numeric"),
 #' @note shiftRight since 1.5.0
 setMethod("shiftRight", signature(y = "Column", x = "numeric"),
           function(y, x) {
-            jc <- callJStatic("org.apache.spark.sql.functions",
+            jc <- callJStatic("com.pubmatic.spark.sql.functions",
                               "shiftRight",
                               y@jc, as.integer(x))
             column(jc)
@@ -2645,7 +2645,7 @@ setMethod("shiftRight", signature(y = "Column", x = "numeric"),
 #' @note shiftRightUnsigned since 1.5.0
 setMethod("shiftRightUnsigned", signature(y = "Column", x = "numeric"),
           function(y, x) {
-            jc <- callJStatic("org.apache.spark.sql.functions",
+            jc <- callJStatic("com.pubmatic.spark.sql.functions",
                               "shiftRightUnsigned",
                               y@jc, as.integer(x))
             column(jc)
@@ -2669,7 +2669,7 @@ setMethod("shiftRightUnsigned", signature(y = "Column", x = "numeric"),
 setMethod("concat_ws", signature(sep = "character", x = "Column"),
           function(sep, x, ...) {
             jcols <- lapply(list(x, ...), function(x) { x@jc })
-            jc <- callJStatic("org.apache.spark.sql.functions", "concat_ws", sep, jcols)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "concat_ws", sep, jcols)
             column(jc)
           })
 
@@ -2685,7 +2685,7 @@ setMethod("conv", signature(x = "Column", fromBase = "numeric", toBase = "numeri
           function(x, fromBase, toBase) {
             fromBase <- as.integer(fromBase)
             toBase <- as.integer(toBase)
-            jc <- callJStatic("org.apache.spark.sql.functions",
+            jc <- callJStatic("com.pubmatic.spark.sql.functions",
                               "conv",
                               x@jc, fromBase, toBase)
             column(jc)
@@ -2700,7 +2700,7 @@ setMethod("conv", signature(x = "Column", fromBase = "numeric", toBase = "numeri
 #' @note expr since 1.5.0
 setMethod("expr", signature(x = "character"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "expr", x)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "expr", x)
             column(jc)
           })
 
@@ -2715,7 +2715,7 @@ setMethod("expr", signature(x = "character"),
 setMethod("format_string", signature(format = "character", x = "Column"),
           function(format, x, ...) {
             jcols <- lapply(list(x, ...), function(arg) { arg@jc })
-            jc <- callJStatic("org.apache.spark.sql.functions",
+            jc <- callJStatic("com.pubmatic.spark.sql.functions",
                               "format_string",
                               format, jcols)
             column(jc)
@@ -2742,7 +2742,7 @@ setMethod("format_string", signature(format = "character", x = "Column"),
 #' @note from_unixtime since 1.5.0
 setMethod("from_unixtime", signature(x = "Column"),
           function(x, format = "uuuu-MM-dd HH:mm:ss") {
-            jc <- callJStatic("org.apache.spark.sql.functions",
+            jc <- callJStatic("com.pubmatic.spark.sql.functions",
                               "from_unixtime",
                               x@jc, format)
             column(jc)
@@ -2791,21 +2791,21 @@ setMethod("window", signature(x = "Column"),
             stopifnot(is.character(windowDuration))
             if (!is.null(slideDuration) && !is.null(startTime)) {
               stopifnot(is.character(slideDuration) && is.character(startTime))
-              jc <- callJStatic("org.apache.spark.sql.functions",
+              jc <- callJStatic("com.pubmatic.spark.sql.functions",
                                 "window",
                                 x@jc, windowDuration, slideDuration, startTime)
             } else if (!is.null(slideDuration)) {
               stopifnot(is.character(slideDuration))
-              jc <- callJStatic("org.apache.spark.sql.functions",
+              jc <- callJStatic("com.pubmatic.spark.sql.functions",
                                 "window",
                                 x@jc, windowDuration, slideDuration)
             } else if (!is.null(startTime)) {
               stopifnot(is.character(startTime))
-              jc <- callJStatic("org.apache.spark.sql.functions",
+              jc <- callJStatic("com.pubmatic.spark.sql.functions",
                                 "window",
                                 x@jc, windowDuration, windowDuration, startTime)
             } else {
-              jc <- callJStatic("org.apache.spark.sql.functions",
+              jc <- callJStatic("com.pubmatic.spark.sql.functions",
                                 "window",
                                 x@jc, windowDuration)
             }
@@ -2825,7 +2825,7 @@ setMethod("window", signature(x = "Column"),
 #' @note locate since 1.5.0
 setMethod("locate", signature(substr = "character", str = "Column"),
           function(substr, str, pos = 1) {
-            jc <- callJStatic("org.apache.spark.sql.functions",
+            jc <- callJStatic("com.pubmatic.spark.sql.functions",
                               "locate",
                               substr, str@jc, as.integer(pos))
             column(jc)
@@ -2841,7 +2841,7 @@ setMethod("locate", signature(substr = "character", str = "Column"),
 #' @note lpad since 1.5.0
 setMethod("lpad", signature(x = "Column", len = "numeric", pad = "character"),
           function(x, len, pad) {
-            jc <- callJStatic("org.apache.spark.sql.functions",
+            jc <- callJStatic("com.pubmatic.spark.sql.functions",
                               "lpad",
                               x@jc, as.integer(len), pad)
             column(jc)
@@ -2863,7 +2863,7 @@ setMethod("lpad", signature(x = "Column", len = "numeric", pad = "character"),
 #' @note rand since 1.5.0
 setMethod("rand", signature(seed = "missing"),
           function(seed) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "rand")
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "rand")
             column(jc)
           })
 
@@ -2872,7 +2872,7 @@ setMethod("rand", signature(seed = "missing"),
 #' @note rand(numeric) since 1.5.0
 setMethod("rand", signature(seed = "numeric"),
           function(seed) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "rand", as.integer(seed))
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "rand", as.integer(seed))
             column(jc)
           })
 
@@ -2886,7 +2886,7 @@ setMethod("rand", signature(seed = "numeric"),
 #' @note randn since 1.5.0
 setMethod("randn", signature(seed = "missing"),
           function(seed) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "randn")
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "randn")
             column(jc)
           })
 
@@ -2895,7 +2895,7 @@ setMethod("randn", signature(seed = "missing"),
 #' @note randn(numeric) since 1.5.0
 setMethod("randn", signature(seed = "numeric"),
           function(seed) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "randn", as.integer(seed))
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "randn", as.integer(seed))
             column(jc)
           })
 
@@ -2923,7 +2923,7 @@ setMethod("randn", signature(seed = "numeric"),
 setMethod("regexp_extract",
           signature(x = "Column", pattern = "character", idx = "numeric"),
           function(x, pattern, idx) {
-            jc <- callJStatic("org.apache.spark.sql.functions",
+            jc <- callJStatic("com.pubmatic.spark.sql.functions",
                               "regexp_extract",
                               x@jc, pattern, as.integer(idx))
             column(jc)
@@ -2940,7 +2940,7 @@ setMethod("regexp_extract",
 setMethod("regexp_replace",
           signature(x = "Column", pattern = "character", replacement = "character"),
           function(x, pattern, replacement) {
-            jc <- callJStatic("org.apache.spark.sql.functions",
+            jc <- callJStatic("com.pubmatic.spark.sql.functions",
                               "regexp_replace",
                               x@jc, pattern, replacement)
             column(jc)
@@ -2954,7 +2954,7 @@ setMethod("regexp_replace",
 #' @note rpad since 1.5.0
 setMethod("rpad", signature(x = "Column", len = "numeric", pad = "character"),
           function(x, len, pad) {
-            jc <- callJStatic("org.apache.spark.sql.functions",
+            jc <- callJStatic("com.pubmatic.spark.sql.functions",
                               "rpad",
                               x@jc, as.integer(len), pad)
             column(jc)
@@ -2977,7 +2977,7 @@ setMethod("rpad", signature(x = "Column", len = "numeric", pad = "character"),
 setMethod("substring_index",
           signature(x = "Column", delim = "character", count = "numeric"),
           function(x, delim, count) {
-            jc <- callJStatic("org.apache.spark.sql.functions",
+            jc <- callJStatic("com.pubmatic.spark.sql.functions",
                               "substring_index",
                               x@jc, delim, as.integer(count))
             column(jc)
@@ -2999,7 +2999,7 @@ setMethod("substring_index",
 setMethod("translate",
           signature(x = "Column", matchingString = "character", replaceString = "character"),
           function(x, matchingString, replaceString) {
-            jc <- callJStatic("org.apache.spark.sql.functions",
+            jc <- callJStatic("com.pubmatic.spark.sql.functions",
                               "translate", x@jc, matchingString, replaceString)
             column(jc)
           })
@@ -3012,7 +3012,7 @@ setMethod("translate",
 #' @note unix_timestamp since 1.5.0
 setMethod("unix_timestamp", signature(x = "missing", format = "missing"),
           function(x, format) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "unix_timestamp")
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "unix_timestamp")
             column(jc)
           })
 
@@ -3021,7 +3021,7 @@ setMethod("unix_timestamp", signature(x = "missing", format = "missing"),
 #' @note unix_timestamp(Column) since 1.5.0
 setMethod("unix_timestamp", signature(x = "Column", format = "missing"),
           function(x, format) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "unix_timestamp", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "unix_timestamp", x@jc)
             column(jc)
           })
 
@@ -3030,7 +3030,7 @@ setMethod("unix_timestamp", signature(x = "Column", format = "missing"),
 #' @note unix_timestamp(Column, character) since 1.5.0
 setMethod("unix_timestamp", signature(x = "Column", format = "character"),
           function(x, format = "uuuu-MM-dd HH:mm:ss") {
-            jc <- callJStatic("org.apache.spark.sql.functions", "unix_timestamp", x@jc, format)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "unix_timestamp", x@jc, format)
             column(jc)
           })
 
@@ -3057,7 +3057,7 @@ setMethod("when", signature(condition = "Column", value = "ANY"),
           function(condition, value) {
               condition <- condition@jc
               value <- if (class(value) == "Column") { value@jc } else { value }
-              jc <- callJStatic("org.apache.spark.sql.functions", "when", condition, value)
+              jc <- callJStatic("com.pubmatic.spark.sql.functions", "when", condition, value)
               column(jc)
           })
 
@@ -3077,7 +3077,7 @@ setMethod("ifelse",
               test <- test@jc
               yes <- if (class(yes) == "Column") { yes@jc } else { yes }
               no <- if (class(no) == "Column") { no@jc } else { no }
-              jc <- callJMethod(callJStatic("org.apache.spark.sql.functions",
+              jc <- callJMethod(callJStatic("com.pubmatic.spark.sql.functions",
                                             "when",
                                             test, yes),
                                 "otherwise", no)
@@ -3099,7 +3099,7 @@ setMethod("ifelse",
 setMethod("cume_dist",
           signature("missing"),
           function() {
-            jc <- callJStatic("org.apache.spark.sql.functions", "cume_dist")
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "cume_dist")
             column(jc)
           })
 
@@ -3119,7 +3119,7 @@ setMethod("cume_dist",
 setMethod("dense_rank",
           signature("missing"),
           function() {
-            jc <- callJStatic("org.apache.spark.sql.functions", "dense_rank")
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "dense_rank")
             column(jc)
           })
 
@@ -3141,7 +3141,7 @@ setMethod("lag",
               x
             }
 
-            jc <- callJStatic("org.apache.spark.sql.functions",
+            jc <- callJStatic("com.pubmatic.spark.sql.functions",
                               "lag", col, as.integer(offset), defaultValue)
             column(jc)
           })
@@ -3165,7 +3165,7 @@ setMethod("lead",
               x
             }
 
-            jc <- callJStatic("org.apache.spark.sql.functions",
+            jc <- callJStatic("com.pubmatic.spark.sql.functions",
                               "lead", col, as.integer(offset), defaultValue)
             column(jc)
           })
@@ -3182,7 +3182,7 @@ setMethod("lead",
 setMethod("ntile",
           signature(x = "numeric"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "ntile", as.integer(x))
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "ntile", as.integer(x))
             column(jc)
           })
 
@@ -3199,7 +3199,7 @@ setMethod("ntile",
 setMethod("percent_rank",
           signature("missing"),
           function() {
-            jc <- callJStatic("org.apache.spark.sql.functions", "percent_rank")
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "percent_rank")
             column(jc)
           })
 
@@ -3219,7 +3219,7 @@ setMethod("percent_rank",
 setMethod("rank",
           signature(x = "missing"),
           function() {
-            jc <- callJStatic("org.apache.spark.sql.functions", "rank")
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "rank")
             column(jc)
           })
 
@@ -3242,7 +3242,7 @@ setMethod("rank",
 setMethod("row_number",
           signature("missing"),
           function() {
-            jc <- callJStatic("org.apache.spark.sql.functions", "row_number")
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "row_number")
             column(jc)
           })
 
@@ -3258,7 +3258,7 @@ setMethod("row_number",
 setMethod("array_contains",
           signature(x = "Column", value = "ANY"),
           function(x, value) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "array_contains", x@jc, value)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "array_contains", x@jc, value)
             column(jc)
           })
 
@@ -3271,7 +3271,7 @@ setMethod("array_contains",
 setMethod("array_distinct",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "array_distinct", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "array_distinct", x@jc)
             column(jc)
           })
 
@@ -3285,7 +3285,7 @@ setMethod("array_distinct",
 setMethod("array_except",
           signature(x = "Column", y = "Column"),
           function(x, y) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "array_except", x@jc, y@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "array_except", x@jc, y@jc)
             column(jc)
           })
 
@@ -3299,7 +3299,7 @@ setMethod("array_except",
 setMethod("array_intersect",
           signature(x = "Column", y = "Column"),
           function(x, y) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "array_intersect", x@jc, y@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "array_intersect", x@jc, y@jc)
             column(jc)
           })
 
@@ -3316,9 +3316,9 @@ setMethod("array_join",
          signature(x = "Column", delimiter = "character"),
          function(x, delimiter, nullReplacement = NULL) {
            jc <- if (is.null(nullReplacement)) {
-             callJStatic("org.apache.spark.sql.functions", "array_join", x@jc, delimiter)
+             callJStatic("com.pubmatic.spark.sql.functions", "array_join", x@jc, delimiter)
            } else {
-             callJStatic("org.apache.spark.sql.functions", "array_join", x@jc, delimiter,
+             callJStatic("com.pubmatic.spark.sql.functions", "array_join", x@jc, delimiter,
                          as.character(nullReplacement))
            }
            column(jc)
@@ -3333,7 +3333,7 @@ setMethod("array_join",
 setMethod("array_max",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "array_max", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "array_max", x@jc)
             column(jc)
           })
 
@@ -3346,7 +3346,7 @@ setMethod("array_max",
 setMethod("array_min",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "array_min", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "array_min", x@jc)
             column(jc)
           })
 
@@ -3362,7 +3362,7 @@ setMethod("array_min",
 setMethod("array_position",
           signature(x = "Column", value = "ANY"),
           function(x, value) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "array_position", x@jc, value)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "array_position", x@jc, value)
             column(jc)
           })
 
@@ -3375,7 +3375,7 @@ setMethod("array_position",
 setMethod("array_remove",
           signature(x = "Column", value = "ANY"),
           function(x, value) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "array_remove", x@jc, value)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "array_remove", x@jc, value)
             column(jc)
           })
 
@@ -3395,7 +3395,7 @@ setMethod("array_repeat",
             } else {
               count <- as.integer(count)
             }
-            jc <- callJStatic("org.apache.spark.sql.functions", "array_repeat", x@jc, count)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "array_repeat", x@jc, count)
             column(jc)
           })
 
@@ -3409,7 +3409,7 @@ setMethod("array_repeat",
 setMethod("array_sort",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "array_sort", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "array_sort", x@jc)
             column(jc)
           })
 
@@ -3424,7 +3424,7 @@ setMethod("array_sort",
 setMethod("arrays_overlap",
           signature(x = "Column", y = "Column"),
           function(x, y) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "arrays_overlap", x@jc, y@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "arrays_overlap", x@jc, y@jc)
             column(jc)
           })
 
@@ -3438,7 +3438,7 @@ setMethod("arrays_overlap",
 setMethod("array_union",
           signature(x = "Column", y = "Column"),
           function(x, y) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "array_union", x@jc, y@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "array_union", x@jc, y@jc)
             column(jc)
           })
 
@@ -3456,7 +3456,7 @@ setMethod("arrays_zip",
               stopifnot(class(arg) == "Column")
               arg@jc
             })
-            jc <- callJStatic("org.apache.spark.sql.functions", "arrays_zip", jcols)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "arrays_zip", jcols)
             column(jc)
           })
 
@@ -3469,7 +3469,7 @@ setMethod("arrays_zip",
 setMethod("shuffle",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "shuffle", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "shuffle", x@jc)
             column(jc)
           })
 
@@ -3483,7 +3483,7 @@ setMethod("shuffle",
 setMethod("flatten",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "flatten", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "flatten", x@jc)
             column(jc)
           })
 
@@ -3500,7 +3500,7 @@ setMethod("map_concat",
               stopifnot(class(arg) == "Column")
               arg@jc
             })
-            jc <- callJStatic("org.apache.spark.sql.functions", "map_concat", jcols)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "map_concat", jcols)
             column(jc)
           })
 
@@ -3513,7 +3513,7 @@ setMethod("map_concat",
 setMethod("map_entries",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "map_entries", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "map_entries", x@jc)
             column(jc)
          })
 
@@ -3528,7 +3528,7 @@ setMethod("map_entries",
 setMethod("map_from_arrays",
           signature(x = "Column", y = "Column"),
           function(x, y) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "map_from_arrays", x@jc, y@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "map_from_arrays", x@jc, y@jc)
             column(jc)
          })
 
@@ -3541,7 +3541,7 @@ setMethod("map_from_arrays",
 setMethod("map_from_entries",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "map_from_entries", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "map_from_entries", x@jc)
             column(jc)
          })
 
@@ -3554,7 +3554,7 @@ setMethod("map_from_entries",
 setMethod("map_keys",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "map_keys", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "map_keys", x@jc)
             column(jc)
          })
 
@@ -3567,7 +3567,7 @@ setMethod("map_keys",
 setMethod("map_values",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "map_values", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "map_values", x@jc)
             column(jc)
           })
 
@@ -3583,7 +3583,7 @@ setMethod("map_values",
 setMethod("element_at",
           signature(x = "Column", extraction = "ANY"),
           function(x, extraction) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "element_at", x@jc, extraction)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "element_at", x@jc, extraction)
             column(jc)
           })
 
@@ -3598,7 +3598,7 @@ setMethod("element_at",
 setMethod("explode",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "explode", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "explode", x@jc)
             column(jc)
           })
 
@@ -3611,7 +3611,7 @@ setMethod("explode",
 setMethod("size",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "size", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "size", x@jc)
             column(jc)
           })
 
@@ -3620,14 +3620,14 @@ setMethod("size",
 #' (array indices start at 1, or from the end if start is negative) with the specified length.
 #'
 #' @rdname column_collection_functions
-#' @param start the starting index
-#' @param length the length of the slice
+#' @param start an index indicating the first element occurring in the result.
+#' @param length a number of consecutive elements chosen to the result.
 #' @aliases slice slice,Column-method
 #' @note slice since 2.4.0
 setMethod("slice",
           signature(x = "Column"),
           function(x, start, length) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "slice", x@jc, start, length)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "slice", x@jc, start, length)
             column(jc)
           })
 
@@ -3645,7 +3645,7 @@ setMethod("slice",
 setMethod("sort_array",
           signature(x = "Column"),
           function(x, asc = TRUE) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "sort_array", x@jc, asc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "sort_array", x@jc, asc)
             column(jc)
           })
 
@@ -3661,7 +3661,7 @@ setMethod("sort_array",
 setMethod("posexplode",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "posexplode", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "posexplode", x@jc)
             column(jc)
           })
 
@@ -3679,7 +3679,7 @@ setMethod("create_array",
               stopifnot(class(x) == "Column")
               x@jc
             })
-            jc <- callJStatic("org.apache.spark.sql.functions", "array", jcols)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "array", jcols)
             column(jc)
           })
 
@@ -3699,7 +3699,7 @@ setMethod("create_map",
               stopifnot(class(x) == "Column")
               x@jc
             })
-            jc <- callJStatic("org.apache.spark.sql.functions", "map", jcols)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "map", jcols)
             column(jc)
           })
 
@@ -3720,7 +3720,7 @@ setMethod("create_map",
 setMethod("collect_list",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "collect_list", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "collect_list", x@jc)
             column(jc)
           })
 
@@ -3735,7 +3735,7 @@ setMethod("collect_list",
 setMethod("collect_set",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "collect_set", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "collect_set", x@jc)
             column(jc)
           })
 
@@ -3764,7 +3764,7 @@ setMethod("collect_set",
 setMethod("split_string",
           signature(x = "Column", pattern = "character"),
           function(x, pattern, limit = -1) {
-            jc <- callJStatic("org.apache.spark.sql.functions",
+            jc <- callJStatic("com.pubmatic.spark.sql.functions",
                               "split", x@jc, pattern, as.integer(limit))
             column(jc)
           })
@@ -3786,7 +3786,7 @@ setMethod("split_string",
 setMethod("repeat_string",
           signature(x = "Column", n = "numeric"),
           function(x, n) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "repeat", x@jc, numToInt(n))
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "repeat", x@jc, numToInt(n))
             column(jc)
           })
 
@@ -3812,7 +3812,7 @@ setMethod("repeat_string",
 setMethod("explode_outer",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "explode_outer", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "explode_outer", x@jc)
             column(jc)
           })
 
@@ -3830,7 +3830,7 @@ setMethod("explode_outer",
 setMethod("posexplode_outer",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "posexplode_outer", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "posexplode_outer", x@jc)
             column(jc)
           })
 
@@ -3862,7 +3862,7 @@ setMethod("posexplode_outer",
 setMethod("not",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "not", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "not", x@jc)
             column(jc)
           })
 
@@ -3893,7 +3893,7 @@ setMethod("not",
 setMethod("grouping_bit",
           signature(x = "Column"),
           function(x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "grouping", x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "grouping", x@jc)
             column(jc)
           })
 
@@ -3929,7 +3929,7 @@ setMethod("grouping_id",
               stopifnot(class(x) == "Column")
               x@jc
             })
-            jc <- callJStatic("org.apache.spark.sql.functions", "grouping_id", jcols)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "grouping_id", jcols)
             column(jc)
           })
 
@@ -3947,7 +3947,7 @@ setMethod("grouping_id",
 #' @note input_file_name since 2.3.0
 setMethod("input_file_name", signature("missing"),
           function() {
-            jc <- callJStatic("org.apache.spark.sql.functions", "input_file_name")
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "input_file_name")
             column(jc)
           })
 
@@ -3965,7 +3965,7 @@ setMethod("input_file_name", signature("missing"),
 setMethod("trunc",
           signature(x = "Column"),
           function(x, format) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "trunc",
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "trunc",
                               x@jc, as.character(format))
             column(jc)
           })
@@ -3984,7 +3984,7 @@ setMethod("trunc",
 setMethod("date_trunc",
           signature(format = "character", x = "Column"),
           function(format, x) {
-            jc <- callJStatic("org.apache.spark.sql.functions", "date_trunc", format, x@jc)
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "date_trunc", format, x@jc)
             column(jc)
           })
 
@@ -4000,7 +4000,7 @@ setMethod("date_trunc",
 setMethod("current_date",
           signature("missing"),
           function() {
-            jc <- callJStatic("org.apache.spark.sql.functions", "current_date")
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "current_date")
             column(jc)
           })
 
@@ -4013,6 +4013,6 @@ setMethod("current_date",
 setMethod("current_timestamp",
           signature("missing"),
           function() {
-            jc <- callJStatic("org.apache.spark.sql.functions", "current_timestamp")
+            jc <- callJStatic("com.pubmatic.spark.sql.functions", "current_timestamp")
             column(jc)
           })

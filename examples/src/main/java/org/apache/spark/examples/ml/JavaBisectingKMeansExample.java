@@ -18,14 +18,14 @@
 package org.apache.spark.examples.ml;
 
 // $example on$
-import org.apache.spark.ml.clustering.BisectingKMeans;
-import org.apache.spark.ml.clustering.BisectingKMeansModel;
-import org.apache.spark.ml.evaluation.ClusteringEvaluator;
-import org.apache.spark.ml.linalg.Vector;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
+import com.pubmatic.spark.ml.clustering.BisectingKMeans;
+import com.pubmatic.spark.ml.clustering.BisectingKMeansModel;
+import com.pubmatic.spark.ml.evaluation.ClusteringEvaluator;
+import com.pubmatic.spark.ml.linalg.Vector;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.Row;
 // $example off$
-import org.apache.spark.sql.SparkSession;
+import com.pubmatic.spark.sql.SparkSession;
 
 
 /**

@@ -19,7 +19,7 @@ package org.apache.spark.examples;
 
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.sql.SparkSession;
+import com.pubmatic.spark.sql.SparkSession;
 
 import java.util.ArrayList;
 import java.util.List;

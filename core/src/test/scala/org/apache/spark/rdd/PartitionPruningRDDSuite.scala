@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package org.apache.spark.rdd
+package com.pubmatic.spark.rdd
 
-import org.apache.spark.{Partition, SharedSparkContext, SparkFunSuite, TaskContext}
+import com.pubmatic.spark.{Partition, SharedSparkContext, SparkFunSuite, TaskContext}
 
 class PartitionPruningRDDSuite extends SparkFunSuite with SharedSparkContext {
 

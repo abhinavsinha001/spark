@@ -18,11 +18,11 @@
 package org.apache.spark.examples.ml;
 
 // $example on$
-import org.apache.spark.ml.classification.LinearSVC;
-import org.apache.spark.ml.classification.LinearSVCModel;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SparkSession;
+import com.pubmatic.spark.ml.classification.LinearSVC;
+import com.pubmatic.spark.ml.classification.LinearSVCModel;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.Row;
+import com.pubmatic.spark.sql.SparkSession;
 // $example off$
 
 public class JavaLinearSVCExample {

@@ -27,10 +27,10 @@ import scala.xml.{Node, Unparsed}
 
 import org.apache.commons.text.StringEscapeUtils
 
-import org.apache.spark.internal.Logging
+import com.pubmatic.spark.internal.Logging
 import org.apache.spark.sql.hive.thriftserver.ui.ToolTips._
-import org.apache.spark.ui._
-import org.apache.spark.ui.UIUtils._
+import com.pubmatic.spark.ui._
+import com.pubmatic.spark.ui.UIUtils._
 import org.apache.spark.util.Utils
 
 /** Page for Spark Web UI that shows statistics of the thrift server */

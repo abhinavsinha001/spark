@@ -18,19 +18,18 @@
 package test.org.apache.spark.sql.streaming;
 
 import java.io.File;
-import java.util.concurrent.TimeoutException;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import org.apache.spark.api.java.function.VoidFunction2;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.ForeachWriter;
-import org.apache.spark.sql.SparkSession;
-import org.apache.spark.sql.streaming.StreamingQuery;
-import org.apache.spark.sql.test.TestSparkSession;
-import org.apache.spark.util.Utils;
+import com.pubmatic.spark.api.java.function.VoidFunction2;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.ForeachWriter;
+import com.pubmatic.spark.sql.SparkSession;
+import com.pubmatic.spark.sql.streaming.StreamingQuery;
+import com.pubmatic.spark.sql.test.TestSparkSession;
+import com.pubmatic.spark.util.Utils;
 
 public class JavaDataStreamReaderWriterSuite {
   private SparkSession spark;
@@ -53,7 +52,7 @@ public class JavaDataStreamReaderWriterSuite {
   }
 
   @Test
-  public void testForeachBatchAPI() throws TimeoutException {
+  public void testForeachBatchAPI() {
     StreamingQuery query = spark
       .readStream()
       .textFile(input)
@@ -67,7 +66,7 @@ public class JavaDataStreamReaderWriterSuite {
   }
 
   @Test
-  public void testForeachAPI() throws TimeoutException {
+  public void testForeachAPI() {
     StreamingQuery query = spark
       .readStream()
       .textFile(input)

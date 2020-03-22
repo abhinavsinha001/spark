@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.deploy
+package com.pubmatic.spark.deploy
 
 import java.io.{File, FileInputStream, FileOutputStream}
 import java.util.jar.{JarEntry, JarOutputStream}
@@ -23,13 +23,12 @@ import java.util.jar.Attributes.Name
 import java.util.jar.Manifest
 
 import scala.collection.mutable.ArrayBuffer
-
 import com.google.common.io.{ByteStreams, Files}
+import com.pubmatic.spark.TestUtils.JavaSourceFromString
 import org.apache.commons.io.FileUtils
+import com.pubmatic.spark.TestUtils._
 import org.apache.ivy.core.settings.IvySettings
-
-import org.apache.spark.TestUtils.{createCompiledClass, JavaSourceFromString}
-import org.apache.spark.deploy.SparkSubmitUtils.MavenCoordinate
+import com.pubmatic.spark.deploy.SparkSubmitUtils.MavenCoordinate
 
 private[deploy] object IvyTestUtils {
 

@@ -27,8 +27,8 @@ import scala.Tuple2;
 
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.api.java.function.PairFunction;
-import org.apache.spark.sql.SparkSession;
+import com.pubmatic.spark.api.java.function.PairFunction;
+import com.pubmatic.spark.sql.SparkSession;
 
 /**
  * Transitive closure on a graph, implemented in Java.

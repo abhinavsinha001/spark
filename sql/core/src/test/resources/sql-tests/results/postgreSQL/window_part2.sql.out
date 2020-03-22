@@ -79,7 +79,7 @@ salary from empsalary
 -- !query 4 schema
 struct<>
 -- !query 4 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Window Frame specifiedwindowframe(RangeFrame, -1000, 1000) must match the required frame specifiedwindowframe(RowFrame, -1, -1);
 
 

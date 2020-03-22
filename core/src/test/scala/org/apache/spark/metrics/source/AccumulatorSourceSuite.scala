@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package org.apache.spark.metrics.source
+package com.pubmatic.spark.metrics.source
 
 import org.mockito.ArgumentCaptor
 import org.mockito.Mockito.{mock, times, verify, when}
 
-import org.apache.spark.{SparkContext, SparkEnv, SparkFunSuite}
-import org.apache.spark.metrics.MetricsSystem
-import org.apache.spark.util.{DoubleAccumulator, LongAccumulator}
+import com.pubmatic.spark.{SparkContext, SparkEnv, SparkFunSuite}
+import com.pubmatic.spark.metrics.MetricsSystem
+import com.pubmatic.spark.util.{DoubleAccumulator, LongAccumulator}
 
 class AccumulatorSourceSuite extends SparkFunSuite {
   test("that that accumulators register against the metric system's register") {

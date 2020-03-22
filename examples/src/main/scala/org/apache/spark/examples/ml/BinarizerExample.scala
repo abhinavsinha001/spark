@@ -19,9 +19,9 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.feature.Binarizer
+import com.pubmatic.spark.ml.feature.Binarizer
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 object BinarizerExample {
   def main(args: Array[String]): Unit = {

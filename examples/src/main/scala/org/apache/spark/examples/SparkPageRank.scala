@@ -18,7 +18,7 @@
 // scalastyle:off println
 package org.apache.spark.examples
 
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 /**
  * Computes the PageRank of URLs from an input file. Input file should
@@ -30,7 +30,7 @@ import org.apache.spark.sql.SparkSession
  * where URL and their neighbors are separated by space(s).
  *
  * This is an example implementation for learning how to use Spark. For more conventional use,
- * please refer to org.apache.spark.graphx.lib.PageRank
+ * please refer to com.pubmatic.spark.graphx.lib.PageRank
  *
  * Example Usage:
  * {{{
@@ -42,7 +42,7 @@ object SparkPageRank {
   def showWarning(): Unit = {
     System.err.println(
       """WARN: This is a naive implementation of PageRank and is given as an example!
-        |Please use the PageRank implementation found in org.apache.spark.graphx.lib.PageRank
+        |Please use the PageRank implementation found in com.pubmatic.spark.graphx.lib.PageRank
         |for more conventional use.
       """.stripMargin)
   }

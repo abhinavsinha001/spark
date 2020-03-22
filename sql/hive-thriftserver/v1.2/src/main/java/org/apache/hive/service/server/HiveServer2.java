@@ -42,7 +42,7 @@ import org.apache.hive.service.cli.thrift.ThriftBinaryCLIService;
 import org.apache.hive.service.cli.thrift.ThriftCLIService;
 import org.apache.hive.service.cli.thrift.ThriftHttpCLIService;
 
-import org.apache.spark.util.ShutdownHookManager;
+import com.pubmatic.spark.util.ShutdownHookManager;
 
 /**
  * HiveServer2.

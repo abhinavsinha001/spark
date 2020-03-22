@@ -19,13 +19,13 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.{Pipeline, PipelineModel}
-import org.apache.spark.ml.classification.LogisticRegression
-import org.apache.spark.ml.feature.{HashingTF, Tokenizer}
-import org.apache.spark.ml.linalg.Vector
-import org.apache.spark.sql.Row
+import com.pubmatic.spark.ml.{Pipeline, PipelineModel}
+import com.pubmatic.spark.ml.classification.LogisticRegression
+import com.pubmatic.spark.ml.feature.{HashingTF, Tokenizer}
+import com.pubmatic.spark.ml.linalg.Vector
+import com.pubmatic.spark.sql.Row
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 object PipelineExample {
 

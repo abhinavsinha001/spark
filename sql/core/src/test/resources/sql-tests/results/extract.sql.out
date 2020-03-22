@@ -511,7 +511,7 @@ select extract(not_supported from c) from t
 -- !query 63 schema
 struct<>
 -- !query 63 output
-org.apache.spark.sql.catalyst.parser.ParseException
+com.pubmatic.spark.sql.catalyst.parser.ParseException
 
 Literals of type 'not_supported' are currently not supported.(line 1, pos 7)
 

@@ -57,7 +57,7 @@ Using the data from the above example:
 {% highlight sql %}
 
 CREATE TEMPORARY VIEW parquetTable
-USING org.apache.spark.sql.parquet
+USING com.pubmatic.spark.sql.parquet
 OPTIONS (
   path "examples/src/main/resources/people.parquet"
 )

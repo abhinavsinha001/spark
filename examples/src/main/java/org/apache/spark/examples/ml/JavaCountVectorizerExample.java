@@ -21,13 +21,13 @@ package org.apache.spark.examples.ml;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.spark.ml.feature.CountVectorizer;
-import org.apache.spark.ml.feature.CountVectorizerModel;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.RowFactory;
-import org.apache.spark.sql.SparkSession;
-import org.apache.spark.sql.types.*;
+import com.pubmatic.spark.ml.feature.CountVectorizer;
+import com.pubmatic.spark.ml.feature.CountVectorizerModel;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.Row;
+import com.pubmatic.spark.sql.RowFactory;
+import com.pubmatic.spark.sql.SparkSession;
+import com.pubmatic.spark.sql.types.*;
 // $example off$
 
 public class JavaCountVectorizerExample {

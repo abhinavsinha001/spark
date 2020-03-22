@@ -31,7 +31,7 @@ import org.apache.xbean.asm7.Opcodes._
 import org.apache.spark.{SparkConf, SparkEnv}
 import org.apache.spark.deploy.SparkHadoopUtil
 import org.apache.spark.internal.Logging
-import org.apache.spark.util.ParentClassLoader
+import com.pubmatic.spark.util.ParentClassLoader
 
 /**
  * A ClassLoader that reads classes from a Hadoop FileSystem or Spark RPC endpoint, used to load

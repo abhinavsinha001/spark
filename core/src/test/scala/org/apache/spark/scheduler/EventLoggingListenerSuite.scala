@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.scheduler
+package com.pubmatic.spark.scheduler
 
 import java.io.{File, InputStream}
 import java.util.Arrays
@@ -30,16 +30,16 @@ import org.json4s.jackson.JsonMethods._
 import org.mockito.Mockito
 import org.scalatest.BeforeAndAfter
 
-import org.apache.spark._
-import org.apache.spark.deploy.SparkHadoopUtil
-import org.apache.spark.deploy.history.{EventLogFileReader, SingleEventLogFileWriter}
-import org.apache.spark.deploy.history.EventLogTestHelper._
-import org.apache.spark.executor.{ExecutorMetrics, TaskMetrics}
-import org.apache.spark.internal.Logging
-import org.apache.spark.io._
-import org.apache.spark.metrics.{ExecutorMetricType, MetricsSystem}
-import org.apache.spark.scheduler.cluster.ExecutorInfo
-import org.apache.spark.util.{JsonProtocol, Utils}
+import com.pubmatic.spark._
+import com.pubmatic.spark.deploy.SparkHadoopUtil
+import com.pubmatic.spark.deploy.history.{EventLogFileReader, SingleEventLogFileWriter}
+import com.pubmatic.spark.deploy.history.EventLogTestHelper._
+import com.pubmatic.spark.executor.{ExecutorMetrics, TaskMetrics}
+import com.pubmatic.spark.internal.Logging
+import com.pubmatic.spark.io._
+import com.pubmatic.spark.metrics.{ExecutorMetricType, MetricsSystem}
+import com.pubmatic.spark.scheduler.cluster.ExecutorInfo
+import com.pubmatic.spark.util.{JsonProtocol, Utils}
 
 /**
  * Test whether EventLoggingListener logs events properly.

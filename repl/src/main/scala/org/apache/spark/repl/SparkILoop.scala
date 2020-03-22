@@ -73,7 +73,7 @@ class SparkILoop(in0: Option[BufferedReader], out: JPrintWriter)
     "import org.apache.spark.SparkContext._",
     "import spark.implicits._",
     "import spark.sql",
-    "import org.apache.spark.sql.functions._"
+    "import com.pubmatic.spark.sql.functions._"
   )
 
   def initializeSpark(): Unit = {

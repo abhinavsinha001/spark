@@ -77,15 +77,15 @@ def convert_exception(e):
     s = e.toString()
     stackTrace = '\n\t at '.join(map(lambda x: x.toString(), e.getStackTrace()))
     c = e.getCause()
-    if s.startswith('org.apache.spark.sql.AnalysisException: '):
+    if s.startswith('com.pubmatic.spark.sql.AnalysisException: '):
         return AnalysisException(s.split(': ', 1)[1], stackTrace, c)
-    if s.startswith('org.apache.spark.sql.catalyst.analysis'):
+    if s.startswith('com.pubmatic.spark.sql.catalyst.analysis'):
         return AnalysisException(s.split(': ', 1)[1], stackTrace, c)
-    if s.startswith('org.apache.spark.sql.catalyst.parser.ParseException: '):
+    if s.startswith('com.pubmatic.spark.sql.catalyst.parser.ParseException: '):
         return ParseException(s.split(': ', 1)[1], stackTrace, c)
-    if s.startswith('org.apache.spark.sql.streaming.StreamingQueryException: '):
+    if s.startswith('com.pubmatic.spark.sql.streaming.StreamingQueryException: '):
         return StreamingQueryException(s.split(': ', 1)[1], stackTrace, c)
-    if s.startswith('org.apache.spark.sql.execution.QueryExecutionException: '):
+    if s.startswith('com.pubmatic.spark.sql.execution.QueryExecutionException: '):
         return QueryExecutionException(s.split(': ', 1)[1], stackTrace, c)
     if s.startswith('java.lang.IllegalArgumentException: '):
         return IllegalArgumentException(s.split(': ', 1)[1], stackTrace, c)
@@ -219,7 +219,7 @@ class ForeachBatchFunction(object):
             raise e
 
     class Java:
-        implements = ['org.apache.spark.sql.execution.streaming.sources.PythonForeachBatchFunction']
+        implements = ['com.pubmatic.spark.sql.execution.streaming.sources.PythonForeachBatchFunction']
 
 
 def to_str(value):

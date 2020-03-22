@@ -62,7 +62,7 @@ DROP VIEW userdb.employeeView;
 -- Assumes a view named `employeeView` does not exists.
 -- Throws exception
 DROP VIEW employeeView;
-Error: org.apache.spark.sql.AnalysisException: Table or view not found: employeeView;
+Error: com.pubmatic.spark.sql.AnalysisException: Table or view not found: employeeView;
 (state=,code=0)
 
 -- Assumes a view named `employeeView` does not exists,Try with IF EXISTS

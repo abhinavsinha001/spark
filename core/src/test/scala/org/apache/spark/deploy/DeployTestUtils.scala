@@ -15,15 +15,15 @@
  * limitations under the License.
  */
 
-package org.apache.spark.deploy
+package com.pubmatic.spark.deploy
 
 import java.io.File
 
-import org.apache.spark.{SecurityManager, SparkConf}
-import org.apache.spark.deploy.master.{ApplicationInfo, DriverInfo, WorkerInfo, WorkerResourceInfo}
-import org.apache.spark.deploy.worker.{DriverRunner, ExecutorRunner}
-import org.apache.spark.resource.{ResourceInformation, ResourceRequirement}
-import org.apache.spark.resource.ResourceUtils.{FPGA, GPU}
+import com.pubmatic.spark.{SecurityManager, SparkConf}
+import com.pubmatic.spark.deploy.master.{ApplicationInfo, DriverInfo, WorkerInfo, WorkerResourceInfo}
+import com.pubmatic.spark.deploy.worker.{DriverRunner, ExecutorRunner}
+import com.pubmatic.spark.resource.{ResourceInformation, ResourceRequirement}
+import com.pubmatic.spark.resource.ResourceUtils.{FPGA, GPU}
 
 private[deploy] object DeployTestUtils {
   def createAppDesc(): ApplicationDescription = {

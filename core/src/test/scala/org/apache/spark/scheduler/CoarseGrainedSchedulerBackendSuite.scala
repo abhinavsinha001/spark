@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.scheduler
+package com.pubmatic.spark.scheduler
 
 import java.util.Properties
 import java.util.concurrent.atomic.AtomicBoolean
@@ -30,17 +30,17 @@ import org.mockito.invocation.InvocationOnMock
 import org.scalatest.concurrent.Eventually
 import org.scalatestplus.mockito.MockitoSugar._
 
-import org.apache.spark._
-import org.apache.spark.internal.config._
-import org.apache.spark.internal.config.Network.RPC_MESSAGE_MAX_SIZE
-import org.apache.spark.rdd.RDD
-import org.apache.spark.resource.ResourceInformation
-import org.apache.spark.resource.ResourceUtils._
-import org.apache.spark.resource.TestResourceIDs._
-import org.apache.spark.rpc.{RpcAddress, RpcEndpointRef, RpcEnv}
-import org.apache.spark.scheduler.cluster.CoarseGrainedClusterMessages._
-import org.apache.spark.scheduler.cluster.CoarseGrainedSchedulerBackend
-import org.apache.spark.util.{RpcUtils, SerializableBuffer, Utils}
+import com.pubmatic.spark._
+import com.pubmatic.spark.internal.config._
+import com.pubmatic.spark.internal.config.Network.RPC_MESSAGE_MAX_SIZE
+import com.pubmatic.spark.rdd.RDD
+import com.pubmatic.spark.resource.ResourceInformation
+import com.pubmatic.spark.resource.ResourceUtils._
+import com.pubmatic.spark.resource.TestResourceIDs._
+import com.pubmatic.spark.rpc.{RpcAddress, RpcEndpointRef, RpcEnv}
+import com.pubmatic.spark.scheduler.cluster.CoarseGrainedClusterMessages._
+import com.pubmatic.spark.scheduler.cluster.CoarseGrainedSchedulerBackend
+import com.pubmatic.spark.util.{RpcUtils, SerializableBuffer, Utils}
 
 class CoarseGrainedSchedulerBackendSuite extends SparkFunSuite with LocalSparkContext
     with Eventually {

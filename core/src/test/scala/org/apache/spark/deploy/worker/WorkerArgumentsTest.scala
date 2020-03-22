@@ -16,10 +16,10 @@
  */
 
 
-package org.apache.spark.deploy.worker
+package com.pubmatic.spark.deploy.worker
 
-import org.apache.spark.{SparkConf, SparkFunSuite}
-import org.apache.spark.util.SparkConfWithEnv
+import com.pubmatic.spark.{SparkConf, SparkFunSuite}
+import com.pubmatic.spark.util.SparkConfWithEnv
 
 class WorkerArgumentsTest extends SparkFunSuite {
 

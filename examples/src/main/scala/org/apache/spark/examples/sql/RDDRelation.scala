@@ -18,9 +18,9 @@
 // scalastyle:off println
 package org.apache.spark.examples.sql
 
-import org.apache.spark.sql.SaveMode
+import com.pubmatic.spark.sql.SaveMode
 // $example on:init_session$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 // $example off:init_session$
 
 // One method for defining the schema of an RDD is to make a case class with the desired column

@@ -27,7 +27,7 @@ import org.apache.spark.mllib.tree.GradientBoostedTrees
 import org.apache.spark.mllib.tree.configuration.{Algo, BoostingStrategy}
 import org.apache.spark.mllib.tree.model.GradientBoostedTreesModel
 import org.apache.spark.rdd.RDD
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.util.Utils
 
 /**
  * An example runner for Gradient Boosting using decision trees as weak learners. Run with

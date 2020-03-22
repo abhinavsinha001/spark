@@ -17,8 +17,8 @@
 
 package org.apache.spark.examples.sql
 
-import org.apache.spark.sql.{Encoder, Encoders, SparkSession}
-import org.apache.spark.sql.expressions.Aggregator
+import com.pubmatic.spark.sql.{Encoder, Encoders, SparkSession}
+import com.pubmatic.spark.sql.expressions.Aggregator
 
 // scalastyle:off println
 object SimpleTypedAggregator {

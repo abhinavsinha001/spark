@@ -101,7 +101,7 @@ class ColumnTests(ReusedSQLTestCase):
         map_col = create_map(lit(0), lit(100), lit(1), lit(200))
         self.assertRaisesRegexp(
             Py4JJavaError,
-            "Unsupported literal type class org.apache.spark.sql.Column id",
+            "Unsupported literal type class com.pubmatic.spark.sql.Column id",
             lambda: map_col.getItem(col('id'))
         )
 

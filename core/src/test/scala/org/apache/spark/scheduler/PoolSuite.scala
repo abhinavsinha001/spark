@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package org.apache.spark.scheduler
+package com.pubmatic.spark.scheduler
 
 import java.io.FileNotFoundException
 import java.util.Properties
 
-import org.apache.spark.{LocalSparkContext, SparkConf, SparkContext, SparkFunSuite}
-import org.apache.spark.internal.config.SCHEDULER_ALLOCATION_FILE
-import org.apache.spark.scheduler.SchedulingMode._
+import com.pubmatic.spark.{LocalSparkContext, SparkConf, SparkContext, SparkFunSuite}
+import com.pubmatic.spark.internal.config.SCHEDULER_ALLOCATION_FILE
+import com.pubmatic.spark.scheduler.SchedulingMode._
 
 /**
  * Tests that pools and the associated scheduling algorithms for FIFO and fair scheduling work

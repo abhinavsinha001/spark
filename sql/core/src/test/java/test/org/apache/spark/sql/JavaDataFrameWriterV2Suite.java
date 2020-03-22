@@ -17,20 +17,20 @@
 
 package test.org.apache.spark.sql;
 
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SparkSession;
-import org.apache.spark.sql.catalyst.analysis.CannotReplaceMissingTableException;
-import org.apache.spark.sql.catalyst.analysis.NoSuchTableException;
-import org.apache.spark.sql.catalyst.analysis.TableAlreadyExistsException;
-import org.apache.spark.sql.connector.InMemoryTableCatalog;
-import org.apache.spark.sql.test.TestSparkSession;
-import org.apache.spark.sql.types.StructType;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.Row;
+import com.pubmatic.spark.sql.SparkSession;
+import com.pubmatic.spark.sql.catalyst.analysis.CannotReplaceMissingTableException;
+import com.pubmatic.spark.sql.catalyst.analysis.NoSuchTableException;
+import com.pubmatic.spark.sql.catalyst.analysis.TableAlreadyExistsException;
+import com.pubmatic.spark.sql.connector.InMemoryTableCatalog;
+import com.pubmatic.spark.sql.test.TestSparkSession;
+import com.pubmatic.spark.sql.types.StructType;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.apache.spark.sql.functions.*;
+import static com.pubmatic.spark.sql.functions.*;
 
 public class JavaDataFrameWriterV2Suite {
   private static StructType schema = new StructType().add("s", "string");

@@ -20,17 +20,17 @@ package test.org.apache.spark.sql;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.expressions.MutableAggregationBuffer;
-import org.apache.spark.sql.expressions.UserDefinedAggregateFunction;
-import org.apache.spark.sql.types.DataType;
-import org.apache.spark.sql.types.DataTypes;
-import org.apache.spark.sql.types.StructField;
-import org.apache.spark.sql.types.StructType;
+import com.pubmatic.spark.sql.Row;
+import com.pubmatic.spark.sql.expressions.MutableAggregationBuffer;
+import com.pubmatic.spark.sql.expressions.UserDefinedAggregateFunction;
+import com.pubmatic.spark.sql.types.DataType;
+import com.pubmatic.spark.sql.types.DataTypes;
+import com.pubmatic.spark.sql.types.StructField;
+import com.pubmatic.spark.sql.types.StructType;
 
 /**
  * An example {@link UserDefinedAggregateFunction} to calculate the sum of a
- * {@link org.apache.spark.sql.types.DoubleType} column.
+ * {@link com.pubmatic.spark.sql.types.DoubleType} column.
  */
 public class MyDoubleSum extends UserDefinedAggregateFunction {
 

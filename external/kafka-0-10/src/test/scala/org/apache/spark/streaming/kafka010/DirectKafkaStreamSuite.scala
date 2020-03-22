@@ -40,7 +40,7 @@ import org.apache.spark.streaming.{LocalStreamingContext, Milliseconds, Streamin
 import org.apache.spark.streaming.dstream.DStream
 import org.apache.spark.streaming.scheduler._
 import org.apache.spark.streaming.scheduler.rate.RateEstimator
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.util.Utils
 
 class DirectKafkaStreamSuite
   extends SparkFunSuite

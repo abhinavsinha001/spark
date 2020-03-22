@@ -17,10 +17,10 @@
 package org.apache.spark.examples.sql
 
 // $example on:untyped_custom_aggregation$
-import org.apache.spark.sql.{Row, SparkSession}
-import org.apache.spark.sql.expressions.MutableAggregationBuffer
-import org.apache.spark.sql.expressions.UserDefinedAggregateFunction
-import org.apache.spark.sql.types._
+import com.pubmatic.spark.sql.{Row, SparkSession}
+import com.pubmatic.spark.sql.expressions.MutableAggregationBuffer
+import com.pubmatic.spark.sql.expressions.UserDefinedAggregateFunction
+import com.pubmatic.spark.sql.types._
 // $example off:untyped_custom_aggregation$
 
 object UserDefinedUntypedAggregation {

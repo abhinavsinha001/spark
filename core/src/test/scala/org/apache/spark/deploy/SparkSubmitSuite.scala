@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.deploy
+package com.pubmatic.spark.deploy
 
 import java.io._
 import java.net.{URI, URL}
@@ -33,18 +33,18 @@ import org.scalatest.{BeforeAndAfterEach, Matchers}
 import org.scalatest.concurrent.{Signaler, ThreadSignaler, TimeLimits}
 import org.scalatest.time.SpanSugar._
 
-import org.apache.spark._
-import org.apache.spark.TestUtils
-import org.apache.spark.TestUtils.JavaSourceFromString
-import org.apache.spark.api.r.RUtils
-import org.apache.spark.deploy.SparkSubmit._
-import org.apache.spark.deploy.SparkSubmitUtils.MavenCoordinate
-import org.apache.spark.deploy.history.EventLogFileReader
-import org.apache.spark.internal.Logging
-import org.apache.spark.internal.config._
-import org.apache.spark.internal.config.UI._
-import org.apache.spark.launcher.SparkLauncher
-import org.apache.spark.util.{CommandLineUtils, ResetSystemProperties, Utils}
+import com.pubmatic.spark._
+import com.pubmatic.spark.TestUtils
+import com.pubmatic.spark.TestUtils.JavaSourceFromString
+import com.pubmatic.spark.api.r.RUtils
+import com.pubmatic.spark.deploy.SparkSubmit._
+import com.pubmatic.spark.deploy.SparkSubmitUtils.MavenCoordinate
+import com.pubmatic.spark.deploy.history.EventLogFileReader
+import com.pubmatic.spark.internal.Logging
+import com.pubmatic.spark.internal.config._
+import com.pubmatic.spark.internal.config.UI._
+import com.pubmatic.spark.launcher.SparkLauncher
+import com.pubmatic.spark.util.{CommandLineUtils, ResetSystemProperties, Utils}
 
 trait TestPrematureExit {
   suite: SparkFunSuite =>
@@ -459,7 +459,7 @@ class SparkSubmitSuite
    * @param tempDir path to temporary directory
    * @param deployMode either "client" or "cluster"
    * @return a pair of the JAR file and the 4-tuple returned by
-   *         [[org.apache.spark.deploy.SparkSubmit#prepareSubmitEnvironment]]
+   *         [[import com.pubmatic.spark.deploy.SparkSubmit#prepareSubmitEnvironment]]
    */
   private def testResolveMainClassOnRemoteJar(
     tempDir: File,
@@ -480,7 +480,7 @@ class SparkSubmitSuite
       "--name", "testApp",
       "--master", "yarn",
       "--deploy-mode", deployMode,
-      "--conf", "spark.hadoop.fs.s3a.impl=org.apache.spark.deploy.TestFileSystem",
+      "--conf", "spark.hadoop.fs.s3a.impl=import com.pubmatic.spark.deploy.TestFileSystem",
       "--conf", "spark.hadoop.fs.s3a.impl.disable.cache=true",
       s"s3a://${jarUrl.getPath}",
       "arg1", "arg2")
@@ -523,7 +523,7 @@ class SparkSubmitSuite
     val clArgs = Seq(
       "--name", "testApp",
       "--master", "yarn",
-      "--conf", "spark.hadoop.fs.s3a.impl=org.apache.spark.deploy.TestFileSystem",
+      "--conf", "spark.hadoop.fs.s3a.impl=import com.pubmatic.spark.deploy.TestFileSystem",
       "--conf", "spark.hadoop.fs.s3a.impl.disable.cache=true",
       s"s3a:///does-not-exist.jar")
 

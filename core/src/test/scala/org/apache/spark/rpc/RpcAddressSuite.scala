@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package org.apache.spark.rpc
+package com.pubmatic.spark.rpc
 
-import org.apache.spark.{SparkException, SparkFunSuite}
+import com.pubmatic.spark.{SparkException, SparkFunSuite}
 
 class RpcAddressSuite extends SparkFunSuite {
 

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.metrics.sink
+package com.pubmatic.spark.metrics.sink
 
 import java.net.{DatagramPacket, DatagramSocket}
 import java.nio.charset.StandardCharsets.UTF_8
@@ -24,8 +24,8 @@ import java.util.concurrent.TimeUnit._
 
 import com.codahale.metrics._
 
-import org.apache.spark.{SecurityManager, SparkConf, SparkFunSuite}
-import org.apache.spark.metrics.sink.StatsdSink._
+import com.pubmatic.spark.{SecurityManager, SparkConf, SparkFunSuite}
+import com.pubmatic.spark.metrics.sink.StatsdSink._
 
 class StatsdSinkSuite extends SparkFunSuite {
   private val securityMgr = new SecurityManager(new SparkConf(false))

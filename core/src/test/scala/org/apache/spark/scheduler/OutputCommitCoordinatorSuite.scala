@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.scheduler
+package com.pubmatic.spark.scheduler
 
 import java.io.File
 import java.util.Date
@@ -30,11 +30,11 @@ import org.mockito.Mockito.{doAnswer, spy, times, verify}
 import org.mockito.invocation.InvocationOnMock
 import org.scalatest.BeforeAndAfter
 
-import org.apache.spark._
-import org.apache.spark.internal.io.{FileCommitProtocol, HadoopMapRedCommitProtocol, SparkHadoopWriterUtils}
-import org.apache.spark.rdd.{FakeOutputCommitter, RDD}
-import org.apache.spark.shuffle.FetchFailedException
-import org.apache.spark.util.{ThreadUtils, Utils}
+import com.pubmatic.spark._
+import com.pubmatic.spark.internal.io.{FileCommitProtocol, HadoopMapRedCommitProtocol, SparkHadoopWriterUtils}
+import com.pubmatic.spark.rdd.{FakeOutputCommitter, RDD}
+import com.pubmatic.spark.shuffle.FetchFailedException
+import com.pubmatic.spark.util.{ThreadUtils, Utils}
 
 /**
  * Unit tests for the output commit coordination functionality.

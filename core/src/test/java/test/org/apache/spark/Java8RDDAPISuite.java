@@ -21,6 +21,9 @@ import java.io.File;
 import java.io.Serializable;
 import java.util.*;
 
+import com.pubmatic.spark.api.java.function.FlatMapFunction2;
+import com.pubmatic.spark.api.java.function.Function;
+import com.pubmatic.spark.api.java.function.Function2;
 import scala.Tuple2;
 
 import com.google.common.collect.Iterables;
@@ -33,13 +36,13 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import org.apache.spark.api.java.JavaDoubleRDD;
-import org.apache.spark.api.java.JavaPairRDD;
-import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.api.java.Optional;
-import org.apache.spark.api.java.function.*;
-import org.apache.spark.util.Utils;
+import com.pubmatic.spark.api.java.JavaDoubleRDD;
+import com.pubmatic.spark.api.java.JavaPairRDD;
+import com.pubmatic.spark.api.java.JavaRDD;
+import com.pubmatic.spark.api.java.JavaSparkContext;
+import com.pubmatic.spark.api.java.Optional;
+import com.pubmatic.spark.api.java.function.*;
+import com.pubmatic.spark.util.Utils;
 
 /**
  * Most of these tests replicate org.apache.spark.JavaAPISuite using java 8

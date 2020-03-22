@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-package org.apache.spark.serializer
+package com.pubmatic.spark.serializer
 
-import org.apache.spark.{SharedSparkContext, SparkException, SparkFunSuite}
-import org.apache.spark.rdd.RDD
+import com.pubmatic.spark.{SharedSparkContext, SparkException, SparkFunSuite}
+import com.pubmatic.spark.rdd.RDD
 
 /* A trivial (but unserializable) container for trivial functions */
 class UnserializableClass {

@@ -21,15 +21,15 @@ package org.apache.spark.examples.ml;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.spark.ml.clustering.PowerIterationClustering;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.RowFactory;
-import org.apache.spark.sql.SparkSession;
-import org.apache.spark.sql.types.DataTypes;
-import org.apache.spark.sql.types.Metadata;
-import org.apache.spark.sql.types.StructField;
-import org.apache.spark.sql.types.StructType;
+import com.pubmatic.spark.ml.clustering.PowerIterationClustering;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.Row;
+import com.pubmatic.spark.sql.RowFactory;
+import com.pubmatic.spark.sql.SparkSession;
+import com.pubmatic.spark.sql.types.DataTypes;
+import com.pubmatic.spark.sql.types.Metadata;
+import com.pubmatic.spark.sql.types.StructField;
+import com.pubmatic.spark.sql.types.StructType;
 // $example off$
 
 public class JavaPowerIterationClusteringExample {

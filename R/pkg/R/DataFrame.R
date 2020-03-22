@@ -1229,7 +1229,7 @@ setMethod("collect",
               }
             } else {
               # listCols is a list of columns
-              listCols <- callJStatic("org.apache.spark.sql.api.r.SQLUtils", "dfToCols", x@sdf)
+              listCols <- callJStatic("com.pubmatic.spark.sql.api.r.SQLUtils", "dfToCols", x@sdf)
               stopifnot(length(listCols) == ncol)
 
               # An empty data.frame with 0 columns and number of rows as collected
@@ -1399,7 +1399,7 @@ setMethod("first",
 setMethod("toRDD",
           signature(x = "SparkDataFrame"),
           function(x) {
-            jrdd <- callJStatic("org.apache.spark.sql.api.r.SQLUtils", "dfToRowRDD", x@sdf)
+            jrdd <- callJStatic("com.pubmatic.spark.sql.api.r.SQLUtils", "dfToRowRDD", x@sdf)
             colNames <- callJMethod(x@sdf, "columns")
             rdd <- RDD(jrdd, serializedMode = "row")
             lapply(rdd, function(row) {
@@ -1501,7 +1501,7 @@ dapplyInternal <- function(x, func, schema) {
                          function(name) { get(name, .broadcastNames) })
 
   sdf <- callJStatic(
-           "org.apache.spark.sql.api.r.SQLUtils",
+           "com.pubmatic.spark.sql.api.r.SQLUtils",
            "dapply",
            x@sdf,
            serialize(cleanClosure(func), connection = NULL),
@@ -3895,14 +3895,14 @@ setMethod("write.stream",
               if (nchar(interval) == 0) {
                 stop("Value for trigger.processingTime must be a non-empty string.")
               }
-              jtrigger <- handledCallJStatic("org.apache.spark.sql.streaming.Trigger",
+              jtrigger <- handledCallJStatic("com.pubmatic.spark.sql.streaming.Trigger",
                                              "ProcessingTime",
                                              interval)
             } else if (!is.null(trigger.once) && !is.na(trigger.once)) {
               if (!is.logical(trigger.once) || !trigger.once) {
                 stop("Value for trigger.once must be TRUE.")
               }
-              jtrigger <- callJStatic("org.apache.spark.sql.streaming.Trigger", "Once")
+              jtrigger <- callJStatic("com.pubmatic.spark.sql.streaming.Trigger", "Once")
             }
             options <- varargsToStrEnv(...)
             write <- handledCallJMethod(df@sdf, "writeStream")
@@ -4129,7 +4129,7 @@ setMethod("alias",
 setMethod("broadcast",
           signature(x = "SparkDataFrame"),
           function(x) {
-            sdf <- callJStatic("org.apache.spark.sql.functions", "broadcast", x@sdf)
+            sdf <- callJStatic("com.pubmatic.spark.sql.functions", "broadcast", x@sdf)
             dataFrame(sdf)
           })
 

@@ -40,8 +40,8 @@ import org.apache.spark.{SparkConf, SparkEnv}
 import org.apache.spark.deploy.SparkHadoopUtil
 import org.apache.spark.internal.Logging
 import org.apache.spark.internal.config._
-import org.apache.spark.util.Utils
-import org.apache.spark.util.Utils.REDACTION_REPLACEMENT_TEXT
+import com.pubmatic.spark.util.Utils
+import com.pubmatic.spark.util.Utils.REDACTION_REPLACEMENT_TEXT
 
 private[spark] object KafkaTokenUtil extends Logging {
   val TOKEN_KIND = new Text("KAFKA_DELEGATION_TOKEN")

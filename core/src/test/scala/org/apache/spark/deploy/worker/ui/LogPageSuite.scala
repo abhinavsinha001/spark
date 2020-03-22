@@ -15,15 +15,15 @@
  * limitations under the License.
  */
 
-package org.apache.spark.deploy.worker.ui
+package com.pubmatic.spark.deploy.worker.ui
 
 import java.io.{File, FileWriter}
 
 import org.mockito.Mockito.{mock, when}
 import org.scalatest.PrivateMethodTester
 
-import org.apache.spark.{SparkConf, SparkFunSuite}
-import org.apache.spark.deploy.worker.Worker
+import com.pubmatic.spark.{SparkConf, SparkFunSuite}
+import com.pubmatic.spark.deploy.worker.Worker
 
 class LogPageSuite extends SparkFunSuite with PrivateMethodTester {
 

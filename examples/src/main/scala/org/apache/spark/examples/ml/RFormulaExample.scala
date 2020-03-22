@@ -19,9 +19,9 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.feature.RFormula
+import com.pubmatic.spark.ml.feature.RFormula
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 object RFormulaExample {
   def main(args: Array[String]): Unit = {

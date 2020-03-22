@@ -185,7 +185,7 @@ JavaDStream<String> words = lines.flatMap(x -> Arrays.asList(x.split(" ")).itera
 generating multiple new records from each record in the source DStream. In this case,
 each line will be split into multiple words and the stream of words is represented as the
 `words` DStream. Note that we defined the transformation using a
-[FlatMapFunction](api/scala/index.html#org.apache.spark.api.java.function.FlatMapFunction) object.
+[FlatMapFunction](api/scala/index.html#FlatMapFunction) object.
 As we will discover along the way, there are a number of such convenience classes in the Java API
 that help defines DStream transformations.
 
@@ -201,9 +201,9 @@ wordCounts.print();
 {% endhighlight %}
 
 The `words` DStream is further mapped (one-to-one transformation) to a DStream of `(word,
-1)` pairs, using a [PairFunction](api/scala/index.html#org.apache.spark.api.java.function.PairFunction)
+1)` pairs, using a [PairFunction](api/scala/index.html#PairFunction)
 object. Then, it is reduced to get the frequency of words in each batch of data,
-using a [Function2](api/scala/index.html#org.apache.spark.api.java.function.Function2) object.
+using a [Function2](api/scala/index.html#Function2) object.
 Finally, `wordCounts.print()` will print a few of the counts generated every second.
 
 Note that when these lines are executed, Spark Streaming only sets up the computation it

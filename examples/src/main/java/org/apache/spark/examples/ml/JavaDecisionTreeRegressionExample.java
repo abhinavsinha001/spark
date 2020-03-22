@@ -17,17 +17,17 @@
 // scalastyle:off println
 package org.apache.spark.examples.ml;
 // $example on$
-import org.apache.spark.ml.Pipeline;
-import org.apache.spark.ml.PipelineModel;
-import org.apache.spark.ml.PipelineStage;
-import org.apache.spark.ml.evaluation.RegressionEvaluator;
-import org.apache.spark.ml.feature.VectorIndexer;
-import org.apache.spark.ml.feature.VectorIndexerModel;
-import org.apache.spark.ml.regression.DecisionTreeRegressionModel;
-import org.apache.spark.ml.regression.DecisionTreeRegressor;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SparkSession;
+import com.pubmatic.spark.ml.Pipeline;
+import com.pubmatic.spark.ml.PipelineModel;
+import com.pubmatic.spark.ml.PipelineStage;
+import com.pubmatic.spark.ml.evaluation.RegressionEvaluator;
+import com.pubmatic.spark.ml.feature.VectorIndexer;
+import com.pubmatic.spark.ml.feature.VectorIndexerModel;
+import com.pubmatic.spark.ml.regression.DecisionTreeRegressionModel;
+import com.pubmatic.spark.ml.regression.DecisionTreeRegressor;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.Row;
+import com.pubmatic.spark.sql.SparkSession;
 // $example off$
 
 public class JavaDecisionTreeRegressionExample {

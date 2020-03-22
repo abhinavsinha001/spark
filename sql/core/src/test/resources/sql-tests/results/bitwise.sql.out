@@ -151,7 +151,7 @@ select bit_count("bit count")
 -- !query 18 schema
 struct<>
 -- !query 18 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 cannot resolve 'bit_count('bit count')' due to data type mismatch: argument 1 requires (integral or boolean) type, however, ''bit count'' is of string type.; line 1 pos 7
 
 
@@ -160,7 +160,7 @@ select bit_count('a')
 -- !query 19 schema
 struct<>
 -- !query 19 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 cannot resolve 'bit_count('a')' due to data type mismatch: argument 1 requires (integral or boolean) type, however, ''a'' is of string type.; line 1 pos 7
 
 

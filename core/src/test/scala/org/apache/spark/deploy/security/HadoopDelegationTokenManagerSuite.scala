@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.deploy.security
+package com.pubmatic.spark.deploy.security
 
 import java.security.PrivilegedExceptionAction
 
@@ -24,10 +24,10 @@ import org.apache.hadoop.fs.CommonConfigurationKeysPublic.HADOOP_SECURITY_AUTHEN
 import org.apache.hadoop.minikdc.MiniKdc
 import org.apache.hadoop.security.{Credentials, UserGroupInformation}
 
-import org.apache.spark.{SparkConf, SparkFunSuite}
-import org.apache.spark.deploy.SparkHadoopUtil
-import org.apache.spark.security.HadoopDelegationTokenProvider
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.{SparkConf, SparkFunSuite}
+import com.pubmatic.spark.deploy.SparkHadoopUtil
+import com.pubmatic.spark.security.HadoopDelegationTokenProvider
+import com.pubmatic.spark.util.Utils
 
 private class ExceptionThrowingDelegationTokenProvider extends HadoopDelegationTokenProvider {
   ExceptionThrowingDelegationTokenProvider.constructed = true

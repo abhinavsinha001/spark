@@ -74,7 +74,7 @@ select * from data order by 0
 -- !query 5 schema
 struct<>
 -- !query 5 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 ORDER BY position 0 is not in select list (valid range is [1, 2]); line 1 pos 28
 
 
@@ -83,7 +83,7 @@ select * from data order by -1
 -- !query 6 schema
 struct<>
 -- !query 6 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 ORDER BY position -1 is not in select list (valid range is [1, 2]); line 1 pos 28
 
 
@@ -92,7 +92,7 @@ select * from data order by 3
 -- !query 7 schema
 struct<>
 -- !query 7 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 ORDER BY position 3 is not in select list (valid range is [1, 2]); line 1 pos 28
 
 

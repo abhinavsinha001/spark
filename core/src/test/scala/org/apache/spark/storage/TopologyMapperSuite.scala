@@ -15,15 +15,15 @@
  * limitations under the License.
  */
 
-package org.apache.spark.storage
+package com.pubmatic.spark.storage
 
 import java.io.{File, FileOutputStream}
 
 import org.scalatest.{BeforeAndAfter, Matchers}
 
-import org.apache.spark._
-import org.apache.spark.internal.config.STORAGE_REPLICATION_TOPOLOGY_FILE
-import org.apache.spark.util.Utils
+import com.pubmatic.spark._
+import com.pubmatic.spark.internal.config.STORAGE_REPLICATION_TOPOLOGY_FILE
+import com.pubmatic.spark.util.Utils
 
 class TopologyMapperSuite  extends SparkFunSuite
   with Matchers

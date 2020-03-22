@@ -26,12 +26,12 @@ import scala.Tuple2;
 import org.junit.After;
 import org.junit.Before;
 
-import org.apache.spark.api.java.function.MapFunction;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Encoder;
-import org.apache.spark.sql.Encoders;
-import org.apache.spark.sql.KeyValueGroupedDataset;
-import org.apache.spark.sql.test.TestSparkSession;
+import com.pubmatic.spark.api.java.function.MapFunction;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.Encoder;
+import com.pubmatic.spark.sql.Encoders;
+import com.pubmatic.spark.sql.KeyValueGroupedDataset;
+import com.pubmatic.spark.sql.test.TestSparkSession;
 
 /**
  * Common test base shared across this and Java8DatasetAggregatorSuite.

@@ -48,7 +48,7 @@ import org.apache.spark.tags.DockerTest
  *    (com/oracle/ojdbc6/11.2.0.2.0/ojdbc6-11.2.0.2.0.jar)
  * 5. The timeout and interval parameter to be increased from 60,1 to a high value for oracle test
  *    in DockerJDBCIntegrationSuite.scala (Locally tested with 200,200 and executed successfully).
- * 6. Run spark test - ./build/sbt "test-only org.apache.spark.sql.jdbc.OracleIntegrationSuite"
+ * 6. Run spark test - ./build/sbt "test-only com.pubmatic.spark.sql.jdbc.OracleIntegrationSuite"
  *
  * All tests in this suite are ignored because of the dependency with the oracle jar from maven
  * repository.
@@ -98,7 +98,7 @@ class OracleIntegrationSuite extends DockerJDBCIntegrationSuite with SharedSpark
     sql(
       s"""
         |CREATE TEMPORARY VIEW datetime
-        |USING org.apache.spark.sql.jdbc
+        |USING com.pubmatic.spark.sql.jdbc
         |OPTIONS (url '$jdbcUrl', dbTable 'datetime', oracle.jdbc.mapDateToTimestamp 'false')
       """.stripMargin.replaceAll("\n", " "))
 
@@ -109,7 +109,7 @@ class OracleIntegrationSuite extends DockerJDBCIntegrationSuite with SharedSpark
     sql(
       s"""
         |CREATE TEMPORARY VIEW datetime1
-        |USING org.apache.spark.sql.jdbc
+        |USING com.pubmatic.spark.sql.jdbc
         |OPTIONS (url '$jdbcUrl', dbTable 'datetime1', oracle.jdbc.mapDateToTimestamp 'false')
       """.stripMargin.replaceAll("\n", " "))
 
@@ -506,7 +506,7 @@ class OracleIntegrationSuite extends DockerJDBCIntegrationSuite with SharedSpark
     sql(
       s"""
          |CREATE OR REPLACE TEMPORARY VIEW queryOption
-         |USING org.apache.spark.sql.jdbc
+         |USING com.pubmatic.spark.sql.jdbc
          |OPTIONS (url '$jdbcUrl',
          |   query '$query',
          |   oracle.jdbc.mapDateToTimestamp false)

@@ -15,18 +15,18 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
 import org.scalatest.Assertions._
 import org.scalatest.Matchers
 import org.scalatest.concurrent.{Signaler, ThreadSignaler, TimeLimits}
 import org.scalatest.time.{Millis, Span}
 
-import org.apache.spark.internal.config
-import org.apache.spark.internal.config.Tests._
-import org.apache.spark.security.EncryptionFunSuite
-import org.apache.spark.storage.{RDDBlockId, StorageLevel}
-import org.apache.spark.util.io.ChunkedByteBuffer
+import com.pubmatic.spark.internal.config
+import com.pubmatic.spark.internal.config.Tests._
+import com.pubmatic.spark.security.EncryptionFunSuite
+import com.pubmatic.spark.storage.{RDDBlockId, StorageLevel}
+import com.pubmatic.spark.util.io.ChunkedByteBuffer
 
 class NotSerializableClass
 class NotSerializableExn(val notSer: NotSerializableClass) extends Throwable() {}

@@ -17,7 +17,7 @@
 
 package test.org.apache.spark.sql.connector;
 
-import org.apache.spark.sql.connector.read.InputPartition;
+import com.pubmatic.spark.sql.connector.read.InputPartition;
 
 class JavaRangeInputPartition implements InputPartition {
   int start;

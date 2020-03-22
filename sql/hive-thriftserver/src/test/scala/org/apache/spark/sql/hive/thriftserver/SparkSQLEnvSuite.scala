@@ -19,7 +19,7 @@ package org.apache.spark.sql.hive.thriftserver
 
 import test.custom.listener.{DummyQueryExecutionListener, DummyStreamingQueryListener}
 
-import org.apache.spark.SparkFunSuite
+import com.pubmatic.spark.SparkFunSuite
 import org.apache.spark.launcher.SparkLauncher
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.hive.HiveUtils.{HIVE_METASTORE_JARS, HIVE_METASTORE_VERSION}

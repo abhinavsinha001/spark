@@ -272,7 +272,7 @@ object SparkBuild extends PomBuild {
         "org.apache.spark.api.python",
         "org.apache.spark.network",
         "org.apache.spark.deploy",
-        "org.apache.spark.util.collection"
+        "com.pubmatic.spark.util.collection"
       ).mkString(":"),
       "-doc-title", "Spark " + version.value.replaceAll("-SNAPSHOT", "") + " ScalaDoc"
     ) ++ {
@@ -421,7 +421,7 @@ object SparkBuild extends PomBuild {
     javaOptions in Compile += "-Dspark.master=local",
 
     sparkSql := {
-      (runMain in Compile).toTask(" org.apache.spark.sql.hive.thriftserver.SparkSQLCLIDriver").value
+      (runMain in Compile).toTask(" com.pubmatic.spark.sql.hive.thriftserver.SparkSQLCLIDriver").value
     }
   ))(assembly)
 
@@ -462,23 +462,23 @@ object SparkParallelTestGrouping {
 
   private val testsWhichShouldRunInTheirOwnDedicatedJvm = Set(
     "org.apache.spark.DistributedSuite",
-    "org.apache.spark.sql.catalyst.expressions.DateExpressionsSuite",
-    "org.apache.spark.sql.catalyst.expressions.HashExpressionsSuite",
-    "org.apache.spark.sql.catalyst.expressions.CastSuite",
-    "org.apache.spark.sql.catalyst.expressions.MathExpressionsSuite",
-    "org.apache.spark.sql.hive.HiveExternalCatalogSuite",
-    "org.apache.spark.sql.hive.StatisticsSuite",
-    "org.apache.spark.sql.hive.execution.HiveCompatibilitySuite",
-    "org.apache.spark.sql.hive.client.VersionsSuite",
-    "org.apache.spark.sql.hive.client.HiveClientVersions",
-    "org.apache.spark.sql.hive.HiveExternalCatalogVersionsSuite",
+    "com.pubmatic.spark.sql.catalyst.expressions.DateExpressionsSuite",
+    "com.pubmatic.spark.sql.catalyst.expressions.HashExpressionsSuite",
+    "com.pubmatic.spark.sql.catalyst.expressions.CastSuite",
+    "com.pubmatic.spark.sql.catalyst.expressions.MathExpressionsSuite",
+    "com.pubmatic.spark.sql.hive.HiveExternalCatalogSuite",
+    "com.pubmatic.spark.sql.hive.StatisticsSuite",
+    "com.pubmatic.spark.sql.hive.execution.HiveCompatibilitySuite",
+    "com.pubmatic.spark.sql.hive.client.VersionsSuite",
+    "com.pubmatic.spark.sql.hive.client.HiveClientVersions",
+    "com.pubmatic.spark.sql.hive.HiveExternalCatalogVersionsSuite",
     "org.apache.spark.ml.classification.LogisticRegressionSuite",
     "org.apache.spark.ml.classification.LinearSVCSuite",
-    "org.apache.spark.sql.SQLQueryTestSuite",
-    "org.apache.spark.sql.hive.thriftserver.ThriftServerQueryTestSuite",
-    "org.apache.spark.sql.hive.thriftserver.SparkSQLEnvSuite",
-    "org.apache.spark.sql.hive.thriftserver.ui.ThriftServerPageSuite",
-    "org.apache.spark.sql.hive.thriftserver.ui.HiveThriftServer2ListenerSuite"
+    "com.pubmatic.spark.sql.SQLQueryTestSuite",
+    "com.pubmatic.spark.sql.hive.thriftserver.ThriftServerQueryTestSuite",
+    "com.pubmatic.spark.sql.hive.thriftserver.SparkSQLEnvSuite",
+    "com.pubmatic.spark.sql.hive.thriftserver.ui.ThriftServerPageSuite",
+    "com.pubmatic.spark.sql.hive.thriftserver.ui.HiveThriftServer2ListenerSuite"
   )
 
   private val DEFAULT_TEST_GROUP = "default_test_group"
@@ -656,7 +656,7 @@ object OldDeps {
 object Catalyst {
   lazy val settings = antlr4Settings ++ Seq(
     antlr4Version in Antlr4 := SbtPomKeys.effectivePom.value.getProperties.get("antlr4.version").asInstanceOf[String],
-    antlr4PackageName in Antlr4 := Some("org.apache.spark.sql.catalyst.parser"),
+    antlr4PackageName in Antlr4 := Some("com.pubmatic.spark.sql.catalyst.parser"),
     antlr4GenListener in Antlr4 := true,
     antlr4GenVisitor in Antlr4 := true,
     antlr4TreatWarningsAsErrors in Antlr4 := true
@@ -668,17 +668,17 @@ object SQL {
     initialCommands in console :=
       """
         |import org.apache.spark.SparkContext
-        |import org.apache.spark.sql.SQLContext
-        |import org.apache.spark.sql.catalyst.analysis._
-        |import org.apache.spark.sql.catalyst.dsl._
-        |import org.apache.spark.sql.catalyst.errors._
-        |import org.apache.spark.sql.catalyst.expressions._
-        |import org.apache.spark.sql.catalyst.plans.logical._
-        |import org.apache.spark.sql.catalyst.rules._
-        |import org.apache.spark.sql.catalyst.util._
-        |import org.apache.spark.sql.execution
-        |import org.apache.spark.sql.functions._
-        |import org.apache.spark.sql.types._
+        |import com.pubmatic.spark.sql.SQLContext
+        |import com.pubmatic.spark.sql.catalyst.analysis._
+        |import com.pubmatic.spark.sql.catalyst.dsl._
+        |import com.pubmatic.spark.sql.catalyst.errors._
+        |import com.pubmatic.spark.sql.catalyst.expressions._
+        |import com.pubmatic.spark.sql.catalyst.plans.logical._
+        |import com.pubmatic.spark.sql.catalyst.rules._
+        |import com.pubmatic.spark.sql.catalyst.util._
+        |import com.pubmatic.spark.sql.execution
+        |import com.pubmatic.spark.sql.functions._
+        |import com.pubmatic.spark.sql.types._
         |
         |val sc = new SparkContext("local[*]", "dev-shell")
         |val sqlContext = new SQLContext(sc)
@@ -702,19 +702,19 @@ object Hive {
     initialCommands in console :=
       """
         |import org.apache.spark.SparkContext
-        |import org.apache.spark.sql.catalyst.analysis._
-        |import org.apache.spark.sql.catalyst.dsl._
-        |import org.apache.spark.sql.catalyst.errors._
-        |import org.apache.spark.sql.catalyst.expressions._
-        |import org.apache.spark.sql.catalyst.plans.logical._
-        |import org.apache.spark.sql.catalyst.rules._
-        |import org.apache.spark.sql.catalyst.util._
-        |import org.apache.spark.sql.execution
-        |import org.apache.spark.sql.functions._
-        |import org.apache.spark.sql.hive._
-        |import org.apache.spark.sql.hive.test.TestHive._
-        |import org.apache.spark.sql.hive.test.TestHive.implicits._
-        |import org.apache.spark.sql.types._""".stripMargin,
+        |import com.pubmatic.spark.sql.catalyst.analysis._
+        |import com.pubmatic.spark.sql.catalyst.dsl._
+        |import com.pubmatic.spark.sql.catalyst.errors._
+        |import com.pubmatic.spark.sql.catalyst.expressions._
+        |import com.pubmatic.spark.sql.catalyst.plans.logical._
+        |import com.pubmatic.spark.sql.catalyst.rules._
+        |import com.pubmatic.spark.sql.catalyst.util._
+        |import com.pubmatic.spark.sql.execution
+        |import com.pubmatic.spark.sql.functions._
+        |import com.pubmatic.spark.sql.hive._
+        |import com.pubmatic.spark.sql.hive.test.TestHive._
+        |import com.pubmatic.spark.sql.hive.test.TestHive.implicits._
+        |import com.pubmatic.spark.sql.types._""".stripMargin,
     cleanupCommands in console := "sparkContext.stop()",
     // Some of our log4j jars make it impossible to submit jobs from this JVM to Hive Map/Reduce
     // in order to generate golden files.  This is only required for developers who are adding new
@@ -834,7 +834,6 @@ object Unidoc {
       .map(_.filterNot(_.getCanonicalPath.contains("org/apache/spark/sql/internal")))
       .map(_.filterNot(_.getCanonicalPath.contains("org/apache/spark/sql/hive/test")))
       .map(_.filterNot(_.getCanonicalPath.contains("org/apache/spark/sql/catalog/v2/utils")))
-      .map(_.filterNot(_.getCanonicalPath.contains("org/apache/hive")))
   }
 
   private def ignoreClasspaths(classpaths: Seq[Classpath]): Seq[Classpath] = {

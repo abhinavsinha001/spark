@@ -24,7 +24,7 @@ import org.apache.hive.service.cli._
 import org.apache.hive.service.cli.operation._
 import org.apache.hive.service.cli.session.HiveSession
 
-import org.apache.spark.internal.Logging
+import com.pubmatic.spark.internal.Logging
 import org.apache.spark.sql.SQLContext
 import org.apache.spark.sql.hive.HiveUtils
 import org.apache.spark.sql.hive.thriftserver._

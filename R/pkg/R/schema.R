@@ -65,7 +65,7 @@ structType.structField <- function(x, ...) {
   sfObjList <- lapply(fields, function(field) {
     field$jobj
   })
-  stObj <- callJStatic("org.apache.spark.sql.api.r.SQLUtils",
+  stObj <- callJStatic("com.pubmatic.spark.sql.api.r.SQLUtils",
                        "createStructType",
                        sfObjList)
   structType(stObj)
@@ -81,7 +81,7 @@ structType.character <- function(x, ...) {
     stop("multiple DDL-formatted strings are not supported")
   }
 
-  stObj <- handledCallJStatic("org.apache.spark.sql.types.StructType",
+  stObj <- handledCallJStatic("com.pubmatic.spark.sql.types.StructType",
                               "fromDDL",
                               x)
   structType(stObj)
@@ -219,7 +219,7 @@ structField.character <- function(x, type, nullable = TRUE, ...) {
 
   checkType(type)
 
-  sfObj <- callJStatic("org.apache.spark.sql.api.r.SQLUtils",
+  sfObj <- callJStatic("com.pubmatic.spark.sql.api.r.SQLUtils",
                        "createStructField",
                        x,
                        type,

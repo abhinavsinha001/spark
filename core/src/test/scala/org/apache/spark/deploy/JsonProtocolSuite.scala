@@ -15,22 +15,21 @@
  * limitations under the License.
  */
 
-package org.apache.spark.deploy
+package com.pubmatic.spark.deploy
 
 import java.util.Date
 
 import com.fasterxml.jackson.core.JsonParseException
+import com.pubmatic.spark.{JsonTestUtils, SparkFunSuite}
 import org.json4s._
 import org.json4s.jackson.JsonMethods
-
-import org.apache.spark.{JsonTestUtils, SparkFunSuite}
-import org.apache.spark.deploy.DeployMessages.{MasterStateResponse, WorkerStateResponse}
-import org.apache.spark.deploy.master.{ApplicationInfo, RecoveryState}
-import org.apache.spark.deploy.worker.ExecutorRunner
+import com.pubmatic.spark.deploy.DeployMessages.{MasterStateResponse, WorkerStateResponse}
+import com.pubmatic.spark.deploy.master.{ApplicationInfo, RecoveryState}
+import com.pubmatic.spark.deploy.worker.ExecutorRunner
 
 class JsonProtocolSuite extends SparkFunSuite with JsonTestUtils {
 
-  import org.apache.spark.deploy.DeployTestUtils._
+  import com.pubmatic.spark.deploy.DeployTestUtils._
 
   test("writeApplicationInfo") {
     val output = JsonProtocol.writeApplicationInfo(createAppInfo())

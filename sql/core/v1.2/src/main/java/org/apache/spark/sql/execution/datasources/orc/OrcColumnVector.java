@@ -15,17 +15,17 @@
  * limitations under the License.
  */
 
-package org.apache.spark.sql.execution.datasources.orc;
+package com.pubmatic.spark.sql.execution.datasources.orc;
 
 import java.math.BigDecimal;
 
 import org.apache.orc.storage.ql.exec.vector.*;
 
-import org.apache.spark.sql.types.DataType;
-import org.apache.spark.sql.types.Decimal;
-import org.apache.spark.sql.types.TimestampType;
-import org.apache.spark.sql.vectorized.ColumnarArray;
-import org.apache.spark.sql.vectorized.ColumnarMap;
+import com.pubmatic.spark.sql.types.DataType;
+import com.pubmatic.spark.sql.types.Decimal;
+import com.pubmatic.spark.sql.types.TimestampType;
+import com.pubmatic.spark.sql.vectorized.ColumnarArray;
+import com.pubmatic.spark.sql.vectorized.ColumnarMap;
 import org.apache.spark.unsafe.types.UTF8String;
 
 /**
@@ -33,7 +33,7 @@ import org.apache.spark.unsafe.types.UTF8String;
  * Spark's vectorized.ColumnVector, this column vector is used to adapt Hive ColumnVector with
  * Spark ColumnarVector.
  */
-public class OrcColumnVector extends org.apache.spark.sql.vectorized.ColumnVector {
+public class OrcColumnVector extends com.pubmatic.spark.sql.vectorized.ColumnVector {
   private ColumnVector baseData;
   private LongColumnVector longData;
   private DoubleColumnVector doubleData;
@@ -187,7 +187,7 @@ public class OrcColumnVector extends org.apache.spark.sql.vectorized.ColumnVecto
   }
 
   @Override
-  public org.apache.spark.sql.vectorized.ColumnVector getChild(int ordinal) {
+  public com.pubmatic.spark.sql.vectorized.ColumnVector getChild(int ordinal) {
     throw new UnsupportedOperationException();
   }
 }

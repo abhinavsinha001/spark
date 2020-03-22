@@ -17,13 +17,13 @@
 
 package org.apache.spark.examples.ml;
 
-import org.apache.spark.ml.feature.Interaction;
-import org.apache.spark.ml.feature.VectorAssembler;
-import org.apache.spark.sql.*;
-import org.apache.spark.sql.types.DataTypes;
-import org.apache.spark.sql.types.Metadata;
-import org.apache.spark.sql.types.StructField;
-import org.apache.spark.sql.types.StructType;
+import com.pubmatic.spark.ml.feature.Interaction;
+import com.pubmatic.spark.ml.feature.VectorAssembler;
+import com.pubmatic.spark.sql.*;
+import com.pubmatic.spark.sql.types.DataTypes;
+import com.pubmatic.spark.sql.types.Metadata;
+import com.pubmatic.spark.sql.types.StructField;
+import com.pubmatic.spark.sql.types.StructType;
 
 import java.util.Arrays;
 import java.util.List;

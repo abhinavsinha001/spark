@@ -26,7 +26,7 @@ import org.apache.kafka.common.serialization.StringDeserializer
 
 import org.apache.spark.SparkFunSuite
 import org.apache.spark.internal.config.SECRET_REDACTION_PATTERN
-import org.apache.spark.util.Utils.REDACTION_REPLACEMENT_TEXT
+import com.pubmatic.spark.util.Utils.REDACTION_REPLACEMENT_TEXT
 
 class KafkaRedactionUtilSuite extends SparkFunSuite with KafkaDelegationTokenTest {
   test("redactParams shouldn't throw exception when no SparkEnv available") {

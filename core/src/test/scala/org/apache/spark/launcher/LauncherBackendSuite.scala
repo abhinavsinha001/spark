@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.launcher
+package com.pubmatic.spark.launcher
 
 import java.util.concurrent.TimeUnit
 
@@ -24,9 +24,9 @@ import scala.concurrent.duration._
 import org.scalatest.Matchers
 import org.scalatest.concurrent.Eventually._
 
-import org.apache.spark._
-import org.apache.spark.internal.config.UI.UI_ENABLED
-import org.apache.spark.util.Utils
+import com.pubmatic.spark._
+import com.pubmatic.spark.internal.config.UI.UI_ENABLED
+import com.pubmatic.spark.util.Utils
 
 class LauncherBackendSuite extends SparkFunSuite with Matchers {
 

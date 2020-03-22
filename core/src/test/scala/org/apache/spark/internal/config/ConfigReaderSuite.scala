@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-package org.apache.spark.internal.config
+package com.pubmatic.spark.internal.config
 
 import scala.collection.JavaConverters._
 
-import org.apache.spark.SparkFunSuite
+import com.pubmatic.spark.SparkFunSuite
 
 class ConfigReaderSuite extends SparkFunSuite {
 

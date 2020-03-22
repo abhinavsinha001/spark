@@ -24,12 +24,12 @@ import scala.collection.mutable.ArrayBuffer
 
 import org.apache.hive.service.server.HiveServer2
 
-import org.apache.spark.{SparkConf, SparkContext}
-import org.apache.spark.internal.config.Status.LIVE_ENTITY_UPDATE_PERIOD
-import org.apache.spark.scheduler._
+import com.pubmatic.spark.{SparkConf, SparkContext}
+import com.pubmatic.spark.internal.config.Status.LIVE_ENTITY_UPDATE_PERIOD
+import com.pubmatic.spark.scheduler._
 import org.apache.spark.sql.hive.thriftserver.HiveThriftServer2.ExecutionState
 import org.apache.spark.sql.internal.SQLConf
-import org.apache.spark.status.{ElementTrackingStore, KVUtils, LiveEntity}
+import com.pubmatic.spark.status.{ElementTrackingStore, KVUtils, LiveEntity}
 
 /**
  * An inner sparkListener called in sc.stop to clean up the HiveThriftServer2

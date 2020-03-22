@@ -16,9 +16,9 @@
  */
 
 
-package org.apache.spark.streaming;
+package com.pubmatic.spark.streaming;
 
-import org.apache.spark.streaming.api.java.*;
+import com.pubmatic.spark.streaming.api.java.*;
 
 public class JavaStreamingListenerAPISuite extends JavaStreamingListener {
 

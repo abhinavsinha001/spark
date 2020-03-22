@@ -22,7 +22,7 @@ import org.apache.kafka.common.config.SaslConfigs
 import org.apache.spark.{SparkConf, SparkEnv}
 import org.apache.spark.internal.Logging
 import org.apache.spark.internal.config.SECRET_REDACTION_PATTERN
-import org.apache.spark.util.Utils.{redact, REDACTION_REPLACEMENT_TEXT}
+import com.pubmatic.spark.util.Utils.{redact, REDACTION_REPLACEMENT_TEXT}
 
 private[spark] object KafkaRedactionUtil extends Logging {
   private[spark] def redactParams(params: Seq[(String, Object)]): Seq[(String, String)] = {

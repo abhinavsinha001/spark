@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package org.apache.spark.executor
+package com.pubmatic.spark.executor
 
-import org.apache.spark.SparkFunSuite
+import com.pubmatic.spark.SparkFunSuite
 
 
 class ProcfsMetricsGetterSuite extends SparkFunSuite {

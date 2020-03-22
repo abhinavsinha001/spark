@@ -69,7 +69,7 @@ class StreamingQuery(object):
     @since(2.0)
     def name(self):
         """Returns the user-specified name of the query, or null if not specified.
-        This name can be specified in the `org.apache.spark.sql.streaming.DataStreamWriter`
+        This name can be specified in the `com.pubmatic.spark.sql.streaming.DataStreamWriter`
         as `dataframe.writeStream.queryName("query").start()`.
         This name, if set, must be unique across all active queries.
         """
@@ -889,20 +889,20 @@ class DataStreamWriter(object):
                 raise ValueError('Value for processingTime must be a non empty string. Got: %s' %
                                  processingTime)
             interval = processingTime.strip()
-            jTrigger = self._spark._sc._jvm.org.apache.spark.sql.streaming.Trigger.ProcessingTime(
+            jTrigger = self._spark._sc._jvm.com.pubmatic.spark.sql.streaming.Trigger.ProcessingTime(
                 interval)
 
         elif once is not None:
             if once is not True:
                 raise ValueError('Value for once must be True. Got: %s' % once)
-            jTrigger = self._spark._sc._jvm.org.apache.spark.sql.streaming.Trigger.Once()
+            jTrigger = self._spark._sc._jvm.com.pubmatic.spark.sql.streaming.Trigger.Once()
 
         else:
             if type(continuous) != str or len(continuous.strip()) == 0:
                 raise ValueError('Value for continuous must be a non empty string. Got: %s' %
                                  continuous)
             interval = continuous.strip()
-            jTrigger = self._spark._sc._jvm.org.apache.spark.sql.streaming.Trigger.Continuous(
+            jTrigger = self._spark._sc._jvm.com.pubmatic.spark.sql.streaming.Trigger.Continuous(
                 interval)
 
         self._jwrite = self._jwrite.trigger(jTrigger)
@@ -1065,7 +1065,7 @@ class DataStreamWriter(object):
         serializer = AutoBatchedSerializer(PickleSerializer())
         wrapped_func = _wrap_function(self._spark._sc, func, serializer, serializer)
         jForeachWriter = \
-            self._spark._sc._jvm.org.apache.spark.sql.execution.python.PythonForeachWriter(
+            self._spark._sc._jvm.com.pubmatic.spark.sql.execution.python.PythonForeachWriter(
                 wrapped_func, self._df._jdf.schema())
         self._jwrite.foreach(jForeachWriter)
         return self
@@ -1092,7 +1092,7 @@ class DataStreamWriter(object):
 
         from pyspark.java_gateway import ensure_callback_server_started
         gw = self._spark._sc._gateway
-        java_import(gw.jvm, "org.apache.spark.sql.execution.streaming.sources.*")
+        java_import(gw.jvm, "com.pubmatic.spark.sql.execution.streaming.sources.*")
 
         wrapped_func = ForeachBatchFunction(self._spark, func)
         gw.jvm.PythonForeachBatchHelper.callForeachBatch(self._jwrite, wrapped_func)

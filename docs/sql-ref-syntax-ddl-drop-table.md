@@ -66,7 +66,7 @@ DROP TABLE userdb.employeetable;
 -- Assumes a table named `employeetable` does not exists.
 -- Throws exception
 DROP TABLE employeetable;
-Error: org.apache.spark.sql.AnalysisException: Table or view not found: employeetable;
+Error: com.pubmatic.spark.sql.AnalysisException: Table or view not found: employeetable;
 (state=,code=0)
 
 -- Assumes a table named `employeetable` does not exists,Try with IF EXISTS

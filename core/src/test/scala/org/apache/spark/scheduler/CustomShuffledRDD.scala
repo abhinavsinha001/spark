@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package org.apache.spark.scheduler
+package com.pubmatic.spark.scheduler
 
 import java.util.Arrays
 import java.util.Objects
 
-import org.apache.spark._
-import org.apache.spark.rdd.RDD
+import com.pubmatic.spark._
+import com.pubmatic.spark.rdd.RDD
 
 /**
  * A Partitioner that might group together one or more partitions from the parent.

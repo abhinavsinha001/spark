@@ -19,10 +19,10 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.linalg.Vectors
-import org.apache.spark.ml.regression.AFTSurvivalRegression
+import com.pubmatic.spark.ml.linalg.Vectors
+import com.pubmatic.spark.ml.regression.AFTSurvivalRegression
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 /**
  * An example demonstrating AFTSurvivalRegression.

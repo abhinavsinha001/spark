@@ -21,7 +21,7 @@ package org.apache.spark.examples.streaming
 import org.apache.spark.SparkConf
 import org.apache.spark.storage.StorageLevel
 import org.apache.spark.streaming._
-import org.apache.spark.util.IntParam
+import com.pubmatic.spark.util.IntParam
 
 /**
  * Receives text from multiple rawNetworkStreams and counts how many '\n' delimited

@@ -23,10 +23,10 @@ import javax.servlet.http.HttpServletRequest
 import org.mockito.Mockito.{mock, when, RETURNS_SMART_NULLS}
 import org.scalatest.BeforeAndAfter
 
-import org.apache.spark.{SparkConf, SparkFunSuite}
-import org.apache.spark.scheduler.SparkListenerJobStart
+import com.pubmatic.spark.{SparkConf, SparkFunSuite}
+import com.pubmatic.spark.scheduler.SparkListenerJobStart
 import org.apache.spark.sql.hive.thriftserver._
-import org.apache.spark.status.ElementTrackingStore
+import com.pubmatic.spark.status.ElementTrackingStore
 import org.apache.spark.util.kvstore.InMemoryStore
 
 

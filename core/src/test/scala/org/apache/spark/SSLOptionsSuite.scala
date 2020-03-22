@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
 import java.io.File
 import java.util.UUID
@@ -25,7 +25,7 @@ import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.security.alias.{CredentialProvider, CredentialProviderFactory}
 import org.scalatest.BeforeAndAfterAll
 
-import org.apache.spark.util.SparkConfWithEnv
+import com.pubmatic.spark.util.SparkConfWithEnv
 
 class SSLOptionsSuite extends SparkFunSuite with BeforeAndAfterAll {
 

@@ -20,7 +20,7 @@ package org.apache.spark.examples
 
 import scala.collection.JavaConverters._
 
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.util.Utils
 
 /**
  * Prints out environmental information, sleeps, and then exits. Made to

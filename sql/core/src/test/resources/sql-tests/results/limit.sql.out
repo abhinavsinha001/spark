@@ -52,7 +52,7 @@ SELECT * FROM testdata LIMIT -1
 -- !query 5 schema
 struct<>
 -- !query 5 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 The limit expression must be equal to or greater than 0, but got -1;
 
 
@@ -61,7 +61,7 @@ SELECT * FROM testData TABLESAMPLE (-1 ROWS)
 -- !query 6 schema
 struct<>
 -- !query 6 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 The limit expression must be equal to or greater than 0, but got -1;
 
 
@@ -78,7 +78,7 @@ SELECT * FROM testdata LIMIT CAST(NULL AS INT)
 -- !query 8 schema
 struct<>
 -- !query 8 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 The evaluated limit expression must not be null, but got CAST(NULL AS INT);
 
 
@@ -87,7 +87,7 @@ SELECT * FROM testdata LIMIT key > 3
 -- !query 9 schema
 struct<>
 -- !query 9 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 The limit expression must evaluate to a constant value, but got (testdata.`key` > 3);
 
 
@@ -96,7 +96,7 @@ SELECT * FROM testdata LIMIT true
 -- !query 10 schema
 struct<>
 -- !query 10 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 The limit expression must be integer type, but got boolean;
 
 
@@ -105,7 +105,7 @@ SELECT * FROM testdata LIMIT 'a'
 -- !query 11 schema
 struct<>
 -- !query 11 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 The limit expression must be integer type, but got string;
 
 

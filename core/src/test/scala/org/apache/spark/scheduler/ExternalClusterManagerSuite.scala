@@ -15,15 +15,15 @@
  * limitations under the License.
  */
 
-package org.apache.spark.scheduler
+package com.pubmatic.spark.scheduler
 
 import scala.collection.mutable.Map
 
-import org.apache.spark.{LocalSparkContext, SparkConf, SparkContext, SparkFunSuite}
-import org.apache.spark.executor.ExecutorMetrics
-import org.apache.spark.scheduler.SchedulingMode.SchedulingMode
-import org.apache.spark.storage.BlockManagerId
-import org.apache.spark.util.AccumulatorV2
+import com.pubmatic.spark.{LocalSparkContext, SparkConf, SparkContext, SparkFunSuite}
+import com.pubmatic.spark.executor.ExecutorMetrics
+import com.pubmatic.spark.scheduler.SchedulingMode.SchedulingMode
+import com.pubmatic.spark.storage.BlockManagerId
+import com.pubmatic.spark.util.AccumulatorV2
 
 class ExternalClusterManagerSuite extends SparkFunSuite with LocalSparkContext {
   test("launch of backend and scheduler") {

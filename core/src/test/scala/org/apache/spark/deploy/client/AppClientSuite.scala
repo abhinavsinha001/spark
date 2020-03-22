@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.deploy.client
+package com.pubmatic.spark.deploy.client
 
 import java.io.Closeable
 import java.util.concurrent.ConcurrentLinkedQueue
@@ -25,14 +25,14 @@ import scala.concurrent.duration._
 import org.scalatest.BeforeAndAfterAll
 import org.scalatest.concurrent.{Eventually, ScalaFutures}
 
-import org.apache.spark._
-import org.apache.spark.deploy.{ApplicationDescription, Command}
-import org.apache.spark.deploy.DeployMessages.{MasterStateResponse, RequestMasterState}
-import org.apache.spark.deploy.master.{ApplicationInfo, Master}
-import org.apache.spark.deploy.worker.Worker
-import org.apache.spark.internal.Logging
-import org.apache.spark.rpc.RpcEnv
-import org.apache.spark.util.Utils
+import com.pubmatic.spark._
+import com.pubmatic.spark.deploy.{ApplicationDescription, Command}
+import com.pubmatic.spark.deploy.DeployMessages.{MasterStateResponse, RequestMasterState}
+import com.pubmatic.spark.deploy.master.{ApplicationInfo, Master}
+import com.pubmatic.spark.deploy.worker.Worker
+import com.pubmatic.spark.internal.Logging
+import com.pubmatic.spark.rpc.RpcEnv
+import com.pubmatic.spark.util.Utils
 
 /**
  * End-to-end tests for application client in standalone mode.

@@ -22,11 +22,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.spark.api.java.function.MapFunction;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Encoders;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SparkSession;
+import com.pubmatic.spark.api.java.function.MapFunction;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.Encoders;
+import com.pubmatic.spark.sql.Row;
+import com.pubmatic.spark.sql.SparkSession;
 // $example off:spark_hive$
 
 public class JavaSparkHiveExample {

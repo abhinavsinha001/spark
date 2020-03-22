@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.spark.io
+package com.pubmatic.spark.io
 
 import java.nio.ByteBuffer
 import java.nio.channels.WritableByteChannel
@@ -25,9 +25,9 @@ import org.mockito.Mockito.when
 import org.scalatest.BeforeAndAfterEach
 import org.scalatestplus.mockito.MockitoSugar
 
-import org.apache.spark.{SparkConf, SparkEnv, SparkFunSuite}
-import org.apache.spark.internal.config
-import org.apache.spark.util.io.ChunkedByteBuffer
+import com.pubmatic.spark.{SparkConf, SparkEnv, SparkFunSuite}
+import com.pubmatic.spark.internal.config
+import com.pubmatic.spark.util.io.ChunkedByteBuffer
 
 class ChunkedByteBufferFileRegionSuite extends SparkFunSuite with MockitoSugar
     with BeforeAndAfterEach {

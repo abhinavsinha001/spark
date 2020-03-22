@@ -20,7 +20,7 @@ package org.apache.spark.examples
 
 import org.apache.commons.math3.linear._
 
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 /**
  * Alternating least squares matrix factorization.

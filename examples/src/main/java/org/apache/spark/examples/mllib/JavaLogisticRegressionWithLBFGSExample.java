@@ -25,11 +25,11 @@ import scala.Tuple2;
 
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.mllib.classification.LogisticRegressionModel;
-import org.apache.spark.mllib.classification.LogisticRegressionWithLBFGS;
-import org.apache.spark.mllib.evaluation.MulticlassMetrics;
-import org.apache.spark.mllib.regression.LabeledPoint;
-import org.apache.spark.mllib.util.MLUtils;
+import com.pubmatic.spark.mllib.classification.LogisticRegressionModel;
+import com.pubmatic.spark.mllib.classification.LogisticRegressionWithLBFGS;
+import com.pubmatic.spark.mllib.evaluation.MulticlassMetrics;
+import com.pubmatic.spark.mllib.regression.LabeledPoint;
+import com.pubmatic.spark.mllib.util.MLUtils;
 // $example off$
 
 /**

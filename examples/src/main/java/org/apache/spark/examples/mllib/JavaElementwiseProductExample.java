@@ -25,9 +25,9 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaSparkContext;
 // $example on$
 import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.mllib.feature.ElementwiseProduct;
-import org.apache.spark.mllib.linalg.Vector;
-import org.apache.spark.mllib.linalg.Vectors;
+import com.pubmatic.spark.mllib.feature.ElementwiseProduct;
+import com.pubmatic.spark.mllib.linalg.Vector;
+import com.pubmatic.spark.mllib.linalg.Vectors;
 // $example off$
 
 public class JavaElementwiseProductExample {

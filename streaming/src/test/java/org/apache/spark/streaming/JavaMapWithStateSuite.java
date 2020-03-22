@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.streaming;
+package com.pubmatic.spark.streaming;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -27,18 +27,18 @@ import java.util.Set;
 import scala.Tuple2;
 
 import com.google.common.collect.Sets;
-import org.apache.spark.streaming.api.java.JavaDStream;
-import org.apache.spark.util.ManualClock;
+import com.pubmatic.spark.streaming.api.java.JavaDStream;
+import com.pubmatic.spark.util.ManualClock;
 import org.junit.Assert;
 import org.junit.Test;
 
-import org.apache.spark.HashPartitioner;
-import org.apache.spark.api.java.JavaPairRDD;
-import org.apache.spark.api.java.Optional;
-import org.apache.spark.api.java.function.Function3;
-import org.apache.spark.api.java.function.Function4;
-import org.apache.spark.streaming.api.java.JavaPairDStream;
-import org.apache.spark.streaming.api.java.JavaMapWithStateDStream;
+import com.pubmatic.spark.HashPartitioner;
+import com.pubmatic.spark.api.java.JavaPairRDD;
+import com.pubmatic.spark.api.java.Optional;
+import com.pubmatic.spark.api.java.function.Function3;
+import com.pubmatic.spark.api.java.function.Function4;
+import com.pubmatic.spark.streaming.api.java.JavaPairDStream;
+import com.pubmatic.spark.streaming.api.java.JavaMapWithStateDStream;
 
 public class JavaMapWithStateSuite extends LocalJavaStreamingContext implements Serializable {
 

@@ -1617,8 +1617,6 @@ class GBTClassifier(JavaProbabilisticClassifier, _GBTClassifierParams,
     ...     leafCol="leafId")
     >>> gbt.setMaxIter(5)
     GBTClassifier...
-    >>> gbt.setMinWeightFractionPerNode(0.049)
-    GBTClassifier...
     >>> gbt.getMaxIter()
     5
     >>> gbt.getFeatureSubsetStrategy()
@@ -1686,15 +1684,14 @@ class GBTClassifier(JavaProbabilisticClassifier, _GBTClassifierParams,
                  maxMemoryInMB=256, cacheNodeIds=False, checkpointInterval=10, lossType="logistic",
                  maxIter=20, stepSize=0.1, seed=None, subsamplingRate=1.0, impurity="variance",
                  featureSubsetStrategy="all", validationTol=0.01, validationIndicatorCol=None,
-                 leafCol="", minWeightFractionPerNode=0.0, weightCol=None):
+                 leafCol="", minWeightFractionPerNode=0.0):
         """
         __init__(self, featuresCol="features", labelCol="label", predictionCol="prediction", \
                  maxDepth=5, maxBins=32, minInstancesPerNode=1, minInfoGain=0.0, \
                  maxMemoryInMB=256, cacheNodeIds=False, checkpointInterval=10, \
                  lossType="logistic", maxIter=20, stepSize=0.1, seed=None, subsamplingRate=1.0, \
                  impurity="variance", featureSubsetStrategy="all", validationTol=0.01, \
-                 validationIndicatorCol=None, leafCol="", minWeightFractionPerNode=0.0, \
-                 weightCol=None)
+                 validationIndicatorCol=None, leafCol="", minWeightFractionPerNode=0.0)
         """
         super(GBTClassifier, self).__init__()
         self._java_obj = self._new_java_obj(
@@ -1714,16 +1711,14 @@ class GBTClassifier(JavaProbabilisticClassifier, _GBTClassifierParams,
                   maxMemoryInMB=256, cacheNodeIds=False, checkpointInterval=10,
                   lossType="logistic", maxIter=20, stepSize=0.1, seed=None, subsamplingRate=1.0,
                   impurity="variance", featureSubsetStrategy="all", validationTol=0.01,
-                  validationIndicatorCol=None, leafCol="", minWeightFractionPerNode=0.0,
-                  weightCol=None):
+                  validationIndicatorCol=None, leafCol="", minWeightFractionPerNode=0.0):
         """
         setParams(self, featuresCol="features", labelCol="label", predictionCol="prediction", \
                   maxDepth=5, maxBins=32, minInstancesPerNode=1, minInfoGain=0.0, \
                   maxMemoryInMB=256, cacheNodeIds=False, checkpointInterval=10, \
                   lossType="logistic", maxIter=20, stepSize=0.1, seed=None, subsamplingRate=1.0, \
                   impurity="variance", featureSubsetStrategy="all", validationTol=0.01, \
-                  validationIndicatorCol=None, leafCol="", minWeightFractionPerNode=0.0, \
-                  weightCol=None)
+                  validationIndicatorCol=None, leafCol="", minWeightFractionPerNode=0.0)
         Sets params for Gradient Boosted Tree Classification.
         """
         kwargs = self._input_kwargs
@@ -1830,20 +1825,6 @@ class GBTClassifier(JavaProbabilisticClassifier, _GBTClassifierParams,
         Sets the value of :py:attr:`stepSize`.
         """
         return self._set(stepSize=value)
-
-    @since("3.0.0")
-    def setWeightCol(self, value):
-        """
-        Sets the value of :py:attr:`weightCol`.
-        """
-        return self._set(weightCol=value)
-
-    @since("3.0.0")
-    def setMinWeightFractionPerNode(self, value):
-        """
-        Sets the value of :py:attr:`minWeightFractionPerNode`.
-        """
-        return self._set(minWeightFractionPerNode=value)
 
 
 class GBTClassificationModel(_TreeEnsembleModel, JavaProbabilisticClassificationModel,
@@ -2647,7 +2628,7 @@ class OneVsRestModel(Model, _OneVsRestParams, JavaMLReadable, JavaMLWritable):
                                                         sc._gateway.jvm.org.apache.spark.ml
                                                         .classification.ClassificationModel)
         # TODO: need to set metadata
-        metadata = JavaParams._new_java_obj("org.apache.spark.sql.types.Metadata")
+        metadata = JavaParams._new_java_obj("com.pubmatic.spark.sql.types.Metadata")
         self._java_obj = \
             JavaParams._new_java_obj("org.apache.spark.ml.classification.OneVsRestModel",
                                      self.uid, metadata.empty(), java_models_array)
@@ -2753,7 +2734,7 @@ class OneVsRestModel(Model, _OneVsRestParams, JavaMLReadable, JavaMLWritable):
         java_models = [model._to_java() for model in self.models]
         java_models_array = JavaWrapper._new_java_array(
             java_models, sc._gateway.jvm.org.apache.spark.ml.classification.ClassificationModel)
-        metadata = JavaParams._new_java_obj("org.apache.spark.sql.types.Metadata")
+        metadata = JavaParams._new_java_obj("com.pubmatic.spark.sql.types.Metadata")
         _java_obj = JavaParams._new_java_obj("org.apache.spark.ml.classification.OneVsRestModel",
                                              self.uid, metadata.empty(), java_models_array)
         _java_obj.set("classifier", self.getClassifier()._to_java())

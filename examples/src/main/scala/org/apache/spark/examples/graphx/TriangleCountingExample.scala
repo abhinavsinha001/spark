@@ -19,9 +19,9 @@
 package org.apache.spark.examples.graphx
 
 // $example on$
-import org.apache.spark.graphx.{GraphLoader, PartitionStrategy}
+import com.pubmatic.spark.graphx.{GraphLoader, PartitionStrategy}
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 /**
  * A vertex is part of a triangle when it has two adjacent vertices with an edge between them.

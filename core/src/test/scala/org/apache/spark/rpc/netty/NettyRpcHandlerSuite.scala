@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.rpc.netty
+package com.pubmatic.spark.rpc.netty
 
 import java.net.InetSocketAddress
 import java.nio.ByteBuffer
@@ -24,10 +24,10 @@ import io.netty.channel.Channel
 import org.mockito.ArgumentMatchers.any
 import org.mockito.Mockito._
 
-import org.apache.spark.SparkFunSuite
+import com.pubmatic.spark.SparkFunSuite
 import org.apache.spark.network.client.{TransportClient, TransportResponseHandler}
 import org.apache.spark.network.server.StreamManager
-import org.apache.spark.rpc._
+import com.pubmatic.spark.rpc._
 
 class NettyRpcHandlerSuite extends SparkFunSuite {
 

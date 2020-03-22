@@ -25,9 +25,9 @@ ALTER TABLE test_change CHANGE a
 -- !query 2 schema
 struct<>
 -- !query 2 output
-org.apache.spark.sql.catalyst.parser.ParseException
+com.pubmatic.spark.sql.catalyst.parser.ParseException
 
-Operation not allowed: ALTER TABLE table CHANGE COLUMN requires a TYPE or a COMMENT or a FIRST/AFTER(line 1, pos 0)
+Operation not allowed: ALTER TABLE table CHANGE COLUMN requires a TYPE or a COMMENT(line 1, pos 0)
 
 == SQL ==
 ALTER TABLE test_change CHANGE a
@@ -49,7 +49,7 @@ ALTER TABLE test_change RENAME COLUMN a TO a1
 -- !query 4 schema
 struct<>
 -- !query 4 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 RENAME COLUMN is only supported with v2 tables.;
 
 
@@ -68,7 +68,7 @@ ALTER TABLE test_change CHANGE a TYPE STRING
 -- !query 6 schema
 struct<>
 -- !query 6 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 ALTER TABLE CHANGE COLUMN is not supported for changing column 'a' with type 'IntegerType' to 'a' with type 'StringType';
 
 
@@ -87,8 +87,13 @@ ALTER TABLE test_change CHANGE a TYPE INT AFTER b
 -- !query 8 schema
 struct<>
 -- !query 8 output
-org.apache.spark.sql.AnalysisException
-ALTER COLUMN ... FIRST | ALTER is only supported with v2 tables.;
+com.pubmatic.spark.sql.catalyst.parser.ParseException
+
+Operation not allowed: ALTER TABLE table CHANGE COLUMN ... FIRST | AFTER otherCol(line 1, pos 0)
+
+== SQL ==
+ALTER TABLE test_change CHANGE a TYPE INT AFTER b
+^^^
 
 
 -- !query 9
@@ -96,8 +101,13 @@ ALTER TABLE test_change CHANGE b TYPE STRING FIRST
 -- !query 9 schema
 struct<>
 -- !query 9 output
-org.apache.spark.sql.AnalysisException
-ALTER COLUMN ... FIRST | ALTER is only supported with v2 tables.;
+com.pubmatic.spark.sql.catalyst.parser.ParseException
+
+Operation not allowed: ALTER TABLE table CHANGE COLUMN ... FIRST | AFTER otherCol(line 1, pos 0)
+
+== SQL ==
+ALTER TABLE test_change CHANGE b TYPE STRING FIRST
+^^^
 
 
 -- !query 10
@@ -167,7 +177,7 @@ ALTER TABLE test_change CHANGE invalid_col TYPE INT
 -- !query 17 schema
 struct<>
 -- !query 17 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Can't find column `invalid_col` given table data columns [`a`, `b`, `c`];
 
 
@@ -194,7 +204,7 @@ ALTER TABLE temp_view CHANGE a TYPE INT COMMENT 'this is column a'
 -- !query 20 schema
 struct<>
 -- !query 20 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Invalid command: 'temp_view' is a view not a table.; line 1 pos 0
 
 
@@ -211,7 +221,7 @@ ALTER TABLE global_temp.global_temp_view CHANGE a TYPE INT COMMENT 'this is colu
 -- !query 22 schema
 struct<>
 -- !query 22 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Invalid command: 'global_temp.global_temp_view' is a view not a table.; line 1 pos 0
 
 

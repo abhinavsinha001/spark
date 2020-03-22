@@ -35,7 +35,7 @@ SELECT `(a)?+.+` FROM testData2 WHERE a = 1
 -- !query 3 schema
 struct<>
 -- !query 3 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 cannot resolve '`(a)?+.+`' given input columns: [testdata2.A, testdata2.B, testdata2.c, testdata2.d]; line 1 pos 7
 
 
@@ -44,7 +44,7 @@ SELECT t.`(a)?+.+` FROM testData2 t WHERE a = 1
 -- !query 4 schema
 struct<>
 -- !query 4 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 cannot resolve 't.`(a)?+.+`' given input columns: [t.A, t.B, t.c, t.d]; line 1 pos 7
 
 
@@ -53,7 +53,7 @@ SELECT `(a|b)` FROM testData2 WHERE a = 2
 -- !query 5 schema
 struct<>
 -- !query 5 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 cannot resolve '`(a|b)`' given input columns: [testdata2.A, testdata2.B, testdata2.c, testdata2.d]; line 1 pos 7
 
 
@@ -62,7 +62,7 @@ SELECT `(a|b)?+.+` FROM testData2 WHERE a = 2
 -- !query 6 schema
 struct<>
 -- !query 6 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 cannot resolve '`(a|b)?+.+`' given input columns: [testdata2.A, testdata2.B, testdata2.c, testdata2.d]; line 1 pos 7
 
 
@@ -71,7 +71,7 @@ SELECT SUM(`(a|b)?+.+`) FROM testData2
 -- !query 7 schema
 struct<>
 -- !query 7 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 cannot resolve '`(a|b)?+.+`' given input columns: [testdata2.A, testdata2.B, testdata2.c, testdata2.d]; line 1 pos 11
 
 
@@ -80,7 +80,7 @@ SELECT SUM(`(a)`) FROM testData2
 -- !query 8 schema
 struct<>
 -- !query 8 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 cannot resolve '`(a)`' given input columns: [testdata2.A, testdata2.B, testdata2.c, testdata2.d]; line 1 pos 11
 
 
@@ -300,7 +300,7 @@ SELECT SUM(a) FROM testdata3 GROUP BY `(a)`
 -- !query 32 schema
 struct<>
 -- !query 32 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 cannot resolve '`(a)`' given input columns: [testdata3.a, testdata3.b]; line 1 pos 38
 
 
@@ -309,5 +309,5 @@ SELECT SUM(a) FROM testdata3 GROUP BY `(a)?+.+`
 -- !query 33 schema
 struct<>
 -- !query 33 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 cannot resolve '`(a)?+.+`' given input columns: [testdata3.a, testdata3.b]; line 1 pos 38

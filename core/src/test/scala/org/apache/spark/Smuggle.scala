@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
 import java.util.UUID
 import java.util.concurrent.locks.ReentrantReadWriteLock

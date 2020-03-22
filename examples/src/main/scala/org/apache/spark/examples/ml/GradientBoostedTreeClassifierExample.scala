@@ -19,12 +19,12 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.Pipeline
-import org.apache.spark.ml.classification.{GBTClassificationModel, GBTClassifier}
-import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
-import org.apache.spark.ml.feature.{IndexToString, StringIndexer, VectorIndexer}
+import com.pubmatic.spark.ml.Pipeline
+import com.pubmatic.spark.ml.classification.{GBTClassificationModel, GBTClassifier}
+import com.pubmatic.spark.ml.evaluation.MulticlassClassificationEvaluator
+import com.pubmatic.spark.ml.feature.{IndexToString, StringIndexer, VectorIndexer}
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 object GradientBoostedTreeClassifierExample {
   def main(args: Array[String]): Unit = {

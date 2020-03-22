@@ -18,7 +18,7 @@ package org.apache.spark.examples.sql
 
 import java.util.Properties
 
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 object SQLDataSourceExample {
 

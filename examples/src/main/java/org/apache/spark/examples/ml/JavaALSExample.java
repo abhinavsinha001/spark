@@ -17,17 +17,17 @@
 
 package org.apache.spark.examples.ml;
 
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SparkSession;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.Row;
+import com.pubmatic.spark.sql.SparkSession;
 
 // $example on$
 import java.io.Serializable;
 
 import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.ml.evaluation.RegressionEvaluator;
-import org.apache.spark.ml.recommendation.ALS;
-import org.apache.spark.ml.recommendation.ALSModel;
+import com.pubmatic.spark.ml.evaluation.RegressionEvaluator;
+import com.pubmatic.spark.ml.recommendation.ALS;
+import com.pubmatic.spark.ml.recommendation.ALSModel;
 // $example off$
 
 public class JavaALSExample {

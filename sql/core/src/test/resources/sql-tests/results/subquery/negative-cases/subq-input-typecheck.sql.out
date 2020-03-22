@@ -44,7 +44,7 @@ struct<>
 
 -- !query 4
 CREATE TEMPORARY VIEW t5 AS SELECT * FROM VALUES
-  (CAST('2011-01-01 01:01:01' AS TIMESTAMP), CAST(2 AS STRING), CAST(3 AS BIGINT))
+  (CAST(1 AS DECIMAL(18, 0)), CAST(2 AS STRING), CAST(3 AS BIGINT))
 AS t1(t5a, t5b, t5c)
 -- !query 4 schema
 struct<>
@@ -63,7 +63,7 @@ FROM t1
 -- !query 5 schema
 struct<>
 -- !query 5 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Scalar subquery must return only one column, but got 2;
 
 
@@ -78,7 +78,7 @@ FROM t1
 -- !query 6 schema
 struct<>
 -- !query 6 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Scalar subquery must return only one column, but got 2;
 
 
@@ -91,7 +91,7 @@ t1a IN (SELECT t2a, t2b
 -- !query 7 schema
 struct<>
 -- !query 7 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 cannot resolve '(t1.`t1a` IN (listquery(t1.`t1a`)))' due to data type mismatch: 
 The number of columns in the left hand side of an IN subquery does not match the
 number of columns in the output of subquery.
@@ -112,7 +112,7 @@ WHERE
 -- !query 8 schema
 struct<>
 -- !query 8 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 cannot resolve '(named_struct('t1a', t1.`t1a`, 't1b', t1.`t1b`) IN (listquery(t1.`t1a`)))' due to data type mismatch: 
 The number of columns in the left hand side of an IN subquery does not match the
 number of columns in the output of subquery.
@@ -134,13 +134,13 @@ WHERE
 -- !query 9 schema
 struct<>
 -- !query 9 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 cannot resolve '(named_struct('t4a', t4.`t4a`, 't4b', t4.`t4b`, 't4c', t4.`t4c`) IN (listquery()))' due to data type mismatch: 
 The data type of one or more elements in the left hand side of an IN subquery
 is not compatible with the data type of the output of the subquery
 Mismatched columns:
-[(t4.`t4a`:double, t5.`t5a`:timestamp), (t4.`t4c`:string, t5.`t5c`:bigint)]
+[(t4.`t4a`:double, t5.`t5a`:decimal(18,0)), (t4.`t4c`:string, t5.`t5c`:bigint)]
 Left side:
 [double, string, string].
 Right side:
-[timestamp, string, bigint].;
+[decimal(18,0), string, bigint].;

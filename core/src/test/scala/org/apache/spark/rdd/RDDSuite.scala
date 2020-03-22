@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.rdd
+package com.pubmatic.spark.rdd
 
 import java.io.{File, IOException, ObjectInputStream, ObjectOutputStream}
 import java.lang.management.ManagementFactory
@@ -30,11 +30,11 @@ import org.apache.hadoop.io.{LongWritable, Text}
 import org.apache.hadoop.mapred.{FileSplit, TextInputFormat}
 import org.scalatest.concurrent.Eventually
 
-import org.apache.spark._
-import org.apache.spark.api.java.{JavaRDD, JavaSparkContext}
-import org.apache.spark.internal.config.RDD_PARALLEL_LISTING_THRESHOLD
-import org.apache.spark.rdd.RDDSuiteUtils._
-import org.apache.spark.util.{ThreadUtils, Utils}
+import com.pubmatic.spark._
+import com.pubmatic.spark.api.java.{JavaRDD, JavaSparkContext}
+import com.pubmatic.spark.internal.config.RDD_PARALLEL_LISTING_THRESHOLD
+import com.pubmatic.spark.rdd.RDDSuiteUtils._
+import com.pubmatic.spark.util.{ThreadUtils, Utils}
 
 class RDDSuite extends SparkFunSuite with SharedSparkContext with Eventually {
   var tempDir: File = _

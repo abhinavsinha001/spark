@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package org.apache.spark.serializer
+package com.pubmatic.spark.serializer
 
-import org.apache.spark.{SparkConf, SparkFunSuite}
-import org.apache.spark.LocalSparkContext._
-import org.apache.spark.SparkContext
-import org.apache.spark.SparkException
-import org.apache.spark.internal.config._
-import org.apache.spark.internal.config.Kryo._
+import com.pubmatic.spark.{SparkConf, SparkFunSuite}
+import com.pubmatic.spark.LocalSparkContext._
+import com.pubmatic.spark.SparkContext
+import com.pubmatic.spark.SparkException
+import com.pubmatic.spark.internal.config._
+import com.pubmatic.spark.internal.config.Kryo._
 
 class KryoSerializerResizableOutputSuite extends SparkFunSuite {
 

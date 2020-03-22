@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package org.apache.spark.scheduler
+package com.pubmatic.spark.scheduler
 
-import org.apache.spark._
+import com.pubmatic.spark._
 
 object AdaptiveSchedulingSuiteState {
   var tasksRun = 0

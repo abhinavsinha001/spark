@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-package org.apache.spark.scheduler
+package com.pubmatic.spark.scheduler
 
 import java.io.{IOException, ObjectInputStream, ObjectOutputStream}
 
-import org.apache.spark.TaskContext
+import com.pubmatic.spark.TaskContext
 
 /**
  * A Task implementation that fails to serialize.

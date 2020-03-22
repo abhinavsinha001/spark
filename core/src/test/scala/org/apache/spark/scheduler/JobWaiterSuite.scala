@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-package org.apache.spark.scheduler
+package com.pubmatic.spark.scheduler
 
 import scala.util.Failure
 
-import org.apache.spark.SparkFunSuite
+import com.pubmatic.spark.SparkFunSuite
 
 class JobWaiterSuite extends SparkFunSuite {
 

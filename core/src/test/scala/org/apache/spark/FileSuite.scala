@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
 import java.io._
 import java.nio.ByteBuffer
@@ -34,11 +34,11 @@ import org.apache.hadoop.mapreduce.Job
 import org.apache.hadoop.mapreduce.lib.input.{FileSplit => NewFileSplit, TextInputFormat => NewTextInputFormat}
 import org.apache.hadoop.mapreduce.lib.output.{TextOutputFormat => NewTextOutputFormat}
 
-import org.apache.spark.internal.config._
-import org.apache.spark.rdd.{HadoopRDD, NewHadoopRDD}
-import org.apache.spark.serializer.KryoSerializer
-import org.apache.spark.storage.StorageLevel
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.internal.config._
+import com.pubmatic.spark.rdd.{HadoopRDD, NewHadoopRDD}
+import com.pubmatic.spark.serializer.KryoSerializer
+import com.pubmatic.spark.storage.StorageLevel
+import com.pubmatic.spark.util.Utils
 
 class FileSuite extends SparkFunSuite with LocalSparkContext {
   var tempDir: File = _

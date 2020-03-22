@@ -19,10 +19,10 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.feature.BucketedRandomProjectionLSH
-import org.apache.spark.ml.linalg.Vectors
-import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.functions.col
+import com.pubmatic.spark.ml.feature.BucketedRandomProjectionLSH
+import com.pubmatic.spark.ml.linalg.Vectors
+import com.pubmatic.spark.sql.SparkSession
+import com.pubmatic.spark.sql.functions.col
 // $example off$
 
 /**

@@ -604,14 +604,13 @@ SELECT name, age FROM unknown_age;
 ### EXISTS/NOT EXISTS Subquery <a name="exists-not-exists"></a>
 In Spark, EXISTS and NOT EXISTS expressions are allowed inside a WHERE clause. 
 These are boolean expressions which return either `TRUE` or
-`FALSE`. In other words, EXISTS is a membership condition and returns `TRUE`
+`FALSE`. In otherwords, EXISTS is a membership condition and returns `TRUE`
 when the subquery it refers to returns one or more rows. Similary, NOT EXISTS
 is a non-membership condition and returns TRUE when no rows or zero rows are
 returned from the subquery.
 
 These two expressions are not affected by presence of NULL in the result of
-the subquery. They are normally faster because they can be converted to
-semijoins / anti-semijoins without special provisions for null awareness.
+the subquery. 
 
 #### Examples
 {% highlight sql %}
@@ -669,10 +668,6 @@ To summarize, below are the rules for computing the result of an `IN` expression
   list does not contain NULL values
 - UNKNOWN is returned when the value is `NULL`, or the non-NULL value is not found in the list
   and the list contains at least one `NULL` value
-
-NOT IN always returns UNKNOWN when the list contains `NULL`, regardless of the input value.
-This is because IN returns UNKNOWN if the value is not in the list containing `NULL`,
-and because NOT UNKNOWN is again UNKNOWN.
  
 #### Examples
 {% highlight sql %}

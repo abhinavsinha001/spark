@@ -42,7 +42,7 @@ setMethod("windowPartitionBy",
           signature(col = "character"),
           function(col, ...) {
             windowSpec(
-              callJStatic("org.apache.spark.sql.expressions.Window",
+              callJStatic("com.pubmatic.spark.sql.expressions.Window",
                           "partitionBy",
                           col,
                           list(...)))
@@ -59,7 +59,7 @@ setMethod("windowPartitionBy",
               c@jc
             })
             windowSpec(
-              callJStatic("org.apache.spark.sql.expressions.Window",
+              callJStatic("com.pubmatic.spark.sql.expressions.Window",
                           "partitionBy",
                           jcols))
           })
@@ -89,7 +89,7 @@ setMethod("windowOrderBy",
           signature(col = "character"),
           function(col, ...) {
             windowSpec(
-              callJStatic("org.apache.spark.sql.expressions.Window",
+              callJStatic("com.pubmatic.spark.sql.expressions.Window",
                           "orderBy",
                           col,
                           list(...)))
@@ -106,7 +106,7 @@ setMethod("windowOrderBy",
               c@jc
             })
             windowSpec(
-              callJStatic("org.apache.spark.sql.expressions.Window",
+              callJStatic("com.pubmatic.spark.sql.expressions.Window",
                           "orderBy",
                           jcols))
           })

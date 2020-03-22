@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package org.apache.spark.api.r
+package com.pubmatic.spark.api.r
 
-import org.apache.spark.SparkFunSuite
+import com.pubmatic.spark.SparkFunSuite
 
 class JVMObjectTrackerSuite extends SparkFunSuite {
   test("JVMObjectId does not take null IDs") {

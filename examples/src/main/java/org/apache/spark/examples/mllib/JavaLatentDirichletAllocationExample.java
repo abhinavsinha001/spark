@@ -25,12 +25,12 @@ import scala.Tuple2;
 
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.mllib.clustering.DistributedLDAModel;
-import org.apache.spark.mllib.clustering.LDA;
-import org.apache.spark.mllib.clustering.LDAModel;
-import org.apache.spark.mllib.linalg.Matrix;
-import org.apache.spark.mllib.linalg.Vector;
-import org.apache.spark.mllib.linalg.Vectors;
+import com.pubmatic.spark.mllib.clustering.DistributedLDAModel;
+import com.pubmatic.spark.mllib.clustering.LDA;
+import com.pubmatic.spark.mllib.clustering.LDAModel;
+import com.pubmatic.spark.mllib.linalg.Matrix;
+import com.pubmatic.spark.mllib.linalg.Vector;
+import com.pubmatic.spark.mllib.linalg.Vectors;
 // $example off$
 
 public class JavaLatentDirichletAllocationExample {

@@ -42,7 +42,7 @@ See [Application Submission Guide](submitting-applications.html) for more detail
 Since `spark-avro` module is external, there is no `.avro` API in 
 `DataFrameReader` or `DataFrameWriter`.
 
-To load/save data in Avro format, you need to specify the data source option `format` as `avro`(or `org.apache.spark.sql.avro`).
+To load/save data in Avro format, you need to specify the data source option `format` as `avro`(or `com.pubmatic.spark.sql.avro`).
 <div class="codetabs">
 <div data-lang="scala" markdown="1">
 {% highlight scala %}
@@ -93,7 +93,7 @@ Both functions are currently only available in Scala and Java.
 <div class="codetabs">
 <div data-lang="scala" markdown="1">
 {% highlight scala %}
-import org.apache.spark.sql.avro.functions._
+import com.pubmatic.spark.sql.avro.functions._
 
 // `from_avro` requires Avro schema in JSON string format.
 val jsonFormatSchema = new String(Files.readAllBytes(Paths.get("./examples/src/main/resources/user.avsc")))
@@ -124,8 +124,8 @@ val query = output
 </div>
 <div data-lang="java" markdown="1">
 {% highlight java %}
-import static org.apache.spark.sql.functions.col;
-import static org.apache.spark.sql.avro.functions.*;
+import static com.pubmatic.spark.sql.functions.col;
+import static com.pubmatic.spark.sql.avro.functions.*;
 
 // `from_avro` requires Avro schema in JSON string format.
 String jsonFormatSchema = new String(Files.readAllBytes(Paths.get("./examples/src/main/resources/user.avsc")));
@@ -237,15 +237,6 @@ Data source options of Avro can be set via:
         <li><code>PERMISSIVE</code>: Corrupt records are processed as null result. Therefore, the
         data schema is forced to be fully nullable, which might be different from the one user provided.</li>
       </ul>
-    </td>
-    <td>function <code>from_avro</code></td>
-  </tr>
-  <tr>
-    <td><code>actualSchema</code></td>
-    <td>None</td>
-    <td>Optional Avro schema (in JSON format) that was used to serialize the data. This should be set if the schema provided
-      for deserialization is compatible with - but not the same as - the one used to originally convert the data to Avro.
-      For more information on Avro's schema evolution and compatability, please refer to the [documentation of Confluent](https://docs.confluent.io/current/schema-registry/avro.html).
     </td>
     <td>function <code>from_avro</code></td>
   </tr>

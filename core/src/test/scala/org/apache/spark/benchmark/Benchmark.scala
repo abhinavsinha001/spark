@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.benchmark
+package com.pubmatic.spark.benchmark
 
 import java.io.{OutputStream, PrintStream}
 
@@ -28,7 +28,7 @@ import org.apache.commons.io.output.TeeOutputStream
 import org.apache.commons.lang3.SystemUtils
 import org.scalatest.Assertions._
 
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.util.Utils
 
 /**
  * Utility class to benchmark components. An example of how to use this is:

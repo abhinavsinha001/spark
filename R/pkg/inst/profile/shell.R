@@ -30,7 +30,7 @@
 
   spark <- SparkR::sparkR.session()
   assign("spark", spark, envir = .GlobalEnv)
-  sc <- SparkR:::callJStatic("org.apache.spark.sql.api.r.SQLUtils", "getJavaSparkContext", spark)
+  sc <- SparkR:::callJStatic("com.pubmatic.spark.sql.api.r.SQLUtils", "getJavaSparkContext", spark)
   assign("sc", sc, envir = .GlobalEnv)
   sparkVer <- SparkR:::callJMethod(sc, "version")
   cat("\nWelcome to")

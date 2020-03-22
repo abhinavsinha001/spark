@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.rpc
+package com.pubmatic.spark.rpc
 
 import scala.collection.mutable.ArrayBuffer
 

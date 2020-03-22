@@ -19,9 +19,9 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.feature.SQLTransformer
+import com.pubmatic.spark.ml.feature.SQLTransformer
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 object SQLTransformerExample {
   def main(args: Array[String]): Unit = {

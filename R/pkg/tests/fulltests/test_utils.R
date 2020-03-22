@@ -19,7 +19,7 @@ context("functions in utils.R")
 
 # JavaSparkContext handle
 sparkSession <- sparkR.session(master = sparkRTestMaster, enableHiveSupport = FALSE)
-sc <- callJStatic("org.apache.spark.sql.api.r.SQLUtils", "getJavaSparkContext", sparkSession)
+sc <- callJStatic("com.pubmatic.spark.sql.api.r.SQLUtils", "getJavaSparkContext", sparkSession)
 
 test_that("convertJListToRList() gives back (deserializes) the original JLists
           of strings and integers", {
@@ -169,7 +169,7 @@ test_that("varargsToJProperties", {
 
 test_that("captureJVMException", {
   method <- "createStructField"
-  expect_error(tryCatch(callJStatic("org.apache.spark.sql.api.r.SQLUtils", method,
+  expect_error(tryCatch(callJStatic("com.pubmatic.spark.sql.api.r.SQLUtils", method,
                                     "col", "unknown", TRUE),
                         error = function(e) {
                           captureJVMException(e, method)

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
 import java.util.concurrent.{Semaphore, TimeUnit}
 import java.util.concurrent.atomic.AtomicInteger
@@ -27,10 +27,10 @@ import scala.concurrent.duration._
 import org.scalatest.BeforeAndAfter
 import org.scalatest.Matchers
 
-import org.apache.spark.internal.config._
-import org.apache.spark.internal.config.Deploy._
-import org.apache.spark.scheduler.{SparkListener, SparkListenerStageCompleted, SparkListenerTaskEnd, SparkListenerTaskStart}
-import org.apache.spark.util.ThreadUtils
+import com.pubmatic.spark.internal.config._
+import com.pubmatic.spark.internal.config.Deploy._
+import com.pubmatic.spark.scheduler.{SparkListener, SparkListenerStageCompleted, SparkListenerTaskEnd, SparkListenerTaskStart}
+import com.pubmatic.spark.util.ThreadUtils
 
 /**
  * Test suite for cancelling running jobs. We run the cancellation tasks for single job action

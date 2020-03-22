@@ -20,15 +20,15 @@ package test.org.apache.spark.sql.connector;
 import java.io.IOException;
 import java.util.*;
 
-import org.apache.spark.sql.catalyst.InternalRow;
-import org.apache.spark.sql.catalyst.expressions.GenericInternalRow;
-import org.apache.spark.sql.connector.catalog.Table;
-import org.apache.spark.sql.connector.catalog.TableProvider;
-import org.apache.spark.sql.connector.read.*;
-import org.apache.spark.sql.sources.Filter;
-import org.apache.spark.sql.sources.GreaterThan;
-import org.apache.spark.sql.types.StructType;
-import org.apache.spark.sql.util.CaseInsensitiveStringMap;
+import com.pubmatic.spark.sql.catalyst.InternalRow;
+import com.pubmatic.spark.sql.catalyst.expressions.GenericInternalRow;
+import com.pubmatic.spark.sql.connector.catalog.Table;
+import com.pubmatic.spark.sql.connector.catalog.TableProvider;
+import com.pubmatic.spark.sql.connector.read.*;
+import com.pubmatic.spark.sql.sources.Filter;
+import com.pubmatic.spark.sql.sources.GreaterThan;
+import com.pubmatic.spark.sql.types.StructType;
+import com.pubmatic.spark.sql.util.CaseInsensitiveStringMap;
 
 public class JavaAdvancedDataSourceV2 implements TableProvider {
 

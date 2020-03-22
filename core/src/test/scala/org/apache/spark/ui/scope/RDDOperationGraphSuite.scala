@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package org.apache.spark.ui.scope
+package com.pubmatic.spark.ui.scope
 
-import org.apache.spark.SparkFunSuite
+import com.pubmatic.spark.SparkFunSuite
 
 class RDDOperationGraphSuite extends SparkFunSuite {
   test("Test simple cluster equals") {

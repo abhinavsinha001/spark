@@ -15,11 +15,14 @@
  * limitations under the License.
  */
 
-package org.apache.sparktest
+package com.pubmatic.sparktest
+
+import com.pubmatic.spark.SparkContext
+import com.pubmatic.spark.rdd.RDD
 
 /**
  * A test suite to make sure all `implicit` functions work correctly.
- * Please don't `import org.apache.spark.SparkContext._` in this class.
+ * Please don't `import com.pubmatic.spark.SparkContext._` in this class.
  *
  * As `implicit` is a compiler feature, we don't need to run this class.
  * What we need to do is making the compiler happy.
@@ -28,49 +31,49 @@ class ImplicitSuite {
 
   // We only want to test if `implicit` works well with the compiler, so we don't need a real
   // SparkContext.
-  def mockSparkContext[T]: org.apache.spark.SparkContext = null
+  def mockSparkContext[T]: SparkContext = null
 
   // We only want to test if `implicit` works well with the compiler, so we don't need a real RDD.
-  def mockRDD[T]: org.apache.spark.rdd.RDD[T] = null
+  def mockRDD[T]: RDD[T] = null
 
   def testRddToPairRDDFunctions(): Unit = {
-    val rdd: org.apache.spark.rdd.RDD[(Int, Int)] = mockRDD
+    val rdd: RDD[(Int, Int)] = mockRDD
     rdd.groupByKey()
   }
 
   def testRddToAsyncRDDActions(): Unit = {
-    val rdd: org.apache.spark.rdd.RDD[Int] = mockRDD
+    val rdd: RDD[Int] = mockRDD
     rdd.countAsync()
   }
 
   def testRddToSequenceFileRDDFunctions(): Unit = {
-    val rdd: org.apache.spark.rdd.RDD[(Int, Int)] = mockRDD
+    val rdd: RDD[(Int, Int)] = mockRDD
     rdd.saveAsSequenceFile("/a/test/path")
   }
 
   def testRddToSequenceFileRDDFunctionsWithWritable(): Unit = {
-    val rdd: org.apache.spark.rdd.RDD[(org.apache.hadoop.io.IntWritable, org.apache.hadoop.io.Text)]
+    val rdd: RDD[(org.apache.hadoop.io.IntWritable, org.apache.hadoop.io.Text)]
       = mockRDD
     rdd.saveAsSequenceFile("/a/test/path")
   }
 
   def testRddToSequenceFileRDDFunctionsWithBytesArray(): Unit = {
-    val rdd: org.apache.spark.rdd.RDD[(Int, Array[Byte])] = mockRDD
+    val rdd: RDD[(Int, Array[Byte])] = mockRDD
     rdd.saveAsSequenceFile("/a/test/path")
   }
 
   def testRddToOrderedRDDFunctions(): Unit = {
-    val rdd: org.apache.spark.rdd.RDD[(Int, Int)] = mockRDD
+    val rdd: RDD[(Int, Int)] = mockRDD
     rdd.sortByKey()
   }
 
   def testDoubleRDDToDoubleRDDFunctions(): Unit = {
-    val rdd: org.apache.spark.rdd.RDD[Double] = mockRDD
+    val rdd: RDD[Double] = mockRDD
     rdd.stats()
   }
 
   def testNumericRDDToDoubleRDDFunctions(): Unit = {
-    val rdd: org.apache.spark.rdd.RDD[Int] = mockRDD
+    val rdd: RDD[Int] = mockRDD
     rdd.stats()
   }
 

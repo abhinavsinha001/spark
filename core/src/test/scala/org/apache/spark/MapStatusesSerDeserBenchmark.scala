@@ -15,14 +15,12 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
+import com.pubmatic.spark.benchmark.{Benchmark, BenchmarkBase}
 import org.scalatest.Assertions._
-
-import org.apache.spark.benchmark.Benchmark
-import org.apache.spark.benchmark.BenchmarkBase
-import org.apache.spark.scheduler.CompressedMapStatus
-import org.apache.spark.storage.BlockManagerId
+import com.pubmatic.spark.scheduler.CompressedMapStatus
+import com.pubmatic.spark.storage.BlockManagerId
 
 /**
  * Benchmark for MapStatuses serialization & deserialization performance.

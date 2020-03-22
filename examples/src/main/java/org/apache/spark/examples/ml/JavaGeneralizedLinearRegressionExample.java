@@ -20,13 +20,13 @@ package org.apache.spark.examples.ml;
 // $example on$
 import java.util.Arrays;
 
-import org.apache.spark.ml.regression.GeneralizedLinearRegression;
-import org.apache.spark.ml.regression.GeneralizedLinearRegressionModel;
-import org.apache.spark.ml.regression.GeneralizedLinearRegressionTrainingSummary;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
+import com.pubmatic.spark.ml.regression.GeneralizedLinearRegression;
+import com.pubmatic.spark.ml.regression.GeneralizedLinearRegressionModel;
+import com.pubmatic.spark.ml.regression.GeneralizedLinearRegressionTrainingSummary;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.Row;
 // $example off$
-import org.apache.spark.sql.SparkSession;
+import com.pubmatic.spark.sql.SparkSession;
 
 /**
  * An example demonstrating generalized linear regression.

@@ -25,7 +25,7 @@ import scala.io.Source._
 import org.apache.hadoop.fs.FileSystem
 import org.apache.hadoop.fs.Path
 
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 /**
  * Simple test for reading and writing to a distributed

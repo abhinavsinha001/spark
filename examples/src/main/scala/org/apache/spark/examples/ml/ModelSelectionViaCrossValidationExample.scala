@@ -19,15 +19,15 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.Pipeline
-import org.apache.spark.ml.classification.LogisticRegression
-import org.apache.spark.ml.evaluation.BinaryClassificationEvaluator
-import org.apache.spark.ml.feature.{HashingTF, Tokenizer}
-import org.apache.spark.ml.linalg.Vector
-import org.apache.spark.ml.tuning.{CrossValidator, ParamGridBuilder}
-import org.apache.spark.sql.Row
+import com.pubmatic.spark.ml.Pipeline
+import com.pubmatic.spark.ml.classification.LogisticRegression
+import com.pubmatic.spark.ml.evaluation.BinaryClassificationEvaluator
+import com.pubmatic.spark.ml.feature.{HashingTF, Tokenizer}
+import com.pubmatic.spark.ml.linalg.Vector
+import com.pubmatic.spark.ml.tuning.{CrossValidator, ParamGridBuilder}
+import com.pubmatic.spark.sql.Row
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 /**
  * A simple example demonstrating model selection using CrossValidator.

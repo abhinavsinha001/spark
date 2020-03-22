@@ -42,16 +42,16 @@ of the vector.
 <div data-lang="scala" markdown="1">
 
 The base class of local vectors is
-[`Vector`](api/scala/index.html#org.apache.spark.mllib.linalg.Vector), and we provide two
-implementations: [`DenseVector`](api/scala/index.html#org.apache.spark.mllib.linalg.DenseVector) and
-[`SparseVector`](api/scala/index.html#org.apache.spark.mllib.linalg.SparseVector).  We recommend
+[`Vector`](api/scala/index.html#com.pubmatic.spark.mllib.linalg.Vector), and we provide two
+implementations: [`DenseVector`](api/scala/index.html#com.pubmatic.spark.mllib.linalg.DenseVector) and
+[`SparseVector`](api/scala/index.html#com.pubmatic.spark.mllib.linalg.SparseVector).  We recommend
 using the factory methods implemented in
-[`Vectors`](api/scala/index.html#org.apache.spark.mllib.linalg.Vectors$) to create local vectors.
+[`Vectors`](api/scala/index.html#com.pubmatic.spark.mllib.linalg.Vectors$) to create local vectors.
 
-Refer to the [`Vector` Scala docs](api/scala/index.html#org.apache.spark.mllib.linalg.Vector) and [`Vectors` Scala docs](api/scala/index.html#org.apache.spark.mllib.linalg.Vectors$) for details on the API.
+Refer to the [`Vector` Scala docs](api/scala/index.html#com.pubmatic.spark.mllib.linalg.Vector) and [`Vectors` Scala docs](api/scala/index.html#com.pubmatic.spark.mllib.linalg.Vectors$) for details on the API.
 
 {% highlight scala %}
-import org.apache.spark.mllib.linalg.{Vector, Vectors}
+import com.pubmatic.spark.mllib.linalg.{Vector, Vectors}
 
 // Create a dense vector (1.0, 0.0, 3.0).
 val dv: Vector = Vectors.dense(1.0, 0.0, 3.0)
@@ -63,7 +63,7 @@ val sv2: Vector = Vectors.sparse(3, Seq((0, 1.0), (2, 3.0)))
 
 ***Note:***
 Scala imports `scala.collection.immutable.Vector` by default, so you have to import
-`org.apache.spark.mllib.linalg.Vector` explicitly to use MLlib's `Vector`.
+`com.pubmatic.spark.mllib.linalg.Vector` explicitly to use MLlib's `Vector`.
 
 </div>
 
@@ -79,8 +79,8 @@ using the factory methods implemented in
 Refer to the [`Vector` Java docs](api/java/org/apache/spark/mllib/linalg/Vector.html) and [`Vectors` Java docs](api/java/org/apache/spark/mllib/linalg/Vectors.html) for details on the API.
 
 {% highlight java %}
-import org.apache.spark.mllib.linalg.Vector;
-import org.apache.spark.mllib.linalg.Vectors;
+import com.pubmatic.spark.mllib.linalg.Vector;
+import com.pubmatic.spark.mllib.linalg.Vectors;
 
 // Create a dense vector (1.0, 0.0, 3.0).
 Vector dv = Vectors.dense(1.0, 0.0, 3.0);
@@ -138,13 +138,13 @@ For multiclass classification, labels should be class indices starting from zero
 <div data-lang="scala" markdown="1">
 
 A labeled point is represented by the case class
-[`LabeledPoint`](api/scala/index.html#org.apache.spark.mllib.regression.LabeledPoint).
+[`LabeledPoint`](api/scala/index.html#com.pubmatic.spark.mllib.regression.LabeledPoint).
 
-Refer to the [`LabeledPoint` Scala docs](api/scala/index.html#org.apache.spark.mllib.regression.LabeledPoint) for details on the API.
+Refer to the [`LabeledPoint` Scala docs](api/scala/index.html#com.pubmatic.spark.mllib.regression.LabeledPoint) for details on the API.
 
 {% highlight scala %}
-import org.apache.spark.mllib.linalg.Vectors
-import org.apache.spark.mllib.regression.LabeledPoint
+import com.pubmatic.spark.mllib.linalg.Vectors
+import com.pubmatic.spark.mllib.regression.LabeledPoint
 
 // Create a labeled point with a positive label and a dense feature vector.
 val pos = LabeledPoint(1.0, Vectors.dense(1.0, 0.0, 3.0))
@@ -162,8 +162,8 @@ A labeled point is represented by
 Refer to the [`LabeledPoint` Java docs](api/java/org/apache/spark/mllib/regression/LabeledPoint.html) for details on the API.
 
 {% highlight java %}
-import org.apache.spark.mllib.linalg.Vectors;
-import org.apache.spark.mllib.regression.LabeledPoint;
+import com.pubmatic.spark.mllib.linalg.Vectors;
+import com.pubmatic.spark.mllib.regression.LabeledPoint;
 
 // Create a labeled point with a positive label and a dense feature vector.
 LabeledPoint pos = new LabeledPoint(1.0, Vectors.dense(1.0, 0.0, 3.0));
@@ -211,14 +211,14 @@ After loading, the feature indices are converted to zero-based.
 <div class="codetabs">
 <div data-lang="scala" markdown="1">
 
-[`MLUtils.loadLibSVMFile`](api/scala/index.html#org.apache.spark.mllib.util.MLUtils$) reads training
+[`MLUtils.loadLibSVMFile`](api/scala/index.html#com.pubmatic.spark.mllib.util.MLUtils$) reads training
 examples stored in LIBSVM format.
 
-Refer to the [`MLUtils` Scala docs](api/scala/index.html#org.apache.spark.mllib.util.MLUtils$) for details on the API.
+Refer to the [`MLUtils` Scala docs](api/scala/index.html#com.pubmatic.spark.mllib.util.MLUtils$) for details on the API.
 
 {% highlight scala %}
-import org.apache.spark.mllib.regression.LabeledPoint
-import org.apache.spark.mllib.util.MLUtils
+import com.pubmatic.spark.mllib.regression.LabeledPoint
+import com.pubmatic.spark.mllib.util.MLUtils
 import org.apache.spark.rdd.RDD
 
 val examples: RDD[LabeledPoint] = MLUtils.loadLibSVMFile(sc, "data/mllib/sample_libsvm_data.txt")
@@ -232,8 +232,8 @@ examples stored in LIBSVM format.
 Refer to the [`MLUtils` Java docs](api/java/org/apache/spark/mllib/util/MLUtils.html) for details on the API.
 
 {% highlight java %}
-import org.apache.spark.mllib.regression.LabeledPoint;
-import org.apache.spark.mllib.util.MLUtils;
+import com.pubmatic.spark.mllib.regression.LabeledPoint;
+import com.pubmatic.spark.mllib.util.MLUtils;
 import org.apache.spark.api.java.JavaRDD;
 
 JavaRDD<LabeledPoint> examples = 
@@ -272,17 +272,17 @@ is stored in a one-dimensional array `[1.0, 3.0, 5.0, 2.0, 4.0, 6.0]` with the m
 <div data-lang="scala" markdown="1">
 
 The base class of local matrices is
-[`Matrix`](api/scala/index.html#org.apache.spark.mllib.linalg.Matrix), and we provide two
-implementations: [`DenseMatrix`](api/scala/index.html#org.apache.spark.mllib.linalg.DenseMatrix),
-and [`SparseMatrix`](api/scala/index.html#org.apache.spark.mllib.linalg.SparseMatrix).
+[`Matrix`](api/scala/index.html#com.pubmatic.spark.mllib.linalg.Matrix), and we provide two
+implementations: [`DenseMatrix`](api/scala/index.html#com.pubmatic.spark.mllib.linalg.DenseMatrix),
+and [`SparseMatrix`](api/scala/index.html#com.pubmatic.spark.mllib.linalg.SparseMatrix).
 We recommend using the factory methods implemented
-in [`Matrices`](api/scala/index.html#org.apache.spark.mllib.linalg.Matrices$) to create local
+in [`Matrices`](api/scala/index.html#com.pubmatic.spark.mllib.linalg.Matrices$) to create local
 matrices. Remember, local matrices in MLlib are stored in column-major order.
 
-Refer to the [`Matrix` Scala docs](api/scala/index.html#org.apache.spark.mllib.linalg.Matrix) and [`Matrices` Scala docs](api/scala/index.html#org.apache.spark.mllib.linalg.Matrices$) for details on the API.
+Refer to the [`Matrix` Scala docs](api/scala/index.html#com.pubmatic.spark.mllib.linalg.Matrix) and [`Matrices` Scala docs](api/scala/index.html#com.pubmatic.spark.mllib.linalg.Matrices$) for details on the API.
 
 {% highlight scala %}
-import org.apache.spark.mllib.linalg.{Matrix, Matrices}
+import com.pubmatic.spark.mllib.linalg.{Matrix, Matrices}
 
 // Create a dense matrix ((1.0, 2.0), (3.0, 4.0), (5.0, 6.0))
 val dm: Matrix = Matrices.dense(3, 2, Array(1.0, 3.0, 5.0, 2.0, 4.0, 6.0))
@@ -305,8 +305,8 @@ matrices. Remember, local matrices in MLlib are stored in column-major order.
 Refer to the [`Matrix` Java docs](api/java/org/apache/spark/mllib/linalg/Matrix.html) and [`Matrices` Java docs](api/java/org/apache/spark/mllib/linalg/Matrices.html) for details on the API.
 
 {% highlight java %}
-import org.apache.spark.mllib.linalg.Matrix;
-import org.apache.spark.mllib.linalg.Matrices;
+import com.pubmatic.spark.mllib.linalg.Matrix;
+import com.pubmatic.spark.mllib.linalg.Matrices;
 
 // Create a dense matrix ((1.0, 2.0), (3.0, 4.0), (5.0, 6.0))
 Matrix dm = Matrices.dense(3, 2, new double[] {1.0, 3.0, 5.0, 2.0, 4.0, 6.0});
@@ -377,16 +377,16 @@ limited by the integer range but it should be much smaller in practice.
 <div class="codetabs">
 <div data-lang="scala" markdown="1">
 
-A [`RowMatrix`](api/scala/index.html#org.apache.spark.mllib.linalg.distributed.RowMatrix) can be
+A [`RowMatrix`](api/scala/index.html#com.pubmatic.spark.mllib.linalg.distributed.RowMatrix) can be
 created from an `RDD[Vector]` instance.  Then we can compute its column summary statistics and decompositions.
 [QR decomposition](https://en.wikipedia.org/wiki/QR_decomposition) is of the form A = QR where Q is an orthogonal matrix and R is an upper triangular matrix.
 For [singular value decomposition (SVD)](https://en.wikipedia.org/wiki/Singular_value_decomposition) and [principal component analysis (PCA)](https://en.wikipedia.org/wiki/Principal_component_analysis), please refer to [Dimensionality reduction](mllib-dimensionality-reduction.html).
 
-Refer to the [`RowMatrix` Scala docs](api/scala/index.html#org.apache.spark.mllib.linalg.distributed.RowMatrix) for details on the API.
+Refer to the [`RowMatrix` Scala docs](api/scala/index.html#com.pubmatic.spark.mllib.linalg.distributed.RowMatrix) for details on the API.
 
 {% highlight scala %}
-import org.apache.spark.mllib.linalg.Vector
-import org.apache.spark.mllib.linalg.distributed.RowMatrix
+import com.pubmatic.spark.mllib.linalg.Vector
+import com.pubmatic.spark.mllib.linalg.distributed.RowMatrix
 
 val rows: RDD[Vector] = ... // an RDD of local vectors
 // Create a RowMatrix from an RDD[Vector].
@@ -410,8 +410,8 @@ Refer to the [`RowMatrix` Java docs](api/java/org/apache/spark/mllib/linalg/dist
 
 {% highlight java %}
 import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.mllib.linalg.Vector;
-import org.apache.spark.mllib.linalg.distributed.RowMatrix;
+import com.pubmatic.spark.mllib.linalg.Vector;
+import com.pubmatic.spark.mllib.linalg.distributed.RowMatrix;
 
 JavaRDD<Vector> rows = ... // a JavaRDD of local vectors
 // Create a RowMatrix from an JavaRDD<Vector>.
@@ -463,16 +463,16 @@ vector.
 <div data-lang="scala" markdown="1">
 
 An
-[`IndexedRowMatrix`](api/scala/index.html#org.apache.spark.mllib.linalg.distributed.IndexedRowMatrix)
+[`IndexedRowMatrix`](api/scala/index.html#com.pubmatic.spark.mllib.linalg.distributed.IndexedRowMatrix)
 can be created from an `RDD[IndexedRow]` instance, where
-[`IndexedRow`](api/scala/index.html#org.apache.spark.mllib.linalg.distributed.IndexedRow) is a
+[`IndexedRow`](api/scala/index.html#com.pubmatic.spark.mllib.linalg.distributed.IndexedRow) is a
 wrapper over `(Long, Vector)`.  An `IndexedRowMatrix` can be converted to a `RowMatrix` by dropping
 its row indices.
 
-Refer to the [`IndexedRowMatrix` Scala docs](api/scala/index.html#org.apache.spark.mllib.linalg.distributed.IndexedRowMatrix) for details on the API.
+Refer to the [`IndexedRowMatrix` Scala docs](api/scala/index.html#com.pubmatic.spark.mllib.linalg.distributed.IndexedRowMatrix) for details on the API.
 
 {% highlight scala %}
-import org.apache.spark.mllib.linalg.distributed.{IndexedRow, IndexedRowMatrix, RowMatrix}
+import com.pubmatic.spark.mllib.linalg.distributed.{IndexedRow, IndexedRowMatrix, RowMatrix}
 
 val rows: RDD[IndexedRow] = ... // an RDD of indexed rows
 // Create an IndexedRowMatrix from an RDD[IndexedRow].
@@ -500,9 +500,9 @@ Refer to the [`IndexedRowMatrix` Java docs](api/java/org/apache/spark/mllib/lina
 
 {% highlight java %}
 import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.mllib.linalg.distributed.IndexedRow;
-import org.apache.spark.mllib.linalg.distributed.IndexedRowMatrix;
-import org.apache.spark.mllib.linalg.distributed.RowMatrix;
+import com.pubmatic.spark.mllib.linalg.distributed.IndexedRow;
+import com.pubmatic.spark.mllib.linalg.distributed.IndexedRowMatrix;
+import com.pubmatic.spark.mllib.linalg.distributed.RowMatrix;
 
 JavaRDD<IndexedRow> rows = ... // a JavaRDD of indexed rows
 // Create an IndexedRowMatrix from a JavaRDD<IndexedRow>.
@@ -568,17 +568,17 @@ dimensions of the matrix are huge and the matrix is very sparse.
 <div data-lang="scala" markdown="1">
 
 A
-[`CoordinateMatrix`](api/scala/index.html#org.apache.spark.mllib.linalg.distributed.CoordinateMatrix)
+[`CoordinateMatrix`](api/scala/index.html#com.pubmatic.spark.mllib.linalg.distributed.CoordinateMatrix)
 can be created from an `RDD[MatrixEntry]` instance, where
-[`MatrixEntry`](api/scala/index.html#org.apache.spark.mllib.linalg.distributed.MatrixEntry) is a
+[`MatrixEntry`](api/scala/index.html#com.pubmatic.spark.mllib.linalg.distributed.MatrixEntry) is a
 wrapper over `(Long, Long, Double)`.  A `CoordinateMatrix` can be converted to an `IndexedRowMatrix`
 with sparse rows by calling `toIndexedRowMatrix`.  Other computations for 
 `CoordinateMatrix` are not currently supported.
 
-Refer to the [`CoordinateMatrix` Scala docs](api/scala/index.html#org.apache.spark.mllib.linalg.distributed.CoordinateMatrix) for details on the API.
+Refer to the [`CoordinateMatrix` Scala docs](api/scala/index.html#com.pubmatic.spark.mllib.linalg.distributed.CoordinateMatrix) for details on the API.
 
 {% highlight scala %}
-import org.apache.spark.mllib.linalg.distributed.{CoordinateMatrix, MatrixEntry}
+import com.pubmatic.spark.mllib.linalg.distributed.{CoordinateMatrix, MatrixEntry}
 
 val entries: RDD[MatrixEntry] = ... // an RDD of matrix entries
 // Create a CoordinateMatrix from an RDD[MatrixEntry].
@@ -607,9 +607,9 @@ Refer to the [`CoordinateMatrix` Java docs](api/java/org/apache/spark/mllib/lina
 
 {% highlight java %}
 import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.mllib.linalg.distributed.CoordinateMatrix;
-import org.apache.spark.mllib.linalg.distributed.IndexedRowMatrix;
-import org.apache.spark.mllib.linalg.distributed.MatrixEntry;
+import com.pubmatic.spark.mllib.linalg.distributed.CoordinateMatrix;
+import com.pubmatic.spark.mllib.linalg.distributed.IndexedRowMatrix;
+import com.pubmatic.spark.mllib.linalg.distributed.MatrixEntry;
 
 JavaRDD<MatrixEntry> entries = ... // a JavaRDD of matrix entries
 // Create a CoordinateMatrix from a JavaRDD<MatrixEntry>.
@@ -678,15 +678,15 @@ the sub-matrix at the given index with size `rowsPerBlock` x `colsPerBlock`.
 <div class="codetabs">
 <div data-lang="scala" markdown="1">
 
-A [`BlockMatrix`](api/scala/index.html#org.apache.spark.mllib.linalg.distributed.BlockMatrix) can be
+A [`BlockMatrix`](api/scala/index.html#com.pubmatic.spark.mllib.linalg.distributed.BlockMatrix) can be
 most easily created from an `IndexedRowMatrix` or `CoordinateMatrix` by calling `toBlockMatrix`.
 `toBlockMatrix` creates blocks of size 1024 x 1024 by default.
 Users may change the block size by supplying the values through `toBlockMatrix(rowsPerBlock, colsPerBlock)`.
 
-Refer to the [`BlockMatrix` Scala docs](api/scala/index.html#org.apache.spark.mllib.linalg.distributed.BlockMatrix) for details on the API.
+Refer to the [`BlockMatrix` Scala docs](api/scala/index.html#com.pubmatic.spark.mllib.linalg.distributed.BlockMatrix) for details on the API.
 
 {% highlight scala %}
-import org.apache.spark.mllib.linalg.distributed.{BlockMatrix, CoordinateMatrix, MatrixEntry}
+import com.pubmatic.spark.mllib.linalg.distributed.{BlockMatrix, CoordinateMatrix, MatrixEntry}
 
 val entries: RDD[MatrixEntry] = ... // an RDD of (i, j, v) matrix entries
 // Create a CoordinateMatrix from an RDD[MatrixEntry].
@@ -714,9 +714,9 @@ Refer to the [`BlockMatrix` Java docs](api/java/org/apache/spark/mllib/linalg/di
 
 {% highlight java %}
 import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.mllib.linalg.distributed.BlockMatrix;
-import org.apache.spark.mllib.linalg.distributed.CoordinateMatrix;
-import org.apache.spark.mllib.linalg.distributed.IndexedRowMatrix;
+import com.pubmatic.spark.mllib.linalg.distributed.BlockMatrix;
+import com.pubmatic.spark.mllib.linalg.distributed.CoordinateMatrix;
+import com.pubmatic.spark.mllib.linalg.distributed.IndexedRowMatrix;
 
 JavaRDD<MatrixEntry> entries = ... // a JavaRDD of (i, j, v) Matrix Entries
 // Create a CoordinateMatrix from a JavaRDD<MatrixEntry>.

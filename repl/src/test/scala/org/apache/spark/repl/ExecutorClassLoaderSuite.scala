@@ -42,7 +42,7 @@ import org.apache.spark._
 import org.apache.spark.TestUtils.JavaSourceFromString
 import org.apache.spark.internal.Logging
 import org.apache.spark.rpc.RpcEnv
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.util.Utils
 
 class ExecutorClassLoaderSuite
   extends SparkFunSuite

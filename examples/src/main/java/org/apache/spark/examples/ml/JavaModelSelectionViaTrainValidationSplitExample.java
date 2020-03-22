@@ -18,16 +18,16 @@
 package org.apache.spark.examples.ml;
 
 // $example on$
-import org.apache.spark.ml.evaluation.RegressionEvaluator;
-import org.apache.spark.ml.param.ParamMap;
-import org.apache.spark.ml.regression.LinearRegression;
-import org.apache.spark.ml.tuning.ParamGridBuilder;
-import org.apache.spark.ml.tuning.TrainValidationSplit;
-import org.apache.spark.ml.tuning.TrainValidationSplitModel;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
+import com.pubmatic.spark.ml.evaluation.RegressionEvaluator;
+import com.pubmatic.spark.ml.param.ParamMap;
+import com.pubmatic.spark.ml.regression.LinearRegression;
+import com.pubmatic.spark.ml.tuning.ParamGridBuilder;
+import com.pubmatic.spark.ml.tuning.TrainValidationSplit;
+import com.pubmatic.spark.ml.tuning.TrainValidationSplitModel;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.Row;
 // $example off$
-import org.apache.spark.sql.SparkSession;
+import com.pubmatic.spark.sql.SparkSession;
 
 /**
  * Java example demonstrating model selection using TrainValidationSplit.

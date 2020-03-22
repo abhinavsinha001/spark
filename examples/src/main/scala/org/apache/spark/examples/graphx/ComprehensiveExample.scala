@@ -19,9 +19,9 @@
 package org.apache.spark.examples.graphx
 
 // $example on$
-import org.apache.spark.graphx.GraphLoader
+import com.pubmatic.spark.graphx.GraphLoader
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 /**
  * Suppose I want to build a graph from some text files, restrict the graph

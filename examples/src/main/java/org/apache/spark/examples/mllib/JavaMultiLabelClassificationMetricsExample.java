@@ -23,8 +23,7 @@ import java.util.List;
 
 import scala.Tuple2;
 
-import org.apache.spark.api.java.*;
-import org.apache.spark.mllib.evaluation.MultilabelMetrics;
+import com.pubmatic.spark.mllib.evaluation.MultilabelMetrics;
 import org.apache.spark.SparkConf;
 // $example off$
 

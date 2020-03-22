@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.spark.security
+package com.pubmatic.spark.security
 
-import org.apache.spark.{SparkConf, SparkFunSuite}
-import org.apache.spark.internal.config._
+import com.pubmatic.spark.{SparkConf, SparkFunSuite}
+import com.pubmatic.spark.internal.config._
 
 trait EncryptionFunSuite {
 

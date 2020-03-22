@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package org.apache.spark.deploy.worker
+package com.pubmatic.spark.deploy.worker
 
 import org.scalatest.{Matchers, PrivateMethodTester}
 
-import org.apache.spark.{SecurityManager, SparkConf, SparkFunSuite}
-import org.apache.spark.deploy.Command
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.{SecurityManager, SparkConf, SparkFunSuite}
+import com.pubmatic.spark.deploy.Command
+import com.pubmatic.spark.util.Utils
 
 class CommandUtilsSuite extends SparkFunSuite with Matchers with PrivateMethodTester {
 

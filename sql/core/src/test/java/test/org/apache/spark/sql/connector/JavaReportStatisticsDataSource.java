@@ -19,13 +19,13 @@ package test.org.apache.spark.sql.connector;
 
 import java.util.OptionalLong;
 
-import org.apache.spark.sql.connector.catalog.Table;
-import org.apache.spark.sql.connector.catalog.TableProvider;
-import org.apache.spark.sql.connector.read.InputPartition;
-import org.apache.spark.sql.connector.read.ScanBuilder;
-import org.apache.spark.sql.connector.read.Statistics;
-import org.apache.spark.sql.connector.read.SupportsReportStatistics;
-import org.apache.spark.sql.util.CaseInsensitiveStringMap;
+import com.pubmatic.spark.sql.connector.catalog.Table;
+import com.pubmatic.spark.sql.connector.catalog.TableProvider;
+import com.pubmatic.spark.sql.connector.read.InputPartition;
+import com.pubmatic.spark.sql.connector.read.ScanBuilder;
+import com.pubmatic.spark.sql.connector.read.Statistics;
+import com.pubmatic.spark.sql.connector.read.SupportsReportStatistics;
+import com.pubmatic.spark.sql.util.CaseInsensitiveStringMap;
 
 public class JavaReportStatisticsDataSource implements TableProvider {
   class MyScanBuilder extends JavaSimpleScanBuilder implements SupportsReportStatistics {

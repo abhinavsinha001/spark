@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.benchmark
+package com.pubmatic.spark.benchmark
 
 import java.io.{File, FileOutputStream, OutputStream}
 

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
 import java.lang.ref.WeakReference
 import java.util.concurrent.TimeUnit
@@ -28,11 +28,11 @@ import org.scalatest.concurrent.Eventually._
 import org.scalatest.concurrent.PatienceConfiguration
 import org.scalatest.time.SpanSugar._
 
-import org.apache.spark.internal.{config, Logging}
-import org.apache.spark.internal.config._
-import org.apache.spark.rdd.{RDD, ReliableRDDCheckpointData}
-import org.apache.spark.shuffle.sort.SortShuffleManager
-import org.apache.spark.storage._
+import com.pubmatic.spark.internal.{config, Logging}
+import com.pubmatic.spark.internal.config._
+import com.pubmatic.spark.rdd.{RDD, ReliableRDDCheckpointData}
+import com.pubmatic.spark.shuffle.sort.SortShuffleManager
+import com.pubmatic.spark.storage._
 
 /**
  * An abstract base class for context cleaner tests, which sets up a context with a config

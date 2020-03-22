@@ -25,9 +25,9 @@ import scala.tools.nsc.GenericRunnerSettings
 
 import org.apache.spark._
 import org.apache.spark.internal.Logging
-import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.internal.StaticSQLConf.CATALOG_IMPLEMENTATION
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.sql.SparkSession
+import com.pubmatic.spark.sql.internal.StaticSQLConf.CATALOG_IMPLEMENTATION
+import com.pubmatic.spark.util.Utils
 
 object Main extends Logging {
 

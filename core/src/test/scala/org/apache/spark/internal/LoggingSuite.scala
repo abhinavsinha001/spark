@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package org.apache.spark.internal
+package com.pubmatic.spark.internal
 
 import org.apache.log4j.{Level, Logger}
 import org.apache.log4j.spi.{Filter, LoggingEvent}
 
-import org.apache.spark.SparkFunSuite
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.SparkFunSuite
+import com.pubmatic.spark.util.Utils
 
 class LoggingSuite extends SparkFunSuite {
 

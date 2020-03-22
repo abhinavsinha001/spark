@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package org.apache.spark.io
+package com.pubmatic.spark.io
 
 import java.io.{ByteArrayInputStream, ByteArrayOutputStream}
 
 import com.google.common.io.ByteStreams
 
-import org.apache.spark.{SparkConf, SparkFunSuite}
+import com.pubmatic.spark.{SparkConf, SparkFunSuite}
 
 class CompressionCodecSuite extends SparkFunSuite {
   val conf = new SparkConf(false)

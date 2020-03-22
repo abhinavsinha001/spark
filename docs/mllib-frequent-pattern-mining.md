@@ -54,18 +54,18 @@ We refer users to the papers for more details.
 <div class="codetabs">
 <div data-lang="scala" markdown="1">
 
-[`FPGrowth`](api/scala/index.html#org.apache.spark.mllib.fpm.FPGrowth) implements the
+[`FPGrowth`](api/scala/index.html#com.pubmatic.spark.mllib.fpm.FPGrowth) implements the
 FP-growth algorithm.
 It takes an `RDD` of transactions, where each transaction is an `Array` of items of a generic type.
 Calling `FPGrowth.run` with transactions returns an
-[`FPGrowthModel`](api/scala/index.html#org.apache.spark.mllib.fpm.FPGrowthModel)
+[`FPGrowthModel`](api/scala/index.html#com.pubmatic.spark.mllib.fpm.FPGrowthModel)
 that stores the frequent itemsets with their frequencies.  The following
 example illustrates how to mine frequent itemsets and association rules
 (see [Association
 Rules](mllib-frequent-pattern-mining.html#association-rules) for
 details) from `transactions`.
 
-Refer to the [`FPGrowth` Scala docs](api/scala/index.html#org.apache.spark.mllib.fpm.FPGrowth) for details on the API.
+Refer to the [`FPGrowth` Scala docs](api/scala/index.html#com.pubmatic.spark.mllib.fpm.FPGrowth) for details on the API.
 
 {% include_example scala/org/apache/spark/examples/mllib/SimpleFPGrowth.scala %}
 
@@ -111,7 +111,7 @@ Refer to the [`FPGrowth` Python docs](api/python/pyspark.mllib.html#pyspark.mlli
 
 <div class="codetabs">
 <div data-lang="scala" markdown="1">
-[AssociationRules](api/scala/index.html#org.apache.spark.mllib.fpm.AssociationRules)
+[AssociationRules](api/scala/index.html#com.pubmatic.spark.mllib.fpm.AssociationRules)
 implements a parallel rule generation algorithm for constructing rules
 that have a single item as the consequent.
 
@@ -168,13 +168,13 @@ The following example illustrates PrefixSpan running on the sequences
 <div class="codetabs">
 <div data-lang="scala" markdown="1">
 
-[`PrefixSpan`](api/scala/index.html#org.apache.spark.mllib.fpm.PrefixSpan) implements the
+[`PrefixSpan`](api/scala/index.html#com.pubmatic.spark.mllib.fpm.PrefixSpan) implements the
 PrefixSpan algorithm.
 Calling `PrefixSpan.run` returns a
-[`PrefixSpanModel`](api/scala/index.html#org.apache.spark.mllib.fpm.PrefixSpanModel)
+[`PrefixSpanModel`](api/scala/index.html#com.pubmatic.spark.mllib.fpm.PrefixSpanModel)
 that stores the frequent sequences with their frequencies.
 
-Refer to the [`PrefixSpan` Scala docs](api/scala/index.html#org.apache.spark.mllib.fpm.PrefixSpan) and [`PrefixSpanModel` Scala docs](api/scala/index.html#org.apache.spark.mllib.fpm.PrefixSpanModel) for details on the API.
+Refer to the [`PrefixSpan` Scala docs](api/scala/index.html#com.pubmatic.spark.mllib.fpm.PrefixSpan) and [`PrefixSpanModel` Scala docs](api/scala/index.html#com.pubmatic.spark.mllib.fpm.PrefixSpanModel) for details on the API.
 
 {% include_example scala/org/apache/spark/examples/mllib/PrefixSpanExample.scala %}
 

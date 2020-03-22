@@ -29,7 +29,7 @@ def _list_function_infos(jvm):
     and returns them.
     """
 
-    jinfos = jvm.org.apache.spark.sql.api.python.PythonSQLUtils.listBuiltinFunctionInfos()
+    jinfos = jvm.com.pubmatic.spark.sql.api.python.PythonSQLUtils.listBuiltinFunctionInfos()
     infos = []
     for jinfo in jinfos:
         name = jinfo.getName()

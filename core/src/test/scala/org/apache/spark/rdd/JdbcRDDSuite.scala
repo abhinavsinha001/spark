@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package org.apache.spark.rdd
+package com.pubmatic.spark.rdd
 
 import java.sql._
 
 import org.scalatest.BeforeAndAfter
 
-import org.apache.spark.{LocalSparkContext, SparkContext, SparkFunSuite}
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.{LocalSparkContext, SparkContext, SparkFunSuite}
+import com.pubmatic.spark.util.Utils
 
 class JdbcRDDSuite extends SparkFunSuite with BeforeAndAfter with LocalSparkContext {
 

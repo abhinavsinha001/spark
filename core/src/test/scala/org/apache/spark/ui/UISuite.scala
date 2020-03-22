@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.ui
+package com.pubmatic.spark.ui
 
 import java.net.{BindException, ServerSocket}
 import java.net.{URI, URL}
@@ -30,10 +30,10 @@ import org.mockito.Mockito.{mock, when}
 import org.scalatest.concurrent.Eventually._
 import org.scalatest.time.SpanSugar._
 
-import org.apache.spark._
-import org.apache.spark.LocalSparkContext._
-import org.apache.spark.internal.config.UI
-import org.apache.spark.util.Utils
+import com.pubmatic.spark._
+import com.pubmatic.spark.LocalSparkContext._
+import com.pubmatic.spark.internal.config.UI
+import com.pubmatic.spark.util.Utils
 
 class UISuite extends SparkFunSuite {
 

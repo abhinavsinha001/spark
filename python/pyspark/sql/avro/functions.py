@@ -30,10 +30,9 @@ from pyspark.util import _print_missing_jar
 @since(3.0)
 def from_avro(data, jsonFormatSchema, options={}):
     """
-    Converts a binary column of Avro format into its corresponding catalyst value. If a schema is
-    provided via the option actualSchema, a different (but compatible) schema can be used for
-    reading. If no actualSchema option is provided, the specified schema must match the read data,
-    otherwise the behavior is undefined: it may fail or return arbitrary result.
+    Converts a binary column of avro format into its corresponding catalyst value. The specified
+    schema must match the read data, otherwise the behavior is undefined: it may fail or return
+    arbitrary result.
 
     Note: Avro is built-in but external data source module since Spark 2.4. Please deploy the
     application as per the deployment section of "Apache Avro Data Source Guide".
@@ -59,7 +58,7 @@ def from_avro(data, jsonFormatSchema, options={}):
 
     sc = SparkContext._active_spark_context
     try:
-        jc = sc._jvm.org.apache.spark.sql.avro.functions.from_avro(
+        jc = sc._jvm.com.pubmatic.spark.sql.avro.functions.from_avro(
             _to_java_column(data), jsonFormatSchema, options)
     except TypeError as e:
         if str(e) == "'JavaPackage' object is not callable":
@@ -95,9 +94,9 @@ def to_avro(data, jsonFormatSchema=""):
     sc = SparkContext._active_spark_context
     try:
         if jsonFormatSchema == "":
-            jc = sc._jvm.org.apache.spark.sql.avro.functions.to_avro(_to_java_column(data))
+            jc = sc._jvm.com.pubmatic.spark.sql.avro.functions.to_avro(_to_java_column(data))
         else:
-            jc = sc._jvm.org.apache.spark.sql.avro.functions.to_avro(
+            jc = sc._jvm.com.pubmatic.spark.sql.avro.functions.to_avro(
                 _to_java_column(data), jsonFormatSchema)
     except TypeError as e:
         if str(e) == "'JavaPackage' object is not callable":

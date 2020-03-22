@@ -17,23 +17,23 @@
 
 package org.apache.spark.examples.ml;
 
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.SparkSession;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.SparkSession;
 
 // $example on$
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.spark.ml.feature.ElementwiseProduct;
-import org.apache.spark.ml.linalg.Vector;
-import org.apache.spark.ml.linalg.VectorUDT;
-import org.apache.spark.ml.linalg.Vectors;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.RowFactory;
-import org.apache.spark.sql.types.DataTypes;
-import org.apache.spark.sql.types.StructField;
-import org.apache.spark.sql.types.StructType;
+import com.pubmatic.spark.ml.feature.ElementwiseProduct;
+import com.pubmatic.spark.ml.linalg.Vector;
+import com.pubmatic.spark.ml.linalg.VectorUDT;
+import com.pubmatic.spark.ml.linalg.Vectors;
+import com.pubmatic.spark.sql.Row;
+import com.pubmatic.spark.sql.RowFactory;
+import com.pubmatic.spark.sql.types.DataTypes;
+import com.pubmatic.spark.sql.types.StructField;
+import com.pubmatic.spark.sql.types.StructType;
 // $example off$
 
 public class JavaElementwiseProductExample {

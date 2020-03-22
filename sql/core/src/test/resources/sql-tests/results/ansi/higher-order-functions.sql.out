@@ -19,8 +19,8 @@ select upper(x -> x) as v
 -- !query 1 schema
 struct<>
 -- !query 1 output
-org.apache.spark.sql.AnalysisException
-A lambda function should only be used in a higher order function. However, its class is org.apache.spark.sql.catalyst.expressions.Upper, which is not a higher order function.; line 1 pos 7
+com.pubmatic.spark.sql.AnalysisException
+A lambda function should only be used in a higher order function. However, its class is com.pubmatic.spark.sql.catalyst.expressions.Upper, which is not a higher order function.; line 1 pos 7
 
 
 -- !query 2
@@ -261,7 +261,7 @@ select transform(ys, all -> all * all) as v from values (array(32, 97)) as t(ys)
 -- !query 27 schema
 struct<>
 -- !query 27 output
-org.apache.spark.sql.catalyst.parser.ParseException
+com.pubmatic.spark.sql.catalyst.parser.ParseException
 
 no viable alternative at input 'all'(line 1, pos 21)
 
@@ -275,7 +275,7 @@ select transform(ys, (all, i) -> all + i) as v from values (array(32, 97)) as t(
 -- !query 28 schema
 struct<>
 -- !query 28 output
-org.apache.spark.sql.catalyst.parser.ParseException
+com.pubmatic.spark.sql.catalyst.parser.ParseException
 
 no viable alternative at input 'all'(line 1, pos 22)
 

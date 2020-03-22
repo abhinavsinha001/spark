@@ -17,20 +17,20 @@
 
 package org.apache.spark.examples.ml;
 
-import org.apache.spark.sql.*;
+import com.pubmatic.spark.sql.*;
 
 // $example on$
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.spark.ml.linalg.Vector;
-import org.apache.spark.ml.linalg.Vectors;
-import org.apache.spark.ml.linalg.VectorUDT;
-import org.apache.spark.ml.stat.Summarizer;
-import org.apache.spark.sql.types.DataTypes;
-import org.apache.spark.sql.types.Metadata;
-import org.apache.spark.sql.types.StructField;
-import org.apache.spark.sql.types.StructType;
+import com.pubmatic.spark.ml.linalg.Vector;
+import com.pubmatic.spark.ml.linalg.Vectors;
+import com.pubmatic.spark.ml.linalg.VectorUDT;
+import com.pubmatic.spark.ml.stat.Summarizer;
+import com.pubmatic.spark.sql.types.DataTypes;
+import com.pubmatic.spark.sql.types.Metadata;
+import com.pubmatic.spark.sql.types.StructField;
+import com.pubmatic.spark.sql.types.StructType;
 // $example off$
 
 public class JavaSummarizerExample {

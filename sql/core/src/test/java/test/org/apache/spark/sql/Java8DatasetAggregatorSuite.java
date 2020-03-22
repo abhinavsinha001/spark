@@ -23,9 +23,9 @@ import org.junit.Assert;
 import org.junit.Test;
 import scala.Tuple2;
 
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.KeyValueGroupedDataset;
-import org.apache.spark.sql.expressions.javalang.typed;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.KeyValueGroupedDataset;
+import com.pubmatic.spark.sql.expressions.javalang.typed;
 
 /**
  * Suite that replicates tests in JavaDatasetAggregatorSuite using lambda syntax.

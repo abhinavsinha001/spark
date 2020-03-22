@@ -1,0 +1,4 @@
+com.pubmatic.spark.ml.regression.InternalLinearRegressionModelWriter
+com.pubmatic.spark.ml.regression.PMMLLinearRegressionModelWriter
+com.pubmatic.spark.ml.clustering.InternalKMeansModelWriter
+com.pubmatic.spark.ml.clustering.PMMLKMeansModelWriter

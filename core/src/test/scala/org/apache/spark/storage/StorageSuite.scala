@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package org.apache.spark.storage
+package com.pubmatic.spark.storage
 
-import org.apache.spark.SparkFunSuite
+import com.pubmatic.spark.SparkFunSuite
 
 /**
  * Test various functionalities in StorageUtils and StorageStatus.

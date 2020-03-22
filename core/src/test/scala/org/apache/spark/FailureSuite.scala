@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
 import java.io.{IOException, NotSerializableException, ObjectInputStream}
 
-import org.apache.spark.internal.config.UNSAFE_EXCEPTION_ON_MEMORY_LEAK
-import org.apache.spark.memory.TestMemoryConsumer
-import org.apache.spark.storage.StorageLevel
-import org.apache.spark.util.NonSerializable
+import com.pubmatic.spark.internal.config.UNSAFE_EXCEPTION_ON_MEMORY_LEAK
+import com.pubmatic.spark.memory.TestMemoryConsumer
+import com.pubmatic.spark.storage.StorageLevel
+import com.pubmatic.spark.util.NonSerializable
 
 // Common state shared by FailureSuite-launched tasks. We use a global object
 // for this because any local variables used in the task closures will rightfully

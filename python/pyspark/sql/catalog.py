@@ -35,7 +35,7 @@ Function = namedtuple("Function", "name description className isTemporary")
 class Catalog(object):
     """User-facing catalog API, accessible through `SparkSession.catalog`.
 
-    This is a thin wrapper around its Scala implementation org.apache.spark.sql.catalog.Catalog.
+    This is a thin wrapper around its Scala implementation com.pubmatic.spark.sql.catalog.Catalog.
     """
 
     def __init__(self, sparkSession):

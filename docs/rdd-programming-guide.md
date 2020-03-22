@@ -1393,7 +1393,7 @@ The code below shows an accumulator being used to add up the elements of an arra
 
 {% highlight scala %}
 scala> val accum = sc.longAccumulator("My Accumulator")
-accum: org.apache.spark.util.LongAccumulator = LongAccumulator(id: 0, name: Some(My Accumulator), value: 0)
+accum: com.pubmatic.spark.util.LongAccumulator = LongAccumulator(id: 0, name: Some(My Accumulator), value: 0)
 
 scala> sc.parallelize(Array(1, 2, 3, 4)).foreach(x => accum.add(x))
 ...
@@ -1404,11 +1404,11 @@ res2: Long = 10
 {% endhighlight %}
 
 While this code used the built-in support for accumulators of type Long, programmers can also
-create their own types by subclassing [AccumulatorV2](api/scala/index.html#org.apache.spark.util.AccumulatorV2).
+create their own types by subclassing [AccumulatorV2](api/scala/index.html#com.pubmatic.spark.util.AccumulatorV2).
 The AccumulatorV2 abstract class has several methods which one has to override: `reset` for resetting
 the accumulator to zero, `add` for adding another value into the accumulator,
 `merge` for merging another same-type accumulator into this one. Other methods that must be overridden
-are contained in the [API documentation](api/scala/index.html#org.apache.spark.util.AccumulatorV2). For example, supposing we had a `MyVector` class
+are contained in the [API documentation](api/scala/index.html#com.pubmatic.spark.util.AccumulatorV2). For example, supposing we had a `MyVector` class
 representing mathematical vectors, we could write:
 
 {% highlight scala %}
@@ -1457,11 +1457,11 @@ accum.value();
 {% endhighlight %}
 
 While this code used the built-in support for accumulators of type Long, programmers can also
-create their own types by subclassing [AccumulatorV2](api/scala/index.html#org.apache.spark.util.AccumulatorV2).
+create their own types by subclassing [AccumulatorV2](api/scala/index.html#com.pubmatic.spark.util.AccumulatorV2).
 The AccumulatorV2 abstract class has several methods which one has to override: `reset` for resetting
 the accumulator to zero, `add` for adding another value into the accumulator,
 `merge` for merging another same-type accumulator into this one. Other methods that must be overridden
-are contained in the [API documentation](api/scala/index.html#org.apache.spark.util.AccumulatorV2). For example, supposing we had a `MyVector` class
+are contained in the [API documentation](api/scala/index.html#com.pubmatic.spark.util.AccumulatorV2). For example, supposing we had a `MyVector` class
 representing mathematical vectors, we could write:
 
 {% highlight java %}

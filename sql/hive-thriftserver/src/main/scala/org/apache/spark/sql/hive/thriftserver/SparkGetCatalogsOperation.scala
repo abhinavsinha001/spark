@@ -25,7 +25,7 @@ import org.apache.hive.service.cli.{HiveSQLException, OperationState}
 import org.apache.hive.service.cli.operation.GetCatalogsOperation
 import org.apache.hive.service.cli.session.HiveSession
 
-import org.apache.spark.internal.Logging
+import com.pubmatic.spark.internal.Logging
 import org.apache.spark.sql.SQLContext
 import org.apache.spark.util.{Utils => SparkUtils}
 

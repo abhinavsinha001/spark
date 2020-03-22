@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.status
+package com.pubmatic.spark.status
 
 import java.util.concurrent.atomic.{AtomicBoolean, AtomicInteger}
 
@@ -23,10 +23,10 @@ import org.mockito.Mockito._
 import org.scalatest.Matchers._
 import org.scalatest.concurrent.Eventually
 
-import org.apache.spark.{SparkConf, SparkFunSuite}
-import org.apache.spark.internal.config.Status._
-import org.apache.spark.status.ElementTrackingStore._
-import org.apache.spark.util.kvstore._
+import com.pubmatic.spark.{SparkConf, SparkFunSuite}
+import com.pubmatic.spark.internal.config.Status._
+import com.pubmatic.spark.status.ElementTrackingStore._
+import com.pubmatic.spark.util.kvstore._
 
 class ElementTrackingStoreSuite extends SparkFunSuite with Eventually {
 

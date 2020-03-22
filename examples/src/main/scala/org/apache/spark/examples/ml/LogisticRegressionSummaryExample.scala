@@ -19,10 +19,10 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.classification.LogisticRegression
+import com.pubmatic.spark.ml.classification.LogisticRegression
 // $example off$
-import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.functions.max
+import com.pubmatic.spark.sql.SparkSession
+import com.pubmatic.spark.sql.functions.max
 
 object LogisticRegressionSummaryExample {
 

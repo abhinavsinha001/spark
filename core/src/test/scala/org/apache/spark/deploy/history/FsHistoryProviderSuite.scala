@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.deploy.history
+package com.pubmatic.spark.deploy.history
 
 import java.io._
 import java.nio.charset.StandardCharsets
@@ -37,20 +37,20 @@ import org.mockito.Mockito.{doThrow, mock, spy, verify, when}
 import org.scalatest.Matchers
 import org.scalatest.concurrent.Eventually._
 
-import org.apache.spark.{SecurityManager, SPARK_VERSION, SparkConf, SparkFunSuite}
-import org.apache.spark.internal.Logging
-import org.apache.spark.internal.config.DRIVER_LOG_DFS_DIR
-import org.apache.spark.internal.config.History._
-import org.apache.spark.internal.config.UI.{ADMIN_ACLS, ADMIN_ACLS_GROUPS, USER_GROUPS_MAPPING}
-import org.apache.spark.io._
-import org.apache.spark.scheduler._
-import org.apache.spark.scheduler.cluster.ExecutorInfo
-import org.apache.spark.security.GroupMappingServiceProvider
-import org.apache.spark.status.AppStatusStore
-import org.apache.spark.status.KVUtils.KVStoreScalaSerializer
-import org.apache.spark.status.api.v1.{ApplicationAttemptInfo, ApplicationInfo}
-import org.apache.spark.util.{Clock, JsonProtocol, ManualClock, Utils}
-import org.apache.spark.util.logging.DriverLogger
+import com.pubmatic.spark.{SecurityManager, SPARK_VERSION, SparkConf, SparkFunSuite}
+import com.pubmatic.spark.internal.Logging
+import com.pubmatic.spark.internal.config.DRIVER_LOG_DFS_DIR
+import com.pubmatic.spark.internal.config.History._
+import com.pubmatic.spark.internal.config.UI.{ADMIN_ACLS, ADMIN_ACLS_GROUPS, USER_GROUPS_MAPPING}
+import com.pubmatic.spark.io._
+import com.pubmatic.spark.scheduler._
+import com.pubmatic.spark.scheduler.cluster.ExecutorInfo
+import com.pubmatic.spark.security.GroupMappingServiceProvider
+import com.pubmatic.spark.status.AppStatusStore
+import com.pubmatic.spark.status.KVUtils.KVStoreScalaSerializer
+import com.pubmatic.spark.status.api.v1.{ApplicationAttemptInfo, ApplicationInfo}
+import com.pubmatic.spark.util.{Clock, JsonProtocol, ManualClock, Utils}
+import com.pubmatic.spark.util.logging.DriverLogger
 
 class FsHistoryProviderSuite extends SparkFunSuite with Matchers with Logging {
 
@@ -1383,7 +1383,7 @@ class FsHistoryProviderSuite extends SparkFunSuite with Matchers with Logging {
     val cstream = codec.map(_.compressedContinuousOutputStream(fstream)).getOrElse(fstream)
     val bstream = new BufferedOutputStream(cstream)
 
-    val metadata = SparkListenerLogStart(org.apache.spark.SPARK_VERSION)
+    val metadata = SparkListenerLogStart(com.pubmatic.spark.SPARK_VERSION)
     val eventJson = JsonProtocol.logStartToJson(metadata)
     val metadataJson = compact(eventJson) + "\n"
     bstream.write(metadataJson.getBytes(StandardCharsets.UTF_8))

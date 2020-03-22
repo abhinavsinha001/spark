@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.network
+package com.pubmatic.spark.network
 
 import java.io.InputStream
 import java.nio.ByteBuffer
@@ -26,10 +26,10 @@ import scala.reflect.ClassTag
 
 import org.scalatest.concurrent._
 
-import org.apache.spark.{SparkException, SparkFunSuite}
+import com.pubmatic.spark.{SparkException, SparkFunSuite}
 import org.apache.spark.network.buffer.ManagedBuffer
 import org.apache.spark.network.shuffle.{BlockFetchingListener, DownloadFileManager}
-import org.apache.spark.storage.{BlockId, StorageLevel}
+import com.pubmatic.spark.storage.{BlockId, StorageLevel}
 
 class BlockTransferServiceSuite extends SparkFunSuite with TimeLimits {
 

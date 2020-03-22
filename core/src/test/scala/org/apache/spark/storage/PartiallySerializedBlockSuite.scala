@@ -15,23 +15,22 @@
  * limitations under the License.
  */
 
-package org.apache.spark.storage
+package com.pubmatic.spark.storage
 
 import java.nio.ByteBuffer
 
-import scala.reflect.ClassTag
+import com.pubmatic.spark.memory.MemoryMode
 
+import scala.reflect.ClassTag
 import org.mockito.Mockito
 import org.mockito.Mockito.atLeastOnce
 import org.mockito.invocation.InvocationOnMock
 import org.scalatest.{BeforeAndAfterEach, PrivateMethodTester}
-
-import org.apache.spark.{SparkConf, SparkFunSuite, TaskContext, TaskContextImpl}
-import org.apache.spark.memory.MemoryMode
-import org.apache.spark.serializer.{JavaSerializer, SerializationStream, SerializerManager}
-import org.apache.spark.storage.memory.{MemoryStore, PartiallySerializedBlock, RedirectableOutputStream}
-import org.apache.spark.util.{ByteBufferInputStream, ByteBufferOutputStream}
-import org.apache.spark.util.io.{ChunkedByteBuffer, ChunkedByteBufferOutputStream}
+import com.pubmatic.spark.{SparkConf, SparkFunSuite, TaskContext, TaskContextImpl}
+import com.pubmatic.spark.serializer.{JavaSerializer, SerializationStream, SerializerManager}
+import com.pubmatic.spark.storage.memory.{MemoryStore, PartiallySerializedBlock, RedirectableOutputStream}
+import com.pubmatic.spark.util.{ByteBufferInputStream, ByteBufferOutputStream}
+import com.pubmatic.spark.util.io.{ChunkedByteBuffer, ChunkedByteBufferOutputStream}
 
 class PartiallySerializedBlockSuite
     extends SparkFunSuite

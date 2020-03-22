@@ -63,7 +63,7 @@ license: |
 
   - Since Spark 3.0, JSON datasource and JSON function `schema_of_json` infer TimestampType from string values if they match to the pattern defined by the JSON option `timestampFormat`. Set JSON option `inferTimestamp` to `false` to disable such type inferring.
 
-  - In Spark version 2.4 and earlier, if `org.apache.spark.sql.functions.udf(Any, DataType)` gets a Scala closure with primitive-type argument, the returned UDF will return null if the input values is null. Since Spark 3.0, the UDF will return the default value of the Java type if the input value is null. For example, `val f = udf((x: Int) => x, IntegerType)`, `f($"x")` will return null in Spark 2.4 and earlier if column `x` is null, and return 0 in Spark 3.0. This behavior change is introduced because Spark 3.0 is built with Scala 2.12 by default.
+  - In Spark version 2.4 and earlier, if `com.pubmatic.spark.sql.functions.udf(Any, DataType)` gets a Scala closure with primitive-type argument, the returned UDF will return null if the input values is null. Since Spark 3.0, the UDF will return the default value of the Java type if the input value is null. For example, `val f = udf((x: Int) => x, IntegerType)`, `f($"x")` will return null in Spark 2.4 and earlier if column `x` is null, and return 0 in Spark 3.0. This behavior change is introduced because Spark 3.0 is built with Scala 2.12 by default.
 
   - Since Spark 3.0, Proleptic Gregorian calendar is used in parsing, formatting, and converting dates and timestamps as well as in extracting sub-components like years, days and etc. Spark 3.0 uses Java 8 API classes from the java.time packages that based on ISO chronology (https://docs.oracle.com/javase/8/docs/api/java/time/chrono/IsoChronology.html). In Spark version 2.4 and earlier, those operations are performed by using the hybrid calendar (Julian + Gregorian, see https://docs.oracle.com/javase/7/docs/api/java/util/GregorianCalendar.html). The changes impact on the results for dates before October 15, 1582 (Gregorian) and affect on the following Spark 3.0 API:
 
@@ -222,8 +222,10 @@ license: |
 
   - Since Spark 3.0, when casting interval values to string type, there is no "interval" prefix, e.g. `1 days 2 hours`. In Spark version 2.4 and earlier, the string contains the "interval" prefix like `interval 1 days 2 hours`.
 
-  - Since Spark 3.0, when casting string value to integral types(tinyint, smallint, int and bigint), datetime types(date, timestamp and interval) and boolean type, the leading and trailing whitespaces(<= ACSII 32) will be trimmed before converted to these type values, e.g. `cast(' 1\t' as int)` results `1`, `cast(' 1\t' as boolean)` results `true`, `cast('2019-10-10\t as date)` results the date value `2019-10-10`. In Spark version 2.4 and earlier, while casting string to integrals and booleans, it will not trim the whitespaces from both ends, the foregoing results will be `null`, while to datetimes, only the trailing spaces(= ASCII 32) will be removed.
+  - Since Spark 3.0, when casting string value to integral types, including tinyint, smallint, int and bigint type, the leading and trailing white spaces(<= ACSII 32) will be trimmed before convert to integral values, e.g. `cast(' 1 ' as int)` results `1`. In Spark version 2.4 and earlier, the result will be `null`.
 
+  - Since Spark 3.0, when casting string value to date, timestamp and interval values, the leading and trailing white spaces(<= ACSII 32) will be trimmed before casing, e.g. `cast('2019-10-10\t as date)` results the date value `2019-10-10`. In Spark version 2.4 and earlier, only the trailing space will be removed, thus, the result is `null`.
+  
   - Since Spark 3.0, numbers written in scientific notation(e.g. `1E2`) would be parsed as Double. In Spark version 2.4 and earlier, they're parsed as Decimal. To restore the behavior before Spark 3.0, you can set `spark.sql.legacy.exponentLiteralAsDecimal.enabled` to `true`.
 
   - Since Spark 3.0, we pad decimal numbers with trailing zeros to the scale of the column for `spark-sql` interface, for example:
@@ -251,12 +253,8 @@ license: |
           </td>
         </tr>
     </table>
-    
-  - Since Spark 3.0, CREATE TABLE without a specific provider will use the value of `spark.sql.sources.default` as its provider. In Spark version 2.4 and earlier, it was hive. To restore the behavior before Spark 3.0, you can set `spark.sql.legacy.createHiveTableByDefault.enabled` to `true`.
 
   - Since Spark 3.0, the unary arithmetic operator plus(`+`) only accepts string, numeric and interval type values as inputs. Besides, `+` with a integral string representation will be coerced to double value, e.g. `+'1'` results `1.0`. In Spark version 2.4 and earlier, this operator is ignored. There is no type checking for it, thus, all type values with a `+` prefix are valid, e.g. `+ array(1, 2)` is valid and results `[1, 2]`. Besides, there is no type coercion for it at all, e.g. in Spark 2.4, the result of `+'1'` is string `1`.
-
-  - Since Spark 3.0, day-time interval strings are converted to intervals with respect to the `from` and `to` bounds. If an input string does not match to the pattern defined by specified bounds, the `ParseException` exception is thrown. For example, `interval '2 10:20' hour to minute` raises the exception because the expected format is `[+|-]h[h]:[m]m`. In Spark version 2.4, the `from` bound was not taken into account, and the `to` bound was used to truncate the resulted interval. For instance, the day-time interval string from the showed example is converted to `interval 10 hours 20 minutes`. To restore the behavior before Spark 3.0, you can set `spark.sql.legacy.fromDayTimeString.enabled` to `true`.
 
 ## Upgrading from Spark SQL 2.4 to 2.4.1
 
@@ -652,11 +650,11 @@ and writing data out (`DataFrame.write`),
 and deprecated the old APIs (e.g., `SQLContext.parquetFile`, `SQLContext.jsonFile`).
 
 See the API docs for `SQLContext.read` (
-  <a href="api/scala/index.html#org.apache.spark.sql.SQLContext@read:DataFrameReader">Scala</a>,
+  <a href="api/scala/index.html#com.pubmatic.spark.sql.SQLContext@read:DataFrameReader">Scala</a>,
   <a href="api/java/org/apache/spark/sql/SQLContext.html#read()">Java</a>,
   <a href="api/python/pyspark.sql.html#pyspark.sql.SQLContext.read">Python</a>
 ) and `DataFrame.write` (
-  <a href="api/scala/index.html#org.apache.spark.sql.DataFrame@write:DataFrameWriter">Scala</a>,
+  <a href="api/scala/index.html#com.pubmatic.spark.sql.DataFrame@write:DataFrameWriter">Scala</a>,
   <a href="api/java/org/apache/spark/sql/Dataset.html#write()">Java</a>,
   <a href="api/python/pyspark.sql.html#pyspark.sql.DataFrame.write">Python</a>
 ) more information.
@@ -763,7 +761,7 @@ In some cases where no common type exists (e.g., for passing in closures or Maps
 is used instead.
 
 Additionally, the Java specific types API has been removed. Users of both Scala and Java should
-use the classes present in `org.apache.spark.sql.types` to describe schema programmatically.
+use the classes present in `com.pubmatic.spark.sql.types` to describe schema programmatically.
 
 
 #### Isolation of Implicit Conversions and Removal of dsl Package (Scala-only)
@@ -778,14 +776,14 @@ Additionally, the implicit conversions now only augment RDDs that are composed o
 case classes or tuples) with a method `toDF`, instead of applying automatically.
 
 When using function inside of the DSL (now replaced with the `DataFrame` API) users used to import
-`org.apache.spark.sql.catalyst.dsl`. Instead the public dataframe functions API should be used:
-`import org.apache.spark.sql.functions._`.
+`com.pubmatic.spark.sql.catalyst.dsl`. Instead the public dataframe functions API should be used:
+`import com.pubmatic.spark.sql.functions._`.
 
-#### Removal of the type aliases in org.apache.spark.sql for DataType (Scala-only)
+#### Removal of the type aliases in com.pubmatic.spark.sql for DataType (Scala-only)
 {:.no_toc}
 
 Spark 1.3 removes the type aliases that were present in the base sql package for `DataType`. Users
-should instead import the classes in `org.apache.spark.sql.types`
+should instead import the classes in `com.pubmatic.spark.sql.types`
 
 #### UDF Registration Moved to `sqlContext.udf` (Java & Scala)
 {:.no_toc}

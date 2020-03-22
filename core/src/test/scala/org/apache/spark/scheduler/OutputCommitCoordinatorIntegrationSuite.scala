@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package org.apache.spark.scheduler
+package com.pubmatic.spark.scheduler
 
 import org.apache.hadoop.mapred.{FileOutputCommitter, TaskAttemptContext}
 import org.scalatest.concurrent.{Signaler, ThreadSignaler, TimeLimits}
 import org.scalatest.time.{Seconds, Span}
 
-import org.apache.spark.{LocalSparkContext, SparkConf, SparkContext, SparkFunSuite, TaskContext}
+import com.pubmatic.spark.{LocalSparkContext, SparkConf, SparkContext, SparkFunSuite, TaskContext}
 
 /**
  * Integration tests for the OutputCommitCoordinator.

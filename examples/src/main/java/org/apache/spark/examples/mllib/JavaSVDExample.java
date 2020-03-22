@@ -27,11 +27,11 @@ import org.apache.spark.SparkContext;
 // $example on$
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.mllib.linalg.Matrix;
-import org.apache.spark.mllib.linalg.SingularValueDecomposition;
-import org.apache.spark.mllib.linalg.Vector;
-import org.apache.spark.mllib.linalg.Vectors;
-import org.apache.spark.mllib.linalg.distributed.RowMatrix;
+import com.pubmatic.spark.mllib.linalg.Matrix;
+import com.pubmatic.spark.mllib.linalg.SingularValueDecomposition;
+import com.pubmatic.spark.mllib.linalg.Vector;
+import com.pubmatic.spark.mllib.linalg.Vectors;
+import com.pubmatic.spark.mllib.linalg.distributed.RowMatrix;
 // $example off$
 
 /**

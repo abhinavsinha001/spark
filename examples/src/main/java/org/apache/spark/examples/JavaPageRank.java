@@ -27,8 +27,8 @@ import com.google.common.collect.Iterables;
 
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.api.java.function.Function2;
-import org.apache.spark.sql.SparkSession;
+import com.pubmatic.spark.api.java.function.Function2;
+import com.pubmatic.spark.sql.SparkSession;
 
 /**
  * Computes the PageRank of URLs from an input file. Input file should
@@ -40,7 +40,7 @@ import org.apache.spark.sql.SparkSession;
  * where URL and their neighbors are separated by space(s).
  *
  * This is an example implementation for learning how to use Spark. For more conventional use,
- * please refer to org.apache.spark.graphx.lib.PageRank
+ * please refer to com.pubmatic.spark.graphx.lib.PageRank
  *
  * Example Usage:
  * <pre>
@@ -54,7 +54,7 @@ public final class JavaPageRank {
     String warning = "WARN: This is a naive implementation of PageRank " +
             "and is given as an example! \n" +
             "Please use the PageRank implementation found in " +
-            "org.apache.spark.graphx.lib.PageRank for more conventional use.";
+            "com.pubmatic.spark.graphx.lib.PageRank for more conventional use.";
     System.err.println(warning);
   }
 

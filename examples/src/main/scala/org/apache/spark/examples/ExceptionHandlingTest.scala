@@ -17,7 +17,7 @@
 
 package org.apache.spark.examples
 
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 object ExceptionHandlingTest {
   def main(args: Array[String]): Unit = {

@@ -15,15 +15,15 @@
  * limitations under the License.
  */
 
-package org.apache.spark.ui
+package com.pubmatic.spark.ui
 
 import java.net.{HttpURLConnection, URL}
 import java.util.Locale
+
 import javax.servlet.http.{HttpServletRequest, HttpServletResponse}
 
 import scala.io.Source
 import scala.xml.Node
-
 import com.gargoylesoftware.htmlunit.DefaultCssErrorHandler
 import org.json4s._
 import org.json4s.jackson.JsonMethods
@@ -34,16 +34,15 @@ import org.scalatest.concurrent.Eventually._
 import org.scalatest.time.SpanSugar._
 import org.scalatestplus.selenium.WebBrowser
 import org.w3c.css.sac.CSSParseException
-
-import org.apache.spark._
-import org.apache.spark.LocalSparkContext._
-import org.apache.spark.api.java.StorageLevels
-import org.apache.spark.deploy.history.HistoryServerSuite
-import org.apache.spark.internal.config._
-import org.apache.spark.internal.config.Status._
-import org.apache.spark.internal.config.UI._
-import org.apache.spark.shuffle.FetchFailedException
-import org.apache.spark.status.api.v1.{JacksonMessageWriter, RDDDataDistribution, StageStatus}
+import com.pubmatic.spark._
+import com.pubmatic.spark.api.java.StorageLevels
+import com.pubmatic.spark.LocalSparkContext._
+import com.pubmatic.spark.deploy.history.HistoryServerSuite
+import com.pubmatic.spark.internal.config._
+import com.pubmatic.spark.internal.config.Status._
+import com.pubmatic.spark.internal.config.UI._
+import com.pubmatic.spark.shuffle.FetchFailedException
+import com.pubmatic.spark.status.api.v1.{JacksonMessageWriter, RDDDataDistribution, StageStatus}
 
 private[spark] class SparkUICssErrorHandler extends DefaultCssErrorHandler {
 

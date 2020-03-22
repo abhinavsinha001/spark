@@ -18,9 +18,9 @@
 package org.apache.spark.examples;
 
 import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.api.java.function.Function;
-import org.apache.spark.api.java.function.Function2;
-import org.apache.spark.sql.SparkSession;
+import com.pubmatic.spark.api.java.function.Function;
+import com.pubmatic.spark.api.java.function.Function2;
+import com.pubmatic.spark.sql.SparkSession;
 
 import java.io.Serializable;
 import java.util.Arrays;

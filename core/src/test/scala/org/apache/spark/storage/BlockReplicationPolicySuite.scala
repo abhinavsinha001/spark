@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.storage
+package com.pubmatic.spark.storage
 
 import scala.collection.mutable
 import scala.language.implicitConversions
@@ -23,7 +23,7 @@ import scala.util.Random
 
 import org.scalatest.{BeforeAndAfter, Matchers}
 
-import org.apache.spark.{LocalSparkContext, SparkFunSuite}
+import com.pubmatic.spark.{LocalSparkContext, SparkFunSuite}
 
 class RandomBlockReplicationPolicyBehavior extends SparkFunSuite
   with Matchers

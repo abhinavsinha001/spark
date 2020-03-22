@@ -22,12 +22,12 @@ import java.util.Properties
 import org.mockito.Mockito.{mock, RETURNS_SMART_NULLS}
 import org.scalatest.BeforeAndAfter
 
-import org.apache.spark.{SparkConf, SparkContext, SparkFunSuite}
-import org.apache.spark.internal.config.Status.{ASYNC_TRACKING_ENABLED, LIVE_ENTITY_UPDATE_PERIOD}
-import org.apache.spark.scheduler.SparkListenerJobStart
+import com.pubmatic.spark.{SparkConf, SparkContext, SparkFunSuite}
+import com.pubmatic.spark.internal.config.Status.{ASYNC_TRACKING_ENABLED, LIVE_ENTITY_UPDATE_PERIOD}
+import com.pubmatic.spark.scheduler.SparkListenerJobStart
 import org.apache.spark.sql.hive.thriftserver.HiveThriftServer2
 import org.apache.spark.sql.internal.SQLConf
-import org.apache.spark.status.ElementTrackingStore
+import com.pubmatic.spark.status.ElementTrackingStore
 import org.apache.spark.util.kvstore.InMemoryStore
 
 class HiveThriftServer2ListenerSuite extends SparkFunSuite with BeforeAndAfter {

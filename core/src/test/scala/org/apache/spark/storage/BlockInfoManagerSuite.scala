@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.storage
+package com.pubmatic.spark.storage
 
 import java.util.Properties
 
@@ -26,8 +26,8 @@ import scala.reflect.ClassTag
 import org.scalatest.BeforeAndAfterEach
 import org.scalatest.time.SpanSugar._
 
-import org.apache.spark.{SparkException, SparkFunSuite, TaskContext, TaskContextImpl}
-import org.apache.spark.util.ThreadUtils
+import com.pubmatic.spark.{SparkException, SparkFunSuite, TaskContext, TaskContextImpl}
+import com.pubmatic.spark.util.ThreadUtils
 
 
 class BlockInfoManagerSuite extends SparkFunSuite with BeforeAndAfterEach {

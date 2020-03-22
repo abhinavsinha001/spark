@@ -15,15 +15,15 @@
  * limitations under the License.
  */
 
-package org.apache.spark.deploy.rest
+package com.pubmatic.spark.deploy.rest
 
 import java.lang.Boolean
 
 import org.json4s.jackson.JsonMethods._
 
-import org.apache.spark.{SparkConf, SparkFunSuite}
-import org.apache.spark.internal.config._
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.{SparkConf, SparkFunSuite}
+import com.pubmatic.spark.internal.config._
+import com.pubmatic.spark.util.Utils
 
 /**
  * Tests for the REST application submission protocol.

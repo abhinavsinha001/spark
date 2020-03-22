@@ -58,7 +58,7 @@ select * from int8_tbl limit (case when random() < 0.5 then bigint(null) end)
 -- !query 4 schema
 struct<>
 -- !query 4 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 The limit expression must evaluate to a constant value, but got CASE WHEN (`_nondeterministic` < CAST(0.5BD AS DOUBLE)) THEN CAST(NULL AS BIGINT) END;
 
 

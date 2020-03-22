@@ -16,7 +16,7 @@
  */
 
 // This is a test protocol for testing parquet-avro compatibility.
-@namespace("org.apache.spark.sql.execution.datasources.parquet.test.avro")
+@namespace("com.pubmatic.spark.sql.execution.datasources.parquet.test.avro")
 protocol CompatibilityTest {
     enum Suit {
         SPADES,

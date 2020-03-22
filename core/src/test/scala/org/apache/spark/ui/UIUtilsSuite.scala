@@ -15,12 +15,12 @@
  * limitations under the License.
  */
 
-package org.apache.spark.ui
+package com.pubmatic.spark.ui
 
 import scala.xml.{Node, Text}
 import scala.xml.Utility.trim
 
-import org.apache.spark.SparkFunSuite
+import com.pubmatic.spark.SparkFunSuite
 
 class UIUtilsSuite extends SparkFunSuite {
   import UIUtils._

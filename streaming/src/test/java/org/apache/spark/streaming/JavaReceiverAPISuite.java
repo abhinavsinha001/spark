@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package org.apache.spark.streaming;
+package com.pubmatic.spark.streaming;
 
-import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.api.java.function.VoidFunction;
-import org.apache.spark.streaming.api.java.JavaDStream;
-import org.apache.spark.streaming.api.java.JavaReceiverInputDStream;
-import org.apache.spark.streaming.api.java.JavaStreamingContext;
+import com.pubmatic.spark.api.java.JavaRDD;
+import com.pubmatic.spark.api.java.function.VoidFunction;
+import com.pubmatic.spark.streaming.api.java.JavaDStream;
+import com.pubmatic.spark.streaming.api.java.JavaReceiverInputDStream;
+import com.pubmatic.spark.streaming.api.java.JavaStreamingContext;
 
 import com.google.common.io.Closeables;
 import org.junit.After;
@@ -29,9 +29,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import org.apache.spark.storage.StorageLevel;
-import org.apache.spark.streaming.receiver.Receiver;
-import org.apache.spark.api.java.function.Function;
+import com.pubmatic.spark.storage.StorageLevel;
+import com.pubmatic.spark.streaming.receiver.Receiver;
+import com.pubmatic.spark.api.java.function.Function;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

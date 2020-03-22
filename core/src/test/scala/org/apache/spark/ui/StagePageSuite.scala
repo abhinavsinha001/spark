@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.ui
+package com.pubmatic.spark.ui
 
 import java.util.Locale
 import javax.servlet.http.HttpServletRequest
@@ -24,13 +24,13 @@ import scala.xml.Node
 
 import org.mockito.Mockito.{mock, when, RETURNS_SMART_NULLS}
 
-import org.apache.spark._
-import org.apache.spark.executor.{ExecutorMetrics, TaskMetrics}
-import org.apache.spark.internal.config.Status._
-import org.apache.spark.scheduler._
-import org.apache.spark.status.AppStatusStore
-import org.apache.spark.status.api.v1.{AccumulableInfo => UIAccumulableInfo, StageData, StageStatus}
-import org.apache.spark.ui.jobs.{ApiHelper, StagePage, StagesTab, TaskPagedTable}
+import com.pubmatic.spark._
+import com.pubmatic.spark.executor.{ExecutorMetrics, TaskMetrics}
+import com.pubmatic.spark.internal.config.Status._
+import com.pubmatic.spark.scheduler._
+import com.pubmatic.spark.status.AppStatusStore
+import com.pubmatic.spark.status.api.v1.{AccumulableInfo => UIAccumulableInfo, StageData, StageStatus}
+import com.pubmatic.spark.ui.jobs.{ApiHelper, StagePage, StagesTab, TaskPagedTable}
 
 class StagePageSuite extends SparkFunSuite with LocalSparkContext {
 

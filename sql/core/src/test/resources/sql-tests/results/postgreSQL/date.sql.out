@@ -200,7 +200,7 @@ SELECT date '1999 Jan 08'
 -- !query 21 schema
 struct<>
 -- !query 21 output
-org.apache.spark.sql.catalyst.parser.ParseException
+com.pubmatic.spark.sql.catalyst.parser.ParseException
 
 Cannot parse the DATE value: 1999 Jan 08(line 1, pos 7)
 
@@ -214,7 +214,7 @@ SELECT date '1999 08 Jan'
 -- !query 22 schema
 struct<>
 -- !query 22 output
-org.apache.spark.sql.catalyst.parser.ParseException
+com.pubmatic.spark.sql.catalyst.parser.ParseException
 
 Cannot parse the DATE value: 1999 08 Jan(line 1, pos 7)
 
@@ -244,7 +244,7 @@ SELECT date '1999 01 08'
 -- !query 25 schema
 struct<>
 -- !query 25 output
-org.apache.spark.sql.catalyst.parser.ParseException
+com.pubmatic.spark.sql.catalyst.parser.ParseException
 
 Cannot parse the DATE value: 1999 01 08(line 1, pos 7)
 
@@ -258,7 +258,7 @@ SELECT date '1999 08 01'
 -- !query 26 schema
 struct<>
 -- !query 26 output
-org.apache.spark.sql.catalyst.parser.ParseException
+com.pubmatic.spark.sql.catalyst.parser.ParseException
 
 Cannot parse the DATE value: 1999 08 01(line 1, pos 7)
 
@@ -280,7 +280,7 @@ SELECT date '1999 Jan 08'
 -- !query 28 schema
 struct<>
 -- !query 28 output
-org.apache.spark.sql.catalyst.parser.ParseException
+com.pubmatic.spark.sql.catalyst.parser.ParseException
 
 Cannot parse the DATE value: 1999 Jan 08(line 1, pos 7)
 
@@ -294,7 +294,7 @@ SELECT date '1999 08 Jan'
 -- !query 29 schema
 struct<>
 -- !query 29 output
-org.apache.spark.sql.catalyst.parser.ParseException
+com.pubmatic.spark.sql.catalyst.parser.ParseException
 
 Cannot parse the DATE value: 1999 08 Jan(line 1, pos 7)
 
@@ -324,7 +324,7 @@ SELECT date '1999 01 08'
 -- !query 32 schema
 struct<>
 -- !query 32 output
-org.apache.spark.sql.catalyst.parser.ParseException
+com.pubmatic.spark.sql.catalyst.parser.ParseException
 
 Cannot parse the DATE value: 1999 01 08(line 1, pos 7)
 
@@ -338,7 +338,7 @@ SELECT date '1999 08 01'
 -- !query 33 schema
 struct<>
 -- !query 33 output
-org.apache.spark.sql.catalyst.parser.ParseException
+com.pubmatic.spark.sql.catalyst.parser.ParseException
 
 Cannot parse the DATE value: 1999 08 01(line 1, pos 7)
 
@@ -368,7 +368,7 @@ SELECT date '1999 Jan 08'
 -- !query 36 schema
 struct<>
 -- !query 36 output
-org.apache.spark.sql.catalyst.parser.ParseException
+com.pubmatic.spark.sql.catalyst.parser.ParseException
 
 Cannot parse the DATE value: 1999 Jan 08(line 1, pos 7)
 
@@ -382,7 +382,7 @@ SELECT date '1999 08 Jan'
 -- !query 37 schema
 struct<>
 -- !query 37 output
-org.apache.spark.sql.catalyst.parser.ParseException
+com.pubmatic.spark.sql.catalyst.parser.ParseException
 
 Cannot parse the DATE value: 1999 08 Jan(line 1, pos 7)
 
@@ -412,7 +412,7 @@ SELECT date '1999 01 08'
 -- !query 40 schema
 struct<>
 -- !query 40 output
-org.apache.spark.sql.catalyst.parser.ParseException
+com.pubmatic.spark.sql.catalyst.parser.ParseException
 
 Cannot parse the DATE value: 1999 01 08(line 1, pos 7)
 
@@ -426,7 +426,7 @@ SELECT date '1999 08 01'
 -- !query 41 schema
 struct<>
 -- !query 41 output
-org.apache.spark.sql.catalyst.parser.ParseException
+com.pubmatic.spark.sql.catalyst.parser.ParseException
 
 Cannot parse the DATE value: 1999 08 01(line 1, pos 7)
 
@@ -456,7 +456,7 @@ SELECT date '5874897-12-31'
 -- !query 44 schema
 struct<>
 -- !query 44 output
-org.apache.spark.sql.catalyst.parser.ParseException
+com.pubmatic.spark.sql.catalyst.parser.ParseException
 
 Cannot parse the DATE value: 5874897-12-31(line 1, pos 7)
 
@@ -470,7 +470,7 @@ SELECT date '5874898-01-01'
 -- !query 45 schema
 struct<>
 -- !query 45 output
-org.apache.spark.sql.catalyst.parser.ParseException
+com.pubmatic.spark.sql.catalyst.parser.ParseException
 
 Cannot parse the DATE value: 5874898-01-01(line 1, pos 7)
 
@@ -482,93 +482,93 @@ SELECT date '5874898-01-01'
 -- !query 46
 SELECT f1 - date '2000-01-01' AS `Days From 2K` FROM DATE_TBL
 -- !query 46 schema
-struct<Days From 2K:interval>
+struct<Days From 2K:int>
 -- !query 46 output
--2 years -10 months
--2 years -10 months -1 days
--2 years -9 months -30 days
--3 years -10 months
--3 years -10 months -1 days
--3 years -10 months -2 days
--3 years -9 months -30 days
--42 years -6 months -18 days
--42 years -8 months -22 days
-3 months
-3 months 1 days
-3 months 2 days
-38 years 3 months 7 days
-39 years 3 months 8 days
-40 years 3 months 9 days
+-1035
+-1036
+-1037
+-1400
+-1401
+-1402
+-1403
+-15542
+-15607
+13977
+14343
+14710
+91
+92
+93
 
 
 -- !query 47
 SELECT f1 - date 'epoch' AS `Days From Epoch` FROM DATE_TBL
 -- !query 47 schema
-struct<Days From Epoch:interval>
+struct<Days From Epoch:int>
 -- !query 47 output
--12 years -6 months -18 days
--12 years -8 months -22 days
-26 years 1 months 27 days
-26 years 1 months 28 days
-26 years 2 months
-26 years 2 months 1 days
-27 years 1 months 27 days
-27 years 2 months
-27 years 2 months 1 days
-30 years 3 months
-30 years 3 months 1 days
-30 years 3 months 2 days
-68 years 3 months 7 days
-69 years 3 months 8 days
-70 years 3 months 9 days
+-4585
+-4650
+11048
+11049
+11050
+24934
+25300
+25667
+9554
+9555
+9556
+9557
+9920
+9921
+9922
 
 
 -- !query 48
 SELECT date 'yesterday' - date 'today' AS `One day`
 -- !query 48 schema
-struct<One day:interval>
+struct<One day:int>
 -- !query 48 output
--1 days
+-1
 
 
 -- !query 49
 SELECT date 'today' - date 'tomorrow' AS `One day`
 -- !query 49 schema
-struct<One day:interval>
+struct<One day:int>
 -- !query 49 output
--1 days
+-1
 
 
 -- !query 50
 SELECT date 'yesterday' - date 'tomorrow' AS `Two days`
 -- !query 50 schema
-struct<Two days:interval>
+struct<Two days:int>
 -- !query 50 output
--2 days
+-2
 
 
 -- !query 51
 SELECT date 'tomorrow' - date 'today' AS `One day`
 -- !query 51 schema
-struct<One day:interval>
+struct<One day:int>
 -- !query 51 output
-1 days
+1
 
 
 -- !query 52
 SELECT date 'today' - date 'yesterday' AS `One day`
 -- !query 52 schema
-struct<One day:interval>
+struct<One day:int>
 -- !query 52 output
-1 days
+1
 
 
 -- !query 53
 SELECT date 'tomorrow' - date 'yesterday' AS `Two days`
 -- !query 53 schema
-struct<Two days:interval>
+struct<Two days:int>
 -- !query 53 output
-2 days
+2
 
 
 -- !query 54

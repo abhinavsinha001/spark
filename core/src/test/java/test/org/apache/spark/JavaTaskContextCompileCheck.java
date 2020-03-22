@@ -19,10 +19,10 @@ package test.org.apache.spark;
 
 import java.util.Map;
 
-import org.apache.spark.TaskContext;
-import org.apache.spark.resource.ResourceInformation;
-import org.apache.spark.util.TaskCompletionListener;
-import org.apache.spark.util.TaskFailureListener;
+import com.pubmatic.spark.TaskContext;
+import com.pubmatic.spark.resource.ResourceInformation;
+import com.pubmatic.spark.util.TaskCompletionListener;
+import com.pubmatic.spark.util.TaskFailureListener;
 
 /**
  * Something to make sure that TaskContext can be used in Java.

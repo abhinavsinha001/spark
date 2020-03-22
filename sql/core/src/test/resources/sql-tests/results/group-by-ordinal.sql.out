@@ -94,7 +94,7 @@ select a, b from data group by -1
 -- !query 8 schema
 struct<>
 -- !query 8 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 GROUP BY position -1 is not in select list (valid range is [1, 2]); line 1 pos 31
 
 
@@ -103,7 +103,7 @@ select a, b from data group by 0
 -- !query 9 schema
 struct<>
 -- !query 9 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 GROUP BY position 0 is not in select list (valid range is [1, 2]); line 1 pos 31
 
 
@@ -112,7 +112,7 @@ select a, b from data group by 3
 -- !query 10 schema
 struct<>
 -- !query 10 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 GROUP BY position 3 is not in select list (valid range is [1, 2]); line 1 pos 31
 
 
@@ -121,7 +121,7 @@ select a, b, sum(b) from data group by 3
 -- !query 11 schema
 struct<>
 -- !query 11 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 aggregate functions are not allowed in GROUP BY, but found sum(CAST(data.`b` AS BIGINT));
 
 
@@ -130,7 +130,7 @@ select a, b, sum(b) + 2 from data group by 3
 -- !query 12 schema
 struct<>
 -- !query 12 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 aggregate functions are not allowed in GROUP BY, but found (sum(CAST(data.`b` AS BIGINT)) + CAST(2 AS BIGINT));
 
 
@@ -154,7 +154,7 @@ select * from data group by a, b, 1
 -- !query 14 schema
 struct<>
 -- !query 14 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Star (*) is not allowed in select list when GROUP BY ordinal position is used;
 
 

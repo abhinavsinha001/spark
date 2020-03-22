@@ -23,7 +23,7 @@ select from_csv('1', 1)
 -- !query 2 schema
 struct<>
 -- !query 2 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Schema should be specified in DDL format as a string literal or output of the schema_of_csv function instead of 1;; line 1 pos 7
 
 
@@ -32,7 +32,7 @@ select from_csv('1', 'a InvalidType')
 -- !query 3 schema
 struct<>
 -- !query 3 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 
 DataType invalidtype is not supported.(line 1, pos 2)
 
@@ -47,7 +47,7 @@ select from_csv('1', 'a INT', named_struct('mode', 'PERMISSIVE'))
 -- !query 4 schema
 struct<>
 -- !query 4 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Must use a map() function for options;; line 1 pos 7
 
 
@@ -56,7 +56,7 @@ select from_csv('1', 'a INT', map('mode', 1))
 -- !query 5 schema
 struct<>
 -- !query 5 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 A type of keys and values in map() must be string, but got map<string,int>;; line 1 pos 7
 
 
@@ -65,7 +65,7 @@ select from_csv()
 -- !query 6 schema
 struct<>
 -- !query 6 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Invalid number of arguments for function from_csv. Expected: one of 2 and 3; Found: 0; line 1 pos 7
 
 
@@ -90,7 +90,7 @@ select schema_of_csv(null)
 -- !query 9 schema
 struct<>
 -- !query 9 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 cannot resolve 'schema_of_csv(NULL)' due to data type mismatch: The input csv should be a string literal and not null; however, got NULL.; line 1 pos 7
 
 
@@ -107,7 +107,7 @@ SELECT schema_of_csv(csvField) FROM csvTable
 -- !query 11 schema
 struct<>
 -- !query 11 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 cannot resolve 'schema_of_csv(csvtable.`csvField`)' due to data type mismatch: The input csv should be a string literal and not null; however, got csvtable.`csvField`.; line 1 pos 7
 
 
@@ -140,7 +140,7 @@ select to_csv(named_struct('a', 1, 'b', 2), named_struct('mode', 'PERMISSIVE'))
 -- !query 15 schema
 struct<>
 -- !query 15 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Must use a map() function for options;; line 1 pos 7
 
 
@@ -149,5 +149,5 @@ select to_csv(named_struct('a', 1, 'b', 2), map('mode', 1))
 -- !query 16 schema
 struct<>
 -- !query 16 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 A type of keys and values in map() must be string, but got map<string,int>;; line 1 pos 7

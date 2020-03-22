@@ -16,7 +16,7 @@
  */
 
 
-package org.apache.spark.streaming;
+package com.pubmatic.spark.streaming;
 
 import org.junit.Assert;
 import org.junit.Test;

@@ -21,7 +21,7 @@ package org.apache.spark.examples
 import java.io.File
 
 import org.apache.spark.SparkFiles
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 /** Usage: SparkRemoteFileTest [file] */
 object SparkRemoteFileTest {

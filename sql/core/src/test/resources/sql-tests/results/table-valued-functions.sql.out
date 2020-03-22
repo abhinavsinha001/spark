@@ -7,7 +7,7 @@ select * from dummy(3)
 -- !query 0 schema
 struct<>
 -- !query 0 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 could not resolve `dummy` to a table-valued function; line 1 pos 14
 
 
@@ -69,7 +69,7 @@ select * from range(1, 1, 1, 1, 1)
 -- !query 5 schema
 struct<>
 -- !query 5 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 error: table-valued function range with alternatives:
  (end: long)
  (start: long, end: long)
@@ -83,7 +83,7 @@ select * from range(1, null)
 -- !query 6 schema
 struct<>
 -- !query 6 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 error: table-valued function range with alternatives:
  (end: long)
  (start: long, end: long)

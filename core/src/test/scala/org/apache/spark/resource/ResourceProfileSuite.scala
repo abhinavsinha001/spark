@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-package org.apache.spark.resource
+package com.pubmatic.spark.resource
 
-import org.apache.spark.{SparkConf, SparkFunSuite}
-import org.apache.spark.internal.config._
+import com.pubmatic.spark.{SparkConf, SparkFunSuite}
+import com.pubmatic.spark.internal.config._
 
 class ResourceProfileSuite extends SparkFunSuite {
 

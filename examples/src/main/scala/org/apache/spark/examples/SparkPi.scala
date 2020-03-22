@@ -20,7 +20,7 @@ package org.apache.spark.examples
 
 import scala.math.random
 
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 /** Computes an approximation to pi */
 object SparkPi {

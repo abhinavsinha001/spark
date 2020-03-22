@@ -27,7 +27,7 @@ import org.scalatest.concurrent.Eventually._
 import org.scalatest.time.SpanSugar._
 import org.scalatestplus.selenium.WebBrowser
 
-import org.apache.spark.ui.SparkUICssErrorHandler
+import com.pubmatic.spark.ui.SparkUICssErrorHandler
 
 class UISeleniumSuite
   extends HiveThriftJdbcTest

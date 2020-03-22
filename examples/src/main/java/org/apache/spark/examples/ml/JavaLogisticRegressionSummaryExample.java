@@ -18,13 +18,13 @@
 package org.apache.spark.examples.ml;
 
 // $example on$
-import org.apache.spark.ml.classification.BinaryLogisticRegressionTrainingSummary;
-import org.apache.spark.ml.classification.LogisticRegression;
-import org.apache.spark.ml.classification.LogisticRegressionModel;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SparkSession;
-import org.apache.spark.sql.functions;
+import com.pubmatic.spark.ml.classification.BinaryLogisticRegressionTrainingSummary;
+import com.pubmatic.spark.ml.classification.LogisticRegression;
+import com.pubmatic.spark.ml.classification.LogisticRegressionModel;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.Row;
+import com.pubmatic.spark.sql.SparkSession;
+import com.pubmatic.spark.sql.functions;
 // $example off$
 
 public class JavaLogisticRegressionSummaryExample {

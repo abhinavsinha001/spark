@@ -17,13 +17,13 @@
 
 package org.apache.spark.examples;
 
-import org.apache.spark.SparkJobInfo;
-import org.apache.spark.SparkStageInfo;
-import org.apache.spark.api.java.JavaFutureAction;
+import com.pubmatic.spark.SparkJobInfo;
+import com.pubmatic.spark.SparkStageInfo;
+import com.pubmatic.spark.api.java.JavaFutureAction;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.api.java.function.Function;
-import org.apache.spark.sql.SparkSession;
+import com.pubmatic.spark.api.java.function.Function;
+import com.pubmatic.spark.sql.SparkSession;
 
 import java.util.Arrays;
 import java.util.List;

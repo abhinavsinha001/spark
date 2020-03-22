@@ -22,7 +22,7 @@ import java.io._
 import org.apache.commons.text.StringEscapeUtils
 
 import org.apache.spark.SparkFunSuite
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.util.Utils
 
 /**
  * A special test suite for REPL that all test cases share one REPL instance.
@@ -274,10 +274,10 @@ class SingletonReplSuite extends SparkFunSuite {
   test("Datasets and encoders") {
     val output = runInterpreter(
       """
-        |import org.apache.spark.sql.functions._
-        |import org.apache.spark.sql.{Encoder, Encoders}
-        |import org.apache.spark.sql.expressions.Aggregator
-        |import org.apache.spark.sql.TypedColumn
+        |import com.pubmatic.spark.sql.functions._
+        |import com.pubmatic.spark.sql.{Encoder, Encoders}
+        |import com.pubmatic.spark.sql.expressions.Aggregator
+        |import com.pubmatic.spark.sql.TypedColumn
         |val simpleSum = new Aggregator[Int, Int, Int] {
         |  def zero: Int = 0                     // The initial value.
         |  def reduce(b: Int, a: Int) = b + a    // Add an element to the running total
@@ -396,7 +396,7 @@ class SingletonReplSuite extends SparkFunSuite {
       """
         |case class Foo(s: String)
         |
-        |import org.apache.spark.sql.catalyst.encoders.ExpressionEncoder
+        |import com.pubmatic.spark.sql.catalyst.encoders.ExpressionEncoder
         |
         |val r =
         |  sc.parallelize(1 to 1).map { i => ExpressionEncoder[Foo](); Foo("bar") }.collect.head

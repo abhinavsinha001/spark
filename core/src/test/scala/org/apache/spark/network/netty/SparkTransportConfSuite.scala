@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-package org.apache.spark.network.netty
+package com.pubmatic.spark.network.netty
 
 import org.scalatestplus.mockito.MockitoSugar
 
-import org.apache.spark.{SparkConf, SparkFunSuite}
+import com.pubmatic.spark.{SparkConf, SparkFunSuite}
 import org.apache.spark.network.util.NettyUtils
 
 class SparkTransportConfSuite extends SparkFunSuite with MockitoSugar {

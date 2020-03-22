@@ -22,9 +22,9 @@ import java.util.Arrays;
 
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.mllib.fpm.AssociationRules;
-import org.apache.spark.mllib.fpm.FPGrowth;
-import org.apache.spark.mllib.fpm.FPGrowth.FreqItemset;
+import com.pubmatic.spark.mllib.fpm.AssociationRules;
+import com.pubmatic.spark.mllib.fpm.FPGrowth;
+import com.pubmatic.spark.mllib.fpm.FPGrowth.FreqItemset;
 // $example off$
 
 import org.apache.spark.SparkConf;

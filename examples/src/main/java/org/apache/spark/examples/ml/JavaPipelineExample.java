@@ -20,16 +20,16 @@ package org.apache.spark.examples.ml;
 // $example on$
 import java.util.Arrays;
 
-import org.apache.spark.ml.Pipeline;
-import org.apache.spark.ml.PipelineModel;
-import org.apache.spark.ml.PipelineStage;
-import org.apache.spark.ml.classification.LogisticRegression;
-import org.apache.spark.ml.feature.HashingTF;
-import org.apache.spark.ml.feature.Tokenizer;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
+import com.pubmatic.spark.ml.Pipeline;
+import com.pubmatic.spark.ml.PipelineModel;
+import com.pubmatic.spark.ml.PipelineStage;
+import com.pubmatic.spark.ml.classification.LogisticRegression;
+import com.pubmatic.spark.ml.feature.HashingTF;
+import com.pubmatic.spark.ml.feature.Tokenizer;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.Row;
 // $example off$
-import org.apache.spark.sql.SparkSession;
+import com.pubmatic.spark.sql.SparkSession;
 
 /**
  * Java example for simple text document 'Pipeline'.

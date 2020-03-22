@@ -20,15 +20,15 @@ package org.apache.spark.examples.sql;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SparkSession;
-import org.apache.spark.sql.expressions.MutableAggregationBuffer;
-import org.apache.spark.sql.expressions.UserDefinedAggregateFunction;
-import org.apache.spark.sql.types.DataType;
-import org.apache.spark.sql.types.DataTypes;
-import org.apache.spark.sql.types.StructField;
-import org.apache.spark.sql.types.StructType;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.Row;
+import com.pubmatic.spark.sql.SparkSession;
+import com.pubmatic.spark.sql.expressions.MutableAggregationBuffer;
+import com.pubmatic.spark.sql.expressions.UserDefinedAggregateFunction;
+import com.pubmatic.spark.sql.types.DataType;
+import com.pubmatic.spark.sql.types.DataTypes;
+import com.pubmatic.spark.sql.types.StructField;
+import com.pubmatic.spark.sql.types.StructType;
 // $example off:untyped_custom_aggregation$
 
 public class JavaUserDefinedUntypedAggregation {

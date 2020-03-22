@@ -27,7 +27,7 @@ import scala.util.control.NonFatal
 import org.apache.commons.lang3.exception.ExceptionUtils
 import org.apache.hadoop.hive.conf.HiveConf.ConfVars
 
-import org.apache.spark.SparkException
+import com.pubmatic.spark.SparkException
 import org.apache.spark.sql.SQLQueryTestSuite
 import org.apache.spark.sql.catalyst.analysis.NoSuchTableException
 import org.apache.spark.sql.catalyst.util.fileToString
@@ -117,10 +117,14 @@ class ThriftServerQueryTestSuite extends SQLQueryTestSuite {
       }
 
       testCase match {
-        case _: PgSQLTest | _: AnsiTest =>
-          statement.execute(s"SET ${SQLConf.ANSI_ENABLED.key} = true")
+        case _: PgSQLTest =>
+          statement.execute(s"SET ${SQLConf.DIALECT.key} = ${SQLConf.Dialect.POSTGRESQL.toString}")
+        case _: AnsiTest =>
+          statement.execute(s"SET ${SQLConf.DIALECT.key} = ${SQLConf.Dialect.SPARK.toString}")
+          statement.execute(s"SET ${SQLConf.DIALECT_SPARK_ANSI_ENABLED.key} = true")
         case _ =>
-          statement.execute(s"SET ${SQLConf.ANSI_ENABLED.key} = false")
+          statement.execute(s"SET ${SQLConf.DIALECT.key} = ${SQLConf.Dialect.SPARK.toString}")
+          statement.execute(s"SET ${SQLConf.DIALECT_SPARK_ANSI_ENABLED.key} = false")
       }
 
       // Run the SQL queries preparing them for comparison.

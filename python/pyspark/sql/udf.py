@@ -197,7 +197,7 @@ class UserDefinedFunction(object):
 
         wrapped_func = _wrap_function(sc, self.func, self.returnType)
         jdt = spark._jsparkSession.parseDataType(self.returnType.json())
-        judf = sc._jvm.org.apache.spark.sql.execution.python.UserDefinedPythonFunction(
+        judf = sc._jvm.com.pubmatic.spark.sql.execution.python.UserDefinedPythonFunction(
             self._name, wrapped_func, jdt, self.evalType, self.deterministic)
         return judf
 
@@ -393,17 +393,17 @@ class UDFRegistration(object):
 
         >>> from pyspark.sql.types import IntegerType
         >>> spark.udf.registerJavaFunction(
-        ...     "javaStringLength", "test.org.apache.spark.sql.JavaStringLength", IntegerType())
+        ...     "javaStringLength", "test.com.pubmatic.spark.sql.JavaStringLength", IntegerType())
         >>> spark.sql("SELECT javaStringLength('test')").collect()
         [Row(javaStringLength(test)=4)]
 
         >>> spark.udf.registerJavaFunction(
-        ...     "javaStringLength2", "test.org.apache.spark.sql.JavaStringLength")
+        ...     "javaStringLength2", "test.com.pubmatic.spark.sql.JavaStringLength")
         >>> spark.sql("SELECT javaStringLength2('test')").collect()
         [Row(javaStringLength2(test)=4)]
 
         >>> spark.udf.registerJavaFunction(
-        ...     "javaStringLength3", "test.org.apache.spark.sql.JavaStringLength", "integer")
+        ...     "javaStringLength3", "test.com.pubmatic.spark.sql.JavaStringLength", "integer")
         >>> spark.sql("SELECT javaStringLength3('test')").collect()
         [Row(javaStringLength3(test)=4)]
         """
@@ -423,7 +423,7 @@ class UDFRegistration(object):
         :param name: name of the user-defined aggregate function
         :param javaClassName: fully qualified name of java class
 
-        >>> spark.udf.registerJavaUDAF("javaUDAF", "test.org.apache.spark.sql.MyDoubleAvg")
+        >>> spark.udf.registerJavaUDAF("javaUDAF", "test.com.pubmatic.spark.sql.MyDoubleAvg")
         >>> df = spark.createDataFrame([(1, "a"),(2, "b"), (3, "a")],["id", "name"])
         >>> df.createOrReplaceTempView("df")
         >>> spark.sql("SELECT name, javaUDAF(id) as avg from df group by name").collect()

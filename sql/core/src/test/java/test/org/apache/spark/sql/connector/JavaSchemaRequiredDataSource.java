@@ -17,12 +17,12 @@
 
 package test.org.apache.spark.sql.connector;
 
-import org.apache.spark.sql.connector.catalog.Table;
-import org.apache.spark.sql.connector.catalog.TableProvider;
-import org.apache.spark.sql.connector.read.InputPartition;
-import org.apache.spark.sql.connector.read.ScanBuilder;
-import org.apache.spark.sql.types.StructType;
-import org.apache.spark.sql.util.CaseInsensitiveStringMap;
+import com.pubmatic.spark.sql.connector.catalog.Table;
+import com.pubmatic.spark.sql.connector.catalog.TableProvider;
+import com.pubmatic.spark.sql.connector.read.InputPartition;
+import com.pubmatic.spark.sql.connector.read.ScanBuilder;
+import com.pubmatic.spark.sql.types.StructType;
+import com.pubmatic.spark.sql.util.CaseInsensitiveStringMap;
 
 public class JavaSchemaRequiredDataSource implements TableProvider {
 

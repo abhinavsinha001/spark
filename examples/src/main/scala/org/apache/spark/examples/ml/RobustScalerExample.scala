@@ -19,9 +19,9 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.feature.RobustScaler
+import com.pubmatic.spark.ml.feature.RobustScaler
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 object RobustScalerExample {
   def main(args: Array[String]): Unit = {

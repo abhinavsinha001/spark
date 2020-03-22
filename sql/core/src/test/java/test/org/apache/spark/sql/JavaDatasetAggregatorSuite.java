@@ -24,12 +24,12 @@ import scala.Tuple2;
 import org.junit.Assert;
 import org.junit.Test;
 
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Encoder;
-import org.apache.spark.sql.Encoders;
-import org.apache.spark.sql.KeyValueGroupedDataset;
-import org.apache.spark.sql.expressions.Aggregator;
-import org.apache.spark.sql.expressions.javalang.typed;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.Encoder;
+import com.pubmatic.spark.sql.Encoders;
+import com.pubmatic.spark.sql.KeyValueGroupedDataset;
+import com.pubmatic.spark.sql.expressions.Aggregator;
+import com.pubmatic.spark.sql.expressions.javalang.typed;
 
 /**
  * Suite for testing the aggregate functionality of Datasets in Java.

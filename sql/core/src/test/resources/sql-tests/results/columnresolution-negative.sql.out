@@ -71,7 +71,7 @@ SELECT i1 FROM t1, mydb1.t1
 -- !query 8 schema
 struct<>
 -- !query 8 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Reference 'i1' is ambiguous, could be: mydb1.t1.i1, mydb1.t1.i1.; line 1 pos 7
 
 
@@ -80,7 +80,7 @@ SELECT t1.i1 FROM t1, mydb1.t1
 -- !query 9 schema
 struct<>
 -- !query 9 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Reference 't1.i1' is ambiguous, could be: mydb1.t1.i1, mydb1.t1.i1.; line 1 pos 7
 
 
@@ -89,7 +89,7 @@ SELECT mydb1.t1.i1 FROM t1, mydb1.t1
 -- !query 10 schema
 struct<>
 -- !query 10 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Reference 'mydb1.t1.i1' is ambiguous, could be: mydb1.t1.i1, mydb1.t1.i1.; line 1 pos 7
 
 
@@ -98,7 +98,7 @@ SELECT i1 FROM t1, mydb2.t1
 -- !query 11 schema
 struct<>
 -- !query 11 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Reference 'i1' is ambiguous, could be: mydb1.t1.i1, mydb2.t1.i1.; line 1 pos 7
 
 
@@ -107,7 +107,7 @@ SELECT t1.i1 FROM t1, mydb2.t1
 -- !query 12 schema
 struct<>
 -- !query 12 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Reference 't1.i1' is ambiguous, could be: mydb1.t1.i1, mydb2.t1.i1.; line 1 pos 7
 
 
@@ -124,7 +124,7 @@ SELECT i1 FROM t1, mydb1.t1
 -- !query 14 schema
 struct<>
 -- !query 14 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Reference 'i1' is ambiguous, could be: mydb2.t1.i1, mydb1.t1.i1.; line 1 pos 7
 
 
@@ -133,7 +133,7 @@ SELECT t1.i1 FROM t1, mydb1.t1
 -- !query 15 schema
 struct<>
 -- !query 15 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Reference 't1.i1' is ambiguous, could be: mydb2.t1.i1, mydb1.t1.i1.; line 1 pos 7
 
 
@@ -142,7 +142,7 @@ SELECT i1 FROM t1, mydb2.t1
 -- !query 16 schema
 struct<>
 -- !query 16 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Reference 'i1' is ambiguous, could be: mydb2.t1.i1, mydb2.t1.i1.; line 1 pos 7
 
 
@@ -151,7 +151,7 @@ SELECT t1.i1 FROM t1, mydb2.t1
 -- !query 17 schema
 struct<>
 -- !query 17 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Reference 't1.i1' is ambiguous, could be: mydb2.t1.i1, mydb2.t1.i1.; line 1 pos 7
 
 
@@ -160,7 +160,7 @@ SELECT db1.t1.i1 FROM t1, mydb2.t1
 -- !query 18 schema
 struct<>
 -- !query 18 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 cannot resolve '`db1.t1.i1`' given input columns: [mydb2.t1.i1, mydb2.t1.i1]; line 1 pos 7
 
 
@@ -185,7 +185,7 @@ SELECT mydb1.t1 FROM t1
 -- !query 21 schema
 struct<>
 -- !query 21 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 cannot resolve '`mydb1.t1`' given input columns: [mydb1.t1.i1]; line 1 pos 7
 
 
@@ -194,7 +194,7 @@ SELECT t1.x.y.* FROM t1
 -- !query 22 schema
 struct<>
 -- !query 22 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 cannot resolve 't1.x.y.*' given input columns 'i1';
 
 
@@ -203,7 +203,7 @@ SELECT t1 FROM mydb1.t1
 -- !query 23 schema
 struct<>
 -- !query 23 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 cannot resolve '`t1`' given input columns: [mydb1.t1.i1]; line 1 pos 7
 
 
@@ -220,7 +220,7 @@ SELECT mydb1.t1.i1 FROM t1
 -- !query 25 schema
 struct<>
 -- !query 25 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 cannot resolve '`mydb1.t1.i1`' given input columns: [mydb2.t1.i1]; line 1 pos 7
 
 

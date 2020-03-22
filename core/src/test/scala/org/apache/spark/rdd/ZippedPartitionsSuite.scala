@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package org.apache.spark.rdd
+package com.pubmatic.spark.rdd
 
-import org.apache.spark.{SharedSparkContext, SparkFunSuite}
+import com.pubmatic.spark.{SharedSparkContext, SparkFunSuite}
 
 object ZippedPartitionsSuite {
   def procZippedData(i: Iterator[Int], s: Iterator[String], d: Iterator[Double]) : Iterator[Int] = {

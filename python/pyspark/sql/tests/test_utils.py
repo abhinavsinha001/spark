@@ -47,7 +47,7 @@ class UtilsTests(ReusedSQLTestCase):
         except IllegalArgumentException as e:
             self.assertRegexpMatches(e.desc, "1024 is not in the permitted values")
             self.assertRegexpMatches(e.stackTrace,
-                                     "org.apache.spark.sql.functions")
+                                     "com.pubmatic.spark.sql.functions")
 
 
 if __name__ == "__main__":

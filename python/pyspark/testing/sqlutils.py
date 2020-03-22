@@ -85,7 +85,7 @@ class ExamplePointUDT(UserDefinedType):
 
     @classmethod
     def scalaUDT(cls):
-        return 'org.apache.spark.sql.test.ExamplePointUDT'
+        return 'com.pubmatic.spark.sql.test.ExamplePointUDT'
 
     def serialize(self, obj):
         return [obj.x, obj.y]

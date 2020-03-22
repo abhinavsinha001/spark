@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
 import java.io.File
 import java.net.{MalformedURLException, URI}
@@ -33,16 +33,16 @@ import org.apache.hadoop.mapreduce.lib.input.{TextInputFormat => NewTextInputFor
 import org.json4s.{DefaultFormats, Extraction}
 import org.scalatest.Matchers._
 import org.scalatest.concurrent.Eventually
+import com.pubmatic.spark.TestUtils._
 
-import org.apache.spark.TestUtils._
-import org.apache.spark.internal.config._
-import org.apache.spark.internal.config.UI._
-import org.apache.spark.resource.ResourceAllocation
-import org.apache.spark.resource.ResourceUtils._
-import org.apache.spark.resource.TestResourceIDs._
-import org.apache.spark.scheduler.{SparkListener, SparkListenerExecutorMetricsUpdate, SparkListenerJobStart, SparkListenerTaskEnd, SparkListenerTaskStart}
-import org.apache.spark.shuffle.FetchFailedException
-import org.apache.spark.util.{ThreadUtils, Utils}
+import com.pubmatic.spark.internal.config._
+import com.pubmatic.spark.internal.config.UI._
+import com.pubmatic.spark.resource.ResourceAllocation
+import com.pubmatic.spark.resource.ResourceUtils._
+import com.pubmatic.spark.resource.TestResourceIDs._
+import com.pubmatic.spark.scheduler.{SparkListener, SparkListenerExecutorMetricsUpdate, SparkListenerJobStart, SparkListenerTaskEnd, SparkListenerTaskStart}
+import com.pubmatic.spark.shuffle.FetchFailedException
+import com.pubmatic.spark.util.{ThreadUtils, Utils}
 
 
 class SparkContextSuite extends SparkFunSuite with LocalSparkContext with Eventually {
@@ -757,7 +757,7 @@ class SparkContextSuite extends SparkFunSuite with LocalSparkContext with Eventu
     }
     sc.addSparkListener(listener)
     sc.range(0, 2).groupBy((x: Long) => x % 2, 2).map { case (x, _) =>
-      val context = org.apache.spark.TaskContext.get()
+      val context = TaskContext.get()
       if (context.stageAttemptNumber == 0) {
         if (context.partitionId == 0) {
           // Make the first task in the first stage attempt fail.
@@ -903,7 +903,7 @@ class SparkContextSuite extends SparkFunSuite with LocalSparkContext with Eventu
   }
 
   test("test resource scheduling under local-cluster mode") {
-    import org.apache.spark.TestUtils._
+    import com.pubmatic.spark.TestUtils._
 
     assume(!(Utils.isWindows))
     withTempDir { dir =>

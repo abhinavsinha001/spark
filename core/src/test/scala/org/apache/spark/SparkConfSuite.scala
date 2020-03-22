@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
 import java.util.concurrent.{Executors, TimeUnit}
 
@@ -25,16 +25,16 @@ import scala.util.{Random, Try}
 
 import com.esotericsoftware.kryo.Kryo
 
-import org.apache.spark.internal.config._
-import org.apache.spark.internal.config.History._
-import org.apache.spark.internal.config.Kryo._
-import org.apache.spark.internal.config.Network._
+import com.pubmatic.spark.internal.config._
+import com.pubmatic.spark.internal.config.History._
+import com.pubmatic.spark.internal.config.Kryo._
+import com.pubmatic.spark.internal.config.Network._
 import org.apache.spark.network.util.ByteUnit
-import org.apache.spark.resource.ResourceID
-import org.apache.spark.resource.ResourceUtils._
-import org.apache.spark.resource.TestResourceIDs._
-import org.apache.spark.serializer.{JavaSerializer, KryoRegistrator, KryoSerializer}
-import org.apache.spark.util.{ResetSystemProperties, RpcUtils, Utils}
+import com.pubmatic.spark.resource.ResourceID
+import com.pubmatic.spark.resource.ResourceUtils._
+import com.pubmatic.spark.resource.TestResourceIDs._
+import com.pubmatic.spark.serializer.{JavaSerializer, KryoRegistrator, KryoSerializer}
+import com.pubmatic.spark.util.{ResetSystemProperties, RpcUtils, Utils}
 
 class SparkConfSuite extends SparkFunSuite with LocalSparkContext with ResetSystemProperties {
   test("Test byteString conversion") {

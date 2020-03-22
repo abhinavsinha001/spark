@@ -103,7 +103,7 @@ infer_type <- function(x) {
 sparkR.conf <- function(key, defaultValue) {
   sparkSession <- getSparkSession()
   if (missing(key)) {
-    m <- callJStatic("org.apache.spark.sql.api.r.SQLUtils", "getSessionConf", sparkSession)
+    m <- callJStatic("com.pubmatic.spark.sql.api.r.SQLUtils", "getSessionConf", sparkSession)
     as.list(m, all.names = TRUE, sorted = TRUE)
   } else {
     conf <- callJMethod(sparkSession, "conf")
@@ -143,7 +143,7 @@ sparkR.version <- function() {
 }
 
 getDefaultSqlSource <- function() {
-  l <- sparkR.conf("spark.sql.sources.default", "org.apache.spark.sql.parquet")
+  l <- sparkR.conf("spark.sql.sources.default", "com.pubmatic.spark.sql.parquet")
   l[["spark.sql.sources.default"]]
 }
 
@@ -277,7 +277,7 @@ createDataFrame <- function(data, schema = NULL, samplingRatio = 1.0,
         fileName <- tempfile(pattern = "sparwriteToFileInArrowk-arrow", fileext = ".tmp")
         tryCatch({
           writeToFileInArrow(fileName, data, numPartitions)
-          jrddInArrow <- callJStatic("org.apache.spark.sql.api.r.SQLUtils",
+          jrddInArrow <- callJStatic("com.pubmatic.spark.sql.api.r.SQLUtils",
                                      "readArrowStreamFromFile",
                                      sparkSession,
                                      fileName)
@@ -316,7 +316,7 @@ createDataFrame <- function(data, schema = NULL, samplingRatio = 1.0,
   if (useArrow) {
     rdd <- jrddInArrow
   } else if (is.list(data)) {
-    sc <- callJStatic("org.apache.spark.sql.api.r.SQLUtils", "getJavaSparkContext", sparkSession)
+    sc <- callJStatic("com.pubmatic.spark.sql.api.r.SQLUtils", "getJavaSparkContext", sparkSession)
     if (!is.null(numPartitions)) {
       rdd <- parallelize(sc, data, numSlices = numToInt(numPartitions))
     } else {
@@ -333,12 +333,12 @@ createDataFrame <- function(data, schema = NULL, samplingRatio = 1.0,
   stopifnot(class(schema) == "structType")
 
   if (useArrow) {
-    sdf <- callJStatic("org.apache.spark.sql.api.r.SQLUtils",
+    sdf <- callJStatic("com.pubmatic.spark.sql.api.r.SQLUtils",
                        "toDataFrame", rdd, schema$jobj, sparkSession)
   } else {
     jrdd <- getJRDD(lapply(rdd, function(x) x), "row")
     srdd <- callJMethod(jrdd, "rdd")
-    sdf <- callJStatic("org.apache.spark.sql.api.r.SQLUtils", "createDF",
+    sdf <- callJStatic("com.pubmatic.spark.sql.api.r.SQLUtils", "createDF",
                        srdd, schema$jobj, sparkSession)
   }
   dataFrame(sdf)

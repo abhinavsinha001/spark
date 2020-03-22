@@ -27,11 +27,11 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.mllib.regression.LabeledPoint;
-import org.apache.spark.mllib.tree.GradientBoostedTrees;
-import org.apache.spark.mllib.tree.configuration.BoostingStrategy;
-import org.apache.spark.mllib.tree.model.GradientBoostedTreesModel;
-import org.apache.spark.mllib.util.MLUtils;
+import com.pubmatic.spark.mllib.regression.LabeledPoint;
+import com.pubmatic.spark.mllib.tree.GradientBoostedTrees;
+import com.pubmatic.spark.mllib.tree.configuration.BoostingStrategy;
+import com.pubmatic.spark.mllib.tree.model.GradientBoostedTreesModel;
+import com.pubmatic.spark.mllib.util.MLUtils;
 // $example off$
 
 public class JavaGradientBoostingRegressionExample {

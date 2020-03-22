@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.sql.catalyst.util
+package com.pubmatic.spark.sql.catalyst.util
 
 import java.util.Locale
 

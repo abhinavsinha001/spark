@@ -201,7 +201,7 @@ PIVOT (
 -- !query 13 schema
 struct<>
 -- !query 13 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Aggregate expression required for pivot, but 'coursesales.`earnings`' did not appear in any aggregate function.;
 
 
@@ -216,7 +216,7 @@ PIVOT (
 -- !query 14 schema
 struct<>
 -- !query 14 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Aggregate expression required for pivot, but '__auto_generated_subquery_name.`year`' did not appear in any aggregate function.;
 
 
@@ -231,7 +231,7 @@ PIVOT (
 -- !query 15 schema
 struct<>
 -- !query 15 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 cannot resolve '`year`' given input columns: [__auto_generated_subquery_name.course, __auto_generated_subquery_name.earnings]; line 4 pos 0
 
 
@@ -261,7 +261,7 @@ PIVOT (
 -- !query 17 schema
 struct<>
 -- !query 17 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 It is not allowed to use an aggregate function in the argument of another aggregate function. Please use the inner aggregate function in a sub-query.;
 
 
@@ -312,7 +312,7 @@ PIVOT (
 -- !query 20 schema
 struct<>
 -- !query 20 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Invalid pivot value 'dotNET': value data type string does not match pivot column data type struct<course:string,year:int>;
 
 
@@ -325,7 +325,7 @@ PIVOT (
 -- !query 21 schema
 struct<>
 -- !query 21 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 cannot resolve '`s`' given input columns: [coursesales.course, coursesales.earnings, coursesales.year]; line 4 pos 15
 
 
@@ -338,7 +338,7 @@ PIVOT (
 -- !query 22 schema
 struct<>
 -- !query 22 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Literal expressions required for pivot values, found 'course#x';
 
 
@@ -457,7 +457,7 @@ PIVOT (
 -- !query 29 schema
 struct<>
 -- !query 29 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Invalid pivot column 'm#x'. Pivot columns must be comparable.;
 
 
@@ -474,7 +474,7 @@ PIVOT (
 -- !query 30 schema
 struct<>
 -- !query 30 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Invalid pivot column 'named_struct(course, course#x, m, m#x)'. Pivot columns must be comparable.;
 
 

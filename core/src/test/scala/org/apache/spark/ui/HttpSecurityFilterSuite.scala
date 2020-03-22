@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.ui
+package com.pubmatic.spark.ui
 
 import java.util.UUID
 import javax.servlet.FilterChain
@@ -27,8 +27,8 @@ import org.mockito.ArgumentCaptor
 import org.mockito.ArgumentMatchers.{any, eq => meq}
 import org.mockito.Mockito.{mock, times, verify, when}
 
-import org.apache.spark._
-import org.apache.spark.internal.config.UI._
+import com.pubmatic.spark._
+import com.pubmatic.spark.internal.config.UI._
 
 class HttpSecurityFilterSuite extends SparkFunSuite {
 

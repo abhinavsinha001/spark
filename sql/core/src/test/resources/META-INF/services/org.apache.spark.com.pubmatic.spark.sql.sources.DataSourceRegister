@@ -1,0 +1,14 @@
+com.pubmatic.spark.sql.sources.FakeSourceOne
+com.pubmatic.spark.sql.sources.FakeSourceTwo
+com.pubmatic.spark.sql.sources.FakeSourceThree
+com.pubmatic.spark.sql.sources.FakeSourceFour
+org.apache.fakesource.FakeExternalSourceOne
+org.apache.fakesource.FakeExternalSourceTwo
+org.apache.fakesource.FakeExternalSourceThree
+com.pubmatic.spark.sql.streaming.sources.FakeReadMicroBatchOnly
+com.pubmatic.spark.sql.streaming.sources.FakeReadContinuousOnly
+com.pubmatic.spark.sql.streaming.sources.FakeReadBothModes
+com.pubmatic.spark.sql.streaming.sources.FakeReadNeitherMode
+com.pubmatic.spark.sql.streaming.sources.FakeWriteOnly
+com.pubmatic.spark.sql.streaming.sources.FakeNoWrite
+com.pubmatic.spark.sql.streaming.sources.FakeWriteSupportProviderV1Fallback

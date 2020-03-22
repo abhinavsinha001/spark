@@ -19,10 +19,10 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.feature.DCT
-import org.apache.spark.ml.linalg.Vectors
+import com.pubmatic.spark.ml.feature.DCT
+import com.pubmatic.spark.ml.linalg.Vectors
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 object DCTExample {
   def main(args: Array[String]): Unit = {

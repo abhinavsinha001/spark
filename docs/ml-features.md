@@ -1426,7 +1426,7 @@ NaN values, they will be handled specially and placed into their own bucket, for
 are used, then non-NaN data will be put into buckets[0-3], but NaNs will be counted in a special bucket[4].
 
 Algorithm: The bin ranges are chosen using an approximate algorithm (see the documentation for
-[approxQuantile](api/scala/index.html#org.apache.spark.sql.DataFrameStatFunctions) for a
+[approxQuantile](api/scala/index.html#com.pubmatic.spark.sql.DataFrameStatFunctions) for a
 detailed description). The precision of the approximation can be controlled with the
 `relativeError` parameter. When set to zero, exact quantiles are calculated
 (**Note:** Computing exact quantiles is an expensive operation). The lower and upper bin bounds

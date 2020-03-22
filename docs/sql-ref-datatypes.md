@@ -65,7 +65,7 @@ Spark SQL and DataFrames support the following data types:
 <div class="codetabs">
 <div data-lang="scala"  markdown="1">
 
-All data types of Spark SQL are located in the package `org.apache.spark.sql.types`.
+All data types of Spark SQL are located in the package `com.pubmatic.spark.sql.types`.
 You can access them by doing
 
 {% include_example data_types scala/org/apache/spark/examples/sql/SparkSQLExample.scala %}
@@ -177,7 +177,7 @@ You can access them by doing
 </tr>
 <tr>
   <td> <b>StructType</b> </td>
-  <td> org.apache.spark.sql.Row </td>
+  <td> com.pubmatic.spark.sql.Row </td>
   <td>
   StructType(<i>fields</i>)<br />
   <b>Note:</b> <i>fields</i> is a Seq of StructFields. Also, two fields with the same
@@ -200,9 +200,9 @@ You can access them by doing
 <div data-lang="java" markdown="1">
 
 All data types of Spark SQL are located in the package of
-`org.apache.spark.sql.types`. To access or create a data type,
+`com.pubmatic.spark.sql.types`. To access or create a data type,
 please use factory methods provided in
-`org.apache.spark.sql.types.DataTypes`.
+`com.pubmatic.spark.sql.types.DataTypes`.
 
 <table class="table">
 <tr>
@@ -314,7 +314,7 @@ please use factory methods provided in
 </tr>
 <tr>
   <td> <b>StructType</b> </td>
-  <td> org.apache.spark.sql.Row </td>
+  <td> com.pubmatic.spark.sql.Row </td>
   <td>
   DataTypes.createStructType(<i>fields</i>)<br />
   <b>Note:</b> <i>fields</i> is a List or an array of StructFields.

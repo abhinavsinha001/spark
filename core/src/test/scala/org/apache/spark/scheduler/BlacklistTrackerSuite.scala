@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.scheduler
+package com.pubmatic.spark.scheduler
 
 import org.mockito.ArgumentMatchers.any
 import org.mockito.Mockito.{never, verify, when}
@@ -23,9 +23,9 @@ import org.mockito.invocation.InvocationOnMock
 import org.scalatest.BeforeAndAfterEach
 import org.scalatestplus.mockito.MockitoSugar
 
-import org.apache.spark._
-import org.apache.spark.internal.config
-import org.apache.spark.util.ManualClock
+import com.pubmatic.spark._
+import com.pubmatic.spark.internal.config
+import com.pubmatic.spark.util.ManualClock
 
 class BlacklistTrackerSuite extends SparkFunSuite with BeforeAndAfterEach with MockitoSugar
     with LocalSparkContext {

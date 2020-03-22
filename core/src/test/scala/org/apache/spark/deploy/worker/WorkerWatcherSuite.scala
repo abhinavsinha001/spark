@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-package org.apache.spark.deploy.worker
+package com.pubmatic.spark.deploy.worker
 
-import org.apache.spark.{SecurityManager, SparkConf, SparkFunSuite}
-import org.apache.spark.rpc.{RpcAddress, RpcEndpointAddress, RpcEnv}
+import com.pubmatic.spark.{SecurityManager, SparkConf, SparkFunSuite}
+import com.pubmatic.spark.rpc.{RpcAddress, RpcEndpointAddress, RpcEnv}
 
 class WorkerWatcherSuite extends SparkFunSuite {
   test("WorkerWatcher shuts down on valid disassociation") {

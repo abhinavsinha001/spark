@@ -25,38 +25,38 @@ license: |
 
 <!-- All the documentation links  -->
 
-[EdgeRDD]: api/scala/index.html#org.apache.spark.graphx.EdgeRDD
-[VertexRDD]: api/scala/index.html#org.apache.spark.graphx.VertexRDD
-[Edge]: api/scala/index.html#org.apache.spark.graphx.Edge
-[EdgeTriplet]: api/scala/index.html#org.apache.spark.graphx.EdgeTriplet
-[Graph]: api/scala/index.html#org.apache.spark.graphx.Graph
-[GraphOps]: api/scala/index.html#org.apache.spark.graphx.GraphOps
-[Graph.mapVertices]: api/scala/index.html#org.apache.spark.graphx.Graph@mapVertices[VD2]((VertexId,VD)⇒VD2)(ClassTag[VD2]):Graph[VD2,ED]
-[Graph.reverse]: api/scala/index.html#org.apache.spark.graphx.Graph@reverse:Graph[VD,ED]
-[Graph.subgraph]: api/scala/index.html#org.apache.spark.graphx.Graph@subgraph((EdgeTriplet[VD,ED])⇒Boolean,(VertexId,VD)⇒Boolean):Graph[VD,ED]
-[Graph.mask]: api/scala/index.html#org.apache.spark.graphx.Graph@mask[VD2,ED2](Graph[VD2,ED2])(ClassTag[VD2],ClassTag[ED2]):Graph[VD,ED]
-[Graph.groupEdges]: api/scala/index.html#org.apache.spark.graphx.Graph@groupEdges((ED,ED)⇒ED):Graph[VD,ED]
-[GraphOps.joinVertices]: api/scala/index.html#org.apache.spark.graphx.GraphOps@joinVertices[U](RDD[(VertexId,U)])((VertexId,VD,U)⇒VD)(ClassTag[U]):Graph[VD,ED]
-[Graph.outerJoinVertices]: api/scala/index.html#org.apache.spark.graphx.Graph@outerJoinVertices[U,VD2](RDD[(VertexId,U)])((VertexId,VD,Option[U])⇒VD2)(ClassTag[U],ClassTag[VD2]):Graph[VD2,ED]
-[Graph.aggregateMessages]: api/scala/index.html#org.apache.spark.graphx.Graph@aggregateMessages[A]((EdgeContext[VD,ED,A])⇒Unit,(A,A)⇒A,TripletFields)(ClassTag[A]):VertexRDD[A]
-[EdgeContext]: api/scala/index.html#org.apache.spark.graphx.EdgeContext
-[GraphOps.collectNeighborIds]: api/scala/index.html#org.apache.spark.graphx.GraphOps@collectNeighborIds(EdgeDirection):VertexRDD[Array[VertexId]]
-[GraphOps.collectNeighbors]: api/scala/index.html#org.apache.spark.graphx.GraphOps@collectNeighbors(EdgeDirection):VertexRDD[Array[(VertexId,VD)]]
+[EdgeRDD]: api/scala/index.html#com.pubmatic.spark.graphx.EdgeRDD
+[VertexRDD]: api/scala/index.html#com.pubmatic.spark.graphx.VertexRDD
+[Edge]: api/scala/index.html#com.pubmatic.spark.graphx.Edge
+[EdgeTriplet]: api/scala/index.html#com.pubmatic.spark.graphx.EdgeTriplet
+[Graph]: api/scala/index.html#com.pubmatic.spark.graphx.Graph
+[GraphOps]: api/scala/index.html#com.pubmatic.spark.graphx.GraphOps
+[Graph.mapVertices]: api/scala/index.html#com.pubmatic.spark.graphx.Graph@mapVertices[VD2]((VertexId,VD)⇒VD2)(ClassTag[VD2]):Graph[VD2,ED]
+[Graph.reverse]: api/scala/index.html#com.pubmatic.spark.graphx.Graph@reverse:Graph[VD,ED]
+[Graph.subgraph]: api/scala/index.html#com.pubmatic.spark.graphx.Graph@subgraph((EdgeTriplet[VD,ED])⇒Boolean,(VertexId,VD)⇒Boolean):Graph[VD,ED]
+[Graph.mask]: api/scala/index.html#com.pubmatic.spark.graphx.Graph@mask[VD2,ED2](Graph[VD2,ED2])(ClassTag[VD2],ClassTag[ED2]):Graph[VD,ED]
+[Graph.groupEdges]: api/scala/index.html#com.pubmatic.spark.graphx.Graph@groupEdges((ED,ED)⇒ED):Graph[VD,ED]
+[GraphOps.joinVertices]: api/scala/index.html#com.pubmatic.spark.graphx.GraphOps@joinVertices[U](RDD[(VertexId,U)])((VertexId,VD,U)⇒VD)(ClassTag[U]):Graph[VD,ED]
+[Graph.outerJoinVertices]: api/scala/index.html#com.pubmatic.spark.graphx.Graph@outerJoinVertices[U,VD2](RDD[(VertexId,U)])((VertexId,VD,Option[U])⇒VD2)(ClassTag[U],ClassTag[VD2]):Graph[VD2,ED]
+[Graph.aggregateMessages]: api/scala/index.html#com.pubmatic.spark.graphx.Graph@aggregateMessages[A]((EdgeContext[VD,ED,A])⇒Unit,(A,A)⇒A,TripletFields)(ClassTag[A]):VertexRDD[A]
+[EdgeContext]: api/scala/index.html#com.pubmatic.spark.graphx.EdgeContext
+[GraphOps.collectNeighborIds]: api/scala/index.html#com.pubmatic.spark.graphx.GraphOps@collectNeighborIds(EdgeDirection):VertexRDD[Array[VertexId]]
+[GraphOps.collectNeighbors]: api/scala/index.html#com.pubmatic.spark.graphx.GraphOps@collectNeighbors(EdgeDirection):VertexRDD[Array[(VertexId,VD)]]
 [RDD Persistence]: rdd-programming-guide.html#rdd-persistence
-[Graph.cache]: api/scala/index.html#org.apache.spark.graphx.Graph@cache():Graph[VD,ED]
-[GraphOps.pregel]: api/scala/index.html#org.apache.spark.graphx.GraphOps@pregel[A](A,Int,EdgeDirection)((VertexId,VD,A)⇒VD,(EdgeTriplet[VD,ED])⇒Iterator[(VertexId,A)],(A,A)⇒A)(ClassTag[A]):Graph[VD,ED]
-[PartitionStrategy]: api/scala/index.html#org.apache.spark.graphx.PartitionStrategy$
-[GraphLoader.edgeListFile]: api/scala/index.html#org.apache.spark.graphx.GraphLoader$@edgeListFile(SparkContext,String,Boolean,Int):Graph[Int,Int]
-[Graph.apply]: api/scala/index.html#org.apache.spark.graphx.Graph$@apply[VD,ED](RDD[(VertexId,VD)],RDD[Edge[ED]],VD)(ClassTag[VD],ClassTag[ED]):Graph[VD,ED]
-[Graph.fromEdgeTuples]: api/scala/index.html#org.apache.spark.graphx.Graph$@fromEdgeTuples[VD](RDD[(VertexId,VertexId)],VD,Option[PartitionStrategy])(ClassTag[VD]):Graph[VD,Int]
-[Graph.fromEdges]: api/scala/index.html#org.apache.spark.graphx.Graph$@fromEdges[VD,ED](RDD[Edge[ED]],VD)(ClassTag[VD],ClassTag[ED]):Graph[VD,ED]
-[PartitionStrategy]: api/scala/index.html#org.apache.spark.graphx.PartitionStrategy
-[PageRank]: api/scala/index.html#org.apache.spark.graphx.lib.PageRank$
-[ConnectedComponents]: api/scala/index.html#org.apache.spark.graphx.lib.ConnectedComponents$
-[TriangleCount]: api/scala/index.html#org.apache.spark.graphx.lib.TriangleCount$
-[Graph.partitionBy]: api/scala/index.html#org.apache.spark.graphx.Graph@partitionBy(PartitionStrategy):Graph[VD,ED]
-[EdgeContext.sendToSrc]: api/scala/index.html#org.apache.spark.graphx.EdgeContext@sendToSrc(msg:A):Unit
-[EdgeContext.sendToDst]: api/scala/index.html#org.apache.spark.graphx.EdgeContext@sendToDst(msg:A):Unit
+[Graph.cache]: api/scala/index.html#com.pubmatic.spark.graphx.Graph@cache():Graph[VD,ED]
+[GraphOps.pregel]: api/scala/index.html#com.pubmatic.spark.graphx.GraphOps@pregel[A](A,Int,EdgeDirection)((VertexId,VD,A)⇒VD,(EdgeTriplet[VD,ED])⇒Iterator[(VertexId,A)],(A,A)⇒A)(ClassTag[A]):Graph[VD,ED]
+[PartitionStrategy]: api/scala/index.html#com.pubmatic.spark.graphx.PartitionStrategy$
+[GraphLoader.edgeListFile]: api/scala/index.html#com.pubmatic.spark.graphx.GraphLoader$@edgeListFile(SparkContext,String,Boolean,Int):Graph[Int,Int]
+[Graph.apply]: api/scala/index.html#com.pubmatic.spark.graphx.Graph$@apply[VD,ED](RDD[(VertexId,VD)],RDD[Edge[ED]],VD)(ClassTag[VD],ClassTag[ED]):Graph[VD,ED]
+[Graph.fromEdgeTuples]: api/scala/index.html#com.pubmatic.spark.graphx.Graph$@fromEdgeTuples[VD](RDD[(VertexId,VertexId)],VD,Option[PartitionStrategy])(ClassTag[VD]):Graph[VD,Int]
+[Graph.fromEdges]: api/scala/index.html#com.pubmatic.spark.graphx.Graph$@fromEdges[VD,ED](RDD[Edge[ED]],VD)(ClassTag[VD],ClassTag[ED]):Graph[VD,ED]
+[PartitionStrategy]: api/scala/index.html#com.pubmatic.spark.graphx.PartitionStrategy
+[PageRank]: api/scala/index.html#com.pubmatic.spark.graphx.lib.PageRank$
+[ConnectedComponents]: api/scala/index.html#com.pubmatic.spark.graphx.lib.ConnectedComponents$
+[TriangleCount]: api/scala/index.html#com.pubmatic.spark.graphx.lib.TriangleCount$
+[Graph.partitionBy]: api/scala/index.html#com.pubmatic.spark.graphx.Graph@partitionBy(PartitionStrategy):Graph[VD,ED]
+[EdgeContext.sendToSrc]: api/scala/index.html#com.pubmatic.spark.graphx.EdgeContext@sendToSrc(msg:A):Unit
+[EdgeContext.sendToDst]: api/scala/index.html#com.pubmatic.spark.graphx.EdgeContext@sendToDst(msg:A):Unit
 [TripletFields]: api/java/org/apache/spark/graphx/TripletFields.html
 [TripletFields.All]: api/java/org/apache/spark/graphx/TripletFields.html#All
 [TripletFields.None]: api/java/org/apache/spark/graphx/TripletFields.html#None
@@ -87,7 +87,7 @@ To get started you first need to import Spark and GraphX into your project, as f
 
 {% highlight scala %}
 import org.apache.spark._
-import org.apache.spark.graphx._
+import com.pubmatic.spark.graphx._
 // To make some of the examples work we will also need RDD
 import org.apache.spark.rdd.RDD
 {% endhighlight %}
@@ -99,7 +99,7 @@ getting started with Spark refer to the [Spark Quick Start Guide](quick-start.ht
 
 # The Property Graph
 
-The [property graph](api/scala/index.html#org.apache.spark.graphx.Graph) is a directed multigraph
+The [property graph](api/scala/index.html#com.pubmatic.spark.graphx.Graph) is a directed multigraph
 with user defined objects attached to each vertex and edge.  A directed multigraph is a directed
 graph with potentially multiple parallel edges sharing the same source and destination vertex.  The
 ability to support parallel edges simplifies modeling scenarios where there can be multiple
@@ -175,7 +175,7 @@ val userGraph: Graph[(String, String), String]
 There are numerous ways to construct a property graph from raw files, RDDs, and even synthetic
 generators and these are discussed in more detail in the section on
 [graph builders](#graph_builders).  Probably the most general method is to use the
-[Graph object](api/scala/index.html#org.apache.spark.graphx.Graph$).  For example the following
+[Graph object](api/scala/index.html#com.pubmatic.spark.graphx.Graph$).  For example the following
 code constructs a graph from a collection of RDDs:
 
 {% highlight scala %}
@@ -954,7 +954,7 @@ to broadcast vertices when implementing the join required for operations like `t
 
 # Graph Algorithms
 
-GraphX includes a set of graph algorithms to simplify analytics tasks. The algorithms are contained in the `org.apache.spark.graphx.lib` package and can be accessed directly as methods on `Graph` via [`GraphOps`][GraphOps]. This section describes the algorithms and how they are used.
+GraphX includes a set of graph algorithms to simplify analytics tasks. The algorithms are contained in the `com.pubmatic.spark.graphx.lib` package and can be accessed directly as methods on `Graph` via [`GraphOps`][GraphOps]. This section describes the algorithms and how they are used.
 
 <a name="pagerank"></a>
 

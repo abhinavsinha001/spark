@@ -124,7 +124,7 @@ class DecisionTreeModel(JavaModelWrapper, JavaSaveable, JavaLoader):
 
     @classmethod
     def _java_loader_class(cls):
-        return "org.apache.spark.mllib.tree.model.DecisionTreeModel"
+        return "com.pubmatic.spark.mllib.tree.model.DecisionTreeModel"
 
 
 class DecisionTree(object):
@@ -287,7 +287,7 @@ class RandomForestModel(TreeEnsembleModel, JavaLoader):
 
     @classmethod
     def _java_loader_class(cls):
-        return "org.apache.spark.mllib.tree.model.RandomForestModel"
+        return "com.pubmatic.spark.mllib.tree.model.RandomForestModel"
 
 
 class RandomForest(object):
@@ -486,7 +486,7 @@ class GradientBoostedTreesModel(TreeEnsembleModel, JavaLoader):
 
     @classmethod
     def _java_loader_class(cls):
-        return "org.apache.spark.mllib.tree.model.GradientBoostedTreesModel"
+        return "com.pubmatic.spark.mllib.tree.model.GradientBoostedTreesModel"
 
 
 class GradientBoostedTrees(object):

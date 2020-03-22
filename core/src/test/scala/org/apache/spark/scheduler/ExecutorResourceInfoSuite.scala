@@ -15,12 +15,12 @@
  * limitations under the License.
  */
 
-package org.apache.spark.scheduler
+package com.pubmatic.spark.scheduler
 
 import scala.collection.mutable.ArrayBuffer
 
-import org.apache.spark.{SparkException, SparkFunSuite}
-import org.apache.spark.resource.ResourceUtils.GPU
+import com.pubmatic.spark.{SparkException, SparkFunSuite}
+import com.pubmatic.spark.resource.ResourceUtils.GPU
 
 class ExecutorResourceInfoSuite extends SparkFunSuite {
 

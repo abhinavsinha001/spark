@@ -95,7 +95,7 @@ SELECT string(1, 2)
 -- !query 11 schema
 struct<>
 -- !query 11 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Function string accepts only one argument; line 1 pos 7
 
 

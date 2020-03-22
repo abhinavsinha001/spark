@@ -21,9 +21,9 @@ package org.apache.spark.examples.graphx
 import scala.collection.mutable
 
 import org.apache.spark._
-import org.apache.spark.graphx._
-import org.apache.spark.graphx.PartitionStrategy._
-import org.apache.spark.graphx.lib._
+import com.pubmatic.spark.graphx._
+import com.pubmatic.spark.graphx.PartitionStrategy._
+import com.pubmatic.spark.graphx.lib._
 import org.apache.spark.storage.StorageLevel
 
 

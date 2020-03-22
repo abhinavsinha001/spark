@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.deploy.master.ui
+package com.pubmatic.spark.deploy.master.ui
 
 import java.io.DataOutputStream
 import java.net.{HttpURLConnection, URL}
@@ -27,11 +27,11 @@ import scala.collection.mutable.HashMap
 import org.mockito.Mockito.{mock, times, verify, when}
 import org.scalatest.BeforeAndAfterAll
 
-import org.apache.spark.{SecurityManager, SparkConf, SparkFunSuite}
-import org.apache.spark.deploy.DeployMessages.{KillDriverResponse, RequestKillDriver}
-import org.apache.spark.deploy.DeployTestUtils._
-import org.apache.spark.deploy.master._
-import org.apache.spark.rpc.{RpcEndpointRef, RpcEnv}
+import com.pubmatic.spark.{SecurityManager, SparkConf, SparkFunSuite}
+import com.pubmatic.spark.deploy.DeployMessages.{KillDriverResponse, RequestKillDriver}
+import com.pubmatic.spark.deploy.DeployTestUtils._
+import com.pubmatic.spark.deploy.master._
+import com.pubmatic.spark.rpc.{RpcEndpointRef, RpcEnv}
 
 
 class MasterWebUISuite extends SparkFunSuite with BeforeAndAfterAll {

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.serializer
+package com.pubmatic.spark.serializer
 
 import java.io._
 
@@ -23,7 +23,7 @@ import scala.annotation.meta.param
 
 import org.scalatest.BeforeAndAfterEach
 
-import org.apache.spark.SparkFunSuite
+import com.pubmatic.spark.SparkFunSuite
 
 
 class SerializationDebuggerSuite extends SparkFunSuite with BeforeAndAfterEach {

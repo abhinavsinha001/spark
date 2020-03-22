@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.spark.storage
+package com.pubmatic.spark.storage
 
 import java.io.File
 
 import org.scalatest.BeforeAndAfterEach
 
-import org.apache.spark.{SparkConf, SparkFunSuite}
-import org.apache.spark.executor.ShuffleWriteMetrics
-import org.apache.spark.serializer.{JavaSerializer, SerializerManager}
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.{SparkConf, SparkFunSuite}
+import com.pubmatic.spark.executor.ShuffleWriteMetrics
+import com.pubmatic.spark.serializer.{JavaSerializer, SerializerManager}
+import com.pubmatic.spark.util.Utils
 
 class DiskBlockObjectWriterSuite extends SparkFunSuite with BeforeAndAfterEach {
 

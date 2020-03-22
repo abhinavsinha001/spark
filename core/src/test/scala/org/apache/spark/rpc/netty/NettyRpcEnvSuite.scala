@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.rpc.netty
+package com.pubmatic.spark.rpc.netty
 
 import java.util.concurrent.ExecutionException
 
@@ -24,9 +24,9 @@ import scala.concurrent.duration._
 import org.scalatest.concurrent.{Signaler, ThreadSignaler, TimeLimits}
 import org.scalatestplus.mockito.MockitoSugar
 
-import org.apache.spark._
+import com.pubmatic.spark._
 import org.apache.spark.network.client.TransportClient
-import org.apache.spark.rpc._
+import com.pubmatic.spark.rpc._
 
 class NettyRpcEnvSuite extends RpcEnvSuite with MockitoSugar with TimeLimits {
 

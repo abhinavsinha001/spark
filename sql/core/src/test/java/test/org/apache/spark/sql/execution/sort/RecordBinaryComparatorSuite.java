@@ -17,20 +17,20 @@
 
 package test.org.apache.spark.sql.execution.sort;
 
-import org.apache.spark.SparkConf;
-import org.apache.spark.internal.config.package$;
-import org.apache.spark.memory.TaskMemoryManager;
-import org.apache.spark.memory.TestMemoryConsumer;
-import org.apache.spark.memory.TestMemoryManager;
-import org.apache.spark.sql.catalyst.expressions.UnsafeArrayData;
-import org.apache.spark.sql.catalyst.expressions.UnsafeRow;
-import org.apache.spark.sql.execution.RecordBinaryComparator;
+import com.pubmatic.spark.SparkConf;
+import com.pubmatic.spark.internal.config.package$;
+import com.pubmatic.spark.memory.TaskMemoryManager;
+import com.pubmatic.spark.memory.TestMemoryConsumer;
+import com.pubmatic.spark.memory.TestMemoryManager;
+import com.pubmatic.spark.sql.catalyst.expressions.UnsafeArrayData;
+import com.pubmatic.spark.sql.catalyst.expressions.UnsafeRow;
+import com.pubmatic.spark.sql.execution.RecordBinaryComparator;
 import org.apache.spark.unsafe.Platform;
 import org.apache.spark.unsafe.UnsafeAlignedOffset;
 import org.apache.spark.unsafe.array.LongArray;
 import org.apache.spark.unsafe.memory.MemoryBlock;
 import org.apache.spark.unsafe.types.UTF8String;
-import org.apache.spark.util.collection.unsafe.sort.*;
+import com.pubmatic.spark.util.collection.unsafe.sort.*;
 
 import org.junit.After;
 import org.junit.Assert;

@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package org.apache.spark.metrics
+package com.pubmatic.spark.metrics
 
 import org.scalatest.BeforeAndAfter
 
-import org.apache.spark.SparkConf
-import org.apache.spark.SparkFunSuite
-import org.apache.spark.internal.config.METRICS_CONF
+import com.pubmatic.spark.SparkConf
+import com.pubmatic.spark.SparkFunSuite
+import com.pubmatic.spark.internal.config.METRICS_CONF
 
 class MetricsConfigSuite extends SparkFunSuite with BeforeAndAfter {
   var filePath: String = _

@@ -24,9 +24,9 @@ import java.nio.ByteBuffer
 import scala.collection.mutable
 import scala.reflect.ClassTag
 
-import org.apache.spark.SparkConf
-import org.apache.spark.deploy.master._
-import org.apache.spark.serializer.Serializer
+import com.pubmatic.spark.SparkConf
+import com.pubmatic.spark.deploy.master._
+import com.pubmatic.spark.serializer.Serializer
 
 class CustomRecoveryModeFactory(
   conf: SparkConf,

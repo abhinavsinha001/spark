@@ -23,7 +23,7 @@ import org.apache.kafka.common.security.auth.SecurityProtocol.SASL_SSL
 
 import org.apache.spark.SparkConf
 import org.apache.spark.internal.Logging
-import org.apache.spark.util.Utils.REDACTION_REPLACEMENT_TEXT
+import com.pubmatic.spark.util.Utils.REDACTION_REPLACEMENT_TEXT
 
 private[spark] case class KafkaTokenClusterConf(
     identifier: String,

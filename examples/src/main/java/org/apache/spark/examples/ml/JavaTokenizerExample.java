@@ -17,7 +17,7 @@
 
 package org.apache.spark.examples.ml;
 
-import org.apache.spark.sql.SparkSession;
+import com.pubmatic.spark.sql.SparkSession;
 
 // $example on$
 import java.util.Arrays;
@@ -25,19 +25,19 @@ import java.util.List;
 
 import scala.collection.mutable.WrappedArray;
 
-import org.apache.spark.ml.feature.RegexTokenizer;
-import org.apache.spark.ml.feature.Tokenizer;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.RowFactory;
-import org.apache.spark.sql.types.DataTypes;
-import org.apache.spark.sql.types.Metadata;
-import org.apache.spark.sql.types.StructField;
-import org.apache.spark.sql.types.StructType;
+import com.pubmatic.spark.ml.feature.RegexTokenizer;
+import com.pubmatic.spark.ml.feature.Tokenizer;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.Row;
+import com.pubmatic.spark.sql.RowFactory;
+import com.pubmatic.spark.sql.types.DataTypes;
+import com.pubmatic.spark.sql.types.Metadata;
+import com.pubmatic.spark.sql.types.StructField;
+import com.pubmatic.spark.sql.types.StructType;
 
 // col("...") is preferable to df.col("...")
-import static org.apache.spark.sql.functions.callUDF;
-import static org.apache.spark.sql.functions.col;
+import static com.pubmatic.spark.sql.functions.callUDF;
+import static com.pubmatic.spark.sql.functions.col;
 // $example off$
 
 public class JavaTokenizerExample {

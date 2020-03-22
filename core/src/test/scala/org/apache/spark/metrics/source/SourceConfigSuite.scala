@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-package org.apache.spark.metrics.source
+package com.pubmatic.spark.metrics.source
 
-import org.apache.spark.{LocalSparkContext, SparkConf, SparkContext, SparkFunSuite}
-import org.apache.spark.internal.config.{METRICS_EXECUTORMETRICS_SOURCE_ENABLED, METRICS_STATIC_SOURCES_ENABLED}
+import com.pubmatic.spark.{LocalSparkContext, SparkConf, SparkContext, SparkFunSuite}
+import com.pubmatic.spark.internal.config.{METRICS_EXECUTORMETRICS_SOURCE_ENABLED, METRICS_STATIC_SOURCES_ENABLED}
 
 class SourceConfigSuite extends SparkFunSuite with LocalSparkContext {
 

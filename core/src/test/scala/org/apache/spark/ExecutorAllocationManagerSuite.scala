@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
 import java.util.concurrent.TimeUnit
 
@@ -25,13 +25,13 @@ import org.mockito.ArgumentMatchers.{any, eq => meq}
 import org.mockito.Mockito.{mock, never, verify, when}
 import org.scalatest.PrivateMethodTester
 
-import org.apache.spark.executor.ExecutorMetrics
-import org.apache.spark.internal.config
-import org.apache.spark.internal.config.Tests.TEST_SCHEDULE_INTERVAL
-import org.apache.spark.metrics.MetricsSystem
-import org.apache.spark.scheduler._
-import org.apache.spark.scheduler.cluster.ExecutorInfo
-import org.apache.spark.util.{Clock, ManualClock, SystemClock}
+import com.pubmatic.spark.executor.ExecutorMetrics
+import com.pubmatic.spark.internal.config
+import com.pubmatic.spark.internal.config.Tests.TEST_SCHEDULE_INTERVAL
+import com.pubmatic.spark.metrics.MetricsSystem
+import com.pubmatic.spark.scheduler._
+import com.pubmatic.spark.scheduler.cluster.ExecutorInfo
+import com.pubmatic.spark.util.{Clock, ManualClock, SystemClock}
 
 /**
  * Test add and remove behavior of ExecutorAllocationManager.

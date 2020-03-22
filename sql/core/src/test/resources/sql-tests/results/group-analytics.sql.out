@@ -209,7 +209,7 @@ SELECT course, year, GROUPING(course) FROM courseSales GROUP BY course, year
 -- !query 14 schema
 struct<>
 -- !query 14 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 grouping() can only be used with GroupingSets/Cube/Rollup;
 
 
@@ -218,7 +218,7 @@ SELECT course, year, GROUPING_ID(course, year) FROM courseSales GROUP BY course,
 -- !query 15 schema
 struct<>
 -- !query 15 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 grouping_id() can only be used with GroupingSets/Cube/Rollup;
 
 
@@ -254,7 +254,7 @@ SELECT course, year FROM courseSales GROUP BY course, year HAVING GROUPING(cours
 -- !query 18 schema
 struct<>
 -- !query 18 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 grouping()/grouping_id() can only be used with GroupingSets/Cube/Rollup;
 
 
@@ -263,7 +263,7 @@ SELECT course, year FROM courseSales GROUP BY course, year HAVING GROUPING_ID(co
 -- !query 19 schema
 struct<>
 -- !query 19 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 grouping()/grouping_id() can only be used with GroupingSets/Cube/Rollup;
 
 
@@ -318,7 +318,7 @@ SELECT course, year FROM courseSales GROUP BY course, year ORDER BY GROUPING(cou
 -- !query 23 schema
 struct<>
 -- !query 23 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 grouping()/grouping_id() can only be used with GroupingSets/Cube/Rollup;
 
 
@@ -327,7 +327,7 @@ SELECT course, year FROM courseSales GROUP BY course, year ORDER BY GROUPING_ID(
 -- !query 24 schema
 struct<>
 -- !query 24 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 grouping()/grouping_id() can only be used with GroupingSets/Cube/Rollup;
 
 

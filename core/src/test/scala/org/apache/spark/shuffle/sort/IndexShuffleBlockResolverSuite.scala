@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.shuffle.sort
+package com.pubmatic.spark.shuffle.sort
 
 import java.io.{DataInputStream, File, FileInputStream, FileOutputStream}
 
@@ -26,10 +26,10 @@ import org.mockito.Mockito._
 import org.mockito.invocation.InvocationOnMock
 import org.scalatest.BeforeAndAfterEach
 
-import org.apache.spark.{SparkConf, SparkFunSuite}
-import org.apache.spark.shuffle.IndexShuffleBlockResolver
-import org.apache.spark.storage._
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.{SparkConf, SparkFunSuite}
+import com.pubmatic.spark.shuffle.IndexShuffleBlockResolver
+import com.pubmatic.spark.storage._
+import com.pubmatic.spark.util.Utils
 
 
 class IndexShuffleBlockResolverSuite extends SparkFunSuite with BeforeAndAfterEach {

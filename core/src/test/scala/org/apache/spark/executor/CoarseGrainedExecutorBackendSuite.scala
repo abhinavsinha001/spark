@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.executor
+package com.pubmatic.spark.executor
 
 import java.net.URL
 import java.nio.ByteBuffer
@@ -31,16 +31,16 @@ import org.mockito.Mockito.when
 import org.scalatest.concurrent.Eventually.{eventually, timeout}
 import org.scalatestplus.mockito.MockitoSugar
 
-import org.apache.spark._
-import org.apache.spark.TestUtils._
-import org.apache.spark.resource.{ResourceAllocation, ResourceInformation}
-import org.apache.spark.resource.ResourceUtils._
-import org.apache.spark.resource.TestResourceIDs._
-import org.apache.spark.rpc.RpcEnv
-import org.apache.spark.scheduler.TaskDescription
-import org.apache.spark.scheduler.cluster.CoarseGrainedClusterMessages.LaunchTask
-import org.apache.spark.serializer.JavaSerializer
-import org.apache.spark.util.{SerializableBuffer, Utils}
+import com.pubmatic.spark._
+import com.pubmatic.spark.TestUtils._
+import com.pubmatic.spark.resource.{ResourceAllocation, ResourceInformation}
+import com.pubmatic.spark.resource.ResourceUtils._
+import com.pubmatic.spark.resource.TestResourceIDs._
+import com.pubmatic.spark.rpc.RpcEnv
+import com.pubmatic.spark.scheduler.TaskDescription
+import com.pubmatic.spark.scheduler.cluster.CoarseGrainedClusterMessages.LaunchTask
+import com.pubmatic.spark.serializer.JavaSerializer
+import com.pubmatic.spark.util.{SerializableBuffer, Utils}
 
 class CoarseGrainedExecutorBackendSuite extends SparkFunSuite
     with LocalSparkContext with MockitoSugar {

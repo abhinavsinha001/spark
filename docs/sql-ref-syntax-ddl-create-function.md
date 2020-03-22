@@ -75,7 +75,7 @@ CREATE [ OR REPLACE ] [ TEMPORARY ] FUNCTION [ IF NOT EXISTS ]
       <li>Should extend <code>UDF</code> or <code>UDAF</code> in <code>org.apache.hadoop.hive.ql.exec</code> package.</li>
       <li>Should extend <code>AbstractGenericUDAFResolver</code>, <code>GenericUDF</code>, or
           <code>GenericUDTF</code> in <code>org.apache.hadoop.hive.ql.udf.generic</code> package.</li>
-      <li>Should extend <code>UserDefinedAggregateFunction</code> in <code>org.apache.spark.sql.expressions</code> package.</li>
+      <li>Should extend <code>UserDefinedAggregateFunction</code> in <code>com.pubmatic.spark.sql.expressions</code> package.</li>
     </ul>
   </dd>
   <dt><code><em>resource_locations</em></code></dt>

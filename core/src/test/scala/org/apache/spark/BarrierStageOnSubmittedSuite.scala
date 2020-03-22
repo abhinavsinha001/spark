@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
 import scala.concurrent.duration._
 
-import org.apache.spark.internal.config._
-import org.apache.spark.rdd.{PartitionPruningRDD, RDD}
-import org.apache.spark.scheduler.BarrierJobAllocationFailed._
-import org.apache.spark.util.ThreadUtils
+import com.pubmatic.spark.internal.config._
+import com.pubmatic.spark.rdd.{PartitionPruningRDD, RDD}
+import com.pubmatic.spark.scheduler.BarrierJobAllocationFailed._
+import com.pubmatic.spark.util.ThreadUtils
 
 /**
  * This test suite covers all the cases that shall fail fast on job submitted that contains one

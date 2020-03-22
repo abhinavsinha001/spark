@@ -25,8 +25,11 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.util.*;
 
-import org.apache.spark.sql.streaming.GroupStateTimeout;
-import org.apache.spark.sql.streaming.OutputMode;
+import com.pubmatic.spark.api.java.function.*;
+import com.pubmatic.spark.sql.streaming.GroupStateTimeout;
+import com.pubmatic.spark.sql.streaming.OutputMode;
+import org.apache.spark.api.java.function.FlatMapGroupsWithStateFunction;
+import org.apache.spark.api.java.function.MapGroupsWithStateFunction;
 import scala.Tuple2;
 import scala.Tuple3;
 import scala.Tuple4;
@@ -36,18 +39,18 @@ import com.google.common.base.Objects;
 import org.junit.*;
 import org.junit.rules.ExpectedException;
 
-import org.apache.spark.api.java.JavaPairRDD;
-import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.api.java.function.*;
-import org.apache.spark.sql.*;
-import org.apache.spark.sql.catalyst.encoders.OuterScopes;
-import org.apache.spark.sql.catalyst.expressions.GenericRow;
-import org.apache.spark.sql.test.TestSparkSession;
-import org.apache.spark.sql.types.StructType;
-import org.apache.spark.util.LongAccumulator;
-import static org.apache.spark.sql.functions.col;
-import static org.apache.spark.sql.functions.expr;
-import static org.apache.spark.sql.types.DataTypes.*;
+import com.pubmatic.spark.api.java.JavaPairRDD;
+import com.pubmatic.spark.api.java.JavaSparkContext;
+
+import com.pubmatic.spark.sql.*;
+import com.pubmatic.spark.sql.catalyst.encoders.OuterScopes;
+import com.pubmatic.spark.sql.catalyst.expressions.GenericRow;
+import com.pubmatic.spark.sql.test.TestSparkSession;
+import com.pubmatic.spark.sql.types.StructType;
+import com.pubmatic.spark.util.LongAccumulator;
+import static com.pubmatic.spark.sql.functions.col;
+import static com.pubmatic.spark.sql.functions.expr;
+import static com.pubmatic.spark.sql.types.DataTypes.*;
 
 public class JavaDatasetSuite implements Serializable {
   private transient TestSparkSession spark;

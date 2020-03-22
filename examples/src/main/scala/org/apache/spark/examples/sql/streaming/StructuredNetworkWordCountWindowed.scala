@@ -20,8 +20,8 @@ package org.apache.spark.examples.sql.streaming
 
 import java.sql.Timestamp
 
-import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.functions._
+import com.pubmatic.spark.sql.SparkSession
+import com.pubmatic.spark.sql.functions._
 
 /**
  * Counts words in UTF8 encoded, '\n' delimited text received from the network over a

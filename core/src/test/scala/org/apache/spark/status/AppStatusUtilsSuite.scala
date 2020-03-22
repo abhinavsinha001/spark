@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.spark.status
+package com.pubmatic.spark.status
 
 import java.util.Date
 
-import org.apache.spark.SparkFunSuite
-import org.apache.spark.status.api.v1.{TaskData, TaskMetrics}
+import com.pubmatic.spark.SparkFunSuite
+import com.pubmatic.spark.status.api.v1.{TaskData, TaskMetrics}
 
 class AppStatusUtilsSuite extends SparkFunSuite {
 

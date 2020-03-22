@@ -19,9 +19,9 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.feature.{RegexTokenizer, Tokenizer}
-import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.functions._
+import com.pubmatic.spark.ml.feature.{RegexTokenizer, Tokenizer}
+import com.pubmatic.spark.sql.SparkSession
+import com.pubmatic.spark.sql.functions._
 // $example off$
 
 object TokenizerExample {

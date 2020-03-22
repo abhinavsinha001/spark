@@ -995,12 +995,6 @@ This is the component with the largest amount of instrumented metrics
 - namespace=JVMCPU
   - jvmCpuTime
 
-- namespace=ExecutorMetrics
-  - **note:** these metrics are conditional to a configuration parameter:
-    `spark.metrics.executorMetricsSource.enabled` (default is true) 
-  - This source contains memory-related metrics. A full list of available metrics in this 
-    namespace can be found in the corresponding entry for the Executor component instance.
- 
 - namespace=plugin.\<Plugin Class Name>
   - Optional namespace(s). Metrics in this namespace are defined by user-supplied code, and
   configured using the Spark plugin API. See "Advanced Instrumentation" below for how to load
@@ -1051,41 +1045,6 @@ when running in local mode.
   - threadpool.currentPool_size
   - threadpool.maxPool_size
   - threadpool.startedTasks
-
-- namespace=ExecutorMetrics
-  - **notes:** 
-    - These metrics are conditional to a configuration parameter:
-    `spark.metrics.executorMetricsSource.enabled` (default value is true) 
-    - ExecutorMetrics are updated as part of heartbeat processes scheduled
-   for the executors and for the driver at regular intervals: `spark.executor.heartbeatInterval` (default value is 10 seconds)
-    - An optional faster polling mechanism is available for executor memory metrics, 
-   it can be activated by setting a polling interval (in milliseconds) using the configuration parameter `spark.executor.metrics.pollingInterval`
-  - JVMHeapMemory
-  - JVMOffHeapMemory
-  - OnHeapExecutionMemory
-  - OnHeapStorageMemory
-  - OnHeapUnifiedMemory
-  - OffHeapExecutionMemory
-  - OffHeapStorageMemory
-  - OffHeapUnifiedMemory
-  - DirectPoolMemory
-  - MappedPoolMemory
-  - MinorGCCount
-  - MinorGCTime
-  - MajorGCCount
-  - MajorGCTime
-  - "ProcessTree*" metric counters:
-    - ProcessTreeJVMVMemory
-    - ProcessTreeJVMRSSMemory
-    - ProcessTreePythonVMemory
-    - ProcessTreePythonRSSMemory
-    - ProcessTreeOtherVMemory
-    - ProcessTreeOtherRSSMemory
-    - **note:** "ProcessTree*" metrics are collected only under certain conditions.
-      The conditions are the logical AND of the following: `/proc` filesystem exists,
-      `spark.eventLog.logStageExecutorProcessTreeMetrics.enabled=true`,
-      `spark.eventLog.logStageExecutorMetrics.enabled=true`.
-      "ProcessTree*" metrics report 0 when those conditions are not met.
 
 - namespace=JVMCPU
   - jvmCpuTime
@@ -1203,7 +1162,7 @@ applications. There are two configuration keys available for loading plugins int
 - <code>spark.plugins.defaultList</code>
 
 Both take a comma-separated list of class names that implement the
-<code>org.apache.spark.api.plugin.SparkPlugin</code> interface. The two names exist so that it's
+<code>SparkPlugin</code> interface. The two names exist so that it's
 possible for one list to be placed in the Spark default config file, allowing users to
 easily add other plugins from the command line without overwriting the config file's list. Duplicate
 plugins are ignored.

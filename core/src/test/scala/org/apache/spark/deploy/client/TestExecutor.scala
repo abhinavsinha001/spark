@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.deploy.client
+package com.pubmatic.spark.deploy.client
 
 private[spark] object TestExecutor {
   def main(args: Array[String]): Unit = {

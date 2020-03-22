@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.status
+package com.pubmatic.spark.status
 
 import java.io.File
 import java.util.{Date, Properties}
@@ -26,15 +26,15 @@ import scala.reflect.{classTag, ClassTag}
 
 import org.scalatest.BeforeAndAfter
 
-import org.apache.spark._
-import org.apache.spark.executor.{ExecutorMetrics, TaskMetrics}
-import org.apache.spark.internal.config.Status._
-import org.apache.spark.metrics.ExecutorMetricType
-import org.apache.spark.scheduler._
-import org.apache.spark.scheduler.cluster._
-import org.apache.spark.status.api.v1
-import org.apache.spark.storage._
-import org.apache.spark.util.Utils
+import com.pubmatic.spark._
+import com.pubmatic.spark.executor.{ExecutorMetrics, TaskMetrics}
+import com.pubmatic.spark.internal.config.Status._
+import com.pubmatic.spark.metrics.ExecutorMetricType
+import com.pubmatic.spark.scheduler._
+import com.pubmatic.spark.scheduler.cluster._
+import com.pubmatic.spark.status.api.v1
+import com.pubmatic.spark.storage._
+import com.pubmatic.spark.util.Utils
 
 class AppStatusListenerSuite extends SparkFunSuite with BeforeAndAfter {
 

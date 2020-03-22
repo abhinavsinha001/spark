@@ -26,8 +26,8 @@ import scala.collection.immutable.Map$;
 
 import org.junit.Test;
 
-import org.apache.spark.api.java.*;
-import org.apache.spark.*;
+import com.pubmatic.spark.api.java.*;
+import com.pubmatic.spark.*;
 
 /**
  * Java apps can use both Java-friendly JavaSparkContext and Scala SparkContext.

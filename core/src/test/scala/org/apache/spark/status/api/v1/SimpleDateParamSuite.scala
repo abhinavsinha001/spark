@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.spark.status.api.v1
+package com.pubmatic.spark.status.api.v1
 
 import javax.ws.rs.WebApplicationException
 
 import org.scalatest.Matchers
 
-import org.apache.spark.SparkFunSuite
+import com.pubmatic.spark.SparkFunSuite
 
 class SimpleDateParamSuite extends SparkFunSuite with Matchers {
 

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.metrics
+package com.pubmatic.spark.metrics
 
 import java.io.{File, PrintWriter}
 
@@ -32,9 +32,9 @@ import org.apache.hadoop.mapreduce.lib.input.{CombineFileInputFormat => NewCombi
 import org.apache.hadoop.mapreduce.lib.output.{TextOutputFormat => NewTextOutputFormat}
 import org.scalatest.BeforeAndAfter
 
-import org.apache.spark.{SharedSparkContext, SparkFunSuite}
-import org.apache.spark.scheduler.{SparkListener, SparkListenerTaskEnd}
-import org.apache.spark.util.{ThreadUtils, Utils}
+import com.pubmatic.spark.{SharedSparkContext, SparkFunSuite}
+import com.pubmatic.spark.scheduler.{SparkListener, SparkListenerTaskEnd}
+import com.pubmatic.spark.util.{ThreadUtils, Utils}
 
 class InputOutputMetricsSuite extends SparkFunSuite with SharedSparkContext
   with BeforeAndAfter {

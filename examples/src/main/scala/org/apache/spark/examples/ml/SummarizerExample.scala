@@ -19,10 +19,10 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.linalg.{Vector, Vectors}
-import org.apache.spark.ml.stat.Summarizer
+import com.pubmatic.spark.ml.linalg.{Vector, Vectors}
+import com.pubmatic.spark.ml.stat.Summarizer
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 object SummarizerExample {
   def main(args: Array[String]): Unit = {

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-namespace java org.apache.spark.sql.execution.datasources.parquet.test.thrift
+namespace java com.pubmatic.spark.sql.execution.datasources.parquet.test.thrift
 
 enum Suit {
     SPADES,

@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-package org.apache.spark.partial
+package com.pubmatic.spark.partial
 
-import org.apache.spark.SparkFunSuite
-import org.apache.spark.util.StatCounter
+import com.pubmatic.spark.SparkFunSuite
+import com.pubmatic.spark.util.StatCounter
 
 class MeanEvaluatorSuite extends SparkFunSuite {
 

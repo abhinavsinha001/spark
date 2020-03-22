@@ -151,11 +151,11 @@ def launch_gateway(conf=None, popen_kwargs=None):
     java_import(gateway.jvm, "org.apache.spark.api.java.*")
     java_import(gateway.jvm, "org.apache.spark.api.python.*")
     java_import(gateway.jvm, "org.apache.spark.ml.python.*")
-    java_import(gateway.jvm, "org.apache.spark.mllib.api.python.*")
+    java_import(gateway.jvm, "com.pubmatic.spark.mllib.api.python.*")
     # TODO(davies): move into sql
-    java_import(gateway.jvm, "org.apache.spark.sql.*")
-    java_import(gateway.jvm, "org.apache.spark.sql.api.python.*")
-    java_import(gateway.jvm, "org.apache.spark.sql.hive.*")
+    java_import(gateway.jvm, "com.pubmatic.spark.sql.*")
+    java_import(gateway.jvm, "com.pubmatic.spark.sql.api.python.*")
+    java_import(gateway.jvm, "com.pubmatic.spark.sql.hive.*")
     java_import(gateway.jvm, "scala.Tuple2")
 
     return gateway

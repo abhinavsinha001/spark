@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package org.apache.spark.api.java
+package com.pubmatic.spark.api.java
 
 import java.io.Serializable
 
 import org.mockito.Mockito._
 
-import org.apache.spark.SparkFunSuite
+import com.pubmatic.spark.SparkFunSuite
 
 
 class JavaUtilsSuite extends SparkFunSuite {

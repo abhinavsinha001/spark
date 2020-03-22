@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.spark.storage
+package com.pubmatic.spark.storage
 
-import org.apache.spark._
-import org.apache.spark.internal.config._
+import com.pubmatic.spark._
+import com.pubmatic.spark.internal.config._
 
 class FlatmapIteratorSuite extends SparkFunSuite with LocalSparkContext {
   /* Tests the ability of Spark to deal with user provided iterators from flatMap

@@ -18,17 +18,17 @@
 // scalastyle:off println
 package org.apache.spark.examples.ml
 
-import org.apache.spark.ml.classification.{ClassificationModel, Classifier, ClassifierParams}
-import org.apache.spark.ml.feature.LabeledPoint
-import org.apache.spark.ml.linalg.{BLAS, Vector, Vectors}
-import org.apache.spark.ml.param.{IntParam, ParamMap}
-import org.apache.spark.ml.util.Identifiable
-import org.apache.spark.sql.{Dataset, Row, SparkSession}
+import com.pubmatic.spark.ml.classification.{ClassificationModel, Classifier, ClassifierParams}
+import com.pubmatic.spark.ml.feature.LabeledPoint
+import com.pubmatic.spark.ml.linalg.{BLAS, Vector, Vectors}
+import com.pubmatic.spark.ml.param.{IntParam, ParamMap}
+import com.pubmatic.spark.ml.util.Identifiable
+import com.pubmatic.spark.sql.{Dataset, Row, SparkSession}
 
 /**
  * A simple example demonstrating how to write your own learning algorithm using Estimator,
  * Transformer, and other abstractions.
- * This mimics [[org.apache.spark.ml.classification.LogisticRegression]].
+ * This mimics [[com.pubmatic.spark.ml.classification.LogisticRegression]].
  * Run with
  * {{{
  * bin/run-example ml.DeveloperApiExample

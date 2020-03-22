@@ -54,10 +54,10 @@ Spark's primary abstraction is a distributed collection of items called a Datase
 
 {% highlight scala %}
 scala> val textFile = spark.read.textFile("README.md")
-textFile: org.apache.spark.sql.Dataset[String] = [value: string]
+textFile: com.pubmatic.spark.sql.Dataset[String] = [value: string]
 {% endhighlight %}
 
-You can get values from Dataset directly, by calling some actions, or transform the Dataset to get a new one. For more details, please read the _[API doc](api/scala/index.html#org.apache.spark.sql.Dataset)_.
+You can get values from Dataset directly, by calling some actions, or transform the Dataset to get a new one. For more details, please read the _[API doc](api/scala/index.html#com.pubmatic.spark.sql.Dataset)_.
 
 {% highlight scala %}
 scala> textFile.count() // Number of items in this Dataset
@@ -71,7 +71,7 @@ Now let's transform this Dataset into a new one. We call `filter` to return a ne
 
 {% highlight scala %}
 scala> val linesWithSpark = textFile.filter(line => line.contains("Spark"))
-linesWithSpark: org.apache.spark.sql.Dataset[String] = [value: string]
+linesWithSpark: com.pubmatic.spark.sql.Dataset[String] = [value: string]
 {% endhighlight %}
 
 We can chain together transformations and actions:
@@ -149,7 +149,7 @@ One common data flow pattern is MapReduce, as popularized by Hadoop. Spark can i
 
 {% highlight scala %}
 scala> val wordCounts = textFile.flatMap(line => line.split(" ")).groupByKey(identity).count()
-wordCounts: org.apache.spark.sql.Dataset[(String, Long)] = [value: string, count(1): bigint]
+wordCounts: com.pubmatic.spark.sql.Dataset[(String, Long)] = [value: string, count(1): bigint]
 {% endhighlight %}
 
 Here, we call `flatMap` to transform a Dataset of lines to a Dataset of words, and then combine `groupByKey` and `count` to compute the per-word counts in the file as a Dataset of (String, Long) pairs. To collect the word counts in our shell, we can call `collect`:
@@ -241,7 +241,7 @@ named `SimpleApp.scala`:
 
 {% highlight scala %}
 /* SimpleApp.scala */
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 object SimpleApp {
   def main(args: Array[String]) {
@@ -316,8 +316,8 @@ We'll create a very simple Spark application, `SimpleApp.java`:
 
 {% highlight java %}
 /* SimpleApp.java */
-import org.apache.spark.sql.SparkSession;
-import org.apache.spark.sql.Dataset;
+import com.pubmatic.spark.sql.SparkSession;
+import com.pubmatic.spark.sql.Dataset;
 
 public class SimpleApp {
   public static void main(String[] args) {

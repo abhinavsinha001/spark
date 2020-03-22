@@ -42,12 +42,12 @@ The schema of the `image` column is:
 
 <div class="codetabs">
 <div data-lang="scala" markdown="1">
-[`ImageDataSource`](api/scala/index.html#org.apache.spark.ml.source.image.ImageDataSource)
+[`ImageDataSource`](api/scala/index.html#com.pubmatic.spark.ml.source.image.ImageDataSource)
 implements a Spark SQL data source API for loading image data as a DataFrame.
 
 {% highlight scala %}
 scala> val df = spark.read.format("image").option("dropInvalid", true).load("data/mllib/images/origin/kittens")
-df: org.apache.spark.sql.DataFrame = [image: struct<origin: string, height: int ... 4 more fields>]
+df: com.pubmatic.spark.sql.DataFrame = [image: struct<origin: string, height: int ... 4 more fields>]
 
 scala> df.select("image.origin", "image.width", "image.height").show(truncate=false)
 +-----------------------------------------------------------------------+-----+------+
@@ -133,12 +133,12 @@ The schemas of the columns are:
 
 <div class="codetabs">
 <div data-lang="scala" markdown="1">
-[`LibSVMDataSource`](api/scala/index.html#org.apache.spark.ml.source.libsvm.LibSVMDataSource)
+[`LibSVMDataSource`](api/scala/index.html#com.pubmatic.spark.ml.source.libsvm.LibSVMDataSource)
 implements a Spark SQL data source API for loading `LIBSVM` data as a DataFrame.
 
 {% highlight scala %}
 scala> val df = spark.read.format("libsvm").option("numFeatures", "780").load("data/mllib/sample_libsvm_data.txt")
-df: org.apache.spark.sql.DataFrame = [label: double, features: vector]
+df: com.pubmatic.spark.sql.DataFrame = [label: double, features: vector]
 
 scala> df.show(10)
 +-----+--------------------+

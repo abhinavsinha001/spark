@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package org.apache.spark.rdd
+package com.pubmatic.spark.rdd
 
 import scala.concurrent.duration._
 
 import org.scalatest.concurrent.Eventually.{eventually, interval, timeout}
 
-import org.apache.spark.{LocalSparkContext, SparkContext, SparkException, SparkFunSuite}
-import org.apache.spark.storage.{RDDBlockId, StorageLevel}
+import com.pubmatic.spark.{LocalSparkContext, SparkContext, SparkException, SparkFunSuite}
+import com.pubmatic.spark.storage.{RDDBlockId, StorageLevel}
 
 /**
  * Fine-grained tests for local checkpointing.

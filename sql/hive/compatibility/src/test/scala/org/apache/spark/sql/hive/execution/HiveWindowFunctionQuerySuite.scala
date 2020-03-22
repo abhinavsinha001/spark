@@ -15,16 +15,16 @@
  * limitations under the License.
  */
 
-package org.apache.spark.sql.hive.execution
+package com.pubmatic.spark.sql.hive.execution
 
 import java.io.File
 import java.util.{Locale, TimeZone}
 
 import org.scalatest.BeforeAndAfter
 
-import org.apache.spark.sql.hive.test.TestHive
-import org.apache.spark.sql.hive.test.TestHive._
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.sql.hive.test.TestHive
+import com.pubmatic.spark.sql.hive.test.TestHive._
+import com.pubmatic.spark.util.Utils
 
 /**
  * The test suite for window functions. To actually compare results with Hive,
@@ -58,7 +58,7 @@ class HiveWindowFunctionQuerySuite extends HiveComparisonTest with BeforeAndAfte
         |  p_size INT,
         |  p_container STRING,
         |  p_retailprice DOUBLE,
-        |  p_comment STRING) USING hive
+        |  p_comment STRING)
       """.stripMargin)
     val testData1 = TestHive.getHiveFile("data/files/part_tiny.txt").getCanonicalPath
     sql(

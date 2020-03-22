@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.sql.catalyst.expressions
+package com.pubmatic.spark.sql.catalyst.expressions
 
 import scala.collection.mutable
 import scala.collection.mutable.ArrayBuffer

@@ -48,8 +48,8 @@ class ReadwriterTests(ReusedSQLTestCase):
         self.assertEqual(sorted(df.collect()), sorted(actual.collect()))
 
         defaultDataSourceName = self.spark.conf.get("spark.sql.sources.default",
-                                                    "org.apache.spark.sql.parquet")
-        self.spark.sql("SET spark.sql.sources.default=org.apache.spark.sql.json")
+                                                    "com.pubmatic.spark.sql.parquet")
+        self.spark.sql("SET spark.sql.sources.default=com.pubmatic.spark.sql.json")
         actual = self.spark.read.load(path=tmpPath)
         self.assertEqual(sorted(df.collect()), sorted(actual.collect()))
         self.spark.sql("SET spark.sql.sources.default=" + defaultDataSourceName)
@@ -84,8 +84,8 @@ class ReadwriterTests(ReusedSQLTestCase):
         self.assertEqual(sorted(df.collect()), sorted(actual.collect()))
 
         defaultDataSourceName = self.spark.conf.get("spark.sql.sources.default",
-                                                    "org.apache.spark.sql.parquet")
-        self.spark.sql("SET spark.sql.sources.default=org.apache.spark.sql.json")
+                                                    "com.pubmatic.spark.sql.parquet")
+        self.spark.sql("SET spark.sql.sources.default=com.pubmatic.spark.sql.json")
         actual = self.spark.read.load(path=tmpPath)
         self.assertEqual(sorted(df.collect()), sorted(actual.collect()))
         self.spark.sql("SET spark.sql.sources.default=" + defaultDataSourceName)

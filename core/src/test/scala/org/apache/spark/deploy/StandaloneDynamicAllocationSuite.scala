@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.deploy
+package com.pubmatic.spark.deploy
 
 import scala.collection.mutable
 import scala.concurrent.duration._
@@ -25,16 +25,16 @@ import org.mockito.Mockito.{mock, verify, when}
 import org.scalatest.{BeforeAndAfterAll, PrivateMethodTester}
 import org.scalatest.concurrent.Eventually._
 
-import org.apache.spark._
-import org.apache.spark.deploy.DeployMessages.{MasterStateResponse, RequestMasterState}
-import org.apache.spark.deploy.master.ApplicationInfo
-import org.apache.spark.deploy.master.Master
-import org.apache.spark.deploy.worker.Worker
-import org.apache.spark.internal.config
-import org.apache.spark.rpc.{RpcAddress, RpcEndpointRef, RpcEnv}
-import org.apache.spark.scheduler.TaskSchedulerImpl
-import org.apache.spark.scheduler.cluster._
-import org.apache.spark.scheduler.cluster.CoarseGrainedClusterMessages.{LaunchedExecutor, RegisterExecutor, RegisterExecutorFailed}
+import com.pubmatic.spark._
+import com.pubmatic.spark.deploy.DeployMessages.{MasterStateResponse, RequestMasterState}
+import com.pubmatic.spark.deploy.master.ApplicationInfo
+import com.pubmatic.spark.deploy.master.Master
+import com.pubmatic.spark.deploy.worker.Worker
+import com.pubmatic.spark.internal.config
+import com.pubmatic.spark.rpc.{RpcAddress, RpcEndpointRef, RpcEnv}
+import com.pubmatic.spark.scheduler.TaskSchedulerImpl
+import com.pubmatic.spark.scheduler.cluster._
+import com.pubmatic.spark.scheduler.cluster.CoarseGrainedClusterMessages.{LaunchedExecutor, RegisterExecutor, RegisterExecutorFailed}
 
 /**
  * End-to-end tests for dynamic allocation in standalone mode.

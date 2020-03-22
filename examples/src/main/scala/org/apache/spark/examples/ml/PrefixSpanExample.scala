@@ -18,9 +18,9 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.fpm.PrefixSpan
+import com.pubmatic.spark.ml.fpm.PrefixSpan
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 /**
  * An example demonstrating PrefixSpan.

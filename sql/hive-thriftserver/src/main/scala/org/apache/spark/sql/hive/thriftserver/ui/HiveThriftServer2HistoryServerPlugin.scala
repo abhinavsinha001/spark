@@ -17,10 +17,10 @@
 
 package org.apache.spark.sql.hive.thriftserver.ui
 
-import org.apache.spark.SparkConf
-import org.apache.spark.scheduler.SparkListener
-import org.apache.spark.status.{AppHistoryServerPlugin, ElementTrackingStore}
-import org.apache.spark.ui.SparkUI
+import com.pubmatic.spark.SparkConf
+import com.pubmatic.spark.scheduler.SparkListener
+import com.pubmatic.spark.status.{AppHistoryServerPlugin, ElementTrackingStore}
+import com.pubmatic.spark.ui.SparkUI
 
 class HiveThriftServer2HistoryServerPlugin extends AppHistoryServerPlugin {
 

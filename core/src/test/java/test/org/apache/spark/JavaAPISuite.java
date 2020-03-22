@@ -35,10 +35,19 @@ import java.util.concurrent.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import org.apache.spark.Partitioner;
-import org.apache.spark.SparkConf;
-import org.apache.spark.TaskContext;
-import org.apache.spark.TaskContext$;
+import com.pubmatic.spark.Partitioner;
+import com.pubmatic.spark.SparkConf;
+import com.pubmatic.spark.TaskContext;
+import com.pubmatic.spark.TaskContext$;
+import com.pubmatic.spark.api.java.*;
+import com.pubmatic.spark.api.java.function.FlatMapFunction2;
+import com.pubmatic.spark.api.java.function.Function;
+import com.pubmatic.spark.api.java.function.Function2;
+import com.pubmatic.spark.input.PortableDataStream;
+import com.pubmatic.spark.partial.BoundedDouble;
+import com.pubmatic.spark.partial.PartialResult;
+import com.pubmatic.spark.rdd.RDD;
+import com.pubmatic.spark.serializer.KryoSerializer;
 import scala.Tuple2;
 import scala.Tuple3;
 import scala.Tuple4;
@@ -62,21 +71,12 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import org.apache.spark.api.java.JavaDoubleRDD;
-import org.apache.spark.api.java.JavaFutureAction;
-import org.apache.spark.api.java.JavaPairRDD;
-import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.api.java.Optional;
-import org.apache.spark.api.java.function.*;
-import org.apache.spark.input.PortableDataStream;
-import org.apache.spark.partial.BoundedDouble;
-import org.apache.spark.partial.PartialResult;
-import org.apache.spark.rdd.RDD;
-import org.apache.spark.serializer.KryoSerializer;
-import org.apache.spark.storage.StorageLevel;
-import org.apache.spark.util.LongAccumulator;
-import org.apache.spark.util.StatCounter;
+
+import com.pubmatic.spark.api.java.function.*;
+
+import com.pubmatic.spark.storage.StorageLevel;
+import com.pubmatic.spark.util.LongAccumulator;
+import com.pubmatic.spark.util.StatCounter;
 
 // The test suite itself is Serializable so that anonymous Function implementations can be
 // serialized, as an alternative to converting these anonymous classes to static inner classes;

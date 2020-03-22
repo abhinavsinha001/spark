@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.metrics.sink
+package com.pubmatic.spark.metrics.sink
 
 import java.util.Properties
 
@@ -23,7 +23,7 @@ import scala.collection.JavaConverters._
 
 import com.codahale.metrics._
 
-import org.apache.spark.{SecurityManager, SparkConf, SparkFunSuite}
+import com.pubmatic.spark.{SecurityManager, SparkConf, SparkFunSuite}
 
 class GraphiteSinkSuite extends SparkFunSuite {
 

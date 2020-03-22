@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.scheduler
+package com.pubmatic.spark.scheduler
 
 import java.io.{ByteArrayInputStream, ByteArrayOutputStream, ObjectInputStream, ObjectOutputStream}
 
@@ -24,11 +24,11 @@ import scala.util.Random
 import org.mockito.Mockito.mock
 import org.roaringbitmap.RoaringBitmap
 
-import org.apache.spark.{SparkConf, SparkContext, SparkEnv, SparkFunSuite}
-import org.apache.spark.LocalSparkContext._
-import org.apache.spark.internal.config
-import org.apache.spark.serializer.{JavaSerializer, KryoSerializer}
-import org.apache.spark.storage.BlockManagerId
+import com.pubmatic.spark.{SparkConf, SparkContext, SparkEnv, SparkFunSuite}
+import com.pubmatic.spark.LocalSparkContext._
+import com.pubmatic.spark.internal.config
+import com.pubmatic.spark.serializer.{JavaSerializer, KryoSerializer}
+import com.pubmatic.spark.storage.BlockManagerId
 
 class MapStatusSuite extends SparkFunSuite {
   private def doReturn(value: Any) = org.mockito.Mockito.doReturn(value, Seq.empty: _*)

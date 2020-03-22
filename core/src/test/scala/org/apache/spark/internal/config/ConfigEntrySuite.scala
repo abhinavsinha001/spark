@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package org.apache.spark.internal.config
+package com.pubmatic.spark.internal.config
 
 import java.util.Locale
 import java.util.concurrent.TimeUnit
 
-import org.apache.spark.{SparkConf, SparkFunSuite}
+import com.pubmatic.spark.{SparkConf, SparkFunSuite}
 import org.apache.spark.network.util.ByteUnit
-import org.apache.spark.util.SparkConfWithEnv
+import com.pubmatic.spark.util.SparkConfWithEnv
 
 class ConfigEntrySuite extends SparkFunSuite {
 

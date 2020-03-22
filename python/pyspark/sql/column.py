@@ -557,7 +557,7 @@ class Column(object):
         sc = SparkContext._active_spark_context
         if len(alias) == 1:
             if metadata:
-                jmeta = sc._jvm.org.apache.spark.sql.types.Metadata.fromJson(
+                jmeta = sc._jvm.com.pubmatic.spark.sql.types.Metadata.fromJson(
                     json.dumps(metadata))
                 return Column(getattr(self._jc, "as")(alias[0], jmeta))
             else:

@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package org.apache.spark.internal.io
+package com.pubmatic.spark.internal.io
 
-import org.apache.spark.SparkFunSuite
+import com.pubmatic.spark.SparkFunSuite
 
 /**
  * Unit tests for instantiation of FileCommitProtocol implementations.

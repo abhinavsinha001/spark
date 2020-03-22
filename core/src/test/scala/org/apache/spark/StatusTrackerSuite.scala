@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
 import scala.concurrent.duration._
 import scala.language.implicitConversions
@@ -23,7 +23,7 @@ import scala.language.implicitConversions
 import org.scalatest.Matchers
 import org.scalatest.concurrent.Eventually._
 
-import org.apache.spark.JobExecutionStatus._
+import JobExecutionStatus._
 
 class StatusTrackerSuite extends SparkFunSuite with Matchers with LocalSparkContext {
 

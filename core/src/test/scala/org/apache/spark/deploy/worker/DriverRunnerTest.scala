@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.deploy.worker
+package com.pubmatic.spark.deploy.worker
 
 import java.io.File
 
@@ -26,11 +26,11 @@ import org.mockito.Mockito._
 import org.mockito.invocation.InvocationOnMock
 import org.scalatest.concurrent.Eventually.{eventually, interval, timeout}
 
-import org.apache.spark.{SecurityManager, SparkConf, SparkFunSuite}
-import org.apache.spark.deploy.{Command, DriverDescription}
-import org.apache.spark.deploy.master.DriverState
-import org.apache.spark.rpc.RpcEndpointRef
-import org.apache.spark.util.Clock
+import com.pubmatic.spark.{SecurityManager, SparkConf, SparkFunSuite}
+import com.pubmatic.spark.deploy.{Command, DriverDescription}
+import com.pubmatic.spark.deploy.master.DriverState
+import com.pubmatic.spark.rpc.RpcEndpointRef
+import com.pubmatic.spark.util.Clock
 
 class DriverRunnerTest extends SparkFunSuite {
   private def createDriverRunner() = {

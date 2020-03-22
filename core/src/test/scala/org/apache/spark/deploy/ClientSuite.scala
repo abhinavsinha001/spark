@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-package org.apache.spark.deploy
+package com.pubmatic.spark.deploy
 
 import org.scalatest.Matchers
 
-import org.apache.spark.SparkFunSuite
+import com.pubmatic.spark.SparkFunSuite
 
 class ClientSuite extends SparkFunSuite with Matchers {
   test("correctly validates driver jar URL's") {

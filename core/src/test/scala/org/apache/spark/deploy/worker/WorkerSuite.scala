@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.deploy.worker
+package com.pubmatic.spark.deploy.worker
 
 import java.io.{File, IOException}
 import java.util.concurrent.atomic.AtomicBoolean
@@ -32,23 +32,23 @@ import org.mockito.invocation.InvocationOnMock
 import org.scalatest.{BeforeAndAfter, Matchers}
 import org.scalatest.concurrent.Eventually.{eventually, interval, timeout}
 
-import org.apache.spark.{SecurityManager, SparkConf, SparkFunSuite}
-import org.apache.spark.TestUtils.{createTempJsonFile, createTempScriptWithExpectedOutput}
-import org.apache.spark.deploy.{Command, ExecutorState, ExternalShuffleService}
-import org.apache.spark.deploy.DeployMessages.{DriverStateChanged, ExecutorStateChanged, WorkDirCleanup}
-import org.apache.spark.deploy.StandaloneResourceUtils.{ALLOCATED_RESOURCES_FILE, SPARK_RESOURCES_COORDINATE_DIR}
-import org.apache.spark.deploy.master.DriverState
-import org.apache.spark.internal.config
-import org.apache.spark.internal.config.Worker._
-import org.apache.spark.resource.{ResourceAllocation, ResourceInformation}
-import org.apache.spark.resource.ResourceUtils._
-import org.apache.spark.resource.TestResourceIDs.{WORKER_FPGA_ID, WORKER_GPU_ID}
-import org.apache.spark.rpc.{RpcAddress, RpcEnv}
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.{SecurityManager, SparkConf, SparkFunSuite}
+import com.pubmatic.spark.TestUtils.{createTempJsonFile, createTempScriptWithExpectedOutput}
+import com.pubmatic.spark.deploy.{Command, ExecutorState, ExternalShuffleService}
+import com.pubmatic.spark.deploy.DeployMessages.{DriverStateChanged, ExecutorStateChanged, WorkDirCleanup}
+import com.pubmatic.spark.deploy.StandaloneResourceUtils.{ALLOCATED_RESOURCES_FILE, SPARK_RESOURCES_COORDINATE_DIR}
+import com.pubmatic.spark.deploy.master.DriverState
+import com.pubmatic.spark.internal.config
+import com.pubmatic.spark.internal.config.Worker._
+import com.pubmatic.spark.resource.{ResourceAllocation, ResourceInformation}
+import com.pubmatic.spark.resource.ResourceUtils._
+import com.pubmatic.spark.resource.TestResourceIDs.{WORKER_FPGA_ID, WORKER_GPU_ID}
+import com.pubmatic.spark.rpc.{RpcAddress, RpcEnv}
+import com.pubmatic.spark.util.Utils
 
 class WorkerSuite extends SparkFunSuite with Matchers with BeforeAndAfter {
 
-  import org.apache.spark.deploy.DeployTestUtils._
+  import com.pubmatic.spark.deploy.DeployTestUtils._
 
   @Mock(answer = RETURNS_SMART_NULLS) private var shuffleService: ExternalShuffleService = _
 

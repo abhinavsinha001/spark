@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.sql.execution.datasources.orc
+package com.pubmatic.spark.sql.execution.datasources.orc
 
 import org.apache.orc.storage.common.`type`.HiveDecimal
 import org.apache.orc.storage.ql.io.sarg.{PredicateLeaf, SearchArgument}
@@ -23,9 +23,9 @@ import org.apache.orc.storage.ql.io.sarg.SearchArgument.Builder
 import org.apache.orc.storage.ql.io.sarg.SearchArgumentFactory.newBuilder
 import org.apache.orc.storage.serde2.io.HiveDecimalWritable
 
-import org.apache.spark.SparkException
-import org.apache.spark.sql.sources.Filter
-import org.apache.spark.sql.types._
+import com.pubmatic.spark.SparkException
+import com.pubmatic.spark.sql.sources.Filter
+import com.pubmatic.spark.sql.types._
 
 /**
  * Helper object for building ORC `SearchArgument`s, which are used for ORC predicate push-down.
@@ -79,7 +79,7 @@ private[sql] object OrcFilters extends OrcFiltersBase {
       schema: StructType,
       dataTypeMap: Map[String, DataType],
       filters: Seq[Filter]): Seq[Filter] = {
-    import org.apache.spark.sql.sources._
+    import com.pubmatic.spark.sql.sources._
 
     def convertibleFiltersHelper(
         filter: Filter,
@@ -174,7 +174,7 @@ private[sql] object OrcFilters extends OrcFiltersBase {
       dataTypeMap: Map[String, DataType],
       expression: Filter,
       builder: Builder): Builder = {
-    import org.apache.spark.sql.sources._
+    import com.pubmatic.spark.sql.sources._
 
     expression match {
       case And(left, right) =>
@@ -213,7 +213,7 @@ private[sql] object OrcFilters extends OrcFiltersBase {
     def getType(attribute: String): PredicateLeaf.Type =
       getPredicateLeafType(dataTypeMap(attribute))
 
-    import org.apache.spark.sql.sources._
+    import com.pubmatic.spark.sql.sources._
 
     // NOTE: For all case branches dealing with leaf predicates below, the additional `startAnd()`
     // call is mandatory. ORC `SearchArgument` builder requires that all leaf predicates must be

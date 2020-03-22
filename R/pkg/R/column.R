@@ -85,7 +85,7 @@ createOperator <- function(op) {
                   e2 <- e2@jc
                 }
                 if (op == "^") {
-                  jc <- callJStatic("org.apache.spark.sql.functions", operators[[op]], e1@jc, e2)
+                  jc <- callJStatic("com.pubmatic.spark.sql.functions", operators[[op]], e1@jc, e2)
                 } else {
                   callJMethod(e1@jc, operators[[op]], e2)
                 }

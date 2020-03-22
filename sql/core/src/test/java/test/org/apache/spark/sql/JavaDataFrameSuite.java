@@ -31,18 +31,18 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.primitives.Ints;
 import org.junit.*;
 
-import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.RowFactory;
-import org.apache.spark.sql.expressions.UserDefinedFunction;
-import org.apache.spark.sql.test.TestSparkSession;
-import org.apache.spark.sql.types.*;
-import org.apache.spark.util.sketch.BloomFilter;
-import org.apache.spark.util.sketch.CountMinSketch;
-import static org.apache.spark.sql.functions.*;
-import static org.apache.spark.sql.types.DataTypes.*;
+import com.pubmatic.spark.api.java.JavaRDD;
+import com.pubmatic.spark.api.java.JavaSparkContext;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.Row;
+import com.pubmatic.spark.sql.RowFactory;
+import com.pubmatic.spark.sql.expressions.UserDefinedFunction;
+import com.pubmatic.spark.sql.test.TestSparkSession;
+import com.pubmatic.spark.sql.types.*;
+import com.pubmatic.spark.util.sketch.BloomFilter;
+import com.pubmatic.spark.util.sketch.CountMinSketch;
+import static com.pubmatic.spark.sql.functions.*;
+import static com.pubmatic.spark.sql.types.DataTypes.*;
 
 public class JavaDataFrameSuite {
   private transient TestSparkSession spark;

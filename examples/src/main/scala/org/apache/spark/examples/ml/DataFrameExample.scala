@@ -23,11 +23,11 @@ import java.io.File
 import scopt.OptionParser
 
 import org.apache.spark.examples.mllib.AbstractParams
-import org.apache.spark.ml.linalg.Vector
+import com.pubmatic.spark.ml.linalg.Vector
 import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.mllib.stat.MultivariateOnlineSummarizer
-import org.apache.spark.sql.{DataFrame, Row, SparkSession}
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.sql.{DataFrame, Row, SparkSession}
+import com.pubmatic.spark.util.Utils
 
 /**
  * An example of how to use [[DataFrame]] for ML. Run with

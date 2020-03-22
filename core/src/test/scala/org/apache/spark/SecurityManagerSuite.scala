@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
 import java.io.File
 import java.nio.charset.StandardCharsets.UTF_8
@@ -25,11 +25,11 @@ import java.util.Base64
 
 import org.apache.hadoop.security.UserGroupInformation
 
-import org.apache.spark.internal.config._
-import org.apache.spark.internal.config.UI._
-import org.apache.spark.launcher.SparkLauncher
-import org.apache.spark.security.GroupMappingServiceProvider
-import org.apache.spark.util.{ResetSystemProperties, SparkConfWithEnv, Utils}
+import com.pubmatic.spark.internal.config._
+import com.pubmatic.spark.internal.config.UI._
+import com.pubmatic.spark.launcher.SparkLauncher
+import com.pubmatic.spark.security.GroupMappingServiceProvider
+import com.pubmatic.spark.util.{ResetSystemProperties, SparkConfWithEnv, Utils}
 
 class DummyGroupMappingServiceProvider extends GroupMappingServiceProvider {
 

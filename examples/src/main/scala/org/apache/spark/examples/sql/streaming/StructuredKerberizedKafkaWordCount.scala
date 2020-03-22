@@ -22,7 +22,7 @@ import java.util.UUID
 
 import org.apache.kafka.common.security.auth.SecurityProtocol
 
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 /**
  * Consumes messages from one or more topics in Kafka and does wordcount.

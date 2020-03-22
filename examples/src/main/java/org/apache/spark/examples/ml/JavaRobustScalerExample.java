@@ -17,13 +17,13 @@
 
 package org.apache.spark.examples.ml;
 
-import org.apache.spark.sql.SparkSession;
+import com.pubmatic.spark.sql.SparkSession;
 
 // $example on$
-import org.apache.spark.ml.feature.RobustScaler;
-import org.apache.spark.ml.feature.RobustScalerModel;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
+import com.pubmatic.spark.ml.feature.RobustScaler;
+import com.pubmatic.spark.ml.feature.RobustScalerModel;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.Row;
 // $example off$
 
 public class JavaRobustScalerExample {

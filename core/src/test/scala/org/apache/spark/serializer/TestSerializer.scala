@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.serializer
+package com.pubmatic.spark.serializer
 
 import java.io.{EOFException, InputStream, OutputStream}
 import java.nio.ByteBuffer

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.rdd
+package com.pubmatic.spark.rdd
 
 import scala.collection.immutable.NumericRange
 
@@ -24,7 +24,7 @@ import org.scalacheck.Gen
 import org.scalacheck.Prop._
 import org.scalatestplus.scalacheck.Checkers
 
-import org.apache.spark.SparkFunSuite
+import com.pubmatic.spark.SparkFunSuite
 
 class ParallelCollectionSplitSuite extends SparkFunSuite with Checkers {
   test("one element per slice") {

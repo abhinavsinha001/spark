@@ -17,7 +17,7 @@
 
 package org.apache.spark.sql.hive.thriftserver
 
-import org.apache.spark.SparkFunSuite
+import com.pubmatic.spark.SparkFunSuite
 import org.apache.spark.sql.types.{IntegerType, NullType, StringType, StructField, StructType}
 
 class SparkExecuteStatementOperationSuite extends SparkFunSuite {

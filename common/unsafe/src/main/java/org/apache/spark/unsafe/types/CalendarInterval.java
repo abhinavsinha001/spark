@@ -24,7 +24,7 @@ import java.time.Period;
 import java.time.temporal.ChronoUnit;
 import java.util.Objects;
 
-import static org.apache.spark.sql.catalyst.util.DateTimeConstants.*;
+import static com.pubmatic.spark.sql.catalyst.util.DateTimeConstants.*;
 
 /**
  * The internal representation of interval type.
@@ -133,16 +133,4 @@ public final class CalendarInterval implements Serializable, Comparable<Calendar
    * @throws ArithmeticException if a numeric overflow occurs
    */
   public Duration extractAsDuration() { return Duration.of(microseconds, ChronoUnit.MICROS); }
-
-  /**
-   * A constant holding the minimum value an {@code CalendarInterval} can have.
-   */
-  public static CalendarInterval MIN_VALUE =
-    new CalendarInterval(Integer.MIN_VALUE, Integer.MIN_VALUE, Long.MIN_VALUE);
-
-  /**
-   * A constant holding the maximum value an {@code CalendarInterval} can have.
-   */
-  public static CalendarInterval MAX_VALUE =
-    new CalendarInterval(Integer.MAX_VALUE, Integer.MAX_VALUE, Long.MAX_VALUE);
 }

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.deploy
+package com.pubmatic.spark.deploy
 
 import java.io.{File, OutputStream, PrintStream}
 import java.net.URI
@@ -25,15 +25,13 @@ import java.util.zip.ZipFile
 
 import scala.collection.JavaConverters._
 import scala.collection.mutable.ArrayBuffer
-
 import com.google.common.io.Files
 import org.apache.commons.io.FileUtils
 import org.scalatest.BeforeAndAfterEach
-
-import org.apache.spark.SparkFunSuite
-import org.apache.spark.api.r.RUtils
-import org.apache.spark.deploy.SparkSubmitUtils.MavenCoordinate
-import org.apache.spark.util.{ResetSystemProperties, Utils}
+import com.pubmatic.spark.SparkFunSuite
+import com.pubmatic.spark.api.r.RUtils
+import com.pubmatic.spark.deploy.SparkSubmitUtils.MavenCoordinate
+import com.pubmatic.spark.util.{ResetSystemProperties, Utils}
 
 class RPackageUtilsSuite
   extends SparkFunSuite

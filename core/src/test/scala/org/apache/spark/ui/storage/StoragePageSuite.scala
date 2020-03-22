@@ -15,17 +15,17 @@
  * limitations under the License.
  */
 
-package org.apache.spark.ui.storage
+package com.pubmatic.spark.ui.storage
 
 import javax.servlet.http.HttpServletRequest
 
 import org.mockito.Mockito._
 import scala.xml.{Node, Text}
 
-import org.apache.spark.SparkFunSuite
-import org.apache.spark.status.StreamBlockData
-import org.apache.spark.status.api.v1.RDDStorageInfo
-import org.apache.spark.storage._
+import com.pubmatic.spark.SparkFunSuite
+import com.pubmatic.spark.status.StreamBlockData
+import com.pubmatic.spark.status.api.v1.RDDStorageInfo
+import com.pubmatic.spark.storage._
 
 class StoragePageSuite extends SparkFunSuite {
 

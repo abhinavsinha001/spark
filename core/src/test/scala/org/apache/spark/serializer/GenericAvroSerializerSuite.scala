@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.serializer
+package com.pubmatic.spark.serializer
 
 import java.io.{ByteArrayInputStream, ByteArrayOutputStream}
 import java.nio.ByteBuffer
@@ -24,8 +24,8 @@ import com.esotericsoftware.kryo.io.{Input, Output}
 import org.apache.avro.{Schema, SchemaBuilder}
 import org.apache.avro.generic.GenericData.Record
 
-import org.apache.spark.{SharedSparkContext, SparkFunSuite}
-import org.apache.spark.internal.config.SERIALIZER
+import com.pubmatic.spark.{SharedSparkContext, SparkFunSuite}
+import com.pubmatic.spark.internal.config.SERIALIZER
 
 class GenericAvroSerializerSuite extends SparkFunSuite with SharedSparkContext {
   conf.set(SERIALIZER, "org.apache.spark.serializer.KryoSerializer")

@@ -26,10 +26,10 @@ import scala.Tuple2;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.mllib.regression.LabeledPoint;
-import org.apache.spark.mllib.tree.RandomForest;
-import org.apache.spark.mllib.tree.model.RandomForestModel;
-import org.apache.spark.mllib.util.MLUtils;
+import com.pubmatic.spark.mllib.regression.LabeledPoint;
+import com.pubmatic.spark.mllib.tree.RandomForest;
+import com.pubmatic.spark.mllib.tree.model.RandomForestModel;
+import com.pubmatic.spark.mllib.util.MLUtils;
 import org.apache.spark.SparkConf;
 // $example off$
 

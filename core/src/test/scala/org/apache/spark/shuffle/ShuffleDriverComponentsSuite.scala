@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.shuffle
+package com.pubmatic.spark.shuffle
 
 import java.util.{Map => JMap}
 import java.util.concurrent.atomic.AtomicBoolean
@@ -24,10 +24,10 @@ import com.google.common.collect.ImmutableMap
 import org.scalatest.Assertions._
 import org.scalatest.BeforeAndAfterEach
 
-import org.apache.spark.{LocalSparkContext, SparkConf, SparkContext, SparkFunSuite}
-import org.apache.spark.internal.config.SHUFFLE_IO_PLUGIN_CLASS
-import org.apache.spark.shuffle.api.{ShuffleDataIO, ShuffleDriverComponents, ShuffleExecutorComponents, ShuffleMapOutputWriter}
-import org.apache.spark.shuffle.sort.io.LocalDiskShuffleDataIO
+import com.pubmatic.spark.{LocalSparkContext, SparkConf, SparkContext, SparkFunSuite}
+import com.pubmatic.spark.internal.config.SHUFFLE_IO_PLUGIN_CLASS
+import com.pubmatic.spark.shuffle.api.{ShuffleDataIO, ShuffleDriverComponents, ShuffleExecutorComponents, ShuffleMapOutputWriter}
+import com.pubmatic.spark.shuffle.sort.io.LocalDiskShuffleDataIO
 
 class ShuffleDriverComponentsSuite
     extends SparkFunSuite with LocalSparkContext with BeforeAndAfterEach {

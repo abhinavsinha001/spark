@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.spark.deploy.history
+package com.pubmatic.spark.deploy.history
 
 import java.io.File
 import java.nio.charset.StandardCharsets._
 
 import com.google.common.io.Files
 
-import org.apache.spark._
-import org.apache.spark.internal.config.History._
-import org.apache.spark.internal.config.Tests._
+import com.pubmatic.spark._
+import com.pubmatic.spark.internal.config.History._
+import com.pubmatic.spark.internal.config.Tests._
 
 class HistoryServerArgumentsSuite extends SparkFunSuite {
 

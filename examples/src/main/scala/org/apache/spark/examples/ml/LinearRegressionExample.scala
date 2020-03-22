@@ -21,8 +21,8 @@ package org.apache.spark.examples.ml
 import scopt.OptionParser
 
 import org.apache.spark.examples.mllib.AbstractParams
-import org.apache.spark.ml.regression.LinearRegression
-import org.apache.spark.sql.{DataFrame, SparkSession}
+import com.pubmatic.spark.ml.regression.LinearRegression
+import com.pubmatic.spark.sql.{DataFrame, SparkSession}
 
 /**
  * An example runner for linear regression with elastic-net (mixing L1/L2) regularization.

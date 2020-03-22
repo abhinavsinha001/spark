@@ -21,11 +21,11 @@ package org.apache.spark.examples.ml
 // $example on$
 import java.util.Arrays
 
-import org.apache.spark.ml.attribute.{Attribute, AttributeGroup, NumericAttribute}
-import org.apache.spark.ml.feature.VectorSlicer
-import org.apache.spark.ml.linalg.Vectors
-import org.apache.spark.sql.{Row, SparkSession}
-import org.apache.spark.sql.types.StructType
+import com.pubmatic.spark.ml.attribute.{Attribute, AttributeGroup, NumericAttribute}
+import com.pubmatic.spark.ml.feature.VectorSlicer
+import com.pubmatic.spark.ml.linalg.Vectors
+import com.pubmatic.spark.sql.{Row, SparkSession}
+import com.pubmatic.spark.sql.types.StructType
 // $example off$
 
 object VectorSlicerExample {

@@ -21,11 +21,11 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaSparkContext;
 // $example on$
 import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.mllib.feature.ChiSqSelector;
-import org.apache.spark.mllib.feature.ChiSqSelectorModel;
-import org.apache.spark.mllib.linalg.Vectors;
-import org.apache.spark.mllib.regression.LabeledPoint;
-import org.apache.spark.mllib.util.MLUtils;
+import com.pubmatic.spark.mllib.feature.ChiSqSelector;
+import com.pubmatic.spark.mllib.feature.ChiSqSelectorModel;
+import com.pubmatic.spark.mllib.linalg.Vectors;
+import com.pubmatic.spark.mllib.regression.LabeledPoint;
+import com.pubmatic.spark.mllib.util.MLUtils;
 // $example off$
 
 public class JavaChiSqSelectorExample {

@@ -29,7 +29,7 @@ import org.apache.hive.service.cli.operation.GetFunctionsOperation
 import org.apache.hive.service.cli.operation.MetadataOperation.DEFAULT_HIVE_CATALOG
 import org.apache.hive.service.cli.session.HiveSession
 
-import org.apache.spark.internal.Logging
+import com.pubmatic.spark.internal.Logging
 import org.apache.spark.sql.SQLContext
 import org.apache.spark.util.{Utils => SparkUtils}
 

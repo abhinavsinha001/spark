@@ -19,12 +19,12 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.classification.LogisticRegression
-import org.apache.spark.ml.linalg.{Vector, Vectors}
-import org.apache.spark.ml.param.ParamMap
-import org.apache.spark.sql.Row
+import com.pubmatic.spark.ml.classification.LogisticRegression
+import com.pubmatic.spark.ml.linalg.{Vector, Vectors}
+import com.pubmatic.spark.ml.param.ParamMap
+import com.pubmatic.spark.sql.Row
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 object EstimatorTransformerParamExample {
 

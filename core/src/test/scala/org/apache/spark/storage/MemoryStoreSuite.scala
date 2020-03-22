@@ -15,22 +15,21 @@
  * limitations under the License.
  */
 
-package org.apache.spark.storage
+package com.pubmatic.spark.storage
 
 import java.nio.ByteBuffer
 
 import scala.language.implicitConversions
 import scala.reflect.ClassTag
-
 import org.scalatest._
-
-import org.apache.spark._
-import org.apache.spark.internal.config._
-import org.apache.spark.memory.{MemoryMode, UnifiedMemoryManager}
-import org.apache.spark.serializer.{KryoSerializer, SerializerManager}
-import org.apache.spark.storage.memory.{BlockEvictionHandler, MemoryStore, PartiallySerializedBlock, PartiallyUnrolledIterator}
-import org.apache.spark.util._
-import org.apache.spark.util.io.ChunkedByteBuffer
+import com.pubmatic.spark._
+import com.pubmatic.spark.internal.config._
+import com.pubmatic.spark.memory.MemoryMode
+import com.pubmatic.spark.memory.UnifiedMemoryManager
+import com.pubmatic.spark.serializer.{KryoSerializer, SerializerManager}
+import com.pubmatic.spark.storage.memory.{BlockEvictionHandler, MemoryStore, PartiallySerializedBlock, PartiallyUnrolledIterator}
+import com.pubmatic.spark.util._
+import com.pubmatic.spark.util.io.ChunkedByteBuffer
 
 class MemoryStoreSuite
   extends SparkFunSuite

@@ -15,23 +15,22 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
 import java.util.{Locale, Properties}
-import java.util.concurrent.{Callable, CyclicBarrier, Executors, ExecutorService}
+import java.util.concurrent.{Callable, CyclicBarrier, ExecutorService, Executors}
 
+import com.pubmatic.spark.ShuffleSuite.NonJavaSerializableClass
 import org.scalatest.Matchers
-
-import org.apache.spark.ShuffleSuite.NonJavaSerializableClass
-import org.apache.spark.internal.config
-import org.apache.spark.internal.config.Tests.TEST_NO_STAGE_RETRY
-import org.apache.spark.memory.TaskMemoryManager
-import org.apache.spark.rdd.{CoGroupedRDD, OrderedRDDFunctions, RDD, ShuffledRDD, SubtractedRDD}
-import org.apache.spark.scheduler.{MapStatus, MyRDD, SparkListener, SparkListenerTaskEnd}
-import org.apache.spark.serializer.KryoSerializer
-import org.apache.spark.shuffle.ShuffleWriter
-import org.apache.spark.storage.{ShuffleBlockId, ShuffleDataBlockId, ShuffleIndexBlockId}
-import org.apache.spark.util.MutablePair
+import com.pubmatic.spark.internal.config
+import com.pubmatic.spark.internal.config.Tests.TEST_NO_STAGE_RETRY
+import com.pubmatic.spark.memory.TaskMemoryManager
+import com.pubmatic.spark.rdd.{CoGroupedRDD, OrderedRDDFunctions, RDD, ShuffledRDD, SubtractedRDD}
+import com.pubmatic.spark.scheduler.{MapStatus, MyRDD, SparkListener, SparkListenerTaskEnd}
+import com.pubmatic.spark.serializer.KryoSerializer
+import com.pubmatic.spark.shuffle.ShuffleWriter
+import com.pubmatic.spark.storage.{ShuffleBlockId, ShuffleDataBlockId, ShuffleIndexBlockId}
+import com.pubmatic.spark.util.MutablePair
 
 abstract class ShuffleSuite extends SparkFunSuite with Matchers with LocalSparkContext {
 

@@ -15,15 +15,15 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
 import scala.collection.mutable.ArrayBuffer
 import scala.math.abs
 
 import org.scalatest.PrivateMethodTester
 
-import org.apache.spark.rdd.RDD
-import org.apache.spark.util.StatCounter
+import com.pubmatic.spark.rdd.RDD
+import com.pubmatic.spark.util.StatCounter
 
 class PartitioningSuite extends SparkFunSuite with SharedSparkContext with PrivateMethodTester {
 

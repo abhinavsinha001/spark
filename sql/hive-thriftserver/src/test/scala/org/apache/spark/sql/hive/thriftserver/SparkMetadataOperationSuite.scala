@@ -191,7 +191,7 @@ class SparkMetadataOperationSuite extends HiveThriftJdbcTest {
         assert(rs.getString("FUNCTION_NAME") === functionName(i))
         assert(rs.getString("REMARKS").startsWith(s"${functionName(i)}("))
         assert(rs.getInt("FUNCTION_TYPE") === DatabaseMetaData.functionResultUnknown)
-        assert(rs.getString("SPECIFIC_NAME").startsWith("org.apache.spark.sql.catalyst"))
+        assert(rs.getString("SPECIFIC_NAME").startsWith("com.pubmatic.spark.sql.catalyst"))
       }
       // Make sure there are no more elements
       assert(!rs.next())
@@ -218,7 +218,7 @@ class SparkMetadataOperationSuite extends HiveThriftJdbcTest {
       assert(rs.getString("REMARKS") ===
         "upper(str) - Returns `str` with all characters changed to uppercase.")
       assert(rs.getInt("FUNCTION_TYPE") === DatabaseMetaData.functionResultUnknown)
-      assert(rs.getString("SPECIFIC_NAME") === "org.apache.spark.sql.catalyst.expressions.Upper")
+      assert(rs.getString("SPECIFIC_NAME") === "com.pubmatic.spark.sql.catalyst.expressions.Upper")
       // Make sure there are no more elements
       assert(!rs.next())
     }

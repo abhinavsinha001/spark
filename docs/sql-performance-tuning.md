@@ -129,7 +129,7 @@ a specific strategy may not support all join types.
 <div data-lang="scala"  markdown="1">
 
 {% highlight scala %}
-import org.apache.spark.sql.functions.broadcast
+import com.pubmatic.spark.sql.functions.broadcast
 broadcast(spark.table("src")).join(spark.table("records"), "key").show()
 {% endhighlight %}
 
@@ -138,7 +138,7 @@ broadcast(spark.table("src")).join(spark.table("records"), "key").show()
 <div data-lang="java"  markdown="1">
 
 {% highlight java %}
-import static org.apache.spark.sql.functions.broadcast;
+import static com.pubmatic.spark.sql.functions.broadcast;
 broadcast(spark.table("src")).join(spark.table("records"), "key").show();
 {% endhighlight %}
 

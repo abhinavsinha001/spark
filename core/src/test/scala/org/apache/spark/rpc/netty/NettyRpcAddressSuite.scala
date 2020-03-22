@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-package org.apache.spark.rpc.netty
+package com.pubmatic.spark.rpc.netty
 
-import org.apache.spark.SparkFunSuite
-import org.apache.spark.rpc.RpcEndpointAddress
+import com.pubmatic.spark.SparkFunSuite
+import com.pubmatic.spark.rpc.RpcEndpointAddress
 
 class NettyRpcAddressSuite extends SparkFunSuite {
 

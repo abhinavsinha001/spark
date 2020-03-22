@@ -19,11 +19,11 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.linalg.{Matrix, Vectors}
-import org.apache.spark.ml.stat.Correlation
-import org.apache.spark.sql.Row
+import com.pubmatic.spark.ml.linalg.{Matrix, Vectors}
+import com.pubmatic.spark.ml.stat.Correlation
+import com.pubmatic.spark.sql.Row
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 /**
  * An example for computing correlation matrix.

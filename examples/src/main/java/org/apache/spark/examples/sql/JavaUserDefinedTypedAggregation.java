@@ -19,12 +19,12 @@ package org.apache.spark.examples.sql;
 // $example on:typed_custom_aggregation$
 import java.io.Serializable;
 
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Encoder;
-import org.apache.spark.sql.Encoders;
-import org.apache.spark.sql.SparkSession;
-import org.apache.spark.sql.TypedColumn;
-import org.apache.spark.sql.expressions.Aggregator;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.Encoder;
+import com.pubmatic.spark.sql.Encoders;
+import com.pubmatic.spark.sql.SparkSession;
+import com.pubmatic.spark.sql.TypedColumn;
+import com.pubmatic.spark.sql.expressions.Aggregator;
 // $example off:typed_custom_aggregation$
 
 public class JavaUserDefinedTypedAggregation {

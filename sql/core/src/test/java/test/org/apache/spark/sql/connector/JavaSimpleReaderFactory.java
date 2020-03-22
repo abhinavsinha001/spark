@@ -17,11 +17,11 @@
 
 package test.org.apache.spark.sql.connector;
 
-import org.apache.spark.sql.catalyst.InternalRow;
-import org.apache.spark.sql.catalyst.expressions.GenericInternalRow;
-import org.apache.spark.sql.connector.read.InputPartition;
-import org.apache.spark.sql.connector.read.PartitionReader;
-import org.apache.spark.sql.connector.read.PartitionReaderFactory;
+import com.pubmatic.spark.sql.catalyst.InternalRow;
+import com.pubmatic.spark.sql.catalyst.expressions.GenericInternalRow;
+import com.pubmatic.spark.sql.connector.read.InputPartition;
+import com.pubmatic.spark.sql.connector.read.PartitionReader;
+import com.pubmatic.spark.sql.connector.read.PartitionReaderFactory;
 
 class JavaSimpleReaderFactory implements PartitionReaderFactory {
 

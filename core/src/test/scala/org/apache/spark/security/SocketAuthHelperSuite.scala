@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.spark.security
+package com.pubmatic.spark.security
 
 import java.io.Closeable
 import java.net._
 
-import org.apache.spark.{SparkConf, SparkFunSuite}
-import org.apache.spark.internal.config._
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.{SparkConf, SparkFunSuite}
+import com.pubmatic.spark.internal.config._
+import com.pubmatic.spark.util.Utils
 
 class SocketAuthHelperSuite extends SparkFunSuite {
 

@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
 import scala.concurrent.duration._
 
 import org.scalatest.Assertions
 import org.scalatest.concurrent.Eventually._
 
-import org.apache.spark.storage.StorageLevel
+import com.pubmatic.spark.storage.StorageLevel
 
 class SparkContextInfoSuite extends SparkFunSuite with LocalSparkContext {
   test("getPersistentRDDs only returns RDDs that are marked as cached") {

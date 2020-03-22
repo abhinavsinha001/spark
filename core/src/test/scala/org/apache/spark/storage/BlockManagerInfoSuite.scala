@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package org.apache.spark.storage
+package com.pubmatic.spark.storage
 
 import java.util.{HashMap => JHashMap}
 
 import scala.collection.JavaConverters._
 
-import org.apache.spark.SparkFunSuite
+import com.pubmatic.spark.SparkFunSuite
 
 class BlockManagerInfoSuite extends SparkFunSuite {
 

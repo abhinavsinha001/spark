@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
 import java.io.File
 
@@ -24,12 +24,12 @@ import scala.reflect.ClassTag
 import com.google.common.io.ByteStreams
 import org.apache.hadoop.fs.Path
 
-import org.apache.spark.internal.config.CACHE_CHECKPOINT_PREFERRED_LOCS_EXPIRE_TIME
-import org.apache.spark.internal.config.UI._
-import org.apache.spark.io.CompressionCodec
-import org.apache.spark.rdd._
-import org.apache.spark.storage.{BlockId, StorageLevel, TestBlockId}
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.internal.config.CACHE_CHECKPOINT_PREFERRED_LOCS_EXPIRE_TIME
+import com.pubmatic.spark.internal.config.UI._
+import com.pubmatic.spark.io.CompressionCodec
+import com.pubmatic.spark.rdd._
+import com.pubmatic.spark.storage.{BlockId, StorageLevel, TestBlockId}
+import com.pubmatic.spark.util.Utils
 
 trait RDDCheckpointTester { self: SparkFunSuite =>
 

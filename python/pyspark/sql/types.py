@@ -799,11 +799,11 @@ def _parse_datatype_string(s):
 
     def from_ddl_schema(type_str):
         return _parse_datatype_json_string(
-            sc._jvm.org.apache.spark.sql.types.StructType.fromDDL(type_str).json())
+            sc._jvm.com.pubmatic.spark.sql.types.StructType.fromDDL(type_str).json())
 
     def from_ddl_datatype(type_str):
         return _parse_datatype_json_string(
-            sc._jvm.org.apache.spark.sql.api.python.PythonSQLUtils.parseDataType(type_str).json())
+            sc._jvm.com.pubmatic.spark.sql.api.python.PythonSQLUtils.parseDataType(type_str).json())
 
     try:
         # DDL format, "fieldname datatype, fieldname datatype".

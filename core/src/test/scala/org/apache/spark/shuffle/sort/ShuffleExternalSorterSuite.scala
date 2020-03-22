@@ -15,18 +15,18 @@
  * limitations under the License.
  */
 
-package org.apache.spark.shuffle.sort
+package com.pubmatic.spark.shuffle.sort
 
 import java.lang.{Long => JLong}
 
 import org.mockito.Mockito.when
 import org.scalatestplus.mockito.MockitoSugar
-
-import org.apache.spark._
-import org.apache.spark.executor.{ShuffleWriteMetrics, TaskMetrics}
-import org.apache.spark.internal.config.MEMORY_FRACTION
-import org.apache.spark.internal.config.Tests._
-import org.apache.spark.memory._
+import com.pubmatic.spark._
+import com.pubmatic.spark.executor.{ShuffleWriteMetrics, TaskMetrics}
+import com.pubmatic.spark.internal.config.MEMORY_FRACTION
+import com.pubmatic.spark.internal.config.Tests._
+import com.pubmatic.spark.memory.{MemoryConsumer, MemoryMode, SparkOutOfMemoryError, TaskMemoryManager}
+import com.pubmatic.spark.memory._
 import org.apache.spark.unsafe.Platform
 
 class ShuffleExternalSorterSuite extends SparkFunSuite with LocalSparkContext with MockitoSugar {
@@ -104,7 +104,7 @@ class ShuffleExternalSorterSuite extends SparkFunSuite with LocalSparkContext wi
     //   address)
     // - java.lang.IllegalArgumentException: Comparison method violates its general contract!
     // - java.lang.NullPointerException
-    //     at org.apache.spark.memory.TaskMemoryManager.getPage(TaskMemoryManager.java:384)
+    //     at TaskMemoryManager.getPage(TaskMemoryManager.java:384)
     // - java.lang.UnsupportedOperationException: Cannot grow BufferHolder by size -536870912
     //     because the size after growing exceeds size limitation 2147483632
     intercept[SparkOutOfMemoryError] {

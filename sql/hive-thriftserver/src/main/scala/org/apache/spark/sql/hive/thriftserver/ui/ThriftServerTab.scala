@@ -17,9 +17,9 @@
 
 package org.apache.spark.sql.hive.thriftserver.ui
 
-import org.apache.spark.{SparkContext, SparkException}
-import org.apache.spark.internal.Logging
-import org.apache.spark.ui.{SparkUI, SparkUITab}
+import com.pubmatic.spark.{SparkContext, SparkException}
+import com.pubmatic.spark.internal.Logging
+import com.pubmatic.spark.ui.{SparkUI, SparkUITab}
 
 /**
  * Spark Web UI tab that shows statistics of jobs running in the thrift server.

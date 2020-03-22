@@ -22,13 +22,13 @@ import java.util.Iterator;
 
 import org.apache.spark.annotation.Evolving;
 import org.apache.spark.annotation.Experimental;
-import org.apache.spark.sql.streaming.GroupState;
+import com.pubmatic.spark.sql.streaming.GroupState;
 
 /**
  * ::Experimental::
  * Base interface for a map function used in
- * {@link org.apache.spark.sql.KeyValueGroupedDataset#mapGroupsWithState(
- * MapGroupsWithStateFunction, org.apache.spark.sql.Encoder, org.apache.spark.sql.Encoder)}
+ * {@link com.pubmatic.spark.sql.KeyValueGroupedDataset#mapGroupsWithState(
+ * MapGroupsWithStateFunction, com.pubmatic.spark.sql.Encoder, com.pubmatic.spark.sql.Encoder)}
  * @since 2.1.1
  */
 @Experimental

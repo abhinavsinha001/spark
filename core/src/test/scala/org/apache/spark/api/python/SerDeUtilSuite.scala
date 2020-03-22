@@ -15,9 +15,10 @@
  * limitations under the License.
  */
 
-package org.apache.spark.api.python
+package com.pubmatic.spark.api.python
 
-import org.apache.spark.{SharedSparkContext, SparkFunSuite}
+import com.pubmatic.spark.{SharedSparkContext, SparkFunSuite}
+
 
 class SerDeUtilSuite extends SparkFunSuite with SharedSparkContext {
 

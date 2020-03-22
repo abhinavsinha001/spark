@@ -222,7 +222,7 @@ the following case-insensitive options:
 {% highlight sql %}
 
 CREATE TEMPORARY VIEW jdbcTable
-USING org.apache.spark.sql.jdbc
+USING com.pubmatic.spark.sql.jdbc
 OPTIONS (
   url "jdbc:postgresql:dbserver",
   dbtable "schema.tablename",

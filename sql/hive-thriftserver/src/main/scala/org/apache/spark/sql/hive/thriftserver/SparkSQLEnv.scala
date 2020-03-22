@@ -20,8 +20,8 @@ package org.apache.spark.sql.hive.thriftserver
 import java.io.PrintStream
 import java.nio.charset.StandardCharsets.UTF_8
 
-import org.apache.spark.{SparkConf, SparkContext}
-import org.apache.spark.internal.Logging
+import com.pubmatic.spark.{SparkConf, SparkContext}
+import com.pubmatic.spark.internal.Logging
 import org.apache.spark.sql.{SparkSession, SQLContext}
 import org.apache.spark.sql.hive.{HiveExternalCatalog, HiveUtils}
 import org.apache.spark.util.Utils

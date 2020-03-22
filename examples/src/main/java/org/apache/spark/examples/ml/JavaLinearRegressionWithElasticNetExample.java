@@ -18,13 +18,13 @@
 package org.apache.spark.examples.ml;
 
 // $example on$
-import org.apache.spark.ml.regression.LinearRegression;
-import org.apache.spark.ml.regression.LinearRegressionModel;
-import org.apache.spark.ml.regression.LinearRegressionTrainingSummary;
-import org.apache.spark.ml.linalg.Vectors;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SparkSession;
+import com.pubmatic.spark.ml.regression.LinearRegression;
+import com.pubmatic.spark.ml.regression.LinearRegressionModel;
+import com.pubmatic.spark.ml.regression.LinearRegressionTrainingSummary;
+import com.pubmatic.spark.ml.linalg.Vectors;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.Row;
+import com.pubmatic.spark.sql.SparkSession;
 // $example off$
 
 public class JavaLinearRegressionWithElasticNetExample {

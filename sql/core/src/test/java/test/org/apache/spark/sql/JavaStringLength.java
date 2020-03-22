@@ -17,7 +17,7 @@
 
 package test.org.apache.spark.sql;
 
-import org.apache.spark.sql.api.java.UDF1;
+import com.pubmatic.spark.sql.api.java.UDF1;
 
 /**
  * It is used for register Java UDF from PySpark

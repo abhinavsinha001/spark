@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
 import java.io.File
 
@@ -25,11 +25,11 @@ import org.apache.commons.io.FileUtils
 import org.apache.commons.io.filefilter.TrueFileFilter
 import org.scalatest.BeforeAndAfterAll
 
-import org.apache.spark.internal.config
-import org.apache.spark.rdd.ShuffledRDD
-import org.apache.spark.serializer.{JavaSerializer, KryoSerializer}
-import org.apache.spark.shuffle.sort.SortShuffleManager
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.internal.config
+import com.pubmatic.spark.rdd.ShuffledRDD
+import com.pubmatic.spark.serializer.{JavaSerializer, KryoSerializer}
+import com.pubmatic.spark.shuffle.sort.SortShuffleManager
+import com.pubmatic.spark.util.Utils
 
 class SortShuffleSuite extends ShuffleSuite with BeforeAndAfterAll {
 

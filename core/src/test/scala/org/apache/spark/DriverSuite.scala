@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
 import java.io.File
 
@@ -23,7 +23,7 @@ import org.scalatest.concurrent.{Signaler, ThreadSignaler, TimeLimits}
 import org.scalatest.prop.TableDrivenPropertyChecks._
 import org.scalatest.time.SpanSugar._
 
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.util.Utils
 
 class DriverSuite extends SparkFunSuite with TimeLimits {
 

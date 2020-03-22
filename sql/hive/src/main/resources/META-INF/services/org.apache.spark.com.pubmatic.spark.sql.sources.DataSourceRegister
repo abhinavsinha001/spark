@@ -1,0 +1,2 @@
+com.pubmatic.spark.sql.hive.orc.OrcFileFormat
+com.pubmatic.spark.sql.hive.execution.HiveFileFormat

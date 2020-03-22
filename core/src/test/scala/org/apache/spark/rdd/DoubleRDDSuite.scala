@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package org.apache.spark.rdd
+package com.pubmatic.spark.rdd
 
-import org.apache.spark._
+import com.pubmatic.spark._
 
 class DoubleRDDSuite extends SparkFunSuite with SharedSparkContext {
   test("sum") {

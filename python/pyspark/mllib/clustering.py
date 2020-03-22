@@ -284,7 +284,7 @@ class KMeansModel(Saveable, Loader):
         Save this model to the given path.
         """
         java_centers = _py2java(sc, [_convert_to_vector(c) for c in self.centers])
-        java_model = sc._jvm.org.apache.spark.mllib.clustering.KMeansModel(java_centers)
+        java_model = sc._jvm.com.pubmatic.spark.mllib.clustering.KMeansModel(java_centers)
         java_model.save(sc._jsc.sc(), path)
 
     @classmethod
@@ -293,7 +293,7 @@ class KMeansModel(Saveable, Loader):
         """
         Load a model from the given path.
         """
-        java_model = sc._jvm.org.apache.spark.mllib.clustering.KMeansModel.load(sc._jsc.sc(), path)
+        java_model = sc._jvm.com.pubmatic.spark.mllib.clustering.KMeansModel.load(sc._jsc.sc(), path)
         return KMeansModel(_java2py(sc, java_model.clusterCenters()))
 
 
@@ -496,7 +496,7 @@ class GaussianMixtureModel(JavaModelWrapper, JavaSaveable, JavaLoader):
           Path to where the model is stored.
         """
         model = cls._load_java(sc, path)
-        wrapper = sc._jvm.org.apache.spark.mllib.api.python.GaussianMixtureModelWrapper(model)
+        wrapper = sc._jvm.com.pubmatic.spark.mllib.api.python.GaussianMixtureModelWrapper(model)
         return cls(wrapper)
 
 
@@ -624,7 +624,7 @@ class PowerIterationClusteringModel(JavaModelWrapper, JavaSaveable, JavaLoader):
         """
         model = cls._load_java(sc, path)
         wrapper =\
-            sc._jvm.org.apache.spark.mllib.api.python.PowerIterationClusteringModelWrapper(model)
+            sc._jvm.com.pubmatic.spark.mllib.api.python.PowerIterationClusteringModelWrapper(model)
         return PowerIterationClusteringModel(wrapper)
 
 

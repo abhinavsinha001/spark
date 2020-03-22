@@ -20,7 +20,7 @@ package org.apache.spark.examples
 
 import java.util.Random
 
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 /**
  * Usage: GroupByTest [numMappers] [numKVPairs] [KeySize] [numReducers]

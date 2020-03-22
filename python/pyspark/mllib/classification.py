@@ -235,7 +235,7 @@ class LogisticRegressionModel(LinearClassificationModel):
         """
         Save this model to the given path.
         """
-        java_model = sc._jvm.org.apache.spark.mllib.classification.LogisticRegressionModel(
+        java_model = sc._jvm.com.pubmatic.spark.mllib.classification.LogisticRegressionModel(
             _py2java(sc, self._coeff), self.intercept, self.numFeatures, self.numClasses)
         java_model.save(sc._jsc.sc(), path)
 
@@ -245,7 +245,7 @@ class LogisticRegressionModel(LinearClassificationModel):
         """
         Load a model from the given path.
         """
-        java_model = sc._jvm.org.apache.spark.mllib.classification.LogisticRegressionModel.load(
+        java_model = sc._jvm.com.pubmatic.spark.mllib.classification.LogisticRegressionModel.load(
             sc._jsc.sc(), path)
         weights = _java2py(sc, java_model.weights())
         intercept = java_model.intercept()
@@ -477,7 +477,7 @@ class SVMModel(LinearClassificationModel):
         """
         Save this model to the given path.
         """
-        java_model = sc._jvm.org.apache.spark.mllib.classification.SVMModel(
+        java_model = sc._jvm.com.pubmatic.spark.mllib.classification.SVMModel(
             _py2java(sc, self._coeff), self.intercept)
         java_model.save(sc._jsc.sc(), path)
 
@@ -487,7 +487,7 @@ class SVMModel(LinearClassificationModel):
         """
         Load a model from the given path.
         """
-        java_model = sc._jvm.org.apache.spark.mllib.classification.SVMModel.load(
+        java_model = sc._jvm.com.pubmatic.spark.mllib.classification.SVMModel.load(
             sc._jsc.sc(), path)
         weights = _java2py(sc, java_model.weights())
         intercept = java_model.intercept()
@@ -628,7 +628,7 @@ class NaiveBayesModel(Saveable, Loader):
         java_labels = _py2java(sc, self.labels.tolist())
         java_pi = _py2java(sc, self.pi.tolist())
         java_theta = _py2java(sc, self.theta.tolist())
-        java_model = sc._jvm.org.apache.spark.mllib.classification.NaiveBayesModel(
+        java_model = sc._jvm.com.pubmatic.spark.mllib.classification.NaiveBayesModel(
             java_labels, java_pi, java_theta)
         java_model.save(sc._jsc.sc(), path)
 
@@ -638,7 +638,7 @@ class NaiveBayesModel(Saveable, Loader):
         """
         Load a model from the given path.
         """
-        java_model = sc._jvm.org.apache.spark.mllib.classification.NaiveBayesModel.load(
+        java_model = sc._jvm.com.pubmatic.spark.mllib.classification.NaiveBayesModel.load(
             sc._jsc.sc(), path)
         # Can not unpickle array.array from Pyrolite in Python3 with "bytes"
         py_labels = _java2py(sc, java_model.labels(), "latin1")

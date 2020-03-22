@@ -15,19 +15,19 @@
  * limitations under the License.
  */
 
-package org.apache.spark.resource
+package com.pubmatic.spark.resource
 
 import java.io.File
 import java.nio.file.{Files => JavaFiles}
 
 import org.json4s.{DefaultFormats, Extraction}
 
-import org.apache.spark.{LocalSparkContext, SparkConf, SparkException, SparkFunSuite}
-import org.apache.spark.TestUtils._
-import org.apache.spark.internal.config._
-import org.apache.spark.resource.ResourceUtils._
-import org.apache.spark.resource.TestResourceIDs._
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.{LocalSparkContext, SparkConf, SparkException, SparkFunSuite}
+import com.pubmatic.spark.TestUtils._
+import com.pubmatic.spark.internal.config._
+import com.pubmatic.spark.resource.ResourceUtils._
+import com.pubmatic.spark.resource.TestResourceIDs._
+import com.pubmatic.spark.util.Utils
 
 class ResourceUtilsSuite extends SparkFunSuite
     with LocalSparkContext {

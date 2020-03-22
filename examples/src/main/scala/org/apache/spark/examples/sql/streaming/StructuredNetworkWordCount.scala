@@ -18,7 +18,7 @@
 // scalastyle:off println
 package org.apache.spark.examples.sql.streaming
 
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 /**
  * Counts words in UTF8 encoded, '\n' delimited text received from the network.

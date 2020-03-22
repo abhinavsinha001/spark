@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-package org.apache.spark.memory
+package com.pubmatic.spark.memory
 
 import java.util.Properties
 
-import org.apache.spark.{SparkEnv, TaskContext, TaskContextImpl}
+import com.pubmatic.spark.{SparkEnv, TaskContext, TaskContextImpl}
 
 /**
  * Helper methods for mocking out memory-management-related classes in tests.

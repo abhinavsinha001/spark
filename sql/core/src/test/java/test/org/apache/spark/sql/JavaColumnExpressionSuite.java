@@ -17,13 +17,13 @@
 
 package test.org.apache.spark.sql;
 
-import org.apache.spark.api.java.function.FilterFunction;
-import org.apache.spark.sql.Column;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.RowFactory;
-import org.apache.spark.sql.test.TestSparkSession;
-import org.apache.spark.sql.types.StructType;
+import com.pubmatic.spark.api.java.function.FilterFunction;
+import com.pubmatic.spark.sql.Column;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.Row;
+import com.pubmatic.spark.sql.RowFactory;
+import com.pubmatic.spark.sql.test.TestSparkSession;
+import com.pubmatic.spark.sql.types.StructType;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -31,7 +31,7 @@ import org.junit.Test;
 
 import java.util.*;
 
-import static org.apache.spark.sql.types.DataTypes.*;
+import static com.pubmatic.spark.sql.types.DataTypes.*;
 
 public class JavaColumnExpressionSuite {
   private transient TestSparkSession spark;
@@ -84,7 +84,7 @@ public class JavaColumnExpressionSuite {
     Dataset<Row> df = spark.createDataFrame(rows, schema);
     try {
       df.filter(df.col("a").isInCollection(Arrays.asList(new Column("b"))));
-      Assert.fail("Expected org.apache.spark.sql.AnalysisException");
+      Assert.fail("Expected com.pubmatic.spark.sql.AnalysisException");
     } catch (Exception e) {
       Arrays.asList("cannot resolve",
         "due to data type mismatch: Arguments must be same type but were")

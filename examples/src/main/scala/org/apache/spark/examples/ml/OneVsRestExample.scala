@@ -19,10 +19,10 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.classification.{LogisticRegression, OneVsRest}
-import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
+import com.pubmatic.spark.ml.classification.{LogisticRegression, OneVsRest}
+import com.pubmatic.spark.ml.evaluation.MulticlassClassificationEvaluator
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 /**
  * An example of Multiclass to Binary Reduction with One Vs Rest,

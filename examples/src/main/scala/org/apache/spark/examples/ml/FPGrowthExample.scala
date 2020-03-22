@@ -18,9 +18,9 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.fpm.FPGrowth
+import com.pubmatic.spark.ml.fpm.FPGrowth
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 /**
  * An example demonstrating FP-Growth.

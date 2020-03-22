@@ -22,7 +22,7 @@ package org.apache.spark.examples.mllib
 import org.apache.spark.mllib.evaluation.{RankingMetrics, RegressionMetrics}
 import org.apache.spark.mllib.recommendation.{ALS, Rating}
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 object RankingMetricsExample {
   def main(args: Array[String]): Unit = {

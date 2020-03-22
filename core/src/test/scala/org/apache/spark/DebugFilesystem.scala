@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
 import java.io.{FileDescriptor, InputStream}
 import java.lang
@@ -25,7 +25,7 @@ import scala.collection.mutable
 
 import org.apache.hadoop.fs._
 
-import org.apache.spark.internal.Logging
+import com.pubmatic.spark.internal.Logging
 
 object DebugFilesystem extends Logging {
   // Stores the set of active streams and their creation sites.

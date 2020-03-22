@@ -15,12 +15,12 @@
  * limitations under the License.
  */
 
-package org.apache.spark.rdd
+package com.pubmatic.spark.rdd
 
 import org.scalatest.Matchers
 
-import org.apache.spark.{SharedSparkContext, SparkFunSuite}
-import org.apache.spark.internal.Logging
+import com.pubmatic.spark.{SharedSparkContext, SparkFunSuite}
+import com.pubmatic.spark.internal.Logging
 
 class SortingSuite extends SparkFunSuite with SharedSparkContext with Matchers with Logging {
 

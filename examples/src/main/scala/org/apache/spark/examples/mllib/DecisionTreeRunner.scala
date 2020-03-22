@@ -29,7 +29,7 @@ import org.apache.spark.mllib.tree.configuration.Algo._
 import org.apache.spark.mllib.tree.model.{DecisionTreeModel, RandomForestModel}
 import org.apache.spark.mllib.util.MLUtils
 import org.apache.spark.rdd.RDD
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.util.Utils
 
 /**
  * An example runner for decision trees and random forests. Run with

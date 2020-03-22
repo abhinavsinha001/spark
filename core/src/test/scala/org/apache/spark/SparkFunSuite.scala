@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
 // scalastyle:off
 import java.io.File
@@ -25,9 +25,9 @@ import scala.annotation.tailrec
 import org.apache.log4j.{Appender, Level, Logger}
 import org.scalatest.{BeforeAndAfter, BeforeAndAfterAll, BeforeAndAfterEach, FunSuite, Outcome}
 
-import org.apache.spark.internal.Logging
-import org.apache.spark.internal.config.Tests.IS_TESTING
-import org.apache.spark.util.{AccumulatorContext, Utils}
+import com.pubmatic.spark.internal.Logging
+import com.pubmatic.spark.internal.config.Tests.IS_TESTING
+import com.pubmatic.spark.util.{AccumulatorContext, Utils}
 
 /**
  * Base abstract class for all unit tests in Spark for handling common functionality.

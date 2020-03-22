@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package org.apache.spark.api.r
+package com.pubmatic.spark.api.r
 
-import org.apache.spark.SparkFunSuite
+import com.pubmatic.spark.SparkFunSuite
 
 class RBackendSuite extends SparkFunSuite {
   test("close() clears jvmObjectTracker") {

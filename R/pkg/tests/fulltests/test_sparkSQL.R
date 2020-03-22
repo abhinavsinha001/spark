@@ -39,7 +39,7 @@ setHiveContext <- function(sc) {
     # initialize once and reuse
     ssc <- callJMethod(sc, "sc")
     hiveCtx <- tryCatch({
-      newJObject("org.apache.spark.sql.hive.test.TestHiveContext", ssc, FALSE)
+      newJObject("com.pubmatic.spark.sql.hive.test.TestHiveContext", ssc, FALSE)
     },
     error = function(err) {
       skip("Hive is not build with SparkSQL, skipped")
@@ -66,7 +66,7 @@ sparkSession <- if (windows_with_hadoop()) {
   } else {
     sparkR.session(master = sparkRTestMaster, enableHiveSupport = FALSE)
   }
-sc <- callJStatic("org.apache.spark.sql.api.r.SQLUtils", "getJavaSparkContext", sparkSession)
+sc <- callJStatic("com.pubmatic.spark.sql.api.r.SQLUtils", "getJavaSparkContext", sparkSession)
 # materialize the catalog implementation
 listTables()
 
@@ -2359,7 +2359,7 @@ test_that("join(), crossJoin() and merge() on a DataFrame", {
   tryCatch({
     # cartesian join
     expect_error(tryCatch(count(join(df, df2)), error = function(e) { stop(e) }),
-                 paste0(".*(org.apache.spark.sql.AnalysisException: Detected implicit cartesian",
+                 paste0(".*(com.pubmatic.spark.sql.AnalysisException: Detected implicit cartesian",
                         " product for INNER join between logical plans).*"))
   },
   finally = {
@@ -3788,7 +3788,7 @@ test_that("catalog APIs, listTables, listColumns, listFunctions", {
   expect_equal(colnames(f),
                c("name", "database", "description", "className", "isTemporary"))
   expect_equal(take(orderBy(f, "className"), 1)$className,
-               "org.apache.spark.sql.catalyst.expressions.Abs")
+               "com.pubmatic.spark.sql.catalyst.expressions.Abs")
   expect_error(listFunctions("zxwtyswklpf_db"),
                paste("Error in listFunctions : analysis error - Database",
                      "'zxwtyswklpf_db' does not exist"))

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.memory
+package com.pubmatic.spark.memory
 
 import java.util.concurrent.atomic.AtomicLong
 
@@ -30,10 +30,10 @@ import org.mockito.stubbing.Answer
 import org.scalatest.BeforeAndAfterEach
 import org.scalatest.time.SpanSugar._
 
-import org.apache.spark.SparkFunSuite
-import org.apache.spark.storage.{BlockId, BlockStatus, StorageLevel}
-import org.apache.spark.storage.memory.MemoryStore
-import org.apache.spark.util.ThreadUtils
+import com.pubmatic.spark.SparkFunSuite
+import com.pubmatic.spark.storage.{BlockId, BlockStatus, StorageLevel}
+import com.pubmatic.spark.storage.memory.MemoryStore
+import com.pubmatic.spark.util.ThreadUtils
 
 
 /**

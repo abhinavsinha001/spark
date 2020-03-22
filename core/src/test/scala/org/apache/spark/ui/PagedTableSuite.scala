@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-package org.apache.spark.ui
+package com.pubmatic.spark.ui
 
 import scala.xml.Node
 
-import org.apache.spark.SparkFunSuite
+import com.pubmatic.spark.SparkFunSuite
 
 class PagedDataSourceSuite extends SparkFunSuite {
 

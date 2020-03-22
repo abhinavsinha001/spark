@@ -1,0 +1,11 @@
+com.pubmatic.spark.sql.execution.datasources.v2.csv.CSVDataSourceV2
+com.pubmatic.spark.sql.execution.datasources.jdbc.JdbcRelationProvider
+com.pubmatic.spark.sql.execution.datasources.v2.json.JsonDataSourceV2
+com.pubmatic.spark.sql.execution.datasources.noop.NoopDataSource
+com.pubmatic.spark.sql.execution.datasources.orc.OrcFileFormat
+com.pubmatic.spark.sql.execution.datasources.v2.parquet.ParquetDataSourceV2
+com.pubmatic.spark.sql.execution.datasources.v2.text.TextDataSourceV2
+com.pubmatic.spark.sql.execution.streaming.ConsoleSinkProvider
+com.pubmatic.spark.sql.execution.streaming.sources.RateStreamProvider
+com.pubmatic.spark.sql.execution.streaming.sources.TextSocketSourceProvider
+com.pubmatic.spark.sql.execution.datasources.binaryfile.BinaryFileFormat

@@ -21,7 +21,7 @@ package org.apache.spark.examples
 import scala.collection.mutable
 import scala.util.Random
 
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 /**
  * Transitive closure on a graph.

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.serializer
+package com.pubmatic.spark.serializer
 
 import java.io.{ByteArrayInputStream, ByteArrayOutputStream}
 import java.nio.ByteBuffer
@@ -31,14 +31,14 @@ import com.esotericsoftware.kryo.{Kryo, KryoException}
 import com.esotericsoftware.kryo.io.{Input => KryoInput, Output => KryoOutput}
 import org.roaringbitmap.RoaringBitmap
 
-import org.apache.spark.{SharedSparkContext, SparkConf, SparkFunSuite}
-import org.apache.spark.internal.config._
-import org.apache.spark.internal.config.Kryo._
-import org.apache.spark.internal.io.FileCommitProtocol.TaskCommitMessage
-import org.apache.spark.scheduler.HighlyCompressedMapStatus
-import org.apache.spark.serializer.KryoTest._
-import org.apache.spark.storage.BlockManagerId
-import org.apache.spark.util.ThreadUtils
+import com.pubmatic.spark.{SharedSparkContext, SparkConf, SparkFunSuite}
+import com.pubmatic.spark.internal.config._
+import com.pubmatic.spark.internal.config.Kryo._
+import com.pubmatic.spark.internal.io.FileCommitProtocol.TaskCommitMessage
+import com.pubmatic.spark.scheduler.HighlyCompressedMapStatus
+import com.pubmatic.spark.serializer.KryoTest._
+import com.pubmatic.spark.storage.BlockManagerId
+import com.pubmatic.spark.util.ThreadUtils
 
 class KryoSerializerSuite extends SparkFunSuite with SharedSparkContext {
   conf.set(SERIALIZER, "org.apache.spark.serializer.KryoSerializer")
@@ -310,7 +310,7 @@ class KryoSerializerSuite extends SparkFunSuite with SharedSparkContext {
   }
 
   test("kryo with nonexistent custom registrator should fail") {
-    import org.apache.spark.SparkException
+    import com.pubmatic.spark.SparkException
 
     val conf = new SparkConf(false)
     conf.set(KRYO_USER_REGISTRATORS, "this.class.does.not.exist")
@@ -382,7 +382,7 @@ class KryoSerializerSuite extends SparkFunSuite with SharedSparkContext {
   }
 
   test("serialization buffer overflow reporting") {
-    import org.apache.spark.SparkException
+    import com.pubmatic.spark.SparkException
     val kryoBufferMaxProperty = KRYO_SERIALIZER_MAX_BUFFER_SIZE.key
 
     val largeObject = (1 to 1000000).toArray

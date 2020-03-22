@@ -19,10 +19,10 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.classification.NaiveBayes
-import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
+import com.pubmatic.spark.ml.classification.NaiveBayes
+import com.pubmatic.spark.ml.evaluation.MulticlassClassificationEvaluator
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 object NaiveBayesExample {
   def main(args: Array[String]): Unit = {

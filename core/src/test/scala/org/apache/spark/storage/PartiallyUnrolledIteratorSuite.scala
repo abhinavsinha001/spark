@@ -15,15 +15,15 @@
  * limitations under the License.
  */
 
-package org.apache.spark.storage
+package com.pubmatic.spark.storage
 
 import org.mockito.ArgumentMatchers.{eq => meq}
 import org.mockito.Mockito._
 import org.scalatestplus.mockito.MockitoSugar
 
-import org.apache.spark.SparkFunSuite
-import org.apache.spark.memory.MemoryMode.ON_HEAP
-import org.apache.spark.storage.memory.{MemoryStore, PartiallyUnrolledIterator}
+import com.pubmatic.spark.SparkFunSuite
+import com.pubmatic.spark.memory.MemoryMode.ON_HEAP
+import com.pubmatic.spark.storage.memory.{MemoryStore, PartiallyUnrolledIterator}
 
 class PartiallyUnrolledIteratorSuite extends SparkFunSuite with MockitoSugar {
   test("join two iterators") {

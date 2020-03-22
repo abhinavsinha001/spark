@@ -19,9 +19,9 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.regression.LinearRegression
+import com.pubmatic.spark.ml.regression.LinearRegression
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 object LinearRegressionWithElasticNetExample {
 

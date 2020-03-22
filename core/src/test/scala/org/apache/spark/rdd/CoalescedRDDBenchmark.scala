@@ -15,12 +15,12 @@
  * limitations under the License.
  */
 
-package org.apache.spark.rdd
+package com.pubmatic.spark.rdd
 
 import scala.collection.immutable
 
-import org.apache.spark.SparkContext
-import org.apache.spark.benchmark.{Benchmark, BenchmarkBase}
+import com.pubmatic.spark.SparkContext
+import com.pubmatic.spark.benchmark.{Benchmark, BenchmarkBase}
 
 /**
  * Benchmark for CoalescedRDD.

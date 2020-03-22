@@ -20,12 +20,11 @@ package org.apache.spark.examples.mllib;
 // $example on$
 import scala.Tuple2;
 
-import org.apache.spark.api.java.*;
-import org.apache.spark.mllib.classification.LogisticRegressionModel;
-import org.apache.spark.mllib.classification.LogisticRegressionWithLBFGS;
-import org.apache.spark.mllib.evaluation.BinaryClassificationMetrics;
-import org.apache.spark.mllib.regression.LabeledPoint;
-import org.apache.spark.mllib.util.MLUtils;
+import com.pubmatic.spark.mllib.classification.LogisticRegressionModel;
+import com.pubmatic.spark.mllib.classification.LogisticRegressionWithLBFGS;
+import com.pubmatic.spark.mllib.evaluation.BinaryClassificationMetrics;
+import com.pubmatic.spark.mllib.regression.LabeledPoint;
+import com.pubmatic.spark.mllib.util.MLUtils;
 // $example off$
 import org.apache.spark.SparkConf;
 import org.apache.spark.SparkContext;

@@ -243,7 +243,7 @@ from t1 where f1 = f2
 -- !query 12 schema
 struct<>
 -- !query 12 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 cannot resolve '(PARTITION BY default.t1.`f1` RANGE BETWEEN 1 PRECEDING AND 1 FOLLOWING)' due to data type mismatch: A range window frame cannot be used in an unordered window specification.; line 1 pos 24
 
 
@@ -293,7 +293,7 @@ SELECT * FROM empsalary WHERE row_number() OVER (ORDER BY salary) < 10
 -- !query 17 schema
 struct<>
 -- !query 17 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 It is not allowed to use window functions inside WHERE and HAVING clauses;
 
 
@@ -302,7 +302,7 @@ SELECT * FROM empsalary INNER JOIN tenk1 ON row_number() OVER (ORDER BY salary) 
 -- !query 18 schema
 struct<>
 -- !query 18 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 
 The query operator `Join` contains one or more unsupported
 expression types Aggregate, Window or Generate.
@@ -314,7 +314,7 @@ SELECT rank() OVER (ORDER BY 1), count(*) FROM empsalary GROUP BY 1
 -- !query 19 schema
 struct<>
 -- !query 19 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 
 The query operator `Aggregate` contains one or more unsupported
 expression types Aggregate, Window or Generate.
@@ -326,7 +326,7 @@ SELECT * FROM rank() OVER (ORDER BY random())
 -- !query 20 schema
 struct<>
 -- !query 20 output
-org.apache.spark.sql.catalyst.parser.ParseException
+com.pubmatic.spark.sql.catalyst.parser.ParseException
 
 no viable alternative at input 'ORDER'(line 1, pos 27)
 
@@ -340,7 +340,7 @@ SELECT * FROM empsalary WHERE (rank() OVER (ORDER BY random())) > 10
 -- !query 21 schema
 struct<>
 -- !query 21 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 It is not allowed to use window functions inside WHERE and HAVING clauses;
 
 
@@ -349,7 +349,7 @@ SELECT * FROM empsalary WHERE rank() OVER (ORDER BY random())
 -- !query 22 schema
 struct<>
 -- !query 22 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 It is not allowed to use window functions inside WHERE and HAVING clauses;
 
 
@@ -358,7 +358,7 @@ select rank() OVER (PARTITION BY four, ORDER BY ten) FROM tenk1
 -- !query 23 schema
 struct<>
 -- !query 23 output
-org.apache.spark.sql.catalyst.parser.ParseException
+com.pubmatic.spark.sql.catalyst.parser.ParseException
 
 no viable alternative at input 'ORDER'(line 1, pos 39)
 
@@ -372,7 +372,7 @@ SELECT range(1, 100) OVER () FROM empsalary
 -- !query 24 schema
 struct<>
 -- !query 24 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Undefined function: 'range'. This function is neither a registered temporary function nor a permanent function registered in the database 'default'.; line 1 pos 7
 
 
@@ -381,7 +381,7 @@ SELECT ntile(0) OVER (ORDER BY ten), ten, four FROM tenk1
 -- !query 25 schema
 struct<>
 -- !query 25 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 cannot resolve 'ntile(0)' due to data type mismatch: Buckets expression must be positive, but got: 0; line 1 pos 7
 
 

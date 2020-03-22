@@ -15,16 +15,16 @@
  * limitations under the License.
  */
 
-package org.apache.spark.serializer
+package com.pubmatic.spark.serializer
 
 import scala.reflect.ClassTag
 import scala.util.Random
 
-import org.apache.spark.SparkConf
-import org.apache.spark.benchmark.{Benchmark, BenchmarkBase}
-import org.apache.spark.internal.config._
-import org.apache.spark.internal.config.Kryo._
-import org.apache.spark.serializer.KryoTest._
+import com.pubmatic.spark.SparkConf
+import com.pubmatic.spark.benchmark.{Benchmark, BenchmarkBase}
+import com.pubmatic.spark.internal.config._
+import com.pubmatic.spark.internal.config.Kryo._
+import com.pubmatic.spark.serializer.KryoTest._
 
 /**
  * Benchmark for Kryo Unsafe vs safe Serialization.

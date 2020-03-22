@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 /**
  * Entry point in test application for SPARK-8489.
@@ -25,7 +25,7 @@ import org.apache.spark.sql.SparkSession
  * This is included here for reference only and should NOT be modified without
  * rebuilding the test jar itself.
  *
- * This is used in org.apache.spark.sql.hive.HiveSparkSubmitSuite.
+ * This is used in com.pubmatic.spark.sql.hive.HiveSparkSubmitSuite.
  */
 // TODO: actually rebuild this jar with the new changes.
 object Main {

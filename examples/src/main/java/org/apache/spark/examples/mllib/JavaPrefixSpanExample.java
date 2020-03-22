@@ -24,8 +24,8 @@ import java.util.List;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 // $example on$
-import org.apache.spark.mllib.fpm.PrefixSpan;
-import org.apache.spark.mllib.fpm.PrefixSpanModel;
+import com.pubmatic.spark.mllib.fpm.PrefixSpan;
+import com.pubmatic.spark.mllib.fpm.PrefixSpanModel;
 // $example off$
 import org.apache.spark.SparkConf;
 

@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package org.apache.spark.deploy.history
+package com.pubmatic.spark.deploy.history
 
 import java.nio.charset.StandardCharsets
 
 import org.apache.hadoop.fs.Path
 
-import org.apache.spark.SparkConf
-import org.apache.spark.internal.config._
+import com.pubmatic.spark.SparkConf
+import com.pubmatic.spark.internal.config._
 
 object EventLogTestHelper {
   def getUniqueApplicationId: String = "test-" + System.currentTimeMillis

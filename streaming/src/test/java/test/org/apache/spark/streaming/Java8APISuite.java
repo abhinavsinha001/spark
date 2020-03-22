@@ -20,29 +20,29 @@ package test.org.apache.spark.streaming;
 import java.io.Serializable;
 import java.util.*;
 
-import org.apache.spark.api.java.function.Function3;
-import org.apache.spark.api.java.function.Function4;
-import org.apache.spark.streaming.Duration;
-import org.apache.spark.streaming.Durations;
-import org.apache.spark.streaming.JavaTestUtils;
-import org.apache.spark.streaming.LocalJavaStreamingContext;
-import org.apache.spark.streaming.State;
-import org.apache.spark.streaming.StateSpec;
-import org.apache.spark.streaming.Time;
+import com.pubmatic.spark.api.java.function.Function3;
+import com.pubmatic.spark.api.java.function.Function4;
+import com.pubmatic.spark.streaming.Duration;
+import com.pubmatic.spark.streaming.Durations;
+import com.pubmatic.spark.streaming.JavaTestUtils;
+import com.pubmatic.spark.streaming.LocalJavaStreamingContext;
+import com.pubmatic.spark.streaming.State;
+import com.pubmatic.spark.streaming.StateSpec;
+import com.pubmatic.spark.streaming.Time;
 import scala.Tuple2;
 
 import com.google.common.collect.Sets;
 import org.junit.Assert;
 import org.junit.Test;
 
-import org.apache.spark.HashPartitioner;
-import org.apache.spark.api.java.Optional;
-import org.apache.spark.api.java.JavaPairRDD;
-import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.api.java.function.PairFunction;
-import org.apache.spark.streaming.api.java.JavaDStream;
-import org.apache.spark.streaming.api.java.JavaPairDStream;
-import org.apache.spark.streaming.api.java.JavaMapWithStateDStream;
+import com.pubmatic.spark.HashPartitioner;
+import com.pubmatic.spark.api.java.Optional;
+import com.pubmatic.spark.api.java.JavaPairRDD;
+import com.pubmatic.spark.api.java.JavaRDD;
+import com.pubmatic.spark.api.java.function.PairFunction;
+import com.pubmatic.spark.streaming.api.java.JavaDStream;
+import com.pubmatic.spark.streaming.api.java.JavaPairDStream;
+import com.pubmatic.spark.streaming.api.java.JavaMapWithStateDStream;
 
 /**
  * Most of these tests replicate org.apache.spark.streaming.JavaAPISuite using java 8

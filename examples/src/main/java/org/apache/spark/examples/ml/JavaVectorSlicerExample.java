@@ -17,21 +17,21 @@
 
 package org.apache.spark.examples.ml;
 
-import org.apache.spark.sql.SparkSession;
+import com.pubmatic.spark.sql.SparkSession;
 
 // $example on$
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.spark.ml.attribute.Attribute;
-import org.apache.spark.ml.attribute.AttributeGroup;
-import org.apache.spark.ml.attribute.NumericAttribute;
-import org.apache.spark.ml.feature.VectorSlicer;
-import org.apache.spark.ml.linalg.Vectors;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.RowFactory;
-import org.apache.spark.sql.types.*;
+import com.pubmatic.spark.ml.attribute.Attribute;
+import com.pubmatic.spark.ml.attribute.AttributeGroup;
+import com.pubmatic.spark.ml.attribute.NumericAttribute;
+import com.pubmatic.spark.ml.feature.VectorSlicer;
+import com.pubmatic.spark.ml.linalg.Vectors;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.Row;
+import com.pubmatic.spark.sql.RowFactory;
+import com.pubmatic.spark.sql.types.*;
 // $example off$
 
 public class JavaVectorSlicerExample {

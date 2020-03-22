@@ -17,68 +17,33 @@
 
 package test.org.apache.spark.sql;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import static java.util.stream.Collectors.toList;
 
 import static scala.collection.JavaConverters.mapAsScalaMap;
 
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.RowFactory;
-import static org.apache.spark.sql.functions.*;
-import org.apache.spark.sql.test.TestSparkSession;
-import org.apache.spark.sql.types.*;
-import static org.apache.spark.sql.types.DataTypes.*;
+import com.pubmatic.spark.sql.Dataset;
+import com.pubmatic.spark.sql.Row;
+import com.pubmatic.spark.sql.types.*;
+import static com.pubmatic.spark.sql.types.DataTypes.*;
+import static com.pubmatic.spark.sql.functions.*;
+import com.pubmatic.spark.sql.test.TestSparkSession;
+import static test.org.apache.spark.sql.JavaTestUtils.*;
 
 public class JavaHigherOrderFunctionsSuite {
     private transient TestSparkSession spark;
     private Dataset<Row> arrDf;
     private Dataset<Row> mapDf;
 
-    private void checkAnswer(Dataset<Row> actualDS, List<Row> expected) throws Exception {
-        List<Row> actual = actualDS.collectAsList();
-        Assert.assertEquals(expected.size(), actual.size());
-        for (int i = 0; i < expected.size(); i++) {
-            Row expectedRow = expected.get(i);
-            Row actualRow = actual.get(i);
-            Assert.assertEquals(expectedRow.size(), actualRow.size());
-            for (int j = 0; j < expectedRow.size(); j++) {
-                Object expectedValue = expectedRow.get(j);
-                Object actualValue = actualRow.get(j);
-                if (expectedValue != null && expectedValue.getClass().isArray()) {
-                    actualValue = actualValue.getClass().getMethod("array").invoke(actualValue);
-                    Assert.assertArrayEquals((Object[]) expectedValue, (Object[]) actualValue);
-                } else {
-                    Assert.assertEquals(expectedValue, actualValue);
-                }
-            }
-        }
-    }
-
-    @SafeVarargs
-    private static <T> List<Row> toRows(T... objs) {
-        return Arrays.stream(objs)
-            .map(RowFactory::create)
-            .collect(toList());
-    }
-
-    @SafeVarargs
-    private static <T> T[] makeArray(T... ts) {
-        return ts;
-    }
-
     private void setUpArrDf() {
         List<Row> data = toRows(
             makeArray(1, 9, 8, 7),
             makeArray(5, 8, 9, 7, 2),
-            JavaHigherOrderFunctionsSuite.<Integer>makeArray(),
+            JavaTestUtils.<Integer>makeArray(),
             null
         );
         StructType schema =  new StructType()
@@ -113,13 +78,13 @@ public class JavaHigherOrderFunctionsSuite {
     }
 
     @Test
-    public void testTransform() throws Exception {
+    public void testTransform() {
         checkAnswer(
             arrDf.select(transform(col("x"), x -> x.plus(1))),
             toRows(
                 makeArray(2, 10, 9, 8),
                 makeArray(6, 9, 10, 8, 3),
-                JavaHigherOrderFunctionsSuite.<Integer>makeArray(),
+                JavaTestUtils.<Integer>makeArray(),
                 null
             )
         );
@@ -128,20 +93,20 @@ public class JavaHigherOrderFunctionsSuite {
             toRows(
                 makeArray(1, 10, 10, 10),
                 makeArray(5, 9, 11, 10, 6),
-                JavaHigherOrderFunctionsSuite.<Integer>makeArray(),
+                JavaTestUtils.<Integer>makeArray(),
                 null
             )
         );
     }
 
     @Test
-    public void testFilter() throws Exception {
+    public void testFilter() {
         checkAnswer(
             arrDf.select(filter(col("x"), x -> x.plus(1).equalTo(10))),
             toRows(
                 makeArray(9),
                 makeArray(9),
-                JavaHigherOrderFunctionsSuite.<Integer>makeArray(),
+                JavaTestUtils.<Integer>makeArray(),
                 null
             )
         );
@@ -150,14 +115,14 @@ public class JavaHigherOrderFunctionsSuite {
             toRows(
                 makeArray(9, 8, 7),
                 makeArray(7),
-                JavaHigherOrderFunctionsSuite.<Integer>makeArray(),
+                JavaTestUtils.<Integer>makeArray(),
                 null
             )
         );
     }
 
     @Test
-    public void testExists() throws Exception {
+    public void testExists() {
         checkAnswer(
             arrDf.select(exists(col("x"), x -> x.plus(1).equalTo(10))),
             toRows(
@@ -170,7 +135,7 @@ public class JavaHigherOrderFunctionsSuite {
     }
 
     @Test
-    public void testForall() throws Exception {
+    public void testForall() {
         checkAnswer(
             arrDf.select(forall(col("x"), x -> x.plus(1).equalTo(10))),
             toRows(
@@ -183,7 +148,7 @@ public class JavaHigherOrderFunctionsSuite {
     }
 
     @Test
-    public void testAggregate() throws Exception {
+    public void testAggregate() {
         checkAnswer(
             arrDf.select(aggregate(col("x"), lit(0), (acc, x) -> acc.plus(x))),
             toRows(
@@ -205,20 +170,20 @@ public class JavaHigherOrderFunctionsSuite {
     }
 
     @Test
-    public void testZipWith() throws Exception {
+    public void testZipWith() {
         checkAnswer(
             arrDf.select(zip_with(col("x"), col("x"), (a, b) -> lit(42))),
             toRows(
                 makeArray(42, 42, 42, 42),
                 makeArray(42, 42, 42, 42, 42),
-                JavaHigherOrderFunctionsSuite.<Integer>makeArray(),
+                JavaTestUtils.<Integer>makeArray(),
                 null
             )
         );
     }
 
     @Test
-    public void testTransformKeys() throws Exception {
+    public void testTransformKeys() {
         checkAnswer(
             mapDf.select(transform_keys(col("x"), (k, v) -> k.plus(v))),
             toRows(
@@ -232,7 +197,7 @@ public class JavaHigherOrderFunctionsSuite {
     }
 
     @Test
-    public void testTransformValues() throws Exception {
+    public void testTransformValues() {
         checkAnswer(
             mapDf.select(transform_values(col("x"), (k, v) -> k.plus(v))),
             toRows(
@@ -246,7 +211,7 @@ public class JavaHigherOrderFunctionsSuite {
     }
 
     @Test
-    public void testMapFilter() throws Exception {
+    public void testMapFilter() {
         checkAnswer(
             mapDf.select(map_filter(col("x"), (k, v) -> lit(false))),
             toRows(
@@ -257,7 +222,7 @@ public class JavaHigherOrderFunctionsSuite {
     }
 
     @Test
-    public void testMapZipWith() throws Exception {
+    public void testMapZipWith() {
         checkAnswer(
             mapDf.select(map_zip_with(col("x"), col("x"), (k, v1, v2) -> lit(false))),
             toRows(

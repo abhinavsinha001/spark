@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-package org.apache.spark.rdd
+package com.pubmatic.spark.rdd
 
 import org.scalatest.BeforeAndAfter
 
-import org.apache.spark.{Partition, SparkContext, SparkFunSuite, TaskContext}
+import com.pubmatic.spark.{Partition, SparkContext, SparkFunSuite, TaskContext}
 
 /**
  * Tests whether scopes are passed from the RDD operation to the RDDs correctly.

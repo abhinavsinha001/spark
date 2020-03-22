@@ -19,9 +19,9 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.regression.GeneralizedLinearRegression
+import com.pubmatic.spark.ml.regression.GeneralizedLinearRegression
 // $example off$
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 /**
  * An example demonstrating generalized linear regression.

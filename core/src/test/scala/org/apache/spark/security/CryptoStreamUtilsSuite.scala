@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.spark.security
+package com.pubmatic.spark.security
 
 import java.io._
 import java.nio.ByteBuffer
@@ -27,12 +27,12 @@ import com.google.common.io.ByteStreams
 import org.mockito.ArgumentMatchers.any
 import org.mockito.Mockito._
 
-import org.apache.spark._
-import org.apache.spark.internal.config._
+import com.pubmatic.spark._
+import com.pubmatic.spark.internal.config._
 import org.apache.spark.network.util.CryptoUtils
-import org.apache.spark.security.CryptoStreamUtils._
-import org.apache.spark.serializer.{JavaSerializer, SerializerManager}
-import org.apache.spark.storage.TempShuffleBlockId
+import com.pubmatic.spark.security.CryptoStreamUtils._
+import com.pubmatic.spark.serializer.{JavaSerializer, SerializerManager}
+import com.pubmatic.spark.storage.TempShuffleBlockId
 
 class CryptoStreamUtilsSuite extends SparkFunSuite {
 

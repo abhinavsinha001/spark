@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.rdd
+package com.pubmatic.spark.rdd
 
 import java.util.concurrent.Semaphore
 
@@ -27,8 +27,8 @@ import org.scalatest.BeforeAndAfterAll
 import org.scalatest.concurrent.{Signaler, ThreadSignaler, TimeLimits}
 import org.scalatest.time.SpanSugar._
 
-import org.apache.spark._
-import org.apache.spark.util.ThreadUtils
+import com.pubmatic.spark._
+import com.pubmatic.spark.util.ThreadUtils
 
 class AsyncRDDActionsSuite extends SparkFunSuite with BeforeAndAfterAll with TimeLimits {
 

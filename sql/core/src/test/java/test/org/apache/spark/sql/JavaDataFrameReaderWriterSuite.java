@@ -20,11 +20,11 @@ package test.org.apache.spark.sql;
 import java.io.File;
 import java.util.HashMap;
 
-import org.apache.spark.sql.SaveMode;
-import org.apache.spark.sql.SparkSession;
-import org.apache.spark.sql.test.TestSparkSession;
-import org.apache.spark.sql.types.StructType;
-import org.apache.spark.util.Utils;
+import com.pubmatic.spark.sql.SaveMode;
+import com.pubmatic.spark.sql.SparkSession;
+import com.pubmatic.spark.sql.test.TestSparkSession;
+import com.pubmatic.spark.sql.types.StructType;
+import com.pubmatic.spark.util.Utils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -53,10 +53,10 @@ public class JavaDataFrameReaderWriterSuite {
   public void testFormatAPI() {
     spark
         .read()
-        .format("org.apache.spark.sql.test")
+        .format("com.pubmatic.spark.sql.test")
         .load()
         .write()
-        .format("org.apache.spark.sql.test")
+        .format("com.pubmatic.spark.sql.test")
         .save();
   }
 
@@ -78,7 +78,7 @@ public class JavaDataFrameReaderWriterSuite {
         .option("c", 1.0)
         .option("d", true)
         .options(map)
-        .format("org.apache.spark.sql.test")
+        .format("com.pubmatic.spark.sql.test")
         .save();
   }
 
@@ -87,17 +87,17 @@ public class JavaDataFrameReaderWriterSuite {
     spark
         .range(10)
         .write()
-        .format("org.apache.spark.sql.test")
+        .format("com.pubmatic.spark.sql.test")
         .mode(SaveMode.ErrorIfExists)
         .save();
   }
 
   @Test
   public void testLoadAPI() {
-    spark.read().format("org.apache.spark.sql.test").load();
-    spark.read().format("org.apache.spark.sql.test").load(input);
-    spark.read().format("org.apache.spark.sql.test").load(input, input, input);
-    spark.read().format("org.apache.spark.sql.test").load(new String[]{input, input});
+    spark.read().format("com.pubmatic.spark.sql.test").load();
+    spark.read().format("com.pubmatic.spark.sql.test").load(input);
+    spark.read().format("com.pubmatic.spark.sql.test").load(input, input, input);
+    spark.read().format("com.pubmatic.spark.sql.test").load(new String[]{input, input});
   }
 
   @Test

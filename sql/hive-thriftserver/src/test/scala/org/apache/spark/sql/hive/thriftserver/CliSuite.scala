@@ -29,8 +29,8 @@ import scala.concurrent.duration._
 import org.apache.hadoop.hive.conf.HiveConf.ConfVars
 import org.scalatest.BeforeAndAfterAll
 
-import org.apache.spark.SparkFunSuite
-import org.apache.spark.internal.Logging
+import com.pubmatic.spark.SparkFunSuite
+import com.pubmatic.spark.internal.Logging
 import org.apache.spark.sql.hive.test.HiveTestJars
 import org.apache.spark.sql.test.ProcessTestUtils.ProcessOutputCapturer
 import org.apache.spark.util.{ThreadUtils, Utils}
@@ -164,7 +164,7 @@ class CliSuite extends SparkFunSuite with BeforeAndAfterAll with Logging {
       Thread.currentThread().getContextClassLoader.getResource("data/files/small_kv.txt")
 
     runCliWithin(3.minute)(
-      "CREATE TABLE hive_test(key INT, val STRING) USING hive;"
+      "CREATE TABLE hive_test(key INT, val STRING);"
         -> "",
       "SHOW TABLES;"
         -> "hive_test",
@@ -211,7 +211,7 @@ class CliSuite extends SparkFunSuite with BeforeAndAfterAll with Logging {
         |ROW FORMAT SERDE 'org.apache.hive.hcatalog.data.JsonSerDe';
       """.stripMargin
         -> "",
-      "CREATE TABLE sourceTable (key INT, val STRING) USING hive;"
+      "CREATE TABLE sourceTable (key INT, val STRING);"
         -> "",
       s"LOAD DATA LOCAL INPATH '$dataFilePath' OVERWRITE INTO TABLE sourceTable;"
         -> "",
@@ -237,7 +237,7 @@ class CliSuite extends SparkFunSuite with BeforeAndAfterAll with Logging {
         |ROW FORMAT SERDE 'org.apache.hive.hcatalog.data.JsonSerDe';
       """.stripMargin
         -> "",
-      "CREATE TABLE sourceTableForWithHiveAux (key INT, val STRING) USING hive;"
+      "CREATE TABLE sourceTableForWithHiveAux (key INT, val STRING);"
         -> "",
       s"LOAD DATA LOCAL INPATH '$dataFilePath' OVERWRITE INTO TABLE sourceTableForWithHiveAux;"
         -> "",
@@ -338,7 +338,7 @@ class CliSuite extends SparkFunSuite with BeforeAndAfterAll with Logging {
       1.minute,
       Seq("--jars", s"$jarFile"))(
       "CREATE TEMPORARY FUNCTION testjar AS" +
-        " 'org.apache.spark.sql.hive.execution.UDTFStack';" -> "",
+        " 'com.pubmatic.spark.sql.hive.execution.UDTFStack';" -> "",
       "SELECT testjar(1,'TEST-SPARK-TEST-jar', 28840);" -> "TEST-SPARK-TEST-jar\t28840"
     )
   }
@@ -351,7 +351,7 @@ class CliSuite extends SparkFunSuite with BeforeAndAfterAll with Logging {
       Seq("--jars", s"$jarFile", "--conf",
         s"spark.hadoop.${ConfVars.HIVEAUXJARS}=$hiveContribJar"))(
       "CREATE TEMPORARY FUNCTION testjar AS" +
-        " 'org.apache.spark.sql.hive.execution.UDTFStack';" -> "",
+        " 'com.pubmatic.spark.sql.hive.execution.UDTFStack';" -> "",
       "SELECT testjar(1,'TEST-SPARK-TEST-jar', 28840);" -> "TEST-SPARK-TEST-jar\t28840",
       "CREATE TEMPORARY FUNCTION example_max AS " +
         "'org.apache.hadoop.hive.contrib.udaf.example.UDAFExampleMax';" -> "",
@@ -370,7 +370,7 @@ class CliSuite extends SparkFunSuite with BeforeAndAfterAll with Logging {
         |ROW FORMAT SERDE 'org.apache.hive.hcatalog.data.JsonSerDe';
       """.stripMargin
         -> "",
-      "CREATE TABLE sourceTableForWithSQL(key INT, val STRING) USING hive;"
+      "CREATE TABLE sourceTableForWithSQL(key INT, val STRING);"
         -> "",
       s"LOAD DATA LOCAL INPATH '$dataFilePath' OVERWRITE INTO TABLE sourceTableForWithSQL;"
         -> "",

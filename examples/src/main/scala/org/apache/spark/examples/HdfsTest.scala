@@ -20,7 +20,7 @@ package org.apache.spark.examples
 
 import java.util.concurrent.TimeUnit
 
-import org.apache.spark.sql.SparkSession
+import com.pubmatic.spark.sql.SparkSession
 
 
 object HdfsTest {

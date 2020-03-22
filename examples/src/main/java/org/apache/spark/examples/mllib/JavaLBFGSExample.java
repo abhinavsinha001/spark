@@ -22,14 +22,12 @@ import java.util.Arrays;
 
 import scala.Tuple2;
 
-import org.apache.spark.api.java.*;
-import org.apache.spark.mllib.classification.LogisticRegressionModel;
-import org.apache.spark.mllib.evaluation.BinaryClassificationMetrics;
-import org.apache.spark.mllib.linalg.Vector;
-import org.apache.spark.mllib.linalg.Vectors;
-import org.apache.spark.mllib.optimization.*;
-import org.apache.spark.mllib.regression.LabeledPoint;
-import org.apache.spark.mllib.util.MLUtils;
+import com.pubmatic.spark.mllib.classification.LogisticRegressionModel;
+import com.pubmatic.spark.mllib.evaluation.BinaryClassificationMetrics;
+import com.pubmatic.spark.mllib.linalg.Vector;
+import com.pubmatic.spark.mllib.linalg.Vectors;
+import com.pubmatic.spark.mllib.regression.LabeledPoint;
+import com.pubmatic.spark.mllib.util.MLUtils;
 import org.apache.spark.SparkConf;
 import org.apache.spark.SparkContext;
 // $example off$

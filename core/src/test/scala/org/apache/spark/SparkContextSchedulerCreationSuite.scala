@@ -15,15 +15,15 @@
  * limitations under the License.
  */
 
-package org.apache.spark
+package com.pubmatic.spark
 
 import org.scalatest.PrivateMethodTester
 
-import org.apache.spark.internal.Logging
-import org.apache.spark.scheduler.{SchedulerBackend, TaskScheduler, TaskSchedulerImpl}
-import org.apache.spark.scheduler.cluster.StandaloneSchedulerBackend
-import org.apache.spark.scheduler.local.LocalSchedulerBackend
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.internal.Logging
+import com.pubmatic.spark.scheduler.{SchedulerBackend, TaskScheduler, TaskSchedulerImpl}
+import com.pubmatic.spark.scheduler.cluster.StandaloneSchedulerBackend
+import com.pubmatic.spark.scheduler.local.LocalSchedulerBackend
+import com.pubmatic.spark.util.Utils
 
 
 class SparkContextSchedulerCreationSuite

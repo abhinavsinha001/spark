@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.rdd
+package com.pubmatic.spark.rdd
 
 object RDDSuiteUtils {
   case class Person(first: String, last: String, age: Int)

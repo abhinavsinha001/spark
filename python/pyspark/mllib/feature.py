@@ -636,9 +636,9 @@ class Word2VecModel(JavaVectorTransformer, JavaSaveable, JavaLoader):
         """
         Load a model from the given path.
         """
-        jmodel = sc._jvm.org.apache.spark.mllib.feature \
+        jmodel = sc._jvm.com.pubmatic.spark.mllib.feature \
             .Word2VecModel.load(sc._jsc.sc(), path)
-        model = sc._jvm.org.apache.spark.mllib.api.python.Word2VecModelWrapper(jmodel)
+        model = sc._jvm.com.pubmatic.spark.mllib.api.python.Word2VecModelWrapper(jmodel)
         return Word2VecModel(model)
 
 

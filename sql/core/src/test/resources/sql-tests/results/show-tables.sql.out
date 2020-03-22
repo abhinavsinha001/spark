@@ -168,7 +168,7 @@ SHOW TABLE EXTENDED
 -- !query 13 schema
 struct<>
 -- !query 13 output
-org.apache.spark.sql.catalyst.parser.ParseException
+com.pubmatic.spark.sql.catalyst.parser.ParseException
 
 mismatched input '<EOF>' expecting {'FROM', 'IN', 'LIKE'}(line 1, pos 19)
 
@@ -193,7 +193,7 @@ SHOW TABLE EXTENDED PARTITION(c='Us', d=1)
 -- !query 15 schema
 struct<>
 -- !query 15 output
-org.apache.spark.sql.catalyst.parser.ParseException
+com.pubmatic.spark.sql.catalyst.parser.ParseException
 
 mismatched input 'PARTITION' expecting {'FROM', 'IN', 'LIKE'}(line 1, pos 20)
 
@@ -207,7 +207,7 @@ SHOW TABLE EXTENDED LIKE 'show_t*' PARTITION(c='Us', d=1)
 -- !query 16 schema
 struct<>
 -- !query 16 output
-org.apache.spark.sql.catalyst.analysis.NoSuchTableException
+com.pubmatic.spark.sql.catalyst.analysis.NoSuchTableException
 Table or view 'show_t*' not found in database 'showdb';
 
 
@@ -216,7 +216,7 @@ SHOW TABLE EXTENDED LIKE 'show_t1' PARTITION(c='Us')
 -- !query 17 schema
 struct<>
 -- !query 17 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Partition spec is invalid. The spec (c) must match the partition spec (c, d) defined in table '`showdb`.`show_t1`';
 
 
@@ -225,7 +225,7 @@ SHOW TABLE EXTENDED LIKE 'show_t1' PARTITION(a='Us', d=1)
 -- !query 18 schema
 struct<>
 -- !query 18 output
-org.apache.spark.sql.AnalysisException
+com.pubmatic.spark.sql.AnalysisException
 Partition spec is invalid. The spec (a, d) must match the partition spec (c, d) defined in table '`showdb`.`show_t1`';
 
 
@@ -234,7 +234,7 @@ SHOW TABLE EXTENDED LIKE 'show_t1' PARTITION(c='Ch', d=1)
 -- !query 19 schema
 struct<>
 -- !query 19 output
-org.apache.spark.sql.catalyst.analysis.NoSuchPartitionException
+com.pubmatic.spark.sql.catalyst.analysis.NoSuchPartitionException
 Partition not found in table 'show_t1' database 'showdb':
 c -> Ch
 d -> 1;

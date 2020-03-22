@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package org.apache.spark.serializer
+package com.pubmatic.spark.serializer
 
-import org.apache.spark.internal.config.Kryo._
+import com.pubmatic.spark.internal.config.Kryo._
 
 class UnsafeKryoSerializerSuite extends KryoSerializerSuite {
 

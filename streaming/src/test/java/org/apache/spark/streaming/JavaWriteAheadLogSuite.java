@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.streaming;
+package com.pubmatic.spark.streaming;
 
 import java.util.ArrayList;
 import java.nio.ByteBuffer;
@@ -24,11 +24,11 @@ import java.util.Iterator;
 import java.util.List;
 
 import com.google.common.collect.Iterators;
-import org.apache.spark.SparkConf;
+import com.pubmatic.spark.SparkConf;
 import org.apache.spark.network.util.JavaUtils;
-import org.apache.spark.streaming.util.WriteAheadLog;
-import org.apache.spark.streaming.util.WriteAheadLogRecordHandle;
-import org.apache.spark.streaming.util.WriteAheadLogUtils;
+import com.pubmatic.spark.streaming.util.WriteAheadLog;
+import com.pubmatic.spark.streaming.util.WriteAheadLogRecordHandle;
+import com.pubmatic.spark.streaming.util.WriteAheadLogUtils;
 
 import org.junit.Test;
 import org.junit.Assert;

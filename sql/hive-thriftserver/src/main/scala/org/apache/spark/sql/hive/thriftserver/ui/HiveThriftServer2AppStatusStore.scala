@@ -22,7 +22,7 @@ import scala.collection.JavaConverters._
 import scala.collection.mutable.ArrayBuffer
 
 import org.apache.spark.sql.hive.thriftserver.HiveThriftServer2.ExecutionState
-import org.apache.spark.status.KVUtils.KVIndexParam
+import com.pubmatic.spark.status.KVUtils.KVIndexParam
 import org.apache.spark.util.kvstore.{KVIndex, KVStore}
 
 /**

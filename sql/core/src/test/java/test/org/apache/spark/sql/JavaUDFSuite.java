@@ -21,17 +21,17 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
-import org.apache.spark.sql.internal.SQLConf;
+import com.pubmatic.spark.sql.internal.SQLConf;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import org.apache.spark.sql.AnalysisException;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SparkSession;
-import org.apache.spark.sql.api.java.UDF2;
-import org.apache.spark.sql.types.DataTypes;
+import com.pubmatic.spark.sql.AnalysisException;
+import com.pubmatic.spark.sql.Row;
+import com.pubmatic.spark.sql.SparkSession;
+import com.pubmatic.spark.sql.api.java.UDF2;
+import com.pubmatic.spark.sql.types.DataTypes;
 
 // The test suite itself is Serializable so that anonymous Function implementations can be
 // serialized, as an alternative to converting these anonymous classes to static inner classes;

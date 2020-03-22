@@ -109,7 +109,7 @@ class CatalogTests(ReusedSQLTestCase):
             self.assertEquals(functions["+"], Function(
                 name="+",
                 description=None,
-                className="org.apache.spark.sql.catalyst.expressions.Add",
+                className="com.pubmatic.spark.sql.catalyst.expressions.Add",
                 isTemporary=True))
             self.assertEquals(functions, functionsDefault)
 

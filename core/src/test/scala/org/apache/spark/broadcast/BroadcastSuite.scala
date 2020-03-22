@@ -15,23 +15,21 @@
  * limitations under the License.
  */
 
-package org.apache.spark.broadcast
+package com.pubmatic.spark.broadcast
 
 import java.util.Locale
 
 import scala.util.Random
-
 import org.scalatest.Assertions
-
-import org.apache.spark._
-import org.apache.spark.internal.config
-import org.apache.spark.internal.config.SERIALIZER
-import org.apache.spark.io.SnappyCompressionCodec
-import org.apache.spark.rdd.RDD
-import org.apache.spark.security.EncryptionFunSuite
-import org.apache.spark.serializer.JavaSerializer
-import org.apache.spark.storage._
-import org.apache.spark.util.io.ChunkedByteBuffer
+import com.pubmatic.spark._
+import com.pubmatic.spark.internal.config
+import com.pubmatic.spark.internal.config.SERIALIZER
+import com.pubmatic.spark.io.SnappyCompressionCodec
+import com.pubmatic.spark.rdd.RDD
+import com.pubmatic.spark.security.EncryptionFunSuite
+import com.pubmatic.spark.serializer.JavaSerializer
+import com.pubmatic.spark.storage._
+import com.pubmatic.spark.util.io.ChunkedByteBuffer
 
 // Dummy class that creates a broadcast variable but doesn't use it
 class DummyBroadcastClass(rdd: RDD[Int]) extends Serializable {
@@ -79,7 +77,7 @@ class BroadcastSuite extends SparkFunSuite with LocalSparkContext with Encryptio
   }
 
   test("TorrentBroadcast's blockifyObject and unblockifyObject are inverses") {
-    import org.apache.spark.broadcast.TorrentBroadcast._
+    import com.pubmatic.spark.broadcast.TorrentBroadcast._
     val blockSize = 1024
     val conf = new SparkConf()
     val compressionCodec = Some(new SnappyCompressionCodec(conf))

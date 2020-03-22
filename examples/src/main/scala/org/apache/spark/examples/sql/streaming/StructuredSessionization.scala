@@ -20,8 +20,8 @@ package org.apache.spark.examples.sql.streaming
 
 import java.sql.Timestamp
 
-import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.streaming._
+import com.pubmatic.spark.sql.SparkSession
+import com.pubmatic.spark.sql.streaming._
 
 
 /**

@@ -23,7 +23,7 @@ import org.apache.spark.api.java.JavaSparkContext;
 import java.util.Arrays;
 
 import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.mllib.stat.KernelDensity;
+import com.pubmatic.spark.mllib.stat.KernelDensity;
 // $example off$
 
 public class JavaKernelDensityEstimationExample {

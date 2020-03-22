@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.spark.rdd
+package com.pubmatic.spark.rdd
 
 import java.io.IOException
 
@@ -32,8 +32,8 @@ import org.apache.hadoop.mapreduce.{Job => NewJob, JobContext => NewJobContext,
 import org.apache.hadoop.util.Progressable
 import org.scalatest.Assertions
 
-import org.apache.spark._
-import org.apache.spark.Partitioner
+import com.pubmatic.spark._
+import com.pubmatic.spark.Partitioner
 
 class PairRDDFunctionsSuite extends SparkFunSuite with SharedSparkContext {
   test("aggregateByKey") {

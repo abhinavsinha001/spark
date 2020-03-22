@@ -15,27 +15,26 @@
  * limitations under the License.
  */
 
-package org.apache.spark.api.python
+package com.pubmatic.spark.api.python
 
 import java.io.{ByteArrayOutputStream, DataOutputStream, File}
 import java.net.{InetAddress, Socket}
 import java.nio.charset.StandardCharsets
 import java.util
 
+import com.pubmatic.spark.{LocalSparkContext, SparkConf, SparkContext, SparkFunSuite}
+
 import scala.annotation.tailrec
 import scala.collection.JavaConverters._
 import scala.concurrent.duration.Duration
-
 import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.io.{LongWritable, Text}
 import org.apache.hadoop.mapred.TextInputFormat
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat
-
-import org.apache.spark.{LocalSparkContext, SparkConf, SparkContext, SparkFunSuite}
-import org.apache.spark.api.java.JavaSparkContext
-import org.apache.spark.rdd.{HadoopRDD, RDD}
-import org.apache.spark.security.{SocketAuthHelper, SocketAuthServer}
-import org.apache.spark.util.Utils
+import com.pubmatic.spark.api.java.JavaSparkContext
+import com.pubmatic.spark.rdd.{HadoopRDD, RDD}
+import com.pubmatic.spark.security.{SocketAuthHelper, SocketAuthServer}
+import com.pubmatic.spark.util.Utils
 
 class PythonRDDSuite extends SparkFunSuite with LocalSparkContext {
 

@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-package org.apache.spark.status
+package com.pubmatic.spark.status
 
-import org.apache.spark.SparkFunSuite
-import org.apache.spark.storage.StorageLevel
+import com.pubmatic.spark.SparkFunSuite
+import com.pubmatic.spark.storage.StorageLevel
 
 class LiveEntitySuite extends SparkFunSuite {
 

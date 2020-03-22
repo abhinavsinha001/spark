@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package org.apache.spark.scheduler
+package com.pubmatic.spark.scheduler
 
 import java.io.File
 
 import scala.util.Random
 
-import org.apache.spark._
-import org.apache.spark.internal.config.Tests.TEST_NO_STAGE_RETRY
+import com.pubmatic.spark._
+import com.pubmatic.spark.internal.config.Tests.TEST_NO_STAGE_RETRY
 
 class BarrierTaskContextSuite extends SparkFunSuite with LocalSparkContext {
 
